@@ -217,7 +217,7 @@ export default function BlogPageClient({ initialBlogs, imageOverrides }: BlogPag
                       fill
                       className="object-contain group-hover:scale-105 transition-transform duration-700"
                       priority
-                      unoptimized
+                      sizes="(min-width: 1024px) 50vw, 100vw"
                     />
                   {/* Gradient overlay on image */}
                   <div className="absolute inset-0 bg-gradient-to-r from-black/5 to-transparent lg:bg-gradient-to-l pointer-events-none" />
@@ -387,7 +387,7 @@ export default function BlogPageClient({ initialBlogs, imageOverrides }: BlogPag
                         src={blog.image}
                         alt={blog.imageAlt}
                         fill
-                        unoptimized
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         className="object-contain group-hover:scale-110 transition-transform duration-700"
                       />
                       {/* Category badge on image */}

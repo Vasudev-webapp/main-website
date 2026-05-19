@@ -174,6 +174,7 @@ export default async function BlogDetailPage({
                 alt={blog.imageAlt}
                 fill
                 priority
+                sizes="(min-width: 1024px) 896px, 100vw"
                 className="object-contain"
               />
             </div>
@@ -307,6 +308,7 @@ export default async function BlogDetailPage({
                       src={related.image}
                       alt={related.imageAlt}
                       fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
                       className="object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>

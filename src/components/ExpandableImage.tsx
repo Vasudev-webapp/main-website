@@ -29,7 +29,7 @@ export default function ExpandableImage(props: ImageProps) {
   return (
     <>
       <div 
-        className="relative group cursor-zoom-in overflow-hidden"
+        className={`relative group cursor-zoom-in overflow-hidden ${props.fill ? "w-full h-full" : ""}`}
         onClick={toggleExpand}
       >
         <Image 
