@@ -8,6 +8,7 @@ import { COUNTRY_SLUGS } from "@/lib/seo/country-pages-data";
 import { COMPETITOR_SLUGS } from "@/lib/seo/competitor-comparison-data";
 import { APPLICATION_SLUGS } from "@/lib/seo/application-pages-data";
 import { RESOURCE_SLUGS } from "@/lib/seo/resource-articles-data";
+import { products as staticProducts } from "@/lib/products";
 import {
   buildApplicationPagePath,
   buildComparisonPagePath,
@@ -43,11 +44,17 @@ type SitemapEntry = {
   lastModified: string;
   changeFrequency: ChangeFrequency;
   priority: number;
+  image?: {
+    url: string;
+    caption?: string;
+    title?: string;
+  };
 };
 
 type LiveBlogSlug = {
   slug: string;
   updatedAt: string;
+  image?: string;
 };
 
 const HIGH_PRIORITY_PRODUCTS = new Set([
@@ -107,14 +114,28 @@ function escapeXml(value: string): string {
 }
 
 function buildUrlEntry(entry: SitemapEntry): string {
-  return [
+  const lines = [
     "  <url>",
     `    <loc>${escapeXml(entry.url)}</loc>`,
     `    <lastmod>${escapeXml(entry.lastModified)}</lastmod>`,
     `    <changefreq>${escapeXml(entry.changeFrequency)}</changefreq>`,
     `    <priority>${escapeXml(entry.priority.toFixed(2))}</priority>`,
-    "  </url>",
-  ].join("\n");
+  ];
+
+  if (entry.image) {
+    lines.push("    <image:image>");
+    lines.push(`      <image:loc>${escapeXml(entry.image.url)}</image:loc>`);
+    if (entry.image.caption) {
+      lines.push(`      <image:caption>${escapeXml(entry.image.caption)}</image:caption>`);
+    }
+    if (entry.image.title) {
+      lines.push(`      <image:title>${escapeXml(entry.image.title)}</image:title>`);
+    }
+    lines.push("    </image:image>");
+  }
+
+  lines.push("  </url>");
+  return lines.join("\n");
 }
 
 function buildAbsoluteUrl(path: string): string {
@@ -188,33 +209,57 @@ export async function GET() {
     ...STATIC_ROUTES.map((route) =>
       buildEntry(route.path, route.changeFrequency, route.priority, now)
     ),
-    ...productSlugs.map((slug) =>
-      buildEntry(
+    ...productSlugs.map((slug) => {
+      const product = staticProducts.find((p) => p.slug === slug);
+      const entry = buildEntry(
         `/product/${slug}`,
         "monthly",
         HIGH_PRIORITY_PRODUCTS.has(slug) ? 0.95 : 0.9,
         now
-      )
-    ),
+      );
+      if (product?.imageUrl) {
+        entry.image = {
+          url: product.imageUrl,
+          title: product.name,
+          caption: product.metaDescription || product.description?.substring(0, 100),
+        };
+      }
+      return entry;
+    }),
     ...SERVICE_SLUGS.map((slug) =>
       buildEntry(`/service/${slug}`, "monthly", 0.7, now)
     ),
-    ...Object.entries(blogData).map(([slug, blog]) =>
-      buildEntry(
+    ...Object.entries(blogData).map(([slug, blog]) => {
+      const entry = buildEntry(
         `/blog/${slug}`,
         "monthly",
         0.6,
         toIsoDateString(blog.lastUpdated) ?? toIsoDateString(blog.date) ?? now
-      )
-    ),
-    ...liveBlogs.map((blog) =>
-      buildEntry(
+      );
+      if (blog.image) {
+        entry.image = {
+          url: blog.image,
+          title: blog.title,
+          caption: blog.imageAlt || blog.excerpt,
+        };
+      }
+      return entry;
+    }),
+    ...liveBlogs.map((blog) => {
+      const entry = buildEntry(
         `/blog/${blog.slug}`,
         "monthly",
         0.6,
         toIsoDateString(blog.updatedAt) ?? now
-      )
-    ),
+      );
+      if (blog.image) {
+        entry.image = {
+          url: blog.image,
+          title: blog.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
+        };
+      }
+      return entry;
+    }),
     ...CASE_STUDY_SLUGS.map((slug) =>
       buildEntry(`/case-study/${slug}`, "monthly", 0.5, now)
     ),
@@ -242,7 +287,7 @@ export async function GET() {
 
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
     ...entries.map(buildUrlEntry),
     "</urlset>",
   ].join("\n");

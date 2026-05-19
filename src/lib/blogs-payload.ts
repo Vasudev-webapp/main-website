@@ -117,7 +117,7 @@ export async function getAllBlogImageOverrides(): Promise<Record<string, string>
 }
 
 export async function getAllBlogSlugs(): Promise<
-  { slug: string; updatedAt: string }[]
+  { slug: string; updatedAt: string; image?: string }[]
 > {
   if (isCollectionCurrentlyUnavailable()) return [];
 
@@ -127,7 +127,7 @@ export async function getAllBlogSlugs(): Promise<
       collection: "blogs",
       limit: 1000,
       pagination: false,
-      select: { slug: true, updatedAt: true },
+      select: { slug: true, updatedAt: true, googleDriveImageUrl: true },
     });
 
     return result.docs.flatMap((doc) => {
@@ -135,7 +135,11 @@ export async function getAllBlogSlugs(): Promise<
         return [];
       }
 
-      return [{ slug: doc.slug, updatedAt: doc.updatedAt }];
+      return [{
+        slug: doc.slug,
+        updatedAt: doc.updatedAt,
+        image: typeof doc.googleDriveImageUrl === "string" ? getDirectDriveLink(doc.googleDriveImageUrl) : undefined
+      }];
     });
   } catch (error) {
     if (isMissingBlogsTableError(error)) {

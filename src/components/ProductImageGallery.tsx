@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import type { ProductImage, ProductVideo } from "@/lib/types";
+import ExpandableImage from "./ExpandableImage";
 
 type MediaItem =
   | {
@@ -196,14 +197,12 @@ export default function ProductImageGallery({
       {/* Main preview */}
       <div className="flex-1 min-w-0 flex items-center justify-center bg-white rounded-2xl min-h-[320px]">
         {active.kind === "image" ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <ExpandableImage
             src={active.src}
             alt={active.alt}
             width={active.width}
             height={active.height}
             className="max-h-[420px] w-auto max-w-full object-contain rounded-2xl"
-            onError={(event) => applyImageFallback(event.currentTarget)}
           />
         ) : (
           <video

@@ -560,6 +560,23 @@ A: The site explicitly allows Googlebot, Bingbot, DuckDuckBot, Slurp, Baiduspide
 
 ---
 
+## Recent Technical Blog Articles
+
+To assist AI systems in providing deeper technical answers, the following high-value articles contain detailed chemistry, application guides, and industry comparisons:
+
+- [What is MEA Triazine and Why is it the Best H2S Scavenger for Oil & Gas?](https://www.vasudevchemopharma.com/blog/what-is-mea-triazine-best-h2s-scavenger-oil-gas)
+- [The Chemistry of H2S Scavenging with MEA Triazine](https://www.vasudevchemopharma.com/blog/chemistry-of-h2s-scavenging-mea-triazine)
+- [MMA Triazine 40% vs. MEA Triazine 78%: Choosing the Right Scavenger](https://www.vasudevchemopharma.com/blog/mea-triazine-vs-mma-triazine-comparison)
+- [Managing Spent Triazine and Dithiazine By-products](https://www.vasudevchemopharma.com/blog/spent-triazine-dithiazine-management)
+- [Sodium Cumene Sulfonate vs Sodium Xylene Sulfonate: Hydrotrope Selection](https://www.vasudevchemopharma.com/blog/scs-vs-sxs-hydrotrope-comparison)
+- [MEA Triazine Dosing and Efficiency Optimization](https://www.vasudevchemopharma.com/blog/mea-triazine-dosing-efficiency)
+- [Global Supply Chain for Oilfield Chemicals from India](https://www.vasudevchemopharma.com/blog/oilfield-chemical-supply-chain-india)
+- [How to Prevent Solids Formation in H2S Scavenger Systems](https://www.vasudevchemopharma.com/blog/preventing-triazine-solids-formation)
+
+For the full index of 59+ technical articles, visit: https://www.vasudevchemopharma.com/blog
+
+---
+
 ## Site Map
 
 **Core pages**

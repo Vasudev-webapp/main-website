@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import ExpandableImage from "@/components/ExpandableImage";
 import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import SectionLabel from "@/components/SectionLabel";
 import ArticleSchema from "@/components/seo/ArticleSchema";
@@ -168,12 +169,11 @@ export default async function BlogDetailPage({
 
             {/* Hero image with keyword-rich alt text */}
             <div className="relative mt-12 rounded-3xl overflow-hidden bg-gray-50 flex items-center justify-center max-w-4xl mx-auto aspect-[16/9]">
-              <Image
+              <ExpandableImage
                 src={imageUrl}
                 alt={blog.imageAlt}
                 fill
                 priority
-                unoptimized
                 className="object-contain"
               />
             </div>
@@ -307,7 +307,6 @@ export default async function BlogDetailPage({
                       src={related.image}
                       alt={related.imageAlt}
                       fill
-                      unoptimized
                       className="object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
