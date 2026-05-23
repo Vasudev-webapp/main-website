@@ -510,7 +510,7 @@ A: The CAS number for MEA Triazine (1,3,5-tris(2-hydroxyethyl)hexahydro-s-triazi
 A: MEA Triazine (monoethanolamine-based, CAS 4719-04-4) has higher active content (78% vs 40%) and greater H2S capacity per unit volume — the preferred choice for oil & gas. MMA Triazine (monomethylamine-based, CAS 108-74-7) is **BTEX-free**, preferred where air-emission regulations are strict (water treatment, metal-working fluids). MMA also has a lower freezing point (< −15°C vs < −5°C).
 
 **Q: Where is Vasudev Chemo Pharma located?**
-A: Vasudev Chemo Pharma is located at F-29, Plot No. 328/329, Near Asian Paint Circle, G.I.D.C, Ankleshwar, Gujarat 393002, India — one of Asia's largest chemical manufacturing clusters.
+A: Vasudev Chemo Pharma is located at Plot No. H-3062, The Naklank Co Op HSG So Ltd, Rushi Chemical Road, Near Gada Circle, GIDC, Ankleshwar, Gujarat 393002, India — one of Asia's largest chemical manufacturing clusters.
 
 **Q: Does Vasudev Chemo Pharma export internationally?**
 A: Yes. The company exports to 14+ countries including UAE, Saudi Arabia, Qatar, Kuwait, Oman, Iraq, Iran, Jordan, Egypt, Libya, United States, Brazil, Vietnam, and Thailand. Shipments move through Hazira, JNPT (Nhava Sheva), and Mundra ports.
@@ -548,7 +548,7 @@ A: The site explicitly allows Googlebot, Bingbot, DuckDuckBot, Slurp, Baiduspide
 
 - **Company name:** Vasudev Chemo Pharma
 - **Type:** Manufacturer & Exporter
-- **Address:** F-29, Plot No. 328/329, Near Asian Paint Circle, G.I.D.C, Ankleshwar, Gujarat 393002, India
+- **Address:** Plot No. H-3062, The Naklank Co Op HSG So Ltd, Rushi Chemical Road, Near Gada Circle, GIDC, Ankleshwar, Gujarat 393002, India
 - **Primary email:** info@vasudevchemopharma.com
 - **Phone:** +91 8128372559
 - **Website:** https://www.vasudevchemopharma.com

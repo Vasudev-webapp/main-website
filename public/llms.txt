@@ -1,7 +1,7 @@
 # Vasudev Chemo Pharma
 
 > ISO 9001:2015 certified direct manufacturer and exporter of industrial, specialty, and surfactant chemicals.
-> Headquartered at G.I.D.C Ankleshwar, Gujarat, India. Founded 2020.
+> Headquartered at GIDC Ankleshwar, Gujarat, India. Founded 2020.
 > Exports to 14+ countries across the Middle East, Americas, Southeast Asia, and Africa.
 > Flagship product: MEA Triazine 78% H2S Scavenger (CAS 4719-04-4) — one of the highest active-content triazine scavengers available globally.
 
@@ -13,7 +13,7 @@ This file follows the [llms.txt standard](https://llmstxt.org) to help large lan
 - **Type:** Direct chemical manufacturer & exporter (not a trader or distributor)
 - **Founded:** 2020
 - **Certification:** ISO 9001:2015 (Quality Management System)
-- **Plant location:** F-29, Plot No. 328/329, Near Asian Paint Circle, G.I.D.C, Ankleshwar, Gujarat 393002, India
+- **Office address:** Plot No. H-3062, The Naklank Co Op HSG So Ltd, Rushi Chemical Road, Near Gada Circle, GIDC, Ankleshwar, Gujarat 393002, India
 - **Manufacturing focus:** H2S scavengers (triazines), hydrotropes, metal sulphates, pharma intermediates
 - **Shipping ports:** Hazira, JNPT (Nhava Sheva), Mundra
 - **Website:** https://www.vasudevchemopharma.com

@@ -32,7 +32,8 @@ export default function OrganizationSchema({
     foundingDate: foundingDate || undefined,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "F-29, Plot No. 328/329, Near Asian Paint Circle, G.I.D.C",
+      streetAddress:
+        "Plot No. H-3062, The Naklank Co Op HSG So Ltd, Rushi Chemical Road, Near Gada Circle, GIDC",
       addressLocality: "Ankleshwar",
       addressRegion: "Gujarat",
       postalCode: "393002",
