@@ -41,6 +41,7 @@ import {
 } from "@/lib/seo/seo-route-helpers";
 import { hydrotropeProductArticleLinks } from "@/app/(frontend)/blog/[slug]/hydrotrope-articles-data";
 import { getProductKeywordContentSections } from "@/lib/seo/keyword-content-sections";
+import { getProductInternalLinks } from "@/lib/seo/internal-links";
 
 /* ─── ISR: revalidate product pages every hour ──────────────── */
 export const revalidate = 3600;
@@ -342,6 +343,7 @@ export default async function ProductDetailPage({
   const directAnswer = PRODUCT_DIRECT_ANSWERS[slug];
   const searchConsoleIntentGuide = SEARCH_CONSOLE_INTENT_GUIDES[slug];
   const keywordContentSections = getProductKeywordContentSections(slug);
+  const internalLinks = getProductInternalLinks(slug);
   const faqItems =
     product.faqs.length > 0
       ? product.faqs.slice(0, 6)
@@ -1608,20 +1610,9 @@ export default async function ProductDetailPage({
                         <h4 className="font-heading text-h5 text-primary mb-2">
                           {group.heading}
                         </h4>
-                        <p className="text-sm text-gray-500 mb-4">
-                          {group.description}
+                        <p className="text-sm leading-relaxed text-gray-700">
+                          {group.prose}
                         </p>
-                        <ul className="space-y-2">
-                          {group.items.map((item) => (
-                            <li
-                              key={item}
-                              className="flex items-start gap-2 text-sm text-gray-700"
-                            >
-                              <span className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0 mt-1.5" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
                       </div>
                     ))}
                   </div>
@@ -1643,20 +1634,9 @@ export default async function ProductDetailPage({
                         <h4 className="font-heading text-h5 text-primary mb-2">
                           {group.heading}
                         </h4>
-                        <p className="text-sm text-gray-500 mb-4">
-                          {group.description}
+                        <p className="text-sm leading-relaxed text-gray-700">
+                          {group.prose}
                         </p>
-                        <ul className="space-y-2">
-                          {group.items.map((item) => (
-                            <li
-                              key={item}
-                              className="flex items-start gap-2 text-sm text-gray-700"
-                            >
-                              <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0 mt-1.5" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
                       </div>
                     ))}
                   </div>
@@ -1678,19 +1658,9 @@ export default async function ProductDetailPage({
                         <h4 className="font-heading text-h5 text-primary mb-2">
                           {group.heading}
                         </h4>
-                        <p className="text-xs text-gray-500 mb-3">
-                          {group.description}
+                        <p className="text-sm leading-relaxed text-gray-700">
+                          {group.prose}
                         </p>
-                        <ul className="space-y-1.5">
-                          {group.items.map((item) => (
-                            <li
-                              key={item}
-                              className="text-sm text-gray-700"
-                            >
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
                       </div>
                     ))}
                   </div>
@@ -1699,6 +1669,50 @@ export default async function ProductDetailPage({
             </section>
           )}
 
+
+          {/* ─── INTERNAL LINKS (SEO) ─────────────────────────────── */}
+          {(internalLinks.relatedProducts.length > 0 || internalLinks.industryPages.length > 0 || internalLinks.relatedPages.length > 0) && (
+            <section className="mb-16">
+              <h2 className="font-heading text-h3 text-primary mb-6">
+                Related Products & Resources
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {internalLinks.relatedProducts.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    title={link.context}
+                    className="block border border-gray-200 rounded-xl p-4 hover:border-accent hover:shadow-sm transition-all"
+                  >
+                    <span className="text-sm font-medium text-primary">{link.label}</span>
+                    <span className="block text-xs text-gray-500 mt-1">{link.context}</span>
+                  </Link>
+                ))}
+                {internalLinks.industryPages.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    title={link.context}
+                    className="block border border-gray-200 rounded-xl p-4 hover:border-accent hover:shadow-sm transition-all"
+                  >
+                    <span className="text-sm font-medium text-primary">{link.label}</span>
+                    <span className="block text-xs text-gray-500 mt-1">{link.context}</span>
+                  </Link>
+                ))}
+                {internalLinks.relatedPages.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    title={link.context}
+                    className="block border border-gray-200 rounded-xl p-4 hover:border-accent hover:shadow-sm transition-all"
+                  >
+                    <span className="text-sm font-medium text-primary">{link.label}</span>
+                    <span className="block text-xs text-gray-500 mt-1">{link.context}</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <section id="quote" className="mb-16">
             <div className="bg-primary rounded-3xl p-10 lg:p-14 text-center">

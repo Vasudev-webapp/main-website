@@ -231,9 +231,21 @@ export default async function AboutPage() {
                 <h3 className="font-heading text-h5 font-semibold text-primary group-hover:text-accent transition-colors">Our Chemical Products</h3>
                 <p className="text-sm text-secondary mt-2">Browse 15+ industrial and specialty chemicals</p>
               </Link>
+              <Link href="/industries" className="bg-light rounded-2xl p-6 hover:shadow-md transition-shadow group">
+                <h3 className="font-heading text-h5 font-semibold text-primary group-hover:text-accent transition-colors">Industries We Serve</h3>
+                <p className="text-sm text-secondary mt-2">Oil & gas, water treatment, metalworking & more</p>
+              </Link>
               <Link href="/service" className="bg-light rounded-2xl p-6 hover:shadow-md transition-shadow group">
                 <h3 className="font-heading text-h5 font-semibold text-primary group-hover:text-accent transition-colors">Manufacturing Services</h3>
                 <p className="text-sm text-secondary mt-2">Custom formulation, quality testing, and export</p>
+              </Link>
+              <Link href="/case-study" className="bg-light rounded-2xl p-6 hover:shadow-md transition-shadow group">
+                <h3 className="font-heading text-h5 font-semibold text-primary group-hover:text-accent transition-colors">Case Studies</h3>
+                <p className="text-sm text-secondary mt-2">Real-world project results and process improvements</p>
+              </Link>
+              <Link href="/resources" className="bg-light rounded-2xl p-6 hover:shadow-md transition-shadow group">
+                <h3 className="font-heading text-h5 font-semibold text-primary group-hover:text-accent transition-colors">Technical Resources</h3>
+                <p className="text-sm text-secondary mt-2">Datasheets, guides, and technical documentation</p>
               </Link>
               <Link href="/blog" className="bg-light rounded-2xl p-6 hover:shadow-md transition-shadow group">
                 <h3 className="font-heading text-h5 font-semibold text-primary group-hover:text-accent transition-colors">Industry Insights</h3>
@@ -242,6 +254,10 @@ export default async function AboutPage() {
               <Link href="/contact" className="bg-light rounded-2xl p-6 hover:shadow-md transition-shadow group">
                 <h3 className="font-heading text-h5 font-semibold text-primary group-hover:text-accent transition-colors">Request a Quote</h3>
                 <p className="text-sm text-secondary mt-2">Get pricing for your chemical requirements</p>
+              </Link>
+              <Link href="/compare" className="bg-light rounded-2xl p-6 hover:shadow-md transition-shadow group">
+                <h3 className="font-heading text-h5 font-semibold text-primary group-hover:text-accent transition-colors">Product Comparisons</h3>
+                <p className="text-sm text-secondary mt-2">Compare H2S scavengers and hydrotropes</p>
               </Link>
             </div>
           </div>

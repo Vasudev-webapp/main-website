@@ -59,6 +59,11 @@ export const PRODUCT_META_OVERRIDES: Record<string, ProductMetaOverride> = {
     description:
       "Sodium Xylene Sulfonate 40% liquid (SXS 40, CAS 1300-72-7) uses include detergents, cleaners, agrochemicals and surfactant blends. India manufacturer. Request COA and quote.",
   },
+  "eddm-non-triazine-h2s-scavenger": {
+    title: "Non-Triazine Based H2S Scavenger | EDDM Manufacturer India",
+    description:
+      "EDDM (Ethylenedioxydimethanol, CAS 3586-55-8) — non-triazine H2S scavenger for oil & gas, water treatment & biogas. No salt precipitation, no corrosion. ISO 9001 India manufacturer. Drum, IBC & bulk supply. Request quote.",
+  },
 };
 
 

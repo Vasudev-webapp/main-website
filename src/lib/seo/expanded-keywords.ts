@@ -335,6 +335,11 @@ export const EXPANDED_KEYWORDS = {
       "mea triazine 78 interfacial tension", "mea triazine 78 foaming tendency", "mea triazine 78 emulsion stability",
       "mea triazine 78 impact on desalters", "mea triazine 78 impact on wastewater treatment", "mea triazine 78 microbial control",
       "mea triazine 78 biocide properties", "mea triazine 78 preservative effect", "mea triazine 78 chemical interaction list",
+      "biocide for metalworking fluids", "metalworking fluid biocide triazine", "cutting fluid biocide manufacturer India",
+      "coolant biocide for CNC machines", "metalworking fluid preservation triazine", "biocide for water soluble cutting oil",
+      "metalworking fluid bactericide supplier", "triazine biocide for grinding fluids", "biocide for semi-synthetic metalworking fluid",
+      "hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine manufacturer", "CAS 4719-04-4 manufacturer India", "triazinetriethanol supplier",
+      "1,3,5-tris(2-hydroxyethyl)hexahydro-1,3,5-triazine supplier", "hexahydrotriazine triethanol manufacturer",
     ]
   },
   "mma-triazine-40": {
@@ -412,6 +417,8 @@ export const EXPANDED_KEYWORDS = {
       "mma triazine 40 interfacial tension", "mma triazine 40 foaming tendency", "mma triazine 40 emulsion stability",
       "mma triazine 40 impact on desalters", "mma triazine 40 impact on wastewater treatment", "mma triazine 40 microbial control",
       "mma triazine 40 biocide properties", "mma triazine 40 preservative effect", "mma triazine 40 chemical interaction list",
+      "1,3,5-trimethylhexahydro-1,3,5-triazine manufacturer", "CAS 108-74-7 manufacturer India", "trimethyl triazine supplier",
+      "1,3,5-trimethyl-1,3,5-triazinane supplier", "hexahydro-1,3,5-trimethyl-s-triazine manufacturer", "monomethylamine triazine manufacturer India",
     ]
   },
   "triazine-h2s-scavenger-general": {

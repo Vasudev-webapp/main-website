@@ -50,6 +50,7 @@ export default async function AboutSection() {
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Button href="/about">Learn more about us</Button>
+              <Button href="/case-study" variant="outline">Case Studies</Button>
               {brochureUrl ? (
                 <a
                   href={brochureUrl}

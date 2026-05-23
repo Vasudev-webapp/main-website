@@ -229,6 +229,39 @@ export default async function ServicePage() {
           </div>
         </section>
 
+        {/* Cross-links */}
+        <section className="py-16">
+          <div className="max-w-container mx-auto px-6 lg:px-10">
+            <h2 className="font-heading text-h4 text-primary mb-6">Explore More</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link href="/product" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">Our Products</span>
+                <span className="block text-xs text-gray-500 mt-1">Browse 15+ chemical products</span>
+              </Link>
+              <Link href="/industries" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">Industries We Serve</span>
+                <span className="block text-xs text-gray-500 mt-1">Oil & gas, water treatment, metalworking</span>
+              </Link>
+              <Link href="/case-study" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">Case Studies</span>
+                <span className="block text-xs text-gray-500 mt-1">Real project results and optimizations</span>
+              </Link>
+              <Link href="/about" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">About Us</span>
+                <span className="block text-xs text-gray-500 mt-1">ISO 9001:2015 certified manufacturer</span>
+              </Link>
+              <Link href="/blog" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">Industry Blog</span>
+                <span className="block text-xs text-gray-500 mt-1">Latest chemical manufacturing insights</span>
+              </Link>
+              <Link href="/resources" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">Technical Resources</span>
+                <span className="block text-xs text-gray-500 mt-1">Datasheets, SDS, and dosing guides</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Contact Form */}
         <section className="py-20">
           <div className="max-w-container mx-auto px-6 lg:px-10">

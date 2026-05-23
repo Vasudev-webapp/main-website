@@ -103,7 +103,7 @@ function buildCommonProductFaqs(product: {
 
 // Seed data for all 12 products
 const seedProducts = [
-  // ─── INDUSTRIAL CHEMICALS (5) ──────────────────────────────
+  // ─── SPECIALITY CHEMICALS (6) ──────────────────────────────
   {
     name: "MEA Triazine 78% H2S Scavenger",
     slug: "mea-triazine-78-h2s-scavenger",
@@ -127,8 +127,8 @@ const seedProducts = [
       { key: "Freezing Point", value: "< −5°C" },
       { key: "Viscosity (25°C)", value: "15 – 30 cP" },
     ],
-    applications: ["H₂S scavenging in natural gas", "Crude oil sweetening", "Amine unit support", "Pipeline and wellhead treatment", "Biogas desulphurisation", "Refinery sour water treatment"],
-    industries: ["Oil & Gas", "Petrochemicals", "Refineries", "Biogas & Renewable Energy", "Water Treatment"],
+    applications: ["H₂S scavenging in natural gas", "Crude oil sweetening", "Amine unit support", "Pipeline and wellhead treatment", "Biogas desulphurisation", "Refinery sour water treatment", "Biocide for metalworking fluids", "Cutting fluid and coolant preservation", "Water treatment biocide"],
+    industries: ["Oil & Gas", "Petrochemicals", "Refineries", "Biogas & Renewable Energy", "Water Treatment", "Metalworking & Machining", "Paper & Pulp"],
     safetyClass: "Irritant",
     ghsPictograms: ["GHS07"],
     signalWord: "Warning",
@@ -302,7 +302,44 @@ const seedProducts = [
     minOrderQuantity: "1 MT",
   },
 
-  // ─── SPECIALTY CHEMICALS (4) ───────────────────────────────
+  {
+    name: "EDDM — Non-Triazine H2S Scavenger",
+    slug: "eddm-non-triazine-h2s-scavenger",
+    sku: "VCP-IND-0006",
+    formula: "C₄H₁₀O₄",
+    casNumber: "3586-55-8",
+    category: "industrial",
+    subcategory: "Oilfield Chemicals",
+    description: "EDDM (Ethylenedioxydimethanol) is a non-triazine based H₂S scavenger and slow-release formaldehyde donor used for hydrogen sulphide removal in oil and gas production, water treatment, and industrial applications. Unlike triazine-based scavengers, EDDM does not contain nitrogen or amine groups, making it an ideal alternative where triazine by-products (such as dithiazines or spent triazine polymers) are undesirable. EDDM reacts selectively with H₂S at ambient temperature through an exothermic process, converting hydrogen sulphide into non-hazardous by-products without causing salt precipitation, corrosion, or catalyst poisoning. The product is fully miscible with water, operates effectively across a pH range of 6–11, and is compatible with most oilfield and industrial chemical systems. Manufactured by Vasudev Chemo Pharma at our ISO 9001:2015 certified facility in Gujarat, India, EDDM is supplied at ≥ 90% active substance content with guaranteed total aldehyde content > 45%. It is also used as a liquid in-can preservative (bactericide) for water-based systems including metalworking fluids, polymer dispersions, pigment slurries, and concrete additives.",
+    appearance: "Colourless to pale yellow liquid",
+    molecularWeight: "122.12 g/mol",
+    hsCode: "29094980",
+    specs: [
+      { key: "Active Substance Content", value: "≥ 90%" },
+      { key: "Total Aldehyde Content", value: "> 45%" },
+      { key: "Formaldehyde Content", value: "42 – 48%" },
+      { key: "pH (1% aqueous solution)", value: "6.0 – 8.0" },
+      { key: "Specific Gravity (20°C)", value: "1.180 – 1.200 g/ml" },
+      { key: "Refractive Index (20°C)", value: "1.430 – 1.443" },
+      { key: "Flash Point", value: "> 100°C" },
+      { key: "Solubility in Water", value: "Fully miscible" },
+      { key: "Appearance", value: "Colourless to pale yellow transparent liquid" },
+      { key: "Odour", value: "Mild" },
+    ],
+    applications: ["Non-triazine H₂S scavenging in natural gas", "Crude oil desulphurisation", "Produced water H₂S treatment", "Pipeline and wellhead H₂S removal", "Biogas desulphurisation", "Water treatment biocide", "In-can preservative for water-based systems", "Metalworking fluid preservation", "Polymer dispersion and pigment slurry preservation", "Concrete admixture preservation"],
+    industries: ["Oil & Gas", "Petrochemicals", "Refineries", "Water Treatment", "Metalworking & Machining", "Paints & Coatings", "Construction Chemicals", "Personal Care & Cosmetics"],
+    safetyClass: "Irritant",
+    ghsPictograms: ["GHS07"],
+    signalWord: "Warning",
+    hazardStatements: ["H315 – Causes skin irritation", "H319 – Causes serious eye irritation", "H317 – May cause an allergic skin reaction"],
+    grades: ["Industrial Grade", "Oilfield Grade", "Technical Grade"],
+    packaging: ["230 kg HDPE drums", "1000 L IBC tanks", "Bulk tanker loads", "Custom packaging on request"],
+    minOrderQuantity: "1 MT",
+    imageUrl: "",
+    images: [],
+  },
+
+  // ─── API & INTERMEDIATES (4) ───────────────────────────────
   {
     name: "Bis(2-chloroethyl)amine Hydrochloride",
     slug: "bis-2-chloroethyl-amine-hydrochloride",

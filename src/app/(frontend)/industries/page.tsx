@@ -203,6 +203,47 @@ export default function IndustriesIndexPage() {
           </div>
         </section>
 
+        {/* Cross-links */}
+        <section className="mt-16">
+          <div className="max-w-container mx-auto px-6 lg:px-10">
+            <h2 className="font-heading text-h4 text-primary mb-6">Related Resources</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link href="/product/mea-triazine-78-h2s-scavenger" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">MEA Triazine 78%</span>
+                <span className="block text-xs text-gray-500 mt-1">H2S scavenger & biocide product details</span>
+              </Link>
+              <Link href="/product/mma-triazine-40" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">MMA Triazine 40%</span>
+                <span className="block text-xs text-gray-500 mt-1">BTX-free H2S scavenger product details</span>
+              </Link>
+              <Link href="/case-study" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">Case Studies</span>
+                <span className="block text-xs text-gray-500 mt-1">Real-world project results across industries</span>
+              </Link>
+              <Link href="/blog" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">Industry Blog</span>
+                <span className="block text-xs text-gray-500 mt-1">Technical articles and industry insights</span>
+              </Link>
+              <Link href="/service" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">Our Services</span>
+                <span className="block text-xs text-gray-500 mt-1">Manufacturing, export, and custom formulation</span>
+              </Link>
+              <Link href="/resources" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">Technical Resources</span>
+                <span className="block text-xs text-gray-500 mt-1">Datasheets, dosing guides, and SDS</span>
+              </Link>
+              <Link href="/how-h2s-scavengers-work" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">How H2S Scavengers Work</span>
+                <span className="block text-xs text-gray-500 mt-1">Technical guide to scavenging chemistry</span>
+              </Link>
+              <Link href="/about" className="border border-gray-200 rounded-xl p-4 hover:border-accent transition-colors">
+                <span className="text-sm font-medium text-primary">About Us</span>
+                <span className="block text-xs text-gray-500 mt-1">ISO 9001:2015 certified manufacturer</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="mt-20">
           <div className="max-w-container mx-auto px-6 lg:px-10">

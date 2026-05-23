@@ -5,12 +5,11 @@ import { getCompanyInfo } from "@/lib/company";
 import { SOCIAL_LINKS } from "@/lib/social-links";
 
 const productLinks = [
-  { label: "MEA Triazine 78%", href: "/supply/mea-triazine-78" },
+  { label: "MEA Triazine 78%", href: "/product/mea-triazine-78-h2s-scavenger" },
+  { label: "MMA Triazine 40%", href: "/product/mma-triazine-40" },
+  { label: "Sodium Cumene Sulfonate 40%", href: "/product/sodium-cumene-sulfonate-40" },
+  { label: "Sodium Xylene Sulfonate 40%", href: "/product/sodium-xylene-sulfonate-40" },
   { label: "All Products", href: "/product" },
-  { label: "MEA vs MMA Triazine", href: "/mea-triazine-vs-mma-triazine" },
-  { label: "How H2S Scavengers Work", href: "/how-h2s-scavengers-work" },
-  { label: "Product Comparisons", href: "/compare" },
-  { label: "Resources & Datasheets", href: "/resources" },
 ];
 
 const industryLinks = [

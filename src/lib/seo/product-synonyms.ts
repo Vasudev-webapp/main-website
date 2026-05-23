@@ -381,6 +381,17 @@ export const MMA_TRIAZINE_SYNONYMS: ProductSynonyms = {
     "MMA Triazine 40% may be listed under various names in technical specifications:",
   groups: [
     {
+      heading: "IUPAC and Chemical Names",
+      items: [
+        "1,3,5-Trimethylhexahydro-1,3,5-triazine",
+        "1,3,5-Trimethyl-1,3,5-triazinane",
+        "Hexahydro-1,3,5-trimethyl-s-triazine",
+        "sym-Trimethyl-hexahydrotriazine",
+        "N,N',N''-Trimethyl-1,3,5-triazinane",
+        "Trimethyltriazine",
+      ],
+    },
+    {
       heading: "Synonyms and Application Names",
       items: [
         "H2S Scavenger Chemicals",
@@ -393,9 +404,69 @@ export const MMA_TRIAZINE_SYNONYMS: ProductSynonyms = {
         "Triazine biocide",
         "Industrial biocide for water treatment",
         "Formaldehyde condensate biocide",
+        "BTX-free H2S scavenger",
       ],
     },
   ],
+  casNote: "CAS Number: 108-74-7",
   closingText:
     "Contact us if your specification lists any of these names — we will confirm whether our MMA Triazine 40% matches your requirement.",
+};
+
+export const EDDM_SYNONYMS: ProductSynonyms = {
+  intro:
+    "EDDM (Ethylenedioxydimethanol) is known by several chemical names, trade names, and application-based names. Our product is the same compound regardless of the name your specification uses:",
+  groups: [
+    {
+      heading: "IUPAC and Chemical Names",
+      items: [
+        "(Ethylenedioxy)dimethanol",
+        "Ethylenedioxydimethanol",
+        "1,6-Dihydroxy-2,5-dioxahexane",
+        "2-Methyloloxyethoxymethanol",
+        "Ethylene glycol hemiacetal",
+        "Bis(hydroxymethyl)-1,4-dioxane-2,5-diol",
+        "HOCH₂OCH₂CH₂OCH₂OH",
+      ],
+    },
+    {
+      heading: "Trade Names and Abbreviations",
+      items: [
+        "EDDM",
+        "Non-Triazine H2S Scavenger",
+        "Non-Triazine Based H2S Scavenger",
+        "Formaldehyde-Based H2S Scavenger",
+        "Non-Amine H2S Scavenger",
+        "Glycol Hemiacetal Scavenger",
+      ],
+    },
+    {
+      heading: "Application-Based Names",
+      items: [
+        "Non-Triazine Desulfurizer",
+        "Slow-Release Bactericide",
+        "Formaldehyde Donor Biocide",
+        "In-Can Preservative",
+        "Non-Triazine Gas Sweetener",
+        "H2S Scavenger (Non-Triazine Type)",
+        "Hydrogen Sulfide Scavenger (Formaldehyde-Based)",
+        "Water Treatment Biocide EDDM",
+        "Metalworking Fluid Preservative",
+        "Oil/Water Separation Agent",
+      ],
+    },
+    {
+      heading: "SEO Meta Titles (Alternate Page Titles)",
+      items: [
+        "Non-Triazine Based H2S Scavenger | EDDM Manufacturer India",
+        "EDDM Manufacturer in India | Ethylenedioxydimethanol Supplier",
+        "Buy EDDM Non-Triazine H2S Scavenger | Best Price from India",
+        "Ethylenedioxydimethanol (EDDM) CAS 3586-55-8 | Bulk Supplier",
+        "Non-Triazine H2S Scavenger for Oil & Gas | EDDM Exporter India",
+      ],
+    },
+  ],
+  casNote: "CAS Number: 3586-55-8 | EINECS: 222-720-6",
+  closingText:
+    "Contact us if your specification lists any of these names — we will confirm whether our EDDM Non-Triazine H2S Scavenger matches your requirement.",
 };

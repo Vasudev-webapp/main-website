@@ -67,8 +67,8 @@ export const Products: CollectionConfig = {
       type: "select",
       required: true,
       options: [
-        { label: "Industrial Chemicals", value: "industrial" },
-        { label: "Specialty Chemicals", value: "specialty" },
+        { label: "Speciality Chemicals", value: "industrial" },
+        { label: "API & Intermediates", value: "specialty" },
         { label: "Surfactant Chemicals", value: "surfactant" },
       ],
       admin: { position: "sidebar" },

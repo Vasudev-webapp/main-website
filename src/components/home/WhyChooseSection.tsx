@@ -67,7 +67,11 @@ export default function WhyChooseSection() {
               ))}
             </div>
 
-            <Button href="/product">View our products</Button>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/product">View our products</Button>
+              <Button href="/industries" variant="outline">Industries we serve</Button>
+              <Button href="/resources" variant="outline">Technical resources</Button>
+            </div>
           </div>
         </div>
       </div>

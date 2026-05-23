@@ -17,6 +17,7 @@ export type KeywordContentGroup = {
   heading: string;
   description: string;
   items: string[];
+  prose: string;
 };
 
 export type ProductKeywordContentSections = {
@@ -43,6 +44,34 @@ function titleCase(str: string): string {
 
 function dedupeArray(arr: string[]): string[] {
   return Array.from(new Set(arr.map((s) => s.trim()).filter(Boolean)));
+}
+
+/**
+ * Converts a list of keywords into a natural-sounding prose paragraph.
+ * Keywords are woven into readable sentences rather than displayed as a raw list.
+ */
+function keywordsToProse(keywords: string[], context: string): string {
+  if (keywords.length === 0) return "";
+  // Group keywords into sentence chunks of 3-4
+  const sentences: string[] = [];
+  const chunks: string[][] = [];
+  for (let i = 0; i < keywords.length; i += 3) {
+    chunks.push(keywords.slice(i, i + 3));
+  }
+  const connectors = [
+    "Our product range covers",
+    "We supply solutions for",
+    "Customers rely on us for",
+    "This includes",
+    "We also serve requirements for",
+    "Additionally, we provide",
+  ];
+  chunks.forEach((chunk, idx) => {
+    const connector = connectors[idx % connectors.length];
+    const joined = chunk.map((k) => k.toLowerCase()).join(", ");
+    sentences.push(`${connector} ${joined}.`);
+  });
+  return `${context} ${sentences.join(" ")}`;
 }
 
 /* ── Category content config ─────────────────────────────────────── */
@@ -139,6 +168,12 @@ const APPLICATION_PATTERNS: {
       "Gas sweetening chemicals for natural gas processing, LPG purification, and gas pipeline integrity.",
     patterns: [/natural gas|lpg|gas processing|gas sweetening/i],
   },
+  {
+    heading: "Biocide for Metalworking Fluids",
+    description:
+      "Triazine-based biocide for metalworking fluids — prevents bacterial and fungal growth in cutting fluids, coolants, grinding fluids, and CNC machining coolants. Extends fluid life and eliminates rancid odours.",
+    patterns: [/metalworking|cutting fluid|coolant biocide|machining|grinding fluid|cnc/i],
+  },
 ];
 
 const SUPPLY_PATTERNS: {
@@ -192,11 +227,12 @@ export function getProductKeywordContentSections(
       const matchedKeywords = dedupeArray(
         extractByPattern(allKeywords, patterns)
       );
-      // Pick top 8 most relevant keywords to display as content
+      const items = matchedKeywords.slice(0, 8).map(titleCase);
       return {
         heading,
         description,
-        items: matchedKeywords.slice(0, 8).map(titleCase),
+        items,
+        prose: keywordsToProse(items, description),
       };
     }
   ).filter((g) => g.items.length > 0);
@@ -207,10 +243,12 @@ export function getProductKeywordContentSections(
       const matchedKeywords = dedupeArray(
         extractByPattern(allBuying, patterns)
       );
+      const items = matchedKeywords.slice(0, 8).map(titleCase);
       return {
         heading,
         description,
-        items: matchedKeywords.slice(0, 8).map(titleCase),
+        items,
+        prose: keywordsToProse(items, description),
       };
     }
   ).filter((g) => g.items.length > 0);
@@ -235,10 +273,13 @@ export function getProductKeywordContentSections(
       const matched = dedupeArray(
         distributorKeywords.filter((kw) => pattern.test(kw))
       );
+      const items = matched.slice(0, 6).map(titleCase);
+      const desc = `H2S scavenger and triazine chemical distribution, export, and supply to ${heading} markets. FOB, CIF, and CFR terms available.`;
       return {
         heading: `${heading} Supply`,
-        description: `H2S scavenger and triazine chemical distribution, export, and supply to ${heading} markets. FOB, CIF, and CFR terms available.`,
-        items: matched.slice(0, 6).map(titleCase),
+        description: desc,
+        items,
+        prose: keywordsToProse(items, desc),
       };
     })
     .filter((g) => g.items.length > 0);

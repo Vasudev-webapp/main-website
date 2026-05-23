@@ -102,7 +102,7 @@ export interface Product {
 
 /** Category display labels */
 export const CATEGORY_LABELS: Record<ProductCategory, string> = {
-  industrial: "Industrial Chemicals",
-  specialty: "Specialty Chemicals",
+  industrial: "Speciality Chemicals",
+  specialty: "API & Intermediates",
   surfactant: "Surfactant Chemicals",
 };
