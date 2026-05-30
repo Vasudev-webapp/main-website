@@ -7,6 +7,7 @@ import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import SectionLabel from "@/components/SectionLabel";
 import ArticleSchema from "@/components/seo/ArticleSchema";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import FAQSchema from "@/components/seo/FAQSchema";
 import AuthorByline from "@/components/blog/AuthorByline";
 import TableOfContents from "@/components/blog/TableOfContents";
 import { blogData, type BlogEntry } from "./seo-blog-data";
@@ -147,6 +148,11 @@ export default async function BlogDetailPage({
           },
         ]}
       />
+      {blog.faqs && blog.faqs.length > 0 && (
+        <FAQSchema
+          items={blog.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
+        />
+      )}
 
       <main>
         {/* ── Hero ── */}
@@ -258,6 +264,31 @@ export default async function BlogDetailPage({
 
               {/* Closing paragraph */}
               <p className="text-secondary leading-relaxed">{blog.closing}</p>
+
+              {/* FAQ — visible + FAQPage schema above for AI answer engines */}
+              {blog.faqs && blog.faqs.length > 0 && (
+                <div className="mt-10 not-prose">
+                  <h2 className="font-heading text-h3 font-semibold text-primary mb-4">
+                    Frequently Asked Questions
+                  </h2>
+                  <div className="space-y-4">
+                    {blog.faqs.map((faq) => (
+                      <details
+                        key={faq.question}
+                        className="border border-gray-200 rounded-2xl overflow-hidden group"
+                      >
+                        <summary className="px-6 py-4 cursor-pointer flex items-center justify-between font-medium text-primary hover:bg-gray-50 transition-colors">
+                          {faq.question}
+                          <span className="text-accent ml-4 transition-transform group-open:rotate-45 text-xl">+</span>
+                        </summary>
+                        <div className="px-6 pb-4 text-sm text-secondary leading-relaxed">
+                          {faq.answer}
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* External references */}
               {blog.externalLinks.length > 0 && (

@@ -42,6 +42,21 @@ import {
 import { hydrotropeProductArticleLinks } from "@/app/(frontend)/blog/[slug]/hydrotrope-articles-data";
 import { getProductKeywordContentSections } from "@/lib/seo/keyword-content-sections";
 import { getProductInternalLinks } from "@/lib/seo/internal-links";
+import {
+  SXS_40_SLUG,
+  SXS_40_CHEMICAL_IDENTIFIERS,
+  SXS_40_GENERIC_SYNONYMS,
+  SXS_40_TRADE_NAMES,
+  SXS_40_PURE_PROPERTIES,
+  SXS_40_APPLICATION_BLOCKS,
+  SXS_40_COMPARISON_TABLE,
+  SXS_40_REGULATORY_MATRIX,
+  SXS_40_DOCUMENTS,
+  SXS_40_SHIPPING_PORTS,
+  SXS_40_INCOTERMS,
+  SXS_40_EXPORT_DOCS,
+  SXS_40_MOQ_NOTE,
+} from "@/lib/seo/sxs-40-content";
 
 /* ─── ISR: revalidate product pages every hour ──────────────── */
 export const revalidate = 3600;
@@ -329,6 +344,7 @@ export default async function ProductDetailPage({
   if (!product) notFound();
 
   const isMeaTriazine = slug === MEA_TRIAZINE_SLUG;
+  const isSxs40 = slug === SXS_40_SLUG;
   const synonymData: {
     intro: string;
     groups: { heading: string; items: string[] }[];
@@ -346,7 +362,9 @@ export default async function ProductDetailPage({
   const internalLinks = getProductInternalLinks(slug);
   const faqItems =
     product.faqs.length > 0
-      ? product.faqs.slice(0, 6)
+      ? isSxs40
+        ? product.faqs
+        : product.faqs.slice(0, 6)
       : productPageFaqs;
   const categoryLabel = CATEGORY_LABELS[product.category];
   const relatedProducts = await getRelatedProducts(
@@ -795,6 +813,103 @@ export default async function ProductDetailPage({
             )}
           </section>
 
+          {/* ─── SXS-40: CHEMICAL IDENTIFIERS & SYNONYMS ───────────────── */}
+          {isSxs40 && (
+            <section id="identifiers" className="mb-16">
+              <h2 className="font-heading text-h3 text-primary mb-6">
+                Chemical Identifiers &amp; Synonyms
+              </h2>
+              <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-6">
+                Sodium Xylene Sulfonate 40% is referenced across formulation,
+                regulatory and customs systems by the identifiers below. Use
+                this table to match technical specifications, customs HS codes
+                and supplier brand names from any global source.
+              </p>
+
+              <div className="border border-gray-200 rounded-2xl overflow-hidden overflow-x-auto mb-8">
+                <table className="w-full text-sm min-w-[500px]">
+                  <thead>
+                    <tr className="bg-primary text-white">
+                      <th className="text-left px-5 py-3 font-semibold">Identifier</th>
+                      <th className="text-left px-5 py-3 font-semibold">Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {SXS_40_CHEMICAL_IDENTIFIERS.map((row, i) => (
+                      <tr
+                        key={row.label}
+                        className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}
+                      >
+                        <td className="px-5 py-3 font-medium text-gray-700">
+                          {row.label}
+                        </td>
+                        <td className="px-5 py-3 text-primary font-mono text-xs sm:text-sm">
+                          {row.value}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="border border-gray-200 rounded-2xl p-6">
+                  <h3 className="font-heading text-h5 text-primary mb-4">
+                    Common Synonyms
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-600">
+                    {SXS_40_GENERIC_SYNONYMS.join(" · ")}
+                  </p>
+                </div>
+                <div className="border border-gray-200 rounded-2xl p-6 bg-light">
+                  <h3 className="font-heading text-h5 text-primary mb-4">
+                    Commercial Trade Names (Global Equivalents)
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-600">
+                    Formulators worldwide reference SXS under multiple supplier
+                    brand names, all sharing CAS 1300-72-7:{" "}
+                    <strong className="text-primary">
+                      {SXS_40_TRADE_NAMES.join(", ")}
+                    </strong>
+                    . Vasudev Chemo Pharma supplies the same chemistry under our
+                    in-house brand{" "}
+                    <strong className="text-accent">VCP-SXS-40™</strong> with
+                    COA-verified 39–41% active matter.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 border border-gray-200 rounded-2xl p-6">
+                <h3 className="font-heading text-h5 text-primary mb-4">
+                  Pure Sodium Xylene Sulfonate — Reference Properties
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm min-w-[480px]">
+                    <tbody>
+                      {SXS_40_PURE_PROPERTIES.map((row, i) => (
+                        <tr
+                          key={row.label}
+                          className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}
+                        >
+                          <td className="px-5 py-3 font-medium text-gray-700">
+                            {row.label}
+                          </td>
+                          <td className="px-5 py-3 text-primary">
+                            {row.value}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-gray-400 italic mt-4">
+                  Sources: Atamanchemicals, Lobachemie technical data, ECHA
+                  REACH dossier (EC 215-090-9), OECD 301B biodegradability test.
+                </p>
+              </div>
+            </section>
+          )}
+
           {/* ─── 3b. ALSO KNOWN AS / SYNONYMS (MEA + MMA Triazine) ───── */}
           {slug === "sodium-xylene-sulfonate-90" && (
             <section id="sxs-90-buying-guide" className="mb-16">
@@ -980,6 +1095,42 @@ export default async function ProductDetailPage({
               </div>
             </div>
           </section>
+
+          {/* ─── SXS-40: 7 INDUSTRY-SPECIFIC APPLICATION BLOCKS ─────── */}
+          {isSxs40 && (
+            <section id="industry-applications" className="mb-16">
+              <h2 className="font-heading text-h3 text-primary mb-6">
+                Applications by Industry &amp; Dosage Guidelines
+              </h2>
+              <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-8">
+                Sodium Xylene Sulfonate 40% is used across seven major industry
+                verticals as a hydrotrope, coupling agent, viscosity modifier
+                and wetting agent. Use the dosage ranges below as a starting
+                point — always confirm with bench cloud-point and stability
+                trials in your specific formulation.
+              </p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {SXS_40_APPLICATION_BLOCKS.map((block) => (
+                  <div
+                    key={block.heading}
+                    className="border border-gray-200 rounded-2xl p-6 hover:border-accent/40 hover:shadow-md transition-all"
+                  >
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <h3 className="font-heading text-h5 text-primary">
+                        {block.heading}
+                      </h3>
+                      <span className="text-xs font-semibold uppercase tracking-wide text-accent bg-accent/10 px-3 py-1 rounded-full whitespace-nowrap">
+                        {block.dosageRange}
+                      </span>
+                    </div>
+                    <p className="text-sm leading-relaxed text-gray-600">
+                      {block.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* ─── 5. APPLICATIONS & INDUSTRIES ────────────────────────── */}
           <section id="applications" className="mb-16">
@@ -1239,6 +1390,58 @@ export default async function ProductDetailPage({
                   );
                 })}
               </div>
+            ) : isSxs40 ? (
+              <>
+                <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-6">
+                  Request the full technical data sheet (TDS), GHS-compliant
+                  Safety Data Sheet (SDS / MSDS), batch Certificate of Analysis
+                  (COA) and the Sodium Xylene Sulfonate 40% product brochure.
+                  All documents are issued by Vasudev Chemo Pharma&apos;s QA team
+                  under our ISO 9001:2015 quality system.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                  {SXS_40_DOCUMENTS.map((doc) => (
+                    <Link
+                      key={doc.fileName}
+                      href={doc.fileUrl}
+                      className={
+                        doc.isPrimary
+                          ? "border border-accent/40 bg-accent/5 rounded-2xl p-5 hover:border-accent hover:bg-accent/10 transition-all flex items-start gap-4"
+                          : "border border-gray-200 rounded-2xl p-5 hover:border-accent/50 hover:bg-accent/5 transition-all flex items-start gap-4"
+                      }
+                    >
+                      <svg
+                        className="w-8 h-8 text-accent flex-shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                        />
+                      </svg>
+                      <div>
+                        <p className="text-sm font-semibold text-primary">
+                          {doc.fileName}
+                        </p>
+                        <p
+                          className={`text-xs uppercase font-semibold ${
+                            doc.isPrimary ? "text-accent" : "text-gray-500"
+                          }`}
+                        >
+                          {doc.docType} — Request access
+                        </p>
+                        <p className="text-xs text-gray-600 mt-1.5">
+                          {doc.description}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </>
             ) : (
               <ContentPlaceholder label="Downloadable documents — Safety Data Sheet (SDS/MSDS), Certificate of Analysis (COA), Technical Data Sheet (TDS), Product Specification Sheet. Each with file type, access level (public / on-request)." />
             )}
@@ -1288,6 +1491,97 @@ export default async function ProductDetailPage({
                     className="inline-flex items-center gap-2 rounded-full border border-accent px-5 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent/10"
                   >
                     Explore all market pages
+                  </Link>
+                </div>
+              </>
+            ) : isSxs40 ? (
+              <>
+                <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-6">
+                  Vasudev Chemo Pharma ships Sodium Xylene Sulfonate 40% from
+                  Mundra, Hazira and JNPT (Nhava Sheva) ports under HS Code
+                  29041090. Sea-freight transit times by destination region
+                  below; air freight available for urgent samples and small
+                  shipments.
+                </p>
+                <div className="border border-gray-200 rounded-2xl overflow-hidden overflow-x-auto mb-6">
+                  <table className="w-full text-sm min-w-[600px]">
+                    <thead>
+                      <tr className="bg-primary text-white">
+                        <th className="text-left px-5 py-3 font-semibold">
+                          Origin → Destination
+                        </th>
+                        <th className="text-left px-5 py-3 font-semibold">
+                          Region
+                        </th>
+                        <th className="text-left px-5 py-3 font-semibold">
+                          Transit Window
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {SXS_40_SHIPPING_PORTS.map((row, i) => (
+                        <tr
+                          key={row.port}
+                          className={
+                            i % 2 === 0 ? "bg-white" : "bg-gray-50/50"
+                          }
+                        >
+                          <td className="px-5 py-3 text-gray-700">{row.port}</td>
+                          <td className="px-5 py-3 text-primary">{row.region}</td>
+                          <td className="px-5 py-3 text-accent font-semibold">
+                            {row.transitWindow}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="border border-gray-200 rounded-2xl p-6">
+                    <h3 className="font-heading text-h5 text-primary mb-3">
+                      Incoterms Supported
+                    </h3>
+                    <ul className="space-y-2">
+                      {SXS_40_INCOTERMS.map((term) => (
+                        <li
+                          key={term}
+                          className="flex items-start gap-2 text-sm text-gray-700"
+                        >
+                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                          {term}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="border border-gray-200 rounded-2xl p-6 bg-light">
+                    <h3 className="font-heading text-h5 text-primary mb-3">
+                      Export Documentation
+                    </h3>
+                    <ul className="space-y-2">
+                      {SXS_40_EXPORT_DOCS.map((doc) => (
+                        <li
+                          key={doc}
+                          className="flex items-start gap-2 text-sm text-gray-700"
+                        >
+                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                          {doc}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="mt-6 bg-accent/5 border border-accent/20 rounded-2xl p-6">
+                  <h3 className="font-heading text-h5 text-primary mb-2">
+                    Minimum Order Quantity
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-700">
+                    {SXS_40_MOQ_NOTE}
+                  </p>
+                  <Link
+                    href="/contact?product=sodium-xylene-sulfonate-40"
+                    className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-dark"
+                  >
+                    Request a quote →
                   </Link>
                 </div>
               </>
@@ -1378,6 +1672,121 @@ export default async function ProductDetailPage({
                   </div>
                 </div>
               )}
+            </section>
+          )}
+
+          {/* ─── SXS-40: COMPARISON TABLE (SXS40 vs SXS90 vs SCS40) ─── */}
+          {isSxs40 && (
+            <section id="comparison" className="mb-16">
+              <h2 className="font-heading text-h3 text-primary mb-6">
+                Sodium Xylene Sulfonate 40% vs 90%, vs SCS 40%
+              </h2>
+              <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-6">
+                Choose between liquid and powder hydrotrope grades based on
+                active matter, freight cost, formulation type and application.
+                Vasudev Chemo Pharma supplies all three grades from a single
+                source — switch grades within the same purchase order.
+              </p>
+              <div className="border border-gray-200 rounded-2xl overflow-hidden overflow-x-auto">
+                <table className="w-full text-sm min-w-[640px]">
+                  <thead>
+                    <tr className="bg-primary text-white">
+                      <th className="text-left px-5 py-3 font-semibold">
+                        Parameter
+                      </th>
+                      <th className="text-left px-5 py-3 font-semibold bg-accent/30">
+                        SXS 40% Liquid
+                      </th>
+                      <th className="text-left px-5 py-3 font-semibold">
+                        SXS 90% Powder
+                      </th>
+                      <th className="text-left px-5 py-3 font-semibold">
+                        SCS 40% Liquid
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {SXS_40_COMPARISON_TABLE.map((row, i) => (
+                      <tr
+                        key={row.parameter}
+                        className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}
+                      >
+                        <td className="px-5 py-3 font-medium text-gray-700">
+                          {row.parameter}
+                        </td>
+                        <td className="px-5 py-3 text-accent font-semibold">
+                          {row.sxs40}
+                        </td>
+                        <td className="px-5 py-3 text-primary">{row.sxs90}</td>
+                        <td className="px-5 py-3 text-primary">{row.scs40}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link
+                  href="/product/sodium-xylene-sulfonate-90"
+                  className="inline-flex items-center gap-2 rounded-full border border-accent px-5 py-2.5 text-sm font-semibold text-accent transition-colors hover:bg-accent/10"
+                >
+                  Compare SXS 90% Powder →
+                </Link>
+                <Link
+                  href="/product/sodium-cumene-sulfonate-40"
+                  className="inline-flex items-center gap-2 rounded-full border border-accent px-5 py-2.5 text-sm font-semibold text-accent transition-colors hover:bg-accent/10"
+                >
+                  Compare SCS 40% Liquid →
+                </Link>
+              </div>
+            </section>
+          )}
+
+          {/* ─── SXS-40: REGULATORY MATRIX & BIODEGRADABILITY ───────── */}
+          {isSxs40 && (
+            <section id="regulatory" className="mb-16">
+              <h2 className="font-heading text-h3 text-primary mb-6">
+                Safety, Compliance &amp; Biodegradability
+              </h2>
+              <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-6">
+                Sodium Xylene Sulfonate 40% holds favourable regulatory status
+                across all major jurisdictions for use in detergents, personal
+                care, agrochemicals and industrial cleaning. The matrix below
+                summarises the applicable regulatory framework and
+                biodegradability profile.
+              </p>
+              <div className="border border-gray-200 rounded-2xl overflow-hidden overflow-x-auto">
+                <table className="w-full text-sm min-w-[600px]">
+                  <thead>
+                    <tr className="bg-primary text-white">
+                      <th className="text-left px-5 py-3 font-semibold">
+                        Authority / Region
+                      </th>
+                      <th className="text-left px-5 py-3 font-semibold">
+                        Status
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {SXS_40_REGULATORY_MATRIX.map((row, i) => (
+                      <tr
+                        key={row.label}
+                        className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}
+                      >
+                        <td className="px-5 py-3 font-medium text-primary">
+                          {row.label}
+                        </td>
+                        <td className="px-5 py-3 text-gray-700">{row.value}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-gray-400 italic mt-4">
+                Sources: US FDA 21 CFR 175.105; EU Detergents Regulation (EC)
+                648/2004; ECHA REACH dossier (EC 215-090-9); US EPA Safer
+                Choice; Cosmetic Ingredient Review (CIR) Expert Panel; OECD 301B
+                aerobic biodegradability test.
+              </p>
             </section>
           )}
 

@@ -55,9 +55,9 @@ export const PRODUCT_META_OVERRIDES: Record<string, ProductMetaOverride> = {
       "Sodium Xylene Sulfonate 90% powder (SXS 90%, CAS 1300-72-7) hydrotrope manufacturer in India for detergent powders, alkaline cleaners & exports. Request quote.",
   },
   "sodium-xylene-sulfonate-40": {
-    title: "Sodium Xylene Sulfonate 40% Uses | SXS 40 Manufacturer",
+    title: "Sodium Xylene Sulfonate 40% Manufacturer & Exporter India | SXS 40",
     description:
-      "Sodium Xylene Sulfonate 40% liquid (SXS 40, CAS 1300-72-7) uses include detergents, cleaners, agrochemicals and surfactant blends. India manufacturer. Request COA and quote.",
+      "SXS 40% liquid hydrotrope (CAS 1300-72-7) — ISO 9001:2015 manufacturer & global exporter from India. Bulk supply to UAE, USA, Vietnam. COA, MSDS, samples in 48 hrs.",
   },
   "eddm-non-triazine-h2s-scavenger": {
     title: "Non-Triazine Based H2S Scavenger | EDDM Manufacturer India",

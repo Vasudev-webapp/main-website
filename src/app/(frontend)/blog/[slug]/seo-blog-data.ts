@@ -23,6 +23,7 @@ export type BlogEntry = {
   closing: string;
   internalLinks: { text: string; href: string }[];
   externalLinks: { text: string; href: string }[];
+  faqs?: { question: string; answer: string }[];
 };
 
 /* ------------------------------------------------------------------ */
@@ -833,6 +834,33 @@ export const blogData: Record<string, BlogEntry> = {
       {
         text: "NACE MR0175 — Sulfide Stress Cracking Resistant Metallic Materials",
         href: "https://www.nace.org/",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which H2S scavenger is most cost-effective for US oil and gas?",
+        answer:
+          "For high-volume gas treating above 5 MMscf/d with H2S over 500 ppm, MEA Triazine 78% (CAS 4719-04-4) is the most cost-effective and operationally simple option, removing H2S at roughly $2.50–4.50 per pound. Sourcing it directly from a manufacturer rather than a service-company bundle cuts cost 25–40%.",
+      },
+      {
+        question: "What is the difference between MEA Triazine and MMA Triazine?",
+        answer:
+          "MEA Triazine is monoethanolamine-based at 78% active content; MMA Triazine is methylamine-based at 40% active. Because MMA is half the concentration, it needs roughly twice the volume for the same H2S removal. MEA Triazine 78% gives better economics in most US applications, while MMA suits specific produced-water chemistry constraints.",
+      },
+      {
+        question: "How does MEA Triazine compare to iron sponge for H2S removal?",
+        answer:
+          "MEA Triazine is a once-through liquid injected into the stream, ideal for high-flow gathering systems. Iron sponge is a fixed-bed solid suited to low-flow, moderate-H2S systems; it has low chemistry cost but high CAPEX, pyrophoric spent media, and hazardous-waste disposal. For Permian or Eagle Ford flow rates, liquid triazine is usually more practical.",
+      },
+      {
+        question: "Are glyoxal-based scavengers better than triazine?",
+        answer:
+          "Glyoxal scavengers are a non-triazine option for low-H2S (under 500 ppm) biogas and landfill gas, useful where triazine by-products complicate water treatment. They carry a 20–40% price premium, react slower at low temperature, and have higher vapor-phase toxicity, so US market share stays below 10%.",
+      },
+      {
+        question: "How much MEA Triazine 78% is needed per kg of H2S?",
+        answer:
+          "MEA Triazine reacts with H2S irreversibly to form water-soluble dithiazine. Under typical field conditions operators reach 60–80% of theoretical efficiency, about 4.5 litres of MEA Triazine 78% per kilogram of H2S removed, varying with temperature, pH, contact time and CO2 content.",
       },
     ],
   },

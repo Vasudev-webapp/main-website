@@ -4,6 +4,10 @@ import {
   MEA_TRIAZINE_SLUG,
   MEA_TRIAZINE_SCHEMA_ENRICHMENT,
 } from "@/lib/seo/mea-triazine-schema-data";
+import {
+  SXS_40_SLUG,
+  SXS_40_SCHEMA_ENRICHMENT,
+} from "@/lib/seo/sxs-40-content";
 
 
 type ProductSchemaProps = {
@@ -38,6 +42,7 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
   const availability = getSchemaAvailability(product);
   const hasPrice = typeof product.price === "number" && Number.isFinite(product.price) && product.price > 0;
   const isEnrichedSlug = product.slug === MEA_TRIAZINE_SLUG;
+  const isSxs40 = product.slug === SXS_40_SLUG;
 
   /* --- Base Product schema (all products) --- */
   const productSchema: Record<string, unknown> = {
@@ -100,6 +105,49 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
     productSchema.areaServed = enrichment.areaServed;
   }
 
+  /* --- Slug-specific enrichment (Sodium Xylene Sulfonate 40%) --- */
+  if (isSxs40) {
+    const sxsEnrichment = SXS_40_SCHEMA_ENRICHMENT;
+    productSchema.alternateName = [...sxsEnrichment.alternateName];
+    productSchema.category = sxsEnrichment.category;
+    productSchema.countryOfOrigin = sxsEnrichment.countryOfOrigin;
+    productSchema.mpn = "VCP-SXS-40";
+    productSchema.additionalProperty = [
+      ...sxsEnrichment.identifierProperties.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+      ...sxsEnrichment.additionalProperty.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+    ];
+    productSchema.audience = {
+      "@type": "BusinessAudience",
+      audienceType:
+        "Detergent manufacturers, personal care formulators, agrochemical formulators, oilfield service companies, textile mills, paint/coatings manufacturers",
+    };
+    productSchema.areaServed = [
+      "India",
+      "United Arab Emirates",
+      "Saudi Arabia",
+      "Qatar",
+      "Oman",
+      "Kuwait",
+      "Iraq",
+      "United States",
+      "Vietnam",
+      "Thailand",
+      "Indonesia",
+      "Brazil",
+      "Egypt",
+      "South Africa",
+      "Türkiye",
+    ];
+  }
+
   /* --- H2S Scavenger / Biocide category enrichment (slug-driven) --- */
   const H2S_CATEGORY_SLUGS = [
     "mma-triazine-40",
@@ -155,7 +203,7 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
     ];
   }
 
-  const chemicalSchema = {
+  const chemicalSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "ChemicalSubstance",
     name: product.name,
@@ -168,6 +216,36 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
       }
       : undefined,
   };
+
+  /* --- Slug-specific ChemicalSubstance enrichment (SXS 40%) --- */
+  if (isSxs40) {
+    const sxsEnrichment = SXS_40_SCHEMA_ENRICHMENT;
+    chemicalSchema.alternateName = [...sxsEnrichment.alternateName];
+    chemicalSchema.iupacName = sxsEnrichment.iupacName;
+    chemicalSchema.molecularWeight = "208.21 g/mol";
+    chemicalSchema.identifier = sxsEnrichment.identifierProperties.map((p) => ({
+      "@type": "PropertyValue",
+      name: p.name,
+      value: p.value,
+    }));
+    chemicalSchema.additionalProperty = [
+      {
+        "@type": "PropertyValue",
+        name: "InChI Key",
+        value: sxsEnrichment.inChIKey,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "SMILES",
+        value: sxsEnrichment.smiles,
+      },
+      ...sxsEnrichment.additionalProperty.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+    ];
+  }
 
   return (
     <>

@@ -516,9 +516,9 @@ export const PAGE_META_OVERRIDES: Record<string, PageMetaOverride> = {
   },
   "/blog/sodium-cumene-sulfonate-40-hydrotrope-function-formulation-science": {
     h1: "What Does Sodium Cumene Sulfonate 40% Do in Formulations? Hydrotrope Science Explained",
-    title: "What Does Sodium Cumene Sulfonate 40% Do in Formulations? Hydrotrope Science Explained",
+    title: "Sodium Cumene Sulfonate 40%: Uses, Function & Dosage Guide",
     description:
-      "Research guide to how Sodium Cumene Sulfonate 40% functions as a hydrotrope, coupling agent, solubilizer, viscosity modifier, and cloud-point controller.",
+      "Sodium Cumene Sulfonate 40% (CAS 28348-53-0) is a liquid hydrotrope that boosts solubility, lowers cloud point and controls viscosity in detergents and industrial cleaners. Function, dosage and bulk supply.",
   },
   "/blog/sodium-cumene-sulfonate-40-cloud-point-viscosity-stability": {
     h1: "Sodium Cumene Sulfonate 40% for Cloud Point, Viscosity and Phase Stability",
@@ -642,9 +642,9 @@ export const PAGE_META_OVERRIDES: Record<string, PageMetaOverride> = {
   },
   "/blog/sodium-xylene-sulfonate-40-cloud-point-viscosity-stability": {
     h1: "Sodium Xylene Sulfonate 40% for Cloud Point, Viscosity and Phase Stability",
-    title: "Sodium Xylene Sulfonate 40% for Cloud Point & Viscosity",
+    title: "Sodium Xylene Sulfonate 40%: Cloud Point & Viscosity Control",
     description:
-      "How SXS 40 improves cloud point, viscosity, gel prevention and phase stability in liquid detergents, alkaline cleaners and surfactant concentrates.",
+      "Sodium Xylene Sulfonate 40% (CAS 1300-72-7) depresses cloud point, cuts viscosity and prevents gelling in liquid detergents and alkaline cleaners. Dosage, specs and bulk supply from an ISO 9001 India manufacturer.",
   },
   "/blog/sodium-xylene-sulfonate-40-vs-other-hydrotropes": {
     h1: "Sodium Xylene Sulfonate 40% vs Other Hydrotropes: SCS, SXS, STS and Urea Compared",
@@ -660,9 +660,9 @@ export const PAGE_META_OVERRIDES: Record<string, PageMetaOverride> = {
   },
   "/blog/sodium-xylene-sulfonate-40-applications-detergent-agrochemical-personal-care": {
     h1: "Sodium Xylene Sulfonate 40% Applications in Detergent, Agrochemical and Personal Care Formulas",
-    title: "Sodium Xylene Sulfonate 40% Applications in Detergent, Agrochemical and Personal Care Formulas",
+    title: "Sodium Xylene Sulfonate 40% Uses: Detergent, Agro & Cleaners",
     description:
-      "Application research guide for Sodium Xylene Sulfonate 40% across detergent, cleaner, agrochemical, personal care, and industrial formulation systems.",
+      "What is Sodium Xylene Sulfonate 40% used for? A hydrotrope (CAS 1300-72-7) for liquid detergents, dish wash, agrochemical concentrates and industrial cleaners. Applications, dosage and supplier qualification.",
   },
   "/blog/sodium-xylene-sulfonate-90-manufacturer-india-bulk-supply": {
     h1: "Sodium Xylene Sulfonate 90% Manufacturer in India: Bulk Supply Buying Guide",
@@ -696,9 +696,9 @@ export const PAGE_META_OVERRIDES: Record<string, PageMetaOverride> = {
   },
   "/blog/sodium-xylene-sulfonate-90-hydrotrope-function-formulation-science": {
     h1: "What Does Sodium Xylene Sulfonate 90% Do in Formulations? Hydrotrope Science Explained",
-    title: "Sodium Xylene Sulfonate 90% Uses | Hydrotrope Function Guide",
+    title: "Sodium Xylene Sulfonate 90%: Uses, Function & Dosage Guide",
     description:
-      "SXS 90 hydrotrope function guide for detergent powders, alkaline cleaners and agrochemical systems: coupling, solubilizing, viscosity and cloud-point control.",
+      "Sodium Xylene Sulfonate 90% (CAS 1300-72-7) is a powder hydrotrope that couples surfactants, lowers cloud point and controls viscosity in detergent powders, alkaline cleaners and agrochemicals. See uses, dosage and bulk supply.",
   },
   "/blog/sodium-xylene-sulfonate-90-cloud-point-viscosity-stability": {
     h1: "Sodium Xylene Sulfonate 90% for Cloud Point, Viscosity and Phase Stability",
@@ -780,9 +780,9 @@ export const PAGE_META_OVERRIDES: Record<string, PageMetaOverride> = {
   },
   "/blog/mea-triazine-vs-alternative-h2s-scavengers-usa": {
     h1: "MEA Triazine vs Alternative H2S Scavengers — Complete US Market Comparison",
-    title: "MEA Triazine vs Alternative H2S Scavengers — Complete US Market Comparison",
+    title: "MEA Triazine vs Other H2S Scavengers: 2026 Comparison",
     description:
-      "Choosing the right H2S scavenger for US oil and gas operations requires understanding the strengths and limitations of each option. This guide compares MEA Triazine 78% against MMA Triazine, glyoxal-based scavengers, iron sponge, and solid scavengers on performance, cost, and operational factors.",
+      "Compare MEA Triazine 78% against MMA Triazine, glyoxal, iron sponge and solid H2S scavengers on capacity, cost and handling. Data-driven guide for US oil & gas buyers, with direct-manufacturer supply.",
   },
   "/blog/triazine-h2s-scavenger-dosing-guide-oil-gas": {
     h1: "Triazine H2S Scavenger Dosing Guide for Oil & Gas Operations",

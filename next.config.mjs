@@ -265,6 +265,177 @@ const nextConfig = {
         destination: '/legal/privacy-policy',
         permanent: true,
       },
+      // ─── 404 fixes: old site paths ─────────────────────────
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/ourservices',
+        destination: '/service',
+        permanent: true,
+      },
+      {
+        source: '/ourservices/',
+        destination: '/service',
+        permanent: true,
+      },
+      {
+        source: '/MEA-Triazine',
+        destination: '/product/mea-triazine-78-h2s-scavenger',
+        permanent: true,
+      },
+      {
+        source: '/p-toluenesulfonic-acid',
+        destination: '/product/p-toluenesulfonic-acid',
+        permanent: true,
+      },
+      {
+        source: '/5.0',
+        destination: '/',
+        permanent: true,
+      },
+      // ─── 404 fixes: insights (old blog) ────────────────────
+      {
+        source: '/insights/:slug*',
+        destination: '/blog',
+        permanent: true,
+      },
+      // ─── 404 fixes: removed/non-existent products ──────────
+      {
+        source: '/product/albendazole',
+        destination: '/product',
+        permanent: true,
+      },
+      {
+        source: '/product/ketoconazole',
+        destination: '/product',
+        permanent: true,
+      },
+      {
+        source: '/product/pregabalin',
+        destination: '/product',
+        permanent: true,
+      },
+      {
+        source: '/product/copper-sulphate',
+        destination: '/product',
+        permanent: true,
+      },
+      {
+        source: '/product/copper-sulphate/',
+        destination: '/product',
+        permanent: true,
+      },
+      {
+        source: '/product/manganese-sulphate',
+        destination: '/product',
+        permanent: true,
+      },
+      {
+        source: '/products/manganese-sulphate',
+        destination: '/product',
+        permanent: true,
+      },
+      {
+        source: '/products/manganese-sulphate/',
+        destination: '/product',
+        permanent: true,
+      },
+      // ─── 404 fixes: non-existent compare pages ─────────────
+      {
+        source: '/compare/mea-triazine-vs-yogi-intermediates',
+        destination: '/compare',
+        permanent: true,
+      },
+      {
+        source: '/compare/mea-triazine-vs-jay-dinesh-chemicals',
+        destination: '/compare',
+        permanent: true,
+      },
+      {
+        source: '/compare/mea-triazine-vs-tacelene-chem',
+        destination: '/compare',
+        permanent: true,
+      },
+      {
+        source: '/compare/mea-triazine-vs-venus-ethoxyethers',
+        destination: '/compare',
+        permanent: true,
+      },
+      {
+        source: '/compare/mea-triazine-vs-kwantum-india',
+        destination: '/compare',
+        permanent: true,
+      },
+      {
+        source: '/compare/mea-triazine-vs-geocon-products-india',
+        destination: '/compare',
+        permanent: true,
+      },
+      {
+        source: '/compare/mea-triazine-vs-k2p-chemicals',
+        destination: '/compare',
+        permanent: true,
+      },
+      {
+        source: '/compare/mea-triazine-vs-nipacide-bk',
+        destination: '/compare',
+        permanent: true,
+      },
+      {
+        source: '/compare/mea-triazine-vs-imperial-oilfield-chemicals',
+        destination: '/compare',
+        permanent: true,
+      },
+      {
+        source: '/compare/mea-triazine-vs-melzer-chemicals',
+        destination: '/compare',
+        permanent: true,
+      },
+      {
+        source: '/compare/mea-triazine-vs-esteem-industries',
+        destination: '/compare',
+        permanent: true,
+      },
+      // ─── 404 fixes: non-existent resource/application/case-study/blog pages
+      {
+        source: '/resources/biocide-h2s-scavenger-dual-function',
+        destination: '/resources',
+        permanent: true,
+      },
+      {
+        source: '/applications/drilling-fluids-biocide',
+        destination: '/applications',
+        permanent: true,
+      },
+      {
+        source: '/case-study/precision-cnc-milling-for-automotive-components',
+        destination: '/case-study',
+        permanent: true,
+      },
+      {
+        source: '/case-study/automated-assembly-line-optimization',
+        destination: '/case-study',
+        permanent: true,
+      },
+      {
+        source: '/case-study/lightweight-castings-for-industrial-equipment',
+        destination: '/case-study',
+        permanent: true,
+      },
+      {
+        source: '/blog/ai-iot-breakthroughs-chemical-manufacturing-efficiency',
+        destination: '/blog',
+        permanent: true,
+      },
+      // ─── 404 fixes: supply page with invalid country ───────
+      {
+        source: '/supply/mea-triazine-78/india',
+        destination: '/supply/mea-triazine-78',
+        permanent: true,
+      },
     ];
   },
 };
