@@ -178,6 +178,18 @@ export const PAGE_META_OVERRIDES: Record<string, PageMetaOverride> = {
     description:
       "Sodium Xylene Sulfonate 40% liquid (SXS 40, CAS 1300-72-7) uses include detergents, cleaners, agrochemicals and surfactant blends. Request COA and quote.",
   },
+  "/product/benzalkonium-chloride-50": {
+    h1: "Benzalkonium Chloride 50% (BKC 50%)",
+    title: "Benzalkonium Chloride 50% Manufacturer India | BKC 50% ADBAC Supplier (CAS 8001-54-5)",
+    description:
+      "Benzalkonium Chloride 50% (BKC 50%, ADBAC, CAS 8001-54-5) — broad-spectrum cationic surfactant and quaternary ammonium biocide from ISO 9001:2015, GMP & Halal certified Gujarat manufacturer. Disinfectant, cosmetic & industrial grades. Hospital sanitation, pool algicide, food CIP, cooling-tower biocide. Bulk drum, IBC & ISO-tank export to USA, UAE, Saudi Arabia, Brazil, Vietnam, Russia. Request COA, SDS, Halal certificate, sample & quote in 24 hrs.",
+  },
+  "/product/benzalkonium-chloride-80": {
+    h1: "Benzalkonium Chloride 80% (BKC 80%)",
+    title: "Benzalkonium Chloride 80% Manufacturer India | BKC 80% ADBAC Concentrate Exporter (CAS 8001-54-5)",
+    description:
+      "Benzalkonium Chloride 80% (BKC 80%, ADBAC, CAS 8001-54-5) — high-active 80% concentrate equivalent to Lonza Bardac® 2280 & Stepan BTC® 8358 from ISO 9001:2015, GMP & Halal certified Gujarat manufacturer. Export-economical grade for disinfectant blenders, sanitiser brands & water-treatment formulators. Bulk drum, IBC & ISO-tank export to USA, UAE, Saudi Arabia, Brazil, Vietnam, Russia, Egypt. Request COA, SDS, Halal certificate, sample & quote in 24 hrs.",
+  },
   "/product/bis-2-chloroethyl-amine-hydrochloride": {
     h1: "Bis(2-chloroethyl)amine Hydrochloride",
     title: "Bis(2-chloroethyl)amine HCl - Manufacturer India",

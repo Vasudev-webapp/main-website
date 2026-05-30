@@ -12,6 +12,14 @@ import {
   SCS_40_SLUG,
   SCS_40_SCHEMA_ENRICHMENT,
 } from "@/lib/seo/scs-40-content";
+import {
+  BKC_50_SLUG,
+  BKC_50_SCHEMA_ENRICHMENT,
+} from "@/lib/seo/bkc-50-content";
+import {
+  BKC_80_SLUG,
+  BKC_80_SCHEMA_ENRICHMENT,
+} from "@/lib/seo/bkc-80-content";
 
 
 type ProductSchemaProps = {
@@ -48,6 +56,8 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
   const isEnrichedSlug = product.slug === MEA_TRIAZINE_SLUG;
   const isSxs40 = product.slug === SXS_40_SLUG;
   const isScs40 = product.slug === SCS_40_SLUG;
+  const isBkc50 = product.slug === BKC_50_SLUG;
+  const isBkc80 = product.slug === BKC_80_SLUG;
 
   /* --- Base Product schema (all products) --- */
   const productSchema: Record<string, unknown> = {
@@ -196,6 +206,92 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
     ];
   }
 
+  /* --- Slug-specific enrichment (Benzalkonium Chloride 50%) --- */
+  if (isBkc50) {
+    const bkcEnrichment = BKC_50_SCHEMA_ENRICHMENT;
+    productSchema.alternateName = [...bkcEnrichment.alternateName];
+    productSchema.category = bkcEnrichment.category;
+    productSchema.countryOfOrigin = bkcEnrichment.countryOfOrigin;
+    productSchema.mpn = "VCP-SFC-0005";
+    productSchema.additionalProperty = [
+      ...bkcEnrichment.identifierProperties.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+      ...bkcEnrichment.additionalProperty.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+    ];
+    productSchema.audience = {
+      "@type": "BusinessAudience",
+      audienceType:
+        "Disinfectant manufacturers, EPA-registered formulators, hospital sanitiser brands, food-contact sanitiser blenders, swimming pool algicide manufacturers, cooling tower biocide formulators, cosmetic preservation houses (CTFA-compliant), pharmaceutical OEMs (eye drops, nasal sprays), agricultural and veterinary disinfectant brands, wood preservation formulators, oilfield biocide blenders, textile antimicrobial finishing chemical companies",
+    };
+    productSchema.areaServed = [
+      "India",
+      "United States",
+      "United Arab Emirates",
+      "Saudi Arabia",
+      "Brazil",
+      "Vietnam",
+      "Russia",
+      "Egypt",
+      "Qatar",
+      "Oman",
+      "Kuwait",
+      "Indonesia",
+      "Thailand",
+      "Türkiye",
+      "South Africa",
+    ];
+  }
+
+  /* --- Slug-specific enrichment (Benzalkonium Chloride 80%) --- */
+  if (isBkc80) {
+    const bkcEnrichment = BKC_80_SCHEMA_ENRICHMENT;
+    productSchema.alternateName = [...bkcEnrichment.alternateName];
+    productSchema.category = bkcEnrichment.category;
+    productSchema.countryOfOrigin = bkcEnrichment.countryOfOrigin;
+    productSchema.mpn = "VCP-SFC-0006";
+    productSchema.additionalProperty = [
+      ...bkcEnrichment.identifierProperties.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+      ...bkcEnrichment.additionalProperty.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+    ];
+    productSchema.audience = {
+      "@type": "BusinessAudience",
+      audienceType:
+        "Global disinfectant brands and sanitiser blenders procuring concentrate for on-site dilution, EPA-registered formulators replacing Lonza Bardac® 2280 / Stepan BTC® 8358 / Nouryon Maquat® 4480-E reference grades, cosmetic ingredient formulators, water-treatment chemical companies producing pool algicide and cooling tower biocide concentrates, pharmaceutical OEMs, agricultural and veterinary disinfectant brands",
+    };
+    productSchema.areaServed = [
+      "India",
+      "United States",
+      "United Arab Emirates",
+      "Saudi Arabia",
+      "Brazil",
+      "Vietnam",
+      "Russia",
+      "Egypt",
+      "Qatar",
+      "Oman",
+      "Kuwait",
+      "Indonesia",
+      "Thailand",
+      "Türkiye",
+      "South Africa",
+    ];
+  }
+
   /* --- H2S Scavenger / Biocide category enrichment (slug-driven) --- */
   const H2S_CATEGORY_SLUGS = [
     "mma-triazine-40",
@@ -318,6 +414,66 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
         value: scsEnrichment.smiles,
       },
       ...scsEnrichment.additionalProperty.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+    ];
+  }
+
+  /* --- Slug-specific ChemicalSubstance enrichment (BKC 50%) --- */
+  if (isBkc50) {
+    const bkcEnrichment = BKC_50_SCHEMA_ENRICHMENT;
+    chemicalSchema.alternateName = [...bkcEnrichment.alternateName];
+    chemicalSchema.iupacName = bkcEnrichment.iupacName;
+    chemicalSchema.molecularWeight = "354.0 g/mol (avg, mixed alkyl C₁₂–C₁₆)";
+    chemicalSchema.identifier = bkcEnrichment.identifierProperties.map((p) => ({
+      "@type": "PropertyValue",
+      name: p.name,
+      value: p.value,
+    }));
+    chemicalSchema.additionalProperty = [
+      {
+        "@type": "PropertyValue",
+        name: "InChI Key",
+        value: bkcEnrichment.inChIKey,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "SMILES",
+        value: bkcEnrichment.smiles,
+      },
+      ...bkcEnrichment.additionalProperty.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+    ];
+  }
+
+  /* --- Slug-specific ChemicalSubstance enrichment (BKC 80%) --- */
+  if (isBkc80) {
+    const bkcEnrichment = BKC_80_SCHEMA_ENRICHMENT;
+    chemicalSchema.alternateName = [...bkcEnrichment.alternateName];
+    chemicalSchema.iupacName = bkcEnrichment.iupacName;
+    chemicalSchema.molecularWeight = "354.0 g/mol (avg, mixed alkyl C₁₂–C₁₆)";
+    chemicalSchema.identifier = bkcEnrichment.identifierProperties.map((p) => ({
+      "@type": "PropertyValue",
+      name: p.name,
+      value: p.value,
+    }));
+    chemicalSchema.additionalProperty = [
+      {
+        "@type": "PropertyValue",
+        name: "InChI Key",
+        value: bkcEnrichment.inChIKey,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "SMILES",
+        value: bkcEnrichment.smiles,
+      },
+      ...bkcEnrichment.additionalProperty.map((p) => ({
         "@type": "PropertyValue",
         name: p.name,
         value: p.value,

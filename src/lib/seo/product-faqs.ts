@@ -552,12 +552,148 @@ export const SODIUM_XYLENE_SULFONATE_90_FAQS: FAQItem[] = [
   },
 ];
 
+/* ──────────────────────────────────────────────────────────────────
+ * Benzalkonium Chloride 50% (BKC 50%) — 12 PAA-style FAQs
+ * Slug: benzalkonium-chloride-50 — CAS 8001-54-5 (ADBAC mixture)
+ * ──────────────────────────────────────────────────────────────── */
+export const BENZALKONIUM_CHLORIDE_50_FAQS: FAQItem[] = [
+  {
+    question: "What is Benzalkonium Chloride 50% (BKC 50%) and how does it work as a disinfectant?",
+    answer:
+      "Benzalkonium Chloride 50% is a 50% aqueous solution of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5) — a cationic surfactant and quaternary ammonium biocide. The positively charged quat head binds to the negatively charged outer membrane of bacteria, fungi, and enveloped viruses, disrupts the membrane, leaks intracellular contents, and inactivates the cell. This mechanism makes BKC effective against gram-positive and gram-negative bacteria, yeasts, moulds, algae, and enveloped viruses (including coronaviruses, influenza, herpes, HIV).",
+  },
+  {
+    question: "Is BKC 50% effective against coronavirus and SARS-CoV-2?",
+    answer:
+      "Yes. The US EPA's List N (Disinfectants for Use Against SARS-CoV-2) includes many BKC-based products at active concentrations between 0.1% and 0.4%. BKC inactivates enveloped viruses (SARS-CoV-2, MERS-CoV, influenza, herpes simplex, HIV) by disrupting the lipid bilayer envelope. Contact times typically range 1–10 minutes depending on the formulation, surface, and target organism. Always validate efficacy against the specific virus and surface for your intended use, and follow the registered product label.",
+  },
+  {
+    question: "What is the recommended use concentration of BKC 50% for surface disinfection?",
+    answer:
+      "Typical in-use concentration is 0.1%–0.4% active quat (1,000–4,000 ppm). Dilute 1 part BKC 50% in 125–500 parts water (yields 0.1%–0.4% active). For routine hospital and clinical hard-surface sanitation, 0.2% (2,000 ppm) is the global benchmark. For food-contact no-rinse sanitisers, US FDA 21 CFR 178.1010 limits use to 200 ppm active quat (dilute 1 part BKC 50% in ~2,500 parts water). Always validate efficacy against target organisms with EN 1276 / EN 14476 / AOAC use-dilution test methods.",
+  },
+  {
+    question: "What is the difference between BKC 50% and BKC 80%?",
+    answer:
+      "BKC 50% and BKC 80% contain the same active substance (ADBAC, CAS 8001-54-5) at different concentrations in water — 50% versus 80% active matter. BKC 50% is the global formulation reference standard: lower viscosity, easier to pump and dose at room temperature, the grade specified in most disinfectant formulation manuals. BKC 80% is the export-economical concentrate: 60% more active matter per kilogram shipped (significant freight saving for ocean exports), but more viscous and may gel below 15°C, so sanitiser blenders typically dilute 80% to 50% on-site before formulation.",
+  },
+  {
+    question: "Is BKC 50% compatible with anionic surfactants like LABSA, SLES, or SCS/SXS hydrotropes?",
+    answer:
+      "No. BKC is a cationic surfactant and is generally incompatible with anionic surfactants — including LABSA, SLES, SLS, sodium cumene sulfonate (SCS), sodium xylene sulfonate (SXS), and most soap-based systems. Mixing forms an insoluble ion-pair complex that precipitates out of solution and destroys both biocidal activity and detergency. BKC IS compatible with nonionic surfactants (alcohol ethoxylates, APGs, Tween series), amphoteric surfactants (cocamidopropyl betaine when pH > IEP), and other cationic/quat systems.",
+  },
+  {
+    question: "What grades of BKC 50% does Vasudev Chemo Pharma manufacture?",
+    answer:
+      "Vasudev Chemo Pharma supplies BKC 50% in three grades: (1) Industrial / Technical Grade for cleaning concentrates, water treatment, and oilfield biocide; (2) Cosmetic Grade (CTFA-compliant, INCI: Benzalkonium Chloride) for hair conditioners, shampoos, mouthwashes, and leave-on personal-care products; (3) Disinfectant Grade suitable for EPA-registered formulators producing hospital, food-contact, and pharmaceutical surface sanitisers. All grades are produced at our ISO 9001:2015, GMP, and Halal certified facility in Gujarat, India.",
+  },
+  {
+    question: "Is BKC 50% safe for skin contact in cosmetic formulations?",
+    answer:
+      "BKC is approved as a cosmetic preservative by major regulatory bodies (CTFA / Cosmetics Europe / IFRA) at use concentrations up to 0.1% (rinse-off) and up to 0.05% (leave-on) in personal-care products. Above these limits, BKC can cause skin sensitisation, irritation, and contact dermatitis. The neat 50% concentrate is corrosive (GHS05) and must NEVER contact skin or eyes directly. Always formulate within recommended cosmetic-use limits and conduct in-vitro skin compatibility testing before commercial launch.",
+  },
+  {
+    question: "Can BKC 50% be used to disinfect swimming pools and spa water?",
+    answer:
+      "Yes. BKC 50% is an effective algicide and supplementary sanitiser for residential and commercial swimming pools, spas, and recreational water. Typical dose: 5–15 ppm active quat (10–30 ml of BKC 50% per 1,000 litres of pool water) as a weekly preventive against algae bloom. BKC works synergistically with chlorine-based primary disinfectants and at slightly elevated pH where chlorine alone is less effective. It is non-foaming at recommended pool concentrations and does not affect pH significantly. Always follow local pool water regulations.",
+  },
+  {
+    question: "What is the storage and shelf life of BKC 50%?",
+    answer:
+      "BKC 50% has a guaranteed shelf life of 24 months in original sealed HDPE drums when stored between 5°C and 40°C, away from direct sunlight, in a well-ventilated warehouse. It is non-flammable (flash point > 100°C). Avoid contact with anionic surfactants, chlorine bleach concentrate, and strong oxidisers during storage. Do not store in metal containers (especially aluminium) — BKC is corrosive to bare metal at concentrations > 10%. The product remains stable and does not lose potency over the shelf life when stored correctly.",
+  },
+  {
+    question: "Is BKC 50% Halal-certified and Kosher-certified?",
+    answer:
+      "Yes. Vasudev Chemo Pharma's BKC 50% is Halal-certified by a recognised Indian Halal certification body (certificate provided with each shipment on request — important for export to UAE, Saudi Arabia, Malaysia, Indonesia, and other Muslim-majority markets). Kosher certification is available on request for buyers serving the Israeli and US Jewish-market food sanitation segments. Our manufacturing facility is also GMP certified for cosmetic and pharmaceutical-grade production, and ISO 9001:2015 certified for quality management.",
+  },
+  {
+    question: "What documentation is provided with BKC 50% shipments?",
+    answer:
+      "Every shipment of BKC 50% includes: (1) batch-specific Certificate of Analysis (COA) with active content, pH, free amine, alkyl distribution, and heavy metals; (2) GHS-compliant Safety Data Sheet (SDS) in English and (on request) the destination-country language; (3) Technical Data Sheet (TDS) with formulation guidance; (4) Halal certificate (on request); (5) GMP certificate (on request for cosmetic/pharma buyers); (6) Commercial invoice, packing list, and customs paperwork with HS code 29239000 for international export.",
+  },
+  {
+    question: "Where does Vasudev Chemo Pharma export BKC 50%?",
+    answer:
+      "We export BKC 50% to over 30 countries from our facility in Gujarat, India, with strategic focus on the USA (disinfectant formulators, EPA-registered manufacturers), UAE and Saudi Arabia (Middle East sanitation and pool-water markets), Brazil (Latin America cosmetic and personal-care preservation), Vietnam (Southeast Asia detergent and disinfectant manufacturers), Russia (industrial cleaning and water treatment), and Egypt (North Africa healthcare and food-industry sanitation). Shipments via FOB / CIF / CFR Incoterms from Kandla, Mundra, and Hazira ports.",
+  },
+];
+
+/* ──────────────────────────────────────────────────────────────────
+ * Benzalkonium Chloride 80% (BKC 80%) — 12 PAA-style FAQs
+ * Slug: benzalkonium-chloride-80 — CAS 8001-54-5 (ADBAC mixture)
+ * ──────────────────────────────────────────────────────────────── */
+export const BENZALKONIUM_CHLORIDE_80_FAQS: FAQItem[] = [
+  {
+    question: "What is Benzalkonium Chloride 80% (BKC 80%) and who uses it?",
+    answer:
+      "Benzalkonium Chloride 80% is a high-active 80% aqueous concentrate of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5) — the same active substance as BKC 50% but at higher concentration. It is the export-economical grade preferred by global disinfectant brands, sanitiser blenders, cosmetic preservation houses, water-treatment chemical companies, and EPA-registered formulators who dilute on-site to 50%, 25%, 10%, or final-use concentrations. Bulk buyers shipping internationally choose 80% to reduce freight cost per kilogram of active matter shipped.",
+  },
+  {
+    question: "Why choose BKC 80% over BKC 50%?",
+    answer:
+      "BKC 80% delivers 60% more active quat per kilogram of shipped product than BKC 50% — the freight saving on ocean exports to Latin America, Africa, and the Middle East is significant. It also requires less storage volume on-site. The trade-offs: BKC 80% is more viscous, may form a soft gel below 15°C (warm storage 20–25°C is recommended), and requires gentle warming or vigorous mixing to dilute into water. Choose 80% if you dilute on-site or pay high freight per kg. Choose 50% if you formulate as-is or pump the product directly through metering equipment at room temperature.",
+  },
+  {
+    question: "How do I dilute BKC 80% to make BKC 50% or final-use concentration?",
+    answer:
+      "To make BKC 50% from BKC 80%: blend 62.5 kg of BKC 80% with 37.5 kg of demineralised water (mass ratio) — yields 100 kg of BKC 50%. For final-use disinfectant of 0.1%–0.4% active, dilute 1.25–5.0 g of BKC 80% per litre of water (1 part BKC 80% in 200–800 parts water). Always add BKC concentrate to water (not water to concentrate) to avoid heat spots, use demineralised or low-hardness water (avoids Ca/Mg precipitation), and gently warm BKC 80% to 25–30°C if it has gelled. Validate final active content by titration (BS EN 16370 or USP <081>) before commercial use.",
+  },
+  {
+    question: "Is BKC 80% from Vasudev Chemo Pharma equivalent to Lonza Bardac® 2280, Stepan BTC® 8358, or Nouryon Maquat® 4480-E?",
+    answer:
+      "Yes. Our BKC 80% is functionally equivalent to Lonza Bardac® 2280, Stepan BTC® 8358, Nouryon (AkzoNobel) Maquat® 4480-E, and Pilot Lonzabac® 80% — all 80% ADBAC concentrates with C₁₂–C₁₆ alkyl distribution. Our typical alkyl ratio (C₁₂ 40–50% / C₁₄ 30–40% / C₁₆ 10–20%) matches the global formulation reference standard used by EPA-registered disinfectant brands and formulators. Customers cross-qualifying our product report drop-in replacement performance in surface disinfection, water-treatment, and preservative applications. We provide spec-comparison documents and trial samples (1–5 kg) on request.",
+  },
+  {
+    question: "How should BKC 80% be stored to prevent gelation?",
+    answer:
+      "BKC 80% should be stored between 15°C and 40°C in sealed HDPE drums or IBCs, away from direct sunlight. Below 15°C, BKC 80% becomes viscous and can form a soft gel that takes time to redissolve. If gelation occurs, gently warm the drum to 25–30°C for 24–48 hours and roll/agitate to homogenise — the product fully recovers without loss of activity. For winter storage in cold climates (Russia, northern Europe, northern China), insulated warehousing or heated bulk-tank storage is recommended. Shelf life is 24 months in original sealed packaging.",
+  },
+  {
+    question: "What is the freight saving when buying BKC 80% versus BKC 50%?",
+    answer:
+      "BKC 80% contains 1.6× more active matter per kilogram than BKC 50% (80% vs 50% active). For an order of 10 MT of active quat: BKC 50% requires 20 MT of shipped product (10/0.5); BKC 80% requires 12.5 MT (10/0.8). The 7.5 MT freight saving per order is significant — typically USD 600–1,500 saving on ocean freight to Latin America or West Africa, or USD 300–700 on Middle East shipments. Add storage-space savings on-site and the total cost-of-ownership advantage of 80% over 50% is meaningful for bulk formulators.",
+  },
+  {
+    question: "What grades of BKC 80% are available?",
+    answer:
+      "BKC 80% is supplied in three grades, identical to BKC 50%: (1) Industrial / Technical Grade for cleaning concentrates, water treatment, and oilfield biocide blending; (2) Cosmetic Grade (CTFA-compliant, INCI: Benzalkonium Chloride) for cosmetic preservative formulators who dilute to use concentration; (3) Disinfectant Grade suitable for EPA-registered formulators producing hospital, food-contact, and pharmaceutical surface sanitisers. All grades produced at our ISO 9001:2015, GMP, and Halal certified facility in Gujarat, India, with full COA, SDS, TDS, Halal, and GMP documentation.",
+  },
+  {
+    question: "Is BKC 80% compatible with anionic surfactants?",
+    answer:
+      "No. Like BKC 50%, BKC 80% is a cationic surfactant and is generally incompatible with anionic surfactants — LABSA, SLES, SLS, sodium cumene sulfonate (SCS), sodium xylene sulfonate (SXS), and most soap systems. Mixing forms an insoluble ion-pair complex that precipitates and destroys biocidal activity. BKC IS compatible with nonionic surfactants (alcohol ethoxylates, APGs, Tween), amphoteric surfactants (cocamidopropyl betaine when pH > IEP), and other cationic/quat systems. Pre-test all formulations for clarity, stability, and biocidal performance before scale-up.",
+  },
+  {
+    question: "What is the typical dosage of BKC 80% in disinfectant formulations?",
+    answer:
+      "For ready-to-use surface disinfectants (0.1%–0.4% active): use 0.125%–0.5% BKC 80% in finished formulation. For hospital concentrate (1%–5% active for hand-dilution by end-user): use 1.25%–6.25% BKC 80%. For pool algicide concentrate: typically 10%–20% BKC 80% in finished product diluted by end-user. For cosmetic preservation (max 0.1% active in rinse-off): use 0.125% BKC 80%. Always validate biocidal efficacy with EN 1276 / EN 1650 / EN 14476 testing on the final formulation.",
+  },
+  {
+    question: "Is BKC 80% from Vasudev Chemo Pharma EPA-compliant?",
+    answer:
+      "BKC is an EPA-registered antimicrobial active ingredient (PC Code 069105). Vasudev Chemo Pharma supplies BKC 80% as a raw material that meets the active-substance specifications required for EPA-registered formulations — but the finished disinfectant product itself must be registered separately by the formulator with the US EPA before commercial sale in the United States. Our Disinfectant Grade BKC 80% includes complete COA documentation showing alkyl distribution, active content, free amine, and impurity profile suitable for EPA registration submissions.",
+  },
+  {
+    question: "What documentation is provided with BKC 80% export shipments?",
+    answer:
+      "Every BKC 80% shipment includes: (1) batch-specific COA with active content, pH, free amine, alkyl distribution, heavy metals, and APHA colour; (2) GHS-compliant SDS in English (and destination language on request); (3) TDS with handling and dilution guidance; (4) Halal certificate (on request — important for UAE, Saudi Arabia, Malaysia, Indonesia); (5) GMP certificate (on request for cosmetic/pharma buyers); (6) Kosher certificate (on request for US/Israeli markets); (7) Commercial invoice, packing list, BL, and customs paperwork with HS code 29239000 for international export.",
+  },
+  {
+    question: "Where does Vasudev Chemo Pharma export BKC 80%?",
+    answer:
+      "We export BKC 80% to over 30 countries from our Gujarat facility, with strategic focus on top global markets: USA (disinfectant brands, EPA-registered formulators), UAE and Saudi Arabia (Middle East sanitation, pool-water, and oilfield biocide), Brazil (Latin America cosmetic preservation and water treatment), Vietnam (Southeast Asia detergent and disinfectant manufacturing hub), Russia (industrial cleaning and HVAC biocide), and Egypt (North Africa healthcare, food-industry, and agricultural disinfection). Shipments via FOB / CIF / CFR Incoterms from Kandla, Mundra, and Hazira ports with 8–28 day transit times.",
+  },
+];
+
 export const PRODUCT_PAGE_FAQS: Record<string, FAQItem[]> = {
   "mea-triazine-78-h2s-scavenger": MEA_TRIAZINE_PRODUCT_PAGE_FAQS,
   "sodium-cumene-sulfonate-40": SODIUM_CUMENE_SULFONATE_40_FAQS,
   "sodium-cumene-sulfonate-90": SODIUM_CUMENE_SULFONATE_90_FAQS,
   "sodium-xylene-sulfonate-40": SODIUM_XYLENE_SULFONATE_40_FAQS,
   "sodium-xylene-sulfonate-90": SODIUM_XYLENE_SULFONATE_90_FAQS,
+  "benzalkonium-chloride-50": BENZALKONIUM_CHLORIDE_50_FAQS,
+  "benzalkonium-chloride-80": BENZALKONIUM_CHLORIDE_80_FAQS,
 };
 
 export const PRODUCT_FALLBACK_FAQS: Record<string, FAQItem[]> = {

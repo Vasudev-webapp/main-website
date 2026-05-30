@@ -1281,6 +1281,128 @@ Monitoring: Regular wellhead H2S measurements (using Draeger tubes, online analy
       },
     ],
   },
+
+  /* ----------------------------------------------------------------
+   * 6. Disinfectants & Sanitizers (Benzalkonium Chloride / ADBAC)
+   * -------------------------------------------------------------- */
+  "disinfectants-sanitizers": {
+    slug: "disinfectants-sanitizers",
+    title: "Disinfectants & Sanitizers — Benzalkonium Chloride (BKC) Manufacturer",
+    description:
+      "Benzalkonium Chloride (BKC) 50% and 80% — the global standard quaternary ammonium active substance for hospital surface disinfectants, food-contact sanitisers, swimming-pool algicides, and industrial cleaning. EPA List N for SARS-CoV-2. ISO 9001:2015, GMP, Halal certified. Manufacturer direct from India.",
+    keywords: [
+      "disinfectants and sanitizers",
+      "benzalkonium chloride disinfectant manufacturer",
+      "BKC for disinfectants",
+      "ADBAC for sanitizer formulators",
+      "quaternary ammonium disinfectant manufacturer",
+      "hospital surface disinfectant active manufacturer",
+      "food-contact sanitiser raw material",
+      "EPA List N benzalkonium chloride supplier",
+      "FDA 21 CFR 178.1010 sanitiser concentrate",
+      "BKC 50% disinfectant grade manufacturer",
+      "BKC 80% concentrate disinfectant brand",
+      "EU BPR PT 1 2 3 4 BKC supplier",
+      "GMP cosmetic preservative BKC",
+      "halal certified disinfectant active",
+      "disinfectant active ingredient supplier India",
+      "sanitiser blender raw material",
+      "quat sanitiser concentrate manufacturer",
+    ],
+    h1: "Disinfectants & Sanitizers — Benzalkonium Chloride (BKC) Manufacturer Direct",
+    intro:
+      "Benzalkonium Chloride (BKC, ADBAC, CAS 8001-54-5) is the world's most widely used quaternary ammonium active substance in hospital surface disinfectants, food-contact sanitisers, swimming-pool algicides, cosmetic preservatives, and industrial cleaning concentrates. The US EPA's List N (Disinfectants for Use Against SARS-CoV-2) includes hundreds of BKC-based products. Vasudev Chemo Pharma manufactures BKC 50% and BKC 80% concentrate at our ISO 9001:2015, GMP, and Halal-certified facility in Gujarat, India — supplying disinfectant brands, sanitiser blenders, and EPA-registered formulators across 30+ countries.",
+    sections: [
+      {
+        heading: "BKC: The Global Standard Disinfectant Active",
+        id: "global-standard",
+        body: `Benzalkonium Chloride is a cationic surfactant and quaternary ammonium biocide. Its mechanism of action — disrupting the lipid bilayer of microbial cell membranes — makes it broadly effective against gram-positive and gram-negative bacteria, fungi, yeasts, and enveloped viruses (including SARS-CoV-2, MERS-CoV, influenza A, herpes simplex, and HIV).
+
+Reference grades from Lonza (Bardac® 22, Bardac® 2280, Hyamine® 3500), Stepan (BTC® 824, BTC® 8358), Nouryon/AkzoNobel (Maquat® MC 1412, Maquat® 4480-E), Pilot Chemical (Lonzabac® 50/80), and Kao (Sanisol® C) are the formulation standards used by global disinfectant brands. Vasudev Chemo Pharma's BKC 50% (VCP-SFC-0005) and BKC 80% (VCP-SFC-0006) are functionally equivalent to all of these reference grades — same active substance (ADBAC), same C₁₂–C₁₆ alkyl distribution, same regulatory approvals.`,
+      },
+      {
+        heading: "Application Profile by Industry",
+        id: "applications",
+        body: `Hospital and clinical surface disinfection: BKC at 0.1% – 0.4% active quat (1,000 – 4,000 ppm) is the standard for hospital hard-surface disinfection. Validated under EN 1276 (bactericidal), EN 1650 (fungicidal), EN 14476 (virucidal). Used as the active ingredient in EPA-registered hospital disinfectants in the US.
+
+Food and beverage industry sanitation: BKC at maximum 200 ppm active quat is approved as no-rinse food-contact sanitiser under FDA 21 CFR 178.1010. Used in dairy plants, breweries, soft-drink bottlers, and meat processors for clean-in-place (CIP) and clean-out-of-place (COP) sanitation.
+
+Swimming pool, spa, and recreational water: BKC at 5 – 15 ppm active quat as preventive algicide; works synergistically with chlorine/bromine systems. Effective against algae, Pseudomonas, and chlorine-resistant biofilms.
+
+Cosmetic and pharmaceutical preservation: BKC at 0.001% – 0.01% in eye drops, nasal sprays; 0.05% – 0.1% in cosmetics (Cosmetics Europe Annex V, INCI: Benzalkonium Chloride). USP, NF, BP, EP, IP, JP compendial monographs.
+
+Industrial cleaning, oilfield, and water treatment: BKC at 50 – 200 ppm active quat in cooling-tower biocide programs, oilfield biocide for produced-water injection systems, and industrial cleaning concentrates.`,
+      },
+      {
+        heading: "Why Source from Vasudev Chemo Pharma",
+        id: "why-vasudev",
+        body: `Direct-from-manufacturer pricing — no Western IP brand premium. Our Gujarat facility produces BKC at the same quality standards as global reference brands, with full ISO 9001:2015 + GMP + Halal certification. Disinfectant brands and sanitiser blenders worldwide cross-qualify our product as a drop-in replacement for Lonza Bardac®, Stepan BTC®, and Nouryon Maquat® reference grades.
+
+Three grades available: Industrial / Technical Grade for general industrial use; Cosmetic Grade (CTFA-compliant) for cosmetic preservation; Disinfectant Grade suitable for EPA-registered formulators producing hospital, food-contact, and pharmaceutical surface sanitisers. All grades supplied with batch-specific COA, GHS-compliant SDS, TDS, Halal certificate, GMP certificate, and full export documentation.
+
+Strategic export markets: USA (EPA-registered formulators), UAE / Saudi Arabia (Middle East sanitation, oilfield biocide), Brazil (Latin America cosmetic preservation), Vietnam (Southeast Asia detergent + disinfectant manufacturing), Russia (industrial cleaning, HVAC biocide), Egypt (North Africa healthcare + agricultural disinfection). FOB Mundra, Kandla, and Hazira ports with 8–28 day transit times.`,
+      },
+    ],
+    specs: [
+      { label: "Products available", value: "BKC 50% (VCP-SFC-0005), BKC 80% (VCP-SFC-0006)" },
+      { label: "Active substance", value: "Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC), CAS 8001-54-5" },
+      { label: "HS Code", value: "29239000" },
+      { label: "Hospital surface disinfection", value: "0.1% – 0.4% active quat" },
+      { label: "Food-contact no-rinse", value: "Max 200 ppm active (FDA 21 CFR 178.1010)" },
+      { label: "Pool algicide preventive", value: "5 – 15 ppm active quat" },
+      { label: "Cooling tower routine", value: "50 – 200 ppm active quat" },
+      { label: "Cosmetic preservation", value: "0.05% – 0.1% active (Cosmetics Europe Annex V)" },
+      { label: "Pharmaceutical preservation", value: "0.001% – 0.01% active (USP <51>, BP, EP)" },
+      { label: "Regulatory approvals", value: "EPA PC 069105 | EU BPR PT 1/2/3/4 | USP/NF/BP/EP/IP/JP" },
+      { label: "Certifications", value: "ISO 9001:2015 + GMP + Halal" },
+      { label: "MOQ", value: "1 MT" },
+    ],
+    benefits: [
+      "Equivalent to Lonza Bardac®, Stepan BTC®, Nouryon Maquat®, Pilot Lonzabac® reference grades",
+      "Three grades — Industrial/Technical, Cosmetic (CTFA), Disinfectant (EPA-formulator)",
+      "EPA List N active for SARS-CoV-2 disinfection",
+      "Direct-from-manufacturer pricing — no Western IP brand premium",
+      "ISO 9001:2015 + GMP + Halal certified facility in Gujarat, India",
+      "Full COA, SDS, TDS, Halal certificate, GMP certificate with every shipment",
+      "Export to 30+ countries with FOB / CIF / CFR Incoterms",
+    ],
+    relatedCountries: [
+      { name: "USA", slug: "usa" },
+      { name: "UAE", slug: "uae" },
+      { name: "Saudi Arabia", slug: "saudi-arabia" },
+      { name: "Brazil", slug: "brazil" },
+      { name: "Vietnam", slug: "vietnam" },
+      { name: "Russia", slug: "russia" },
+      { name: "Egypt", slug: "egypt" },
+    ],
+    faqs: [
+      {
+        question: "Is Benzalkonium Chloride EPA-registered for hospital surface disinfection?",
+        answer:
+          "Benzalkonium Chloride is registered as an antimicrobial active substance under US EPA PC Code 069105. The EPA's List N: Disinfectants for Use Against SARS-CoV-2 includes hundreds of BKC-based products at 0.1% – 0.4% active quat. Vasudev Chemo Pharma supplies BKC 50% and BKC 80% as raw material — finished disinfectant products themselves must be EPA-registered separately by the formulator before commercial sale.",
+      },
+      {
+        question: "Can BKC be used as a no-rinse food-contact sanitiser?",
+        answer:
+          "Yes, at maximum 200 ppm active quat per FDA 21 CFR 178.1010. Above 200 ppm, residue levels exceed the no-rinse threshold and the surface must be rinsed with potable water before food contact. Always validate with the registered finished product label and local food-safety regulations (e.g. local FSANZ, EFSA, FSSAI in India).",
+      },
+      {
+        question: "What is the difference between BKC 50% and BKC 80% for disinfectant formulation?",
+        answer:
+          "Same active substance (ADBAC, CAS 8001-54-5), different concentrations. BKC 50% is the global formulation reference standard — used directly in finished disinfectant formulations. BKC 80% is the export-economical concentrate — disinfectant brands and sanitiser blenders procure 80% from India and dilute on-site to 50%, 25%, or 10% for finished products. BKC 80% saves ~37% freight cost per kilogram of active matter shipped.",
+      },
+      {
+        question: "Is BKC compatible with all surfactants in cleaning-disinfectant formulations?",
+        answer:
+          "No. BKC is INCOMPATIBLE with anionic surfactants (LABSA, SLES, SLS, soaps) — mixing forms an insoluble ion-pair complex that destroys biocidal activity. BKC IS compatible with nonionic surfactants (alcohol ethoxylates, APGs, Tween series), amphoteric surfactants (cocamidopropyl betaine when pH > IEP), and other cationic systems. Cleaning-disinfectant blends must be formulated by trained chemists.",
+      },
+      {
+        question: "Do you supply BKC to global disinfectant brands and EPA-registered formulators?",
+        answer:
+          "Yes. We supply BKC 50% and BKC 80% to disinfectant brands, sanitiser blenders, EPA-registered formulators, cosmetic preservation houses, water-treatment chemical companies, and pharmaceutical OEMs across the USA, EU, UAE, Saudi Arabia, Brazil, Vietnam, Russia, Egypt, and 25+ other countries. FOB / CIF / CFR Incoterms from Kandla, Mundra, Hazira ports with full export documentation including Halal and GMP certificates.",
+      },
+    ],
+  },
 };
 
 export const APPLICATION_PAGES_DATA: Record<string, ApplicationPageData> =

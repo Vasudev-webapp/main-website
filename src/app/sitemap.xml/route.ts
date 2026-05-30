@@ -82,6 +82,10 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/applications", changeFrequency: "weekly", priority: 0.8 },
   { path: "/resources", changeFrequency: "weekly", priority: 0.75 },
   { path: "/legal/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
+  // ── BKC (Benzalkonium Chloride) support pages — Day 3 additions ──
+  { path: "/benzalkonium-chloride-50-vs-80", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/bkc-uses-applications", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/bkc-vs-ddac-vs-ctab", changeFrequency: "monthly", priority: 0.85 },
 ];
 
 const SERVICE_SLUGS = [
@@ -102,6 +106,10 @@ const INDUSTRY_SLUGS = [
   "refining",
   "biogas",
   "paper-mill",
+  // ── BKC (Benzalkonium Chloride) industry pages — Day 3 additions ──
+  "healthcare-sanitation",
+  "pool-water-treatment",
+  "personal-care-cosmetics",
 ];
 
 function escapeXml(value: string): string {

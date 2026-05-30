@@ -37,6 +37,15 @@ const INDUSTRY_LINKS: Record<string, InternalLink[]> = {
   paperMill: [
     { href: "/industries/paper-mill", label: "Paper & Pulp Industry", context: "Biocides for paper mill applications" },
   ],
+  healthcareSanitation: [
+    { href: "/industries/healthcare-sanitation", label: "Healthcare & Sanitation", context: "Disinfectants and sanitizers for hospitals, clinics, and food-grade environments" },
+  ],
+  poolWater: [
+    { href: "/industries/pool-water-treatment", label: "Pool & Water Treatment", context: "Algicides and sanitizers for swimming pools, spas, and recreational water" },
+  ],
+  personalCare: [
+    { href: "/industries/personal-care-cosmetics", label: "Personal Care & Cosmetics", context: "Preservatives and surfactants for cosmetics and personal care formulations" },
+  ],
 };
 
 export const PRODUCT_INTERNAL_LINKS: Record<string, ProductInternalLinks> = {
@@ -144,6 +153,52 @@ export const PRODUCT_INTERNAL_LINKS: Record<string, ProductInternalLinks> = {
       ...DEFAULT_LINKS,
     ],
     industryPages: [],
+  },
+  "benzalkonium-chloride-50": {
+    relatedProducts: [
+      { href: "/product/benzalkonium-chloride-80", label: "Benzalkonium Chloride 80%", context: "Concentrated 80% BKC for export buyers who dilute on-site" },
+      { href: "/product/sodium-cumene-sulfonate-40", label: "Sodium Cumene Sulfonate 40%", context: "Anionic hydrotrope (note: anionic + cationic incompatibility)" },
+      { href: "/product/sodium-xylene-sulfonate-40", label: "Sodium Xylene Sulfonate 40%", context: "Anionic hydrotrope alternative for non-cationic systems" },
+    ],
+    relatedPages: [
+      { href: "/benzalkonium-chloride-50-vs-80", label: "BKC 50% vs BKC 80% Comparison", context: "Which grade should you buy — full comparison guide" },
+      { href: "/applications/disinfectants-sanitizers", label: "Disinfectants & Sanitizers Application Guide", context: "How quaternary ammonium compounds disinfect surfaces" },
+      { href: "/bkc-uses-applications", label: "BKC Uses & Applications Hub", context: "All applications of Benzalkonium Chloride from healthcare to oilfield" },
+      { href: "/bkc-vs-ddac-vs-ctab", label: "BKC vs DDAC vs CTAB Comparison", context: "Quaternary ammonium compound chemistry comparison" },
+      { href: "/compare", label: "Product Comparisons", context: "Compare surfactants and biocides side by side" },
+      { href: "/blog", label: "Industry Blog", context: "Latest insights on chemical manufacturing" },
+      ...DEFAULT_LINKS,
+    ],
+    industryPages: [
+      ...INDUSTRY_LINKS.healthcareSanitation,
+      ...INDUSTRY_LINKS.poolWater,
+      ...INDUSTRY_LINKS.personalCare,
+      ...INDUSTRY_LINKS.waterTreatment,
+      ...INDUSTRY_LINKS.oilgas,
+    ],
+  },
+  "benzalkonium-chloride-80": {
+    relatedProducts: [
+      { href: "/product/benzalkonium-chloride-50", label: "Benzalkonium Chloride 50%", context: "Ready-to-formulate 50% BKC — global formulation standard" },
+      { href: "/product/sodium-cumene-sulfonate-90", label: "Sodium Cumene Sulfonate 90%", context: "Anionic hydrotrope powder (note: anionic + cationic incompatibility)" },
+      { href: "/product/sodium-xylene-sulfonate-90", label: "Sodium Xylene Sulfonate 90%", context: "Anionic hydrotrope powder alternative" },
+    ],
+    relatedPages: [
+      { href: "/benzalkonium-chloride-50-vs-80", label: "BKC 50% vs BKC 80% Comparison", context: "Which grade should you buy — full comparison guide" },
+      { href: "/applications/disinfectants-sanitizers", label: "Disinfectants & Sanitizers Application Guide", context: "How quaternary ammonium compounds disinfect surfaces" },
+      { href: "/bkc-uses-applications", label: "BKC Uses & Applications Hub", context: "All applications of Benzalkonium Chloride from healthcare to oilfield" },
+      { href: "/bkc-vs-ddac-vs-ctab", label: "BKC vs DDAC vs CTAB Comparison", context: "Quaternary ammonium compound chemistry comparison" },
+      { href: "/compare", label: "Product Comparisons", context: "Compare surfactants and biocides side by side" },
+      { href: "/blog", label: "Industry Blog", context: "Latest insights on chemical manufacturing" },
+      ...DEFAULT_LINKS,
+    ],
+    industryPages: [
+      ...INDUSTRY_LINKS.healthcareSanitation,
+      ...INDUSTRY_LINKS.poolWater,
+      ...INDUSTRY_LINKS.personalCare,
+      ...INDUSTRY_LINKS.waterTreatment,
+      ...INDUSTRY_LINKS.oilgas,
+    ],
   },
 };
 

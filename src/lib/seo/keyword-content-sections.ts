@@ -128,6 +128,20 @@ const CATEGORY_CONTENT: Record<
     supplySectionHeading:
       "Global Supply of BTX-Free MMA Triazine 40%",
   },
+  "benzalkonium-chloride-50": {
+    categoryLabel: "Surfactant Chemicals — Benzalkonium Chloride 50% (BKC 50%)",
+    categorySummary:
+      "Benzalkonium Chloride 50% (BKC 50%) is a 50% aqueous solution of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5) — a broad-spectrum cationic surfactant and quaternary ammonium biocide manufactured by Vasudev Chemo Pharma. It is the global formulation reference standard for hospital surface disinfectants, food and beverage CIP/COP sanitation, swimming-pool algicides, cosmetic and pharmaceutical preservation, cooling-tower biocide, and agricultural disinfection. Supplied in Industrial / Technical, Cosmetic (CTFA-compliant), and Disinfectant grades from our ISO 9001:2015, GMP, and Halal-certified facility in Gujarat, India.",
+    supplySectionHeading:
+      "Global Supply of Benzalkonium Chloride 50% (BKC 50%)",
+  },
+  "benzalkonium-chloride-80": {
+    categoryLabel: "Surfactant Chemicals — Benzalkonium Chloride 80% (BKC 80%) Concentrate",
+    categorySummary:
+      "Benzalkonium Chloride 80% (BKC 80%) is the high-active, export-economical concentrate of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5) — manufactured by Vasudev Chemo Pharma as a drop-in equivalent to Lonza Bardac® 2280, Stepan BTC® 8358, Nouryon Maquat® 4480-E, and Pilot Lonzabac® 80%. Global disinfectant brands and sanitiser blenders procure 80% concentrate and dilute on-site to 50%, 25%, 10%, or final-use concentrations — saving ~37% freight cost per kilogram of active matter shipped vs BKC 50%. Supplied in Industrial / Technical, Cosmetic (CTFA-compliant), and Disinfectant grades from our ISO 9001:2015, GMP, and Halal-certified facility in Gujarat, India.",
+    supplySectionHeading:
+      "Global Supply of Benzalkonium Chloride 80% (BKC 80%) Concentrate",
+  },
 };
 
 /* ── Keyword grouping patterns ───────────────────────────────────── */
@@ -168,6 +182,42 @@ const APPLICATION_PATTERNS: {
     description:
       "Triazine-based biocide for metalworking fluids — prevents bacterial and fungal growth in cutting fluids, coolants, grinding fluids, and CNC machining coolants. Extends fluid life and eliminates rancid odours.",
     patterns: [/metalworking|cutting fluid|coolant biocide|machining|grinding fluid|cnc/i],
+  },
+  {
+    heading: "Healthcare & Hospital Surface Disinfection",
+    description:
+      "Quaternary ammonium biocide (ADBAC / Benzalkonium Chloride) for hospital surface disinfection, clinical sanitation, and pharmaceutical-grade healthcare environments. Effective against bacteria, fungi, and enveloped viruses including SARS-CoV-2.",
+    patterns: [/hospital|clinical|healthcare|medical|nosocomial|sars|coronavirus|surface disinfect/i],
+  },
+  {
+    heading: "Food & Beverage Industry CIP / COP Sanitation",
+    description:
+      "FDA 21 CFR 178.1010-compliant no-rinse food-contact sanitiser at 200 ppm active quat. Used in dairy, brewery, soft drink, and food packaging facilities.",
+    patterns: [/food contact|cip|cop|dairy|brewery|food.beverage|food.contact|fda 21 cfr/i],
+  },
+  {
+    heading: "Pool, Spa, and Recreational Water Sanitation",
+    description:
+      "Algaecide and supplementary sanitiser for swimming pools, spas, fountains, and recreational water systems. Synergistic with chlorine.",
+    patterns: [/swimming pool|pool algicide|spa water|recreational water|algaecide|algicide/i],
+  },
+  {
+    heading: "Cosmetic and Pharmaceutical Preservation",
+    description:
+      "INCI-listed cosmetic preservative (max 0.1% rinse-off, 0.05% leave-on per Cosmetics Europe Annex V). USP / BP / EP / IP / JP pharmacopoeia-compliant. Used in eye drops, nasal sprays, hair conditioners, and topical antiseptics.",
+    patterns: [/cosmetic preservative|inci|hair conditioner|mouthwash|eye drops|nasal spray|pharmaceutical preservative|topical antiseptic/i],
+  },
+  {
+    heading: "Cooling Tower, HVAC, and Water Treatment Biocide",
+    description:
+      "Quaternary ammonium biocide for cooling towers, HVAC chillers, and recirculating water systems. Controls Legionella, sulphate-reducing bacteria, and biofilm.",
+    patterns: [/cooling tower|hvac|legionella|biofilm|water treatment biocide/i],
+  },
+  {
+    heading: "Agricultural & Veterinary Disinfection",
+    description:
+      "Biosecurity disinfectant for poultry houses, dairy farms, hatcheries, greenhouses, and foot-baths. Used in livestock, animal husbandry, and crop biosecurity programs.",
+    patterns: [/poultry|dairy farm|hatchery|veterinary|livestock|biosecurity|foot.bath|agricultural disinfect/i],
   },
 ];
 

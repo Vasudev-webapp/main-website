@@ -270,6 +270,104 @@ Theoretical capacity: 1 mole of MEA Triazine scavenges **up to 3 moles of H₂S*
 
 ---
 
+### 14. Benzalkonium Chloride 50% (BKC 50%)
+
+**Canonical URL:** https://www.vasudevchemopharma.com/product/benzalkonium-chloride-50
+
+**Direct answer:** Benzalkonium Chloride 50% (BKC 50%) is a 50 ± 1% aqueous solution of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5) — a broad-spectrum cationic surfactant and quaternary ammonium biocide. It is the global formulation reference standard for hospital surface disinfectants, food-contact sanitisers, swimming pool algicides, cosmetic preservatives, and pharmaceutical preservation. Manufactured by Vasudev Chemo Pharma at our ISO 9001:2015, GMP, and Halal certified facility in Gujarat, India. Functionally equivalent to Lonza Bardac® 22 / Stepan BTC® 824 / Nouryon Maquat® MC 1412 reference grades.
+
+- **CAS Number (mixture):** 8001-54-5 · Alternate (chain-specific): 63449-41-2, 68391-01-5, 68424-85-1
+- **EC / EINECS:** 264-151-6 (also 269-919-4) · **HS Code:** 29239000 · **EPA PC Code:** 069105
+- **INCI Name (cosmetics):** Benzalkonium Chloride · **UNII:** F5UM2KM3W7
+- **Molecular formula:** C₆H₅CH₂N(CH₃)₂RCl (R = C₈–C₁₈ alkyl) · **MW (avg, C₁₂–C₁₆):** 354.0 g/mol
+- **Active matter:** 50.0 ± 1.0%
+- **Form:** Clear pale yellow liquid (free-flowing at room temperature)
+- **pH (10% solution, 25°C):** 6.0 – 8.0 · **Specific gravity (25°C):** 0.96 – 1.00
+- **Colour (APHA):** ≤ 50 · **Free amine:** ≤ 1.5%
+- **Alkyl distribution (C₁₂/C₁₄/C₁₆):** 40-50% / 30-40% / 10-20% (typical)
+- **Heavy metals (as Pb):** ≤ 10 ppm
+- **Flash point:** > 100°C (closed cup)
+- **Storage:** 5 – 40°C, sealed HDPE drums, away from direct sunlight · 24-month shelf life
+- **Packaging:** 50 kg / 200 kg HDPE drums · 1000 kg IBC · ISO tank · MOQ 1 MT
+- **Vasudev SKU:** VCP-SFC-0005
+- **GHS:** GHS05 / GHS07 / GHS09 (Danger). H302, H314, H318, H400, H410.
+- **Certifications:** ISO 9001:2015 + GMP + Halal (Kosher available on request)
+- **Grades available:** Industrial / Technical · Cosmetic Grade (CTFA-compliant) · Disinfectant Grade (suitable for EPA-registered formulators)
+- **Trade-name equivalents:** Lonza Bardac® 22, Lonza Hyamine® 3500, Stepan BTC® 824, Stepan BTC® 50NF, Nouryon Maquat® MC 1412, Pilot Lonzabac® 50, Kao Sanisol® C, Kao Quartamin® 50, Croda Crodaquat® BAC
+
+**Applications:**
+- Hospital, clinical, and pharmaceutical surface disinfection (0.1% – 0.4% active quat)
+- Food and beverage industry CIP/COP no-rinse sanitiser (max 200 ppm — FDA 21 CFR 178.1010)
+- Swimming pool, spa, and recreational water algicide (5 – 15 ppm preventive dose)
+- Cosmetic preservative — INCI: Benzalkonium Chloride (max 0.1% rinse-off, 0.05% leave-on)
+- Pharmaceutical preservative — eye drops, nasal sprays, contact lens solutions (0.001% – 0.01%)
+- Cooling tower, HVAC, and industrial water-treatment biocide (50 – 200 ppm active)
+- Agricultural and veterinary disinfection (poultry, dairy, hatcheries, foot-baths)
+- Wood preservation against fungal decay and surface mildew
+- Textile antimicrobial finish (hospital scrubs, sportswear, military uniforms)
+- Phase-transfer catalyst in fine-chemical and pharmaceutical synthesis
+- Oilfield biocide for microbial control in produced water and injection systems
+
+**Compatibility (CRITICAL):**
+- INCOMPATIBLE with anionic surfactants (LABSA, SLES, SLS, SCS, SXS, soaps) — forms insoluble complex, destroys biocidal activity
+- COMPATIBLE with nonionic surfactants (alcohol ethoxylates, APGs, Tween), amphoteric surfactants (cocamidopropyl betaine), other cationic systems
+
+---
+
+### 15. Benzalkonium Chloride 80% (BKC 80%)
+
+**Canonical URL:** https://www.vasudevchemopharma.com/product/benzalkonium-chloride-80
+
+**Direct answer:** Benzalkonium Chloride 80% (BKC 80%) is the high-active 80 ± 1% aqueous concentrate of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5). Same active substance as BKC 50% at higher concentration — the export-economical grade preferred by global disinfectant brands and sanitiser blenders who dilute on-site to 50%, 25%, 10%, or final-use concentrations. Delivers ~37% lower freight cost per kg active matter shipped vs BKC 50%. Functionally equivalent to Lonza Bardac® 2280 / Stepan BTC® 8358 / Nouryon Maquat® 4480-E / Pilot Lonzabac® 80% reference grades. Manufactured by Vasudev Chemo Pharma at our ISO 9001:2015, GMP, and Halal certified facility in Gujarat, India.
+
+- **CAS Number (mixture):** 8001-54-5 · same as BKC 50%
+- **EC / EINECS:** 264-151-6 (also 269-919-4) · **HS Code:** 29239000 · **EPA PC Code:** 069105
+- **INCI Name (cosmetics):** Benzalkonium Chloride
+- **Molecular formula:** C₆H₅CH₂N(CH₃)₂RCl (R = C₈–C₁₈ alkyl) · **MW (avg, C₁₂–C₁₆):** 354.0 g/mol
+- **Active matter:** 80.0 ± 1.0% (vs 50.0 ± 1.0% for BKC 50%)
+- **Form:** Clear to pale yellow viscous liquid (gel-like below 15°C)
+- **pH (10% solution, 25°C):** 6.0 – 8.0 · **Specific gravity (25°C):** 1.00 – 1.04
+- **Colour (APHA):** ≤ 80 · **Free amine:** ≤ 2.0%
+- **Alkyl distribution (C₁₂/C₁₄/C₁₆):** 40-50% / 30-40% / 10-20% (typical, matches Lonza Bardac® 2280 / Stepan BTC® 8358 reference standard)
+- **Refractive index (25°C):** 1.450 – 1.480
+- **Storage:** 15 – 40°C, sealed HDPE drums (gelation prevention; warm storage in cold climates) · 24-month shelf life
+- **Packaging:** 50 kg / 200 kg HDPE drums · 1000 kg IBC · ISO tank · MOQ 1 MT
+- **Vasudev SKU:** VCP-SFC-0006
+- **GHS:** GHS05 / GHS07 / GHS09 (Danger). H302, H314, H318, H400, H410. (More aggressive than BKC 50%)
+- **Certifications:** ISO 9001:2015 + GMP + Halal (Kosher available on request)
+- **Grades available:** Industrial / Technical · Cosmetic Grade (CTFA-compliant) · Disinfectant Grade (suitable for EPA-registered formulators)
+- **Trade-name equivalents:** Lonza Bardac® 2280, Stepan BTC® 8358, Nouryon Maquat® 4480-E, Pilot Lonzabac® 80%, Kao Sanisol® C 80%
+
+**Why BKC 80% over BKC 50% — freight economics:**
+
+For 10 MT of active quat:
+- BKC 50% requires 20 MT shipped (10 ÷ 0.50)
+- BKC 80% requires 12.5 MT shipped (10 ÷ 0.80)
+- **Saving:** 7.5 MT shipped weight — ~37% freight cost reduction per kg active
+
+Typical ocean freight savings: India → USA (Houston) USD 1,200–1,800 per 10 MT order; India → Brazil (Santos) USD 1,500–2,200; India → UAE (Jebel Ali) USD 400–700; India → Vietnam USD 600–1,000; India → Russia (St Petersburg) USD 1,000–1,500.
+
+**Dilution from BKC 80% to BKC 50%:**
+- Blend 62.5 kg BKC 80% + 37.5 kg demineralised water → 100 kg BKC 50% (mass ratio)
+- Always add concentrate to water (not water to concentrate)
+- Use demineralised or low-hardness water to avoid Ca/Mg precipitation
+- Gently warm BKC 80% to 25 – 30°C if it has gelled
+
+**Applications (concentrate-specific use cases):**
+- Concentrated raw material for global disinfectant brands and sanitiser blenders
+- Drop-in replacement for Lonza Bardac® 2280 / Stepan BTC® 8358 in EPA-registered formulations
+- Cosmetic preservative concentrate for INCI-grade formulators (dilute to 0.125% in rinse-off finished product)
+- Pool algicide concentrate (typically 10% – 20% BKC 80% in finished formulation)
+- Cooling tower biocide slug-dose product (20% – 50% BKC 80% in finished formulation)
+- Pharmaceutical preservative concentrate for OEM formulators (eye drops, nasal sprays, contact lens solutions)
+- Veterinary / agricultural disinfectant concentrate for biosecurity products
+- Industrial cleaning, oilfield biocide, textile antimicrobial finish concentrate
+
+**Cross-qualification with Western IP brands:**
+Customers regularly cross-qualify Vasudev's BKC 80% as a drop-in replacement for Lonza Bardac® 2280 / Stepan BTC® 8358 / Nouryon Maquat® 4480-E. Same active substance (ADBAC, CAS 8001-54-5), same C₁₂–C₁₆ alkyl distribution, same regulatory approvals. Spec-comparison documents and trial samples (1 – 5 kg) provided on request. Cross-qualification typically completed via parallel formulation runs, EN 1276 / EN 14476 efficacy testing, and 24-month stability studies on the finished product.
+
+---
+
 ## Services
 
 - [Chemical Manufacturing](https://www.vasudevchemopharma.com/service/chemical-manufacturing) — In-house production of triazines, sulphates, hydrotropes, and pharma intermediates.
@@ -315,6 +413,21 @@ MMA Triazine 40% is supplied as a BTEX-free biocide for metal-working fluid (MWF
 
 Triazine biocides control microbial slime in paper-machine white-water loops and pulp storage.
 
+### Healthcare & Sanitation (BKC industry)
+[Healthcare & Sanitation industry page](https://www.vasudevchemopharma.com/industries/healthcare-sanitation)
+
+Benzalkonium Chloride (BKC, ADBAC) 50% and 80% supplied to disinfectant manufacturers, sanitiser blenders, and EPA-registered formulators producing hospital surface disinfectants, clinical surface sanitisers, food-contact CIP/COP no-rinse sanitisers, and pharmaceutical preservation actives. Drop-in equivalent to Lonza Bardac®, Stepan BTC®, Nouryon Maquat®, Pilot Lonzabac® reference grades. EPA List N for SARS-CoV-2.
+
+### Pool & Water Treatment (BKC industry)
+[Pool & Water Treatment industry page](https://www.vasudevchemopharma.com/industries/pool-water-treatment)
+
+BKC 50% and BKC 80% as the active substance in swimming pool algicides, spa sanitisers, cooling tower biocides (HSE ACOP L8, ASHRAE 188 compliance), HVAC chiller water programs, and recreational water disinfection. Synergistic with chlorine / bromine; effective at elevated pH where chlorine alone fails. Concentrate (80%) preferred for pool chemical brand exporters who dilute to 10% – 25% finished products.
+
+### Personal Care & Cosmetics (BKC industry)
+[Personal Care & Cosmetics industry page](https://www.vasudevchemopharma.com/industries/personal-care-cosmetics)
+
+Cosmetic Grade BKC 50% and BKC 80% — INCI-listed cationic preservative (Cosmetics Europe Annex V approved). Used in hair conditioners, mouthwashes, shampoos, leave-on personal-care products, and as a cationic conditioning agent in 2-in-1 shampoo systems. Also pharmaceutical preservation in eye drops, nasal sprays, contact lens solutions (USP/NF/BP/EP/IP/JP compendial monographs). GMP-certified for cosmetic and pharmaceutical formulators.
+
 ---
 
 ## Application-Specific Pages
@@ -331,6 +444,7 @@ Detailed how-to and technical pages for specific use cases:
 - [Water Treatment Biocide](https://www.vasudevchemopharma.com/applications/water-treatment-biocide)
 - [Metalworking Fluid Preservative](https://www.vasudevchemopharma.com/applications/metalworking-fluid-preservative)
 - [Paper Mill Biocide](https://www.vasudevchemopharma.com/applications/paper-mill-biocide)
+- [Disinfectants & Sanitizers](https://www.vasudevchemopharma.com/applications/disinfectants-sanitizers) — BKC/ADBAC for hospital, food-contact, pool, cosmetic, pharmaceutical preservation, cooling tower biocide
 
 ---
 
@@ -598,6 +712,9 @@ For the full index of 59+ technical articles, visit: https://www.vasudevchemopha
 - [MEA Triazine vs MMA Triazine](https://www.vasudevchemopharma.com/mea-triazine-vs-mma-triazine)
 - [MEA Triazine Prices](https://www.vasudevchemopharma.com/mea-triazine-prices)
 - [MEA Triazine Production Plant Cost](https://www.vasudevchemopharma.com/mea-triazine-production-plant-cost)
+- [BKC 50% vs BKC 80% Comparison](https://www.vasudevchemopharma.com/benzalkonium-chloride-50-vs-80) — Active matter, freight, dilution math, brand equivalence
+- [BKC Uses & Applications Guide](https://www.vasudevchemopharma.com/bkc-uses-applications) — 12-application pillar/hub article
+- [BKC vs DDAC vs CTAB Comparison](https://www.vasudevchemopharma.com/bkc-vs-ddac-vs-ctab) — Quaternary ammonium compound chemistry decision guide
 
 **Commercial**
 - [Product Comparisons (branded equivalents)](https://www.vasudevchemopharma.com/compare)

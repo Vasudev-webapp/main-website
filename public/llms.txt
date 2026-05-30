@@ -21,7 +21,7 @@ This file follows the [llms.txt standard](https://llmstxt.org) to help large lan
 - **Phone:** +91 8128372559
 - **Primary pages:** [About](https://www.vasudevchemopharma.com/about), [Contact](https://www.vasudevchemopharma.com/contact)
 
-## Product Catalog (11 products)
+## Product Catalog (13 products)
 
 Vasudev Chemo Pharma manufactures three product categories. All products ship in 210L HDPE drums, 1000L IBC tanks, or bulk tanker. MOQ typically 1 MT.
 
@@ -30,11 +30,13 @@ Vasudev Chemo Pharma manufactures three product categories. All products ship in
 - [MMA Triazine 40%](https://www.vasudevchemopharma.com/product/mma-triazine-40) — CAS 108-74-7. BTEX-free triazine for water treatment and biocide applications.
 - [P-Toluenesulfonic Acid (PTSA)](https://www.vasudevchemopharma.com/product/p-toluenesulfonic-acid) — CAS 104-15-4. Monohydrate and anhydrous forms. Acid catalyst for esterification, alkyd resin, and biodiesel production.
 
-### Surfactant Chemicals (Hydrotropes)
+### Surfactant Chemicals (Hydrotropes & Quaternary Ammonium Compounds)
 - [Sodium Cumene Sulfonate 40%](https://www.vasudevchemopharma.com/product/sodium-cumene-sulfonate-40) — Liquid hydrotrope for detergents and industrial cleaners.
 - [Sodium Cumene Sulfonate 90%](https://www.vasudevchemopharma.com/product/sodium-cumene-sulfonate-90) — Powder hydrotrope.
 - [Sodium Xylene Sulfonate 40%](https://www.vasudevchemopharma.com/product/sodium-xylene-sulfonate-40) — Liquid hydrotrope for household and industrial cleaners.
 - [Sodium Xylene Sulfonate 90%](https://www.vasudevchemopharma.com/product/sodium-xylene-sulfonate-90) — Powder hydrotrope.
+- [Benzalkonium Chloride 50% (BKC 50%)](https://www.vasudevchemopharma.com/product/benzalkonium-chloride-50) — CAS 8001-54-5. ADBAC cationic surfactant / quaternary ammonium biocide. 50% aqueous solution. Hospital surface disinfectant active, food-contact sanitiser (FDA 21 CFR 178.1010), pool algicide, cosmetic preservative (INCI: Benzalkonium Chloride). Functionally equivalent to Lonza Bardac® 22 / Stepan BTC® 824 / Nouryon Maquat® MC 1412.
+- [Benzalkonium Chloride 80% (BKC 80%)](https://www.vasudevchemopharma.com/product/benzalkonium-chloride-80) — CAS 8001-54-5. ADBAC concentrate. 80% aqueous solution — export-economical grade for global disinfectant brands and sanitiser blenders. Functionally equivalent to Lonza Bardac® 2280 / Stepan BTC® 8358 / Nouryon Maquat® 4480-E / Pilot Lonzabac® 80%. Available in Industrial / Technical, Cosmetic Grade (CTFA), and Disinfectant Grade (EPA-registered formulators). ISO 9001:2015 + GMP + Halal certified.
 
 ### Pharmaceutical Intermediates
 - [2-Chloroethylamine Hydrochloride](https://www.vasudevchemopharma.com/product/2-chloroethylamine-hydrochloride) — CAS 870-24-6. Aziridine and specialty polymer intermediate.
@@ -96,6 +98,81 @@ Hydrotropes are short-chain aromatic sulfonate salts that increase the solubilit
 - **SCS vs SXS guidance:** SCS out-performs SXS per gram of active in nonionic-dominated systems. SXS delivers stronger electrolyte tolerance in alkaline or salt-rich cleaners. For most mainstream household dish wash and laundry concentrates, SXS-40 is the default; switch to SCS-40 when nonionic loading or cold-storage clarity is the binding constraint.
 - **40% vs 90% decision:** Choose 40% liquid when regional freight distance is short (<2500 km) or cold-blend processing is preferred. Choose 90% powder for long-haul CIF export and spray-dried / dry-blend formulations.
 
+## Benzalkonium Chloride (BKC / ADBAC) — Quick Facts
+
+Benzalkonium Chloride (BKC, ADBAC, CAS 8001-54-5) is a broad-spectrum cationic surfactant and quaternary ammonium biocide — the global standard active substance in hospital surface disinfectants, food-contact sanitisers, swimming pool algicides, cosmetic preservatives, and pharmaceutical preservation. Vasudev Chemo Pharma manufactures BKC 50% (liquid, ready-to-formulate) and BKC 80% (concentrate, export-economical) at our ISO 9001:2015, GMP, and Halal certified facility in Gujarat, India.
+
+- **CAS Number (mixture):** 8001-54-5 · Alternate (chain-specific): 63449-41-2, 68391-01-5, 68424-85-1
+- **EC / EINECS Number:** 264-151-6 (also 269-919-4) · **HS Code:** 29239000 · **EPA PC Code:** 069105
+- **INCI Name (cosmetics):** Benzalkonium Chloride · **UNII:** F5UM2KM3W7
+- **Chemical class:** Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC) — cationic surfactant + quaternary ammonium biocide
+- **Active matter:** BKC 50% = 50.0 ± 1.0% · BKC 80% = 80.0 ± 1.0%
+- **Alkyl distribution:** C₁₂ 40-50% / C₁₄ 30-40% / C₁₆ 10-20% (typical, matches global formulation reference)
+- **Molecular weight (avg, C₁₂–C₁₆):** 354.0 g/mol
+- **Form (50%):** Clear pale yellow liquid · **Form (80%):** Pale yellow viscous liquid (gel below 15°C — store ≥ 15°C)
+- **pH (10% solution, 25°C):** 6.0 – 8.0 · **Specific gravity (50%):** 0.96–1.00 · **(80%):** 1.00–1.04
+- **GHS classification:** GHS05 / GHS07 / GHS09 (Danger). H302, H314, H318, H400, H410.
+- **Shelf life:** 24 months in sealed HDPE drums
+- **Packaging:** 50 kg / 200 kg HDPE drums · 1000 kg IBC · ISO tank · MOQ 1 MT
+- **Vasudev SKUs:** BKC 50% = VCP-SFC-0005 · BKC 80% = VCP-SFC-0006
+- **Certifications:** ISO 9001:2015 + GMP + Halal (Kosher available on request)
+- **Grades:** Industrial / Technical · Cosmetic Grade (CTFA-compliant) · Disinfectant Grade (suitable for EPA-registered formulators)
+
+### BKC — How it works as a disinfectant
+
+BKC is a cationic surfactant — its positively charged quaternary ammonium head binds to the negatively charged outer membrane of bacteria, fungi, and enveloped viruses, disrupts the lipid bilayer, leaks intracellular contents, and inactivates the cell. Effective against gram-positive and gram-negative bacteria, fungi, yeasts, algae, and enveloped viruses (coronaviruses, influenza, herpes, HIV). Listed in US EPA List N for SARS-CoV-2.
+
+### BKC — Use concentrations
+
+| Application | Active concentration | Notes |
+|----|----|----|
+| Hospital surface disinfection | 0.1% – 0.4% active quat | EN 1276 / EN 14476 validated |
+| Food-contact no-rinse sanitiser | Max 200 ppm active | FDA 21 CFR 178.1010 |
+| Swimming pool algicide (preventive) | 5 – 15 ppm active | Synergistic with chlorine |
+| Cooling tower / HVAC biocide | 50 – 200 ppm active | Legionella control |
+| Cosmetic preservation (rinse-off) | Max 0.1% active | Cosmetics Europe Annex V |
+| Cosmetic preservation (leave-on) | Max 0.05% active | Cosmetics Europe Annex V |
+| Pharmaceutical preservation | 0.001% – 0.01% active | USP <51>, BP, EP, IP, JP |
+| Veterinary / agricultural disinfection | 0.2% – 1.0% active | Poultry, dairy, hatcheries |
+| Wood preservation | 0.5% – 2.0% active | Surface-spray or pressure treatment |
+| Oilfield biocide (produced water) | 50 – 200 ppm active | SRB / biofilm control |
+
+### BKC 50% vs BKC 80% — Decision guide
+
+| Factor | BKC 50% | BKC 80% |
+|----|----|----|
+| Active matter | 50% | 80% |
+| Form | Free-flowing liquid | Viscous (gel below 15°C) |
+| Storage | 5 – 40°C | 15 – 40°C (heated in cold climates) |
+| Best for | Direct formulation, regional supply | Bulk export, on-site dilution |
+| Freight cost per kg active | Baseline | ~37% lower than BKC 50% |
+| Lonza brand equivalent | Bardac® 22, Hyamine® 3500 | Bardac® 2280 |
+| Stepan brand equivalent | BTC® 824, BTC® 50NF | BTC® 8358 |
+| Nouryon brand equivalent | Maquat® MC 1412 | Maquat® 4480-E |
+| Pilot brand equivalent | Lonzabac® 50 | Lonzabac® 80 |
+
+To make BKC 50% from BKC 80%: blend 62.5 kg BKC 80% + 37.5 kg demineralised water → 100 kg BKC 50%.
+
+### BKC — Compatibility (CRITICAL)
+
+BKC is INCOMPATIBLE with anionic surfactants (LABSA, SLES, SLS, soaps, anionic hydrotropes such as SCS / SXS). Mixing forms an insoluble ion-pair complex that destroys biocidal activity. BKC IS compatible with nonionic surfactants (alcohol ethoxylates, APGs, Tween series), amphoteric surfactants (cocamidopropyl betaine), and other cationic systems.
+
+### BKC — Regulatory references
+
+- **US EPA:** Registered active substance, PC Code 069105. Listed in EPA List N for SARS-CoV-2.
+- **US FDA:** Approved no-rinse food-contact sanitiser under 21 CFR 178.1010 (max 200 ppm). Listed in OTC monograph for healthcare antiseptic active.
+- **EU BPR:** Approved active substance under product types 1 (human hygiene), 2 (non-food disinfectant), 3 (veterinary hygiene), 4 (food and feed area).
+- **REACH (EU):** Pre-registered. Full registration available through EU representatives.
+- **Pharmacopoeia:** Compendial monographs in USP, NF, BP, EP (Ph. Eur.), IP (Indian Pharmacopoeia), JP (Japanese Pharmacopoeia).
+- **Cosmetics:** INCI 'Benzalkonium Chloride' (Cosmetics Europe Annex V).
+
+### BKC support pages on this site
+
+- [BKC 50% vs BKC 80% Comparison](https://www.vasudevchemopharma.com/benzalkonium-chloride-50-vs-80) — Active matter, freight, dilution math, brand equivalence
+- [BKC Uses & Applications Guide](https://www.vasudevchemopharma.com/bkc-uses-applications) — 12-application pillar/hub article
+- [BKC vs DDAC vs CTAB Comparison](https://www.vasudevchemopharma.com/bkc-vs-ddac-vs-ctab) — Quaternary ammonium compound chemistry decision guide
+- [Disinfectants & Sanitizers Application Page](https://www.vasudevchemopharma.com/applications/disinfectants-sanitizers)
+
 ## Industries We Serve
 
 - [Oil & Gas — H2S Scavenging](https://www.vasudevchemopharma.com/industries/oil-gas-h2s-scavenger) — Natural gas sweetening, crude oil sweetening, pipeline treatment.
@@ -105,6 +182,9 @@ Hydrotropes are short-chain aromatic sulfonate salts that increase the solubilit
 - [Refining](https://www.vasudevchemopharma.com/industries/refining) — Sour crude and refinery support chemicals.
 - [Biogas](https://www.vasudevchemopharma.com/industries/biogas) — Desulphurisation of landfill gas and digester gas.
 - [Paper Mill](https://www.vasudevchemopharma.com/industries/paper-mill) — Pulp and paper biocide applications.
+- [Healthcare & Sanitation](https://www.vasudevchemopharma.com/industries/healthcare-sanitation) — BKC for hospital surface disinfection, clinical sanitation, pharmaceutical preservation.
+- [Pool & Water Treatment](https://www.vasudevchemopharma.com/industries/pool-water-treatment) — BKC for swimming pool algicide, spa sanitiser, cooling tower biocide, HVAC water treatment.
+- [Personal Care & Cosmetics](https://www.vasudevchemopharma.com/industries/personal-care-cosmetics) — BKC for cosmetic preservation (CTFA / INCI), pharmaceutical preservation, hair conditioning.
 - [All Industries](https://www.vasudevchemopharma.com/industries)
 
 ## Application Pages

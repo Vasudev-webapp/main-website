@@ -25,4 +25,10 @@ export const PRODUCT_DIRECT_ANSWERS: Record<string, string> = {
 
   "mea-triazine-78-h2s-scavenger":
     "MEA Triazine 78% is a high-concentration monoethanolamine-based H2S scavenger (CAS 4719-04-4) used to remove hydrogen sulfide from natural gas, crude oil, and biogas. It reacts irreversibly with H2S to form stable thiadiazine byproducts, preventing equipment corrosion and ensuring personnel safety in oilfield, refinery, and wastewater treatment operations.",
+
+  "benzalkonium-chloride-50":
+    "Benzalkonium Chloride 50% (BKC 50%) is a 50 ± 1% aqueous solution of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5) — a broad-spectrum cationic surfactant and quaternary ammonium biocide. It is the global formulation standard for hospital surface disinfectants, food-and-beverage CIP/COP sanitation, swimming-pool algicides, cosmetic and pharmaceutical preservation, cooling-tower biocide, and agricultural disinfection.",
+
+  "benzalkonium-chloride-80":
+    "Benzalkonium Chloride 80% (BKC 80%) is the high-active 80 ± 1% aqueous concentrate of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5). It is the export-economical grade preferred by global disinfectant brands and sanitiser blenders who dilute on-site to 50%, 25%, or 10% — delivering 60% more active matter per kilogram shipped than BKC 50% and equivalent to Lonza Bardac® 2280 and Stepan BTC® 8358 reference grades.",
 };
