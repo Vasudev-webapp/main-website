@@ -40,9 +40,9 @@ export const PRODUCT_META_OVERRIDES: Record<string, ProductMetaOverride> = {
       "Di Ethyl Amino Ethyl Chloride HCl - pharma & industrial grade from ISO 9001 Gujarat manufacturer. Bulk export supply. Request COA & pricing today.",
   },
   "sodium-cumene-sulfonate-40": {
-    title: "Sodium Cumene Sulfonate 40% | SCS 40 Liquid",
+    title: "Sodium Cumene Sulfonate 40% Manufacturer in India | SCS 40 Liquid (CAS 28348-53-0)",
     description:
-      "Sodium Cumene Sulfonate 40% liquid (SCS 40, CAS 28348-53-0) hydrotrope for detergents, cleaners and agrochemicals. Request COA, sample and bulk quote.",
+      "Sodium Cumene Sulfonate 40% (SCS 40, CAS 28348-53-0) liquid hydrotrope from ISO 9001:2015 Gujarat manufacturer. Coupling agent for liquid detergents, dish wash, agrochemicals & cleaners. Bulk drum, IBC & ISO-tank export. Request COA, SDS, sample & quote in 24 hrs.",
   },
   "sodium-cumene-sulfonate-90": {
     title: "Sodium Cumene Sulfonate 90% Manufacturer | SCS 90% Powder",

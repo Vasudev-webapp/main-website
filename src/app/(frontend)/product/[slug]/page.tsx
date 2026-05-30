@@ -57,6 +57,16 @@ import {
   SXS_40_EXPORT_DOCS,
   SXS_40_MOQ_NOTE,
 } from "@/lib/seo/sxs-40-content";
+import {
+  SCS_40_SLUG,
+  SCS_40_CHEMICAL_IDENTIFIERS,
+  SCS_40_GENERIC_SYNONYMS,
+  SCS_40_TRADE_NAMES,
+  SCS_40_PURE_PROPERTIES,
+  SCS_40_APPLICATION_BLOCKS,
+  SCS_40_COMPARISON_TABLE,
+  SCS_40_REGULATORY_MATRIX,
+} from "@/lib/seo/scs-40-content";
 
 /* ─── ISR: revalidate product pages every hour ──────────────── */
 export const revalidate = 3600;
@@ -345,6 +355,7 @@ export default async function ProductDetailPage({
 
   const isMeaTriazine = slug === MEA_TRIAZINE_SLUG;
   const isSxs40 = slug === SXS_40_SLUG;
+  const isScs40 = slug === SCS_40_SLUG;
   const synonymData: {
     intro: string;
     groups: { heading: string; items: string[] }[];
@@ -360,12 +371,21 @@ export default async function ProductDetailPage({
   const searchConsoleIntentGuide = SEARCH_CONSOLE_INTENT_GUIDES[slug];
   const keywordContentSections = getProductKeywordContentSections(slug);
   const internalLinks = getProductInternalLinks(slug);
+  // FAQ priority:
+  //   1. Hand-curated PRODUCT_PAGE_FAQS (subject-first, fact-dense, AI-citation-ready)
+  //   2. PRODUCT_FALLBACK_FAQS (per-slug fallback set)
+  //   3. product.faqs from CMS (often auto-templated; weakest)
+  // Earlier we preferred CMS FAQs which surfaced low-quality
+  // auto-generated answers on SCS-40, MEA Triazine, etc. — that hurt
+  // both Google rankings and AI Overview eligibility.
   const faqItems =
-    product.faqs.length > 0
-      ? isSxs40
-        ? product.faqs
-        : product.faqs.slice(0, 6)
-      : productPageFaqs;
+    productPageFaqs.length > 0
+      ? productPageFaqs
+      : product.faqs.length > 0
+        ? isSxs40
+          ? product.faqs
+          : product.faqs.slice(0, 6)
+        : [];
   const categoryLabel = CATEGORY_LABELS[product.category];
   const relatedProducts = await getRelatedProducts(
     product.slug,
@@ -906,6 +926,191 @@ export default async function ProductDetailPage({
                   Sources: Atamanchemicals, Lobachemie technical data, ECHA
                   REACH dossier (EC 215-090-9), OECD 301B biodegradability test.
                 </p>
+              </div>
+            </section>
+          )}
+
+          {/* ─── SCS-40: CHEMICAL IDENTIFIERS & SYNONYMS ───────────────── */}
+          {isScs40 && (
+            <section id="identifiers" className="mb-16">
+              <h2 className="font-heading text-h3 text-primary mb-6">
+                Chemical Identifiers &amp; Synonyms
+              </h2>
+              <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-6">
+                Sodium Cumene Sulfonate 40% is referenced across formulation,
+                regulatory and customs systems by the identifiers below. Use
+                this table to match technical specifications, customs HS codes
+                and competitor brand names from any global source.
+              </p>
+
+              <div className="border border-gray-200 rounded-2xl overflow-hidden overflow-x-auto mb-8">
+                <table className="w-full text-sm min-w-[500px]">
+                  <thead>
+                    <tr className="bg-primary text-white">
+                      <th className="text-left px-5 py-3 font-semibold">Identifier</th>
+                      <th className="text-left px-5 py-3 font-semibold">Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {SCS_40_CHEMICAL_IDENTIFIERS.map((row, i) => (
+                      <tr
+                        key={row.label}
+                        className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}
+                      >
+                        <td className="px-5 py-3 font-medium text-gray-700">
+                          {row.label}
+                        </td>
+                        <td className="px-5 py-3 text-primary font-mono text-xs sm:text-sm break-all">
+                          {row.value}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="border border-gray-200 rounded-2xl p-6">
+                  <h3 className="font-heading text-h5 text-primary mb-4">
+                    Common Synonyms
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-600">
+                    {SCS_40_GENERIC_SYNONYMS.join(" · ")}
+                  </p>
+                </div>
+                <div className="border border-gray-200 rounded-2xl p-6 bg-light">
+                  <h3 className="font-heading text-h5 text-primary mb-4">
+                    Commercial Trade Names (Global Equivalents)
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-600">
+                    Formulators worldwide reference Sodium Cumene Sulfonate 40%
+                    under multiple supplier brand names, all sharing CAS
+                    28348-53-0:{" "}
+                    <strong className="text-primary">
+                      {SCS_40_TRADE_NAMES.join(", ")}
+                    </strong>
+                    . Vasudev Chemo Pharma supplies the same chemistry under
+                    SKU{" "}
+                    <strong className="text-accent">VCP-SFC-0001</strong> with
+                    COA-verified 39 – 41% active matter.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 border border-gray-200 rounded-2xl p-6">
+                <h3 className="font-heading text-h5 text-primary mb-4">
+                  Pure Sodium Cumene Sulfonate — Reference Properties
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm min-w-[480px]">
+                    <tbody>
+                      {SCS_40_PURE_PROPERTIES.map((row, i) => (
+                        <tr
+                          key={row.label}
+                          className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}
+                        >
+                          <td className="px-5 py-3 font-medium text-gray-700">
+                            {row.label}
+                          </td>
+                          <td className="px-5 py-3 text-primary">
+                            {row.value}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-gray-400 italic mt-4">
+                  Sources: ChemicalBook (CB8506326), ECHA REACH dossier (EC
+                  248-983-7), OECD SIDS Hydrotropes 2005, Stepanate SCS-40 TDS,
+                  Atamankimya Sodium Cumenesulfonate technical data.
+                </p>
+              </div>
+
+              <div className="mt-6 border border-gray-200 rounded-2xl p-6">
+                <h3 className="font-heading text-h5 text-primary mb-4">
+                  Application Areas — Detailed
+                </h3>
+                <div className="space-y-6">
+                  {SCS_40_APPLICATION_BLOCKS.map((block) => (
+                    <div key={block.heading}>
+                      <h4 className="font-heading text-base font-semibold text-primary mb-2">
+                        {block.heading}
+                      </h4>
+                      <p className="text-sm leading-relaxed text-gray-700 mb-2">
+                        {block.paragraph}
+                      </p>
+                      <ul className="ml-4 space-y-1">
+                        {block.bullets.map((b) => (
+                          <li
+                            key={b}
+                            className="text-sm leading-relaxed text-gray-600 list-disc list-outside"
+                          >
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-6 border border-gray-200 rounded-2xl p-6 bg-light">
+                <h3 className="font-heading text-h5 text-primary mb-4">
+                  SCS 40 vs SCS 90 vs SXS 40 — Side-by-Side
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm min-w-[640px]">
+                    <thead>
+                      <tr className="bg-primary text-white">
+                        <th className="text-left px-4 py-3 font-semibold">Attribute</th>
+                        <th className="text-left px-4 py-3 font-semibold">SCS 40 (this product)</th>
+                        <th className="text-left px-4 py-3 font-semibold">SCS 90</th>
+                        <th className="text-left px-4 py-3 font-semibold">SXS 40</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {SCS_40_COMPARISON_TABLE.map((row, i) => (
+                        <tr
+                          key={row.attribute}
+                          className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}
+                        >
+                          <td className="px-4 py-3 font-medium text-gray-700">
+                            {row.attribute}
+                          </td>
+                          <td className="px-4 py-3 text-primary">{row.scs40}</td>
+                          <td className="px-4 py-3 text-gray-600">{row.scs90}</td>
+                          <td className="px-4 py-3 text-gray-600">{row.sxs40}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="mt-6 border border-gray-200 rounded-2xl p-6">
+                <h3 className="font-heading text-h5 text-primary mb-4">
+                  Regulatory Inventory Status
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm min-w-[480px]">
+                    <tbody>
+                      {SCS_40_REGULATORY_MATRIX.map((row, i) => (
+                        <tr
+                          key={row.label}
+                          className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}
+                        >
+                          <td className="px-5 py-3 font-medium text-gray-700 w-48 align-top">
+                            {row.label}
+                          </td>
+                          <td className="px-5 py-3 text-gray-700">
+                            {row.value}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </section>
           )}

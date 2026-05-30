@@ -8,6 +8,10 @@ import {
   SXS_40_SLUG,
   SXS_40_SCHEMA_ENRICHMENT,
 } from "@/lib/seo/sxs-40-content";
+import {
+  SCS_40_SLUG,
+  SCS_40_SCHEMA_ENRICHMENT,
+} from "@/lib/seo/scs-40-content";
 
 
 type ProductSchemaProps = {
@@ -43,6 +47,7 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
   const hasPrice = typeof product.price === "number" && Number.isFinite(product.price) && product.price > 0;
   const isEnrichedSlug = product.slug === MEA_TRIAZINE_SLUG;
   const isSxs40 = product.slug === SXS_40_SLUG;
+  const isScs40 = product.slug === SCS_40_SLUG;
 
   /* --- Base Product schema (all products) --- */
   const productSchema: Record<string, unknown> = {
@@ -148,6 +153,49 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
     ];
   }
 
+  /* --- Slug-specific enrichment (Sodium Cumene Sulfonate 40%) --- */
+  if (isScs40) {
+    const scsEnrichment = SCS_40_SCHEMA_ENRICHMENT;
+    productSchema.alternateName = [...scsEnrichment.alternateName];
+    productSchema.category = scsEnrichment.category;
+    productSchema.countryOfOrigin = scsEnrichment.countryOfOrigin;
+    productSchema.mpn = "VCP-SFC-0001";
+    productSchema.additionalProperty = [
+      ...scsEnrichment.identifierProperties.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+      ...scsEnrichment.additionalProperty.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+    ];
+    productSchema.audience = {
+      "@type": "BusinessAudience",
+      audienceType:
+        "Detergent manufacturers, dish wash & laundry formulators, personal care formulators, agrochemical formulators, oilfield service companies, metal-processing & electroplating chemical formulators",
+    };
+    productSchema.areaServed = [
+      "India",
+      "United Arab Emirates",
+      "Saudi Arabia",
+      "Qatar",
+      "Oman",
+      "Kuwait",
+      "Iraq",
+      "Egypt",
+      "United States",
+      "Vietnam",
+      "Thailand",
+      "Indonesia",
+      "Brazil",
+      "South Africa",
+      "Türkiye",
+    ];
+  }
+
   /* --- H2S Scavenger / Biocide category enrichment (slug-driven) --- */
   const H2S_CATEGORY_SLUGS = [
     "mma-triazine-40",
@@ -240,6 +288,36 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
         value: sxsEnrichment.smiles,
       },
       ...sxsEnrichment.additionalProperty.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+    ];
+  }
+
+  /* --- Slug-specific ChemicalSubstance enrichment (SCS 40%) --- */
+  if (isScs40) {
+    const scsEnrichment = SCS_40_SCHEMA_ENRICHMENT;
+    chemicalSchema.alternateName = [...scsEnrichment.alternateName];
+    chemicalSchema.iupacName = scsEnrichment.iupacName;
+    chemicalSchema.molecularWeight = "222.24 g/mol";
+    chemicalSchema.identifier = scsEnrichment.identifierProperties.map((p) => ({
+      "@type": "PropertyValue",
+      name: p.name,
+      value: p.value,
+    }));
+    chemicalSchema.additionalProperty = [
+      {
+        "@type": "PropertyValue",
+        name: "InChI Key",
+        value: scsEnrichment.inChIKey,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "SMILES",
+        value: scsEnrichment.smiles,
+      },
+      ...scsEnrichment.additionalProperty.map((p) => ({
         "@type": "PropertyValue",
         name: p.name,
         value: p.value,

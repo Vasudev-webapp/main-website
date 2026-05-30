@@ -156,9 +156,9 @@ export const PAGE_META_OVERRIDES: Record<string, PageMetaOverride> = {
   },
   "/product/sodium-cumene-sulfonate-40": {
     h1: "Sodium Cumene Sulfonate 40%",
-    title: "Sodium Cumene Sulfonate 40% | SCS 40 Liquid",
+    title: "Sodium Cumene Sulfonate 40% Manufacturer in India | SCS 40 Liquid (CAS 28348-53-0)",
     description:
-      "Sodium Cumene Sulfonate 40% liquid (SCS 40, CAS 28348-53-0) hydrotrope for detergents, cleaners and agrochemicals. Request COA, sample and bulk quote.",
+      "Sodium Cumene Sulfonate 40% (SCS 40, CAS 28348-53-0) liquid hydrotrope from ISO 9001:2015 Gujarat manufacturer. Coupling agent for liquid detergents, dish wash, agrochemicals & cleaners. Bulk drum, IBC & ISO-tank export. Request COA, SDS, sample & quote in 24 hrs.",
   },
   "/product/sodium-cumene-sulfonate-90": {
     h1: "Sodium Cumene Sulfonate 90%",
