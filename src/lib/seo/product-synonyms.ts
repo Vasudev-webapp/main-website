@@ -628,3 +628,59 @@ export const BENZALKONIUM_CHLORIDE_SYNONYMS: ProductSynonyms = {
   closingText:
     "If your specification, purchase order, MSDS, formulation manual, or regulatory filing lists any of the above names, abbreviations, brand equivalents, or pharmacopoeia references, Vasudev Chemo Pharma can supply the matching product. Both BKC 50% and BKC 80% are available in Industrial / Technical Grade, Cosmetic Grade (CTFA-compliant), and Disinfectant Grade (suitable for EPA-registered formulators), with ISO 9001:2015, GMP, and Halal certification. Contact us for COA, SDS, samples, and trade-equivalence confirmation.",
 };
+
+export const SODIUM_XYLENE_SULFONATE_SYNONYMS: ProductSynonyms = {
+  intro:
+    "Sodium Xylene Sulfonate (SXS) is referenced across formulation, regulatory and customs systems by multiple chemical names, trade equivalents, and brand names. Our product is the same active substance regardless of your specification requirements:",
+  groups: [
+    {
+      heading: "IUPAC and Chemical Names",
+      items: [
+        "Sodium xylenesulfonate",
+        "Sodium xylene sulphonate",
+        "Sodium dimethylbenzenesulfonate",
+        "3,4-Xylenesulfonic acid sodium salt",
+        "Sodium o-xylene-4-sulfonate",
+        "Xylenesulfonic acid sodium salt",
+        "Dimethylbenzenesulfonic acid sodium salt",
+        "SXS",
+        "SXS-40",
+        "SXS 40%",
+        "SXS-90",
+        "SXS 90%",
+      ],
+    },
+    {
+      heading: "Trade Names and Brand Equivalents",
+      items: [
+        "Naxonate",
+        "Naxonate G",
+        "Naxonate SX",
+        "Stepanate X",
+        "Stepanate SXS",
+        "Richonate SXS",
+        "Cyclophil SXS 30",
+        "Conco SXS",
+        "Surco SXS",
+        "Ultrawet 40SX",
+        "Eltesol SX 30",
+        "Eltesol SX 93",
+        "Witconate SXS",
+        "Calsoft SXS 96",
+        "Reworyl NXS40",
+        "Alkatrope SX-40",
+        "Carsosulf SXS",
+        "Kemmat SN 18",
+        "Spolapon XS NaP",
+        "ELSURFAC™-NaXS",
+        "GARDILENE SX40AU",
+        "Kualimate SXS 40",
+        "Zeonol 40",
+        "DOLSX-40",
+      ],
+    },
+  ],
+  casNote: "CAS Number: 1300-72-7 | EINECS: 215-090-9 | HS Code: 29041090",
+  closingText:
+    "If your specification, MSDS, formulation manual, or customs filing lists any of the above names or the CAS number 1300-72-7, Vasudev Chemo Pharma can supply the matching product. We provide both 40% liquid and 90% powder grades in bulk drums, IBC totes, and container loads. Contact us for COA, SDS, samples, and specification alignment.",
+};

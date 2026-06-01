@@ -63,7 +63,7 @@ export default function ProductImageGallery({
       seenImages.add(trimmed);
       const trimmedAlt = (alt || "").trim();
       const fallbackAlt = positionLabel
-        ? `${altBase} â€” ${positionLabel}`
+        ? `${altBase} — ${positionLabel}`
         : altBase;
       items.push({
         kind: "image",

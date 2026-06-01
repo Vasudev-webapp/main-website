@@ -74,16 +74,16 @@ export const MEA_TRIAZINE_METADATA = {
   description:
     "MEA Triazine (Monoethanolamine Triazine) is a highly effective H2S scavenger for oil & gas, wastewater, and biogas. Protect infrastructure and ensure safety with our premium quality MEA Triazine 78%.",
   openGraphDescription:
-    "MEA Triazine 78% H2S Scavenger â€” highly effective for natural gas, crude oil, and biogas purification. Protects equipment from corrosion and ensures personnel safety.",
+    "MEA Triazine 78% H2S Scavenger — highly effective for natural gas, crude oil, and biogas purification. Protects equipment from corrosion and ensures personnel safety.",
   twitterDescription:
-    "MEA Triazine 78% â€” The preferred H2S scavenger for oil & gas, wastewater treatment, and biogas purification. Premium quality manufacturer supply from India.",
+    "MEA Triazine 78% — The preferred H2S scavenger for oil & gas, wastewater treatment, and biogas purification. Premium quality manufacturer supply from India.",
 } as const;
 
 export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
   description:
     "MEA Triazine (Monoethanolamine Triazine, CAS 4719-04-4) is a highly effective chemical compound used to scavenge hydrogen sulfide (H2S) in oil and gas, wastewater treatment, and biogas purification. It reacts quickly to form stable, non-corrosive byproducts, enhancing operational efficiency and safety.",
   alternateName: [
-    /* â”€â”€ IUPAC / Chemical Synonyms â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── IUPAC / Chemical Synonyms ────────────────────────── */
     "Monoethanolamine Triazine 78%",
     "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine",
     "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine 78%",
@@ -100,7 +100,7 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "1,3,5-Tris(2-hydroxyethyl)hexahydro-1,3,5-triazine",
     "s-Triazine-1,3,5-triethanol",
     "J2.219E",
-    /* â”€â”€ Generic / Search Names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Generic / Search Names ───────────────────────────── */
     "H2S Scavengers Chemicals",
     "Triazine H2S Scavenger",
     "MEA Based Triazine",
@@ -115,7 +115,7 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "Hydrogen Sulfide Scavenger",
     "Triazine Scavenger",
     "High Purity Triazine",
-    /* â”€â”€ Application-Based Synonyms â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Application-Based Synonyms ───────────────────────── */
     "H2S Scavenger",
     "Desulfurizer",
     "Gas Sweetener",
@@ -133,7 +133,7 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "Anti-mildew Agent",
     "H2S Scavenger (Triazine based)",
     "Oil Drilling Fluid",
-    /* â”€â”€ Competitor / Trade Names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Competitor / Trade Names ─────────────────────────── */
     "Grotan HD",
     "Grotan BK",
     "Grotan B",
@@ -186,17 +186,17 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "Miliden X-2",
     "Scavtreat",
     "Syntan OXB",
-    /* â”€â”€ Vietnamese-language names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Vietnamese-language names ───────────────────────── */
     "Cháº¥t háº¥p thá»¥ H2S Triazine",
-    "HÃ³a cháº¥t khá»­ hydro sulfide MEA Triazine",
-    "HÃ³a cháº¥t xá»­ lÃ½ khÃ­ chua Triazine",
-    "Cháº¥t khá»­ lÆ°u huá»³nh MEA Triazine",
-    /* â”€â”€ Vietnam-market brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    "Hóa cháº¥t khá»­ hydro sulfide MEA Triazine",
+    "Hóa cháº¥t xá»­ lý khí chua Triazine",
+    "Cháº¥t khá»­ lưu huá»³nh MEA Triazine",
+    /* ── Vietnam-market brand names ──────────────────────── */
     "Dayong MEA Triazine",
     "IRO MEA Triazine",
     "H2S Scavenger Conc",
     "JDC H2S Scavenger",
-    /* â”€â”€ USA-market brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── USA-market brand names ──────────────────────────── */
     "Pro3",
     "Pro3 HT",
     "Pro3 GT",
@@ -211,14 +211,14 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "Kontin",
     "HS-1526-40",
     "Sulfa-Check",
-    /* â”€â”€ UAE/GCC-market brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── UAE/GCC-market brand names ──────────────────────── */
     "RXSOL-43-8160-210",
     "RXSOL Triazine Based Biocide",
     "STEPANQUAT 200",
     "JadeScan56",
     "SP-BIO-TZ",
     "SINE PF77",
-    /* â”€â”€ Oman-market brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Oman-market brand names ────────────────────────── */
     "RXSOL H2S Scavenger (RXSOL-11-5014-210)",
     "MC MX 2-1106",
     "SULFA-CLEAR 8411HC",
@@ -227,19 +227,19 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "MBBT H2S Scavenger",
     "OOISS Triazine",
     "ICPL Triazine H2S Scavenger",
-    /* â”€â”€ Arabic-language names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Arabic-language names ───────────────────────────── */
     "Ù…Ø²ÙŠÙ„ ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† (H2S Scavenger)",
     "ÙƒØ§Ø³Ø­ H2S (H2S Scavenger)",
     "Ù…Ø§Ø¯Ø© Ø¥Ø²Ø§Ù„Ø© ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† (H2S Removal Substance)",
     "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ (Sour Gas Treatment)",
     "ÙƒÙŠÙ…Ø§ÙˆÙŠØ§Øª Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· (Oilfield Chemicals)",
-    /* â”€â”€ Oman Arabic-language names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Oman Arabic-language names ─────────────────────── */
     "ÙƒØ§Ø³Ø­ ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† Ø¹ÙÙ…Ø§Ù† (H2S Scavenger Oman)",
     "Ù…ÙˆØ±Ø¯ Ù…ÙˆØ§Ø¯ ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠØ© Ù„Ø¥Ø²Ø§Ù„Ø© H2S ÙÙŠ Ø¹Ù…Ø§Ù† (H2S Chemical Supplier Oman)",
     "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ø¹ÙÙ…Ø§Ù† (Sour Gas Treatment Oman)",
     "Ù…ÙˆØ§Ø¯ ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠØ© Ù„Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· Ø¹ÙÙ…Ø§Ù† (Oilfield Chemicals Oman)",
     "ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† Ù„Ø¥Ø²Ø§Ù„Ø© ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† (Triazine for H2S Removal)",
-    /* â”€â”€ Egypt-market brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Egypt-market brand names ───────────────────────── */
     "ACPA H2S Scavenger",
     "AquaNile H2S Scavenger",
     "MPC H2S Scavenger (Alamia Oil Services)",
@@ -248,13 +248,13 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "Filtron H2S Scavenger",
     "CACIDE 301",
     "SDM CIDE",
-    /* â”€â”€ Egypt Arabic-language names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Egypt Arabic-language names ────────────────────── */
     "Ù…Ø§Ø¯Ø© ÙƒØ§Ø³Ø­Ø© Ù„ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† Ù…ØµØ± (H2S Scavenger Egypt)",
     "Ù…ÙˆØ±Ø¯ ÙƒÙŠÙ…Ø§ÙˆÙŠØ§Øª Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· Ù…ØµØ± (Oilfield Chemical Supplier Egypt)",
     "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ù…ØµØ± (Sour Gas Treatment Egypt)",
     "ÙƒØ§Ø³Ø­ ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† Ù…ØµØ± (H2S Scavenger Egypt)",
     "Ù…ÙˆØ±Ø¯ ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† Ù…ØµØ± (Triazine Supplier Egypt)",
-    /* â”€â”€ Brazil-market brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Brazil-market brand names ──────────────────────── */
     "Global Trend MEA-Triazina 78%",
     "SCAVTREAT 1063 (Clariant)",
     "ABATE S-200 Scavenger (Dow)",
@@ -264,13 +264,13 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "SLB Triazine H2S Scavenger",
     "Nalco/Ecolab H2S Scavenger",
     "Foscote MEA",
-    /* â”€â”€ Portuguese-language names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Portuguese-language names ─────────────────────── */
     "removedor de H2S triazina MEA (H2S Remover MEA Triazine)",
-    "captador de sulfeto de hidrogÃªnio (Hydrogen Sulfide Scavenger)",
+    "captador de sulfeto de hidrogênio (Hydrogen Sulfide Scavenger)",
     "triazina MEA 78% (MEA Triazine 78%)",
     "sequestrante de H2S triazina (H2S Sequestrant Triazine)",
-    "tratamento de gÃ¡s Ã¡cido triazina (Sour Gas Treatment Triazine)",
-    /* â”€â”€ Saudi Arabia brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    "tratamento de gás ácido triazina (Sour Gas Treatment Triazine)",
+    /* ── Saudi Arabia brand names ──────────────────────── */
     "Chemara HS-1501 (Saudi Multichem)",
     "G-SCAV Triazine 78% (Jubail)",
     "SUGEST H2S Scavenger",
@@ -282,13 +282,13 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "Cola Triazine 50 ME (Colonial Chemical)",
     "HME-FILM MEA Triazine (MED Drilling Fluids)",
     "DubiChem Triazine Biocide",
-    /* â”€â”€ Saudi Arabic-language names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Saudi Arabic-language names ───────────────────── */
     "Ù…Ø²ÙŠÙ„ ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† Ø§Ù„Ø³Ø¹ÙˆØ¯ÙŠØ© (H2S Remover Triazine Saudi Arabia)",
     "ÙƒØ§Ø³Ø­ H2S ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† Ø§Ù„Ù…Ù…Ù„ÙƒØ© Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© Ø§Ù„Ø³Ø¹ÙˆØ¯ÙŠØ© (H2S Scavenger Triazine KSA)",
     "Ù…ÙˆØ±Ø¯ ÙƒÙŠÙ…Ø§ÙˆÙŠØ§Øª Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· Ø§Ù„Ø³Ø¹ÙˆØ¯ÙŠØ© (Oilfield Chemical Supplier KSA)",
     "Ù…Ø§Ø¯Ø© Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† (Sour Gas Treatment Triazine)",
     "ÙƒØ§Ø³Ø­ ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† Ø£Ø±Ø§Ù…ÙƒÙˆ (H2S Scavenger Aramco)",
-    /* â”€â”€ Iraq brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Iraq brand names ────────────────────────────── */
     "Tawreed H2S Scavenger (Baghdad)",
     "ALDUHA H2S Scavenger (Basra)",
     "SAHARA MEA Triazine (North Rumaila)",
@@ -300,13 +300,13 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "ATDMCO MEA (UAE/Turkey)",
     "TAQA Group Chemicals",
     "Falizan HS-9003 (Iran)",
-    /* â”€â”€ Iraqi Arabic-language names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Iraqi Arabic-language names ───────────────────── */
     "ÙƒØ§Ø³Ø­ ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† Ø§Ù„Ø¹Ø±Ø§Ù‚ (H2S Scavenger Iraq)",
     "Ù…ÙˆØ±Ø¯ ÙƒÙŠÙ…Ø§ÙˆÙŠØ§Øª Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· Ø§Ù„Ø¹Ø±Ø§Ù‚ (Oilfield Chemical Supplier Iraq)",
     "Ù…ÙˆØ±Ø¯ ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† Ø§Ù„Ø¨ØµØ±Ø© (Triazine Supplier Basra)",
     "ÙƒØ§Ø³Ø­ H2S Ø­Ù‚Ù„ Ø§Ù„Ø±Ù…ÙŠÙ„Ø© (H2S Scavenger Rumaila Field)",
     "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ø§Ù„Ø¹Ø±Ø§Ù‚ (Sour Gas Treatment Iraq)",
-    /* â”€â”€ Qatar-market brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Qatar-market brand names ────────────────────────── */
     "BKC Gulf Triazine Scavenger",
     "Deluxe MEA (Qatar)",
     "Chemway MEA Triazine",
@@ -315,14 +315,14 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "Halliburton Triazine (Qatar)",
     "HS-1526-40 Triazine (Univar)",
     "K2P MEA-T Scavenger",
-    /* â”€â”€ Qatar Arabic-language names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Qatar Arabic-language names ───────────────────── */
     "ÙƒØ§Ø³Ø­ ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† Ù‚Ø·Ø± (H2S Scavenger Qatar)",
     "Ù…ÙˆØ±Ø¯ ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† Ù‚Ø·Ø± (Triazine Supplier Qatar)",
     "Ù…ÙˆØ±Ø¯ Ù…ÙˆØ§Ø¯ ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠØ© Ù„Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ù‚Ø·Ø± (Gas Treatment Chemical Supplier Qatar)",
     "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ù‚Ø·Ø± (Sour Gas Treatment Qatar)",
     "ÙƒÙŠÙ…Ø§ÙˆÙŠØ§Øª Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· Ù‚Ø·Ø± (Oilfield Chemicals Qatar)",
     "ÙƒØ§Ø³Ø­ H2S Ø­Ù‚Ù„ Ø§Ù„Ø´Ù…Ø§Ù„ (H2S Scavenger North Field)",
-    /* â”€â”€ Kuwait-market brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Kuwait-market brand names ────────────────────────── */
     "Bait Al Aseel H2S Scavenger (Kuwait)",
     "DK Petrochemicals MEA (Kuwait)",
     "HME-FILM MEA Triazine (MED Drilling, GCC)",
@@ -330,33 +330,33 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     "Xipeng MEA Triazine 78% (China)",
     "Sarex HPT Triazine (India)",
     "Dorf Ketal H2S Scavenger (Kuwait KOC)",
-    /* â”€â”€ Kuwait Arabic-language names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Kuwait Arabic-language names ─────────────────────── */
     "ÙƒØ§Ø³Ø­ ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† Ø§Ù„ÙƒÙˆÙŠØª (H2S Scavenger Kuwait)",
     "Ù…ÙˆØ±Ø¯ ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† Ø§Ù„ÙƒÙˆÙŠØª (Triazine Supplier Kuwait)",
     "Ù…Ø§Ø¯Ø© Ø¥Ø²Ø§Ù„Ø© H2S Ù„Ø­Ù‚ÙˆÙ„ Ù†ÙØ· Ø§Ù„ÙƒÙˆÙŠØª (H2S Removal Kuwait Oilfields)",
     "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ø§Ù„ÙƒÙˆÙŠØª (Sour Gas Treatment Kuwait)",
     "ÙƒÙŠÙ…Ø§ÙˆÙŠØ§Øª Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· Ø§Ù„ÙƒÙˆÙŠØª (Oilfield Chemicals Kuwait)",
-    /* â”€â”€ Thailand-market brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Thailand-market brand names ─────────────────────── */
     "Brenntag MEA (Thailand)",
     "PTT GC MEA (Thailand)",
     "Krungthep Trading MEA (Thailand)",
     "Borregaard H2S Scavenger (Norway)",
     "ECHEMI MEA Triazine 78% (China)",
     "Chemipan MEA (Thailand retail)",
-    /* â”€â”€ Thai-language names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Thai-language names ───────────────────────────── */
     "à¸ªà¸²à¸£à¸à¸³à¸ˆà¸±à¸” H2S à¹„à¸•à¸£à¸­à¸°à¸‹à¸µà¸™ (H2S Scavenger Triazine)",
     "à¸ªà¸²à¸£à¸”à¸±à¸à¸ˆà¸±à¸šà¹„à¸®à¹‚à¸”à¸£à¹€à¸ˆà¸™à¸‹à¸±à¸¥à¹„à¸Ÿà¸”à¹Œ (Hydrogen Sulfide Scavenger)",
     "à¸ªà¸²à¸£à¸šà¸³à¸šà¸±à¸”à¸à¹Šà¸²à¸‹à¹€à¸›à¸£à¸µà¹‰à¸¢à¸§ (Sour Gas Treatment Agent)",
-    "à¹€à¸„à¸¡à¸µà¸ à¸±à¸“à¸‘à¹Œà¸ªà¸³à¸«à¸£à¸±à¸šà¸­à¸¸à¸•à¸ªà¸²à¸«à¸à¸£à¸£à¸¡à¸™à¹‰à¸³à¸¡à¸±à¸™à¹à¸¥à¸°à¹à¸à¹Šà¸ª (Oil & Gas Industry Chemicals)",
-    "à¸ªà¸²à¸£à¹€à¸„à¸¡à¸µà¸‚à¸ˆà¸±à¸”à¹„à¸®à¹‚à¸”à¸£à¹€à¸ˆà¸™à¸‹à¸±à¸¥à¹„à¸Ÿà¸”à¹Œà¸à¹Šà¸²à¸‹à¸Šà¸µà¸§à¸ à¸²à¸ž (Biogas H2S Removal)",
-    /* â”€â”€ Iran-market brand names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    "à¹€à¸„à¸¡à¸µà¸ à¸±à¸“à¸‘à¹Œà¸ªà¸³à¸«à¸£à¸±à¸šà¸­à¸¸à¸•à¸ªà¸²à¸«à¸à¸£à¸£à¸¡à¸™à¹‰à¸³à¸¡à¸±à¸™à¹à¸¥à¸°à¹à¸à¹Šà¸ª (Oil & Gas Industry Chemicals)",
+    "à¸ªà¸²à¸£à¹€à¸„à¸¡à¸µà¸‚à¸ˆà¸±à¸”à¹„à¸®à¹‚à¸”à¸£à¹€à¸ˆà¸™à¸‹à¸±à¸¥à¹„à¸Ÿà¸”à¹Œà¸à¹Šà¸²à¸‹à¸Šà¸µà¸§à¸ à¸²à¸ž (Biogas H2S Removal)",
+    /* ── Iran-market brand names ────────────────────────── */
     "Tsorb3400 (Tasfyeh Group, Iran)",
     "Tasfyeh MEA Triazine 80% (Iran)",
     "Chemical Iran MEA (Tehran)",
     "IranChemicalMine MEA (Iran)",
-    "Triasorb (Sintez-Oka, Russia â€” Iran supply)",
+    "Triasorb (Sintez-Oka, Russia — Iran supply)",
     "Sarex HPT Triazine (India export)",
-    /* â”€â”€ Farsi (Persian) names â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── Farsi (Persian) names ────────────────────────── */
     "Ø­Ø°Ùâ€ŒÚ©Ù†Ù†Ø¯Ù‡ H2S ØªØ±ÛŒâ€ŒØ¢Ø²ÛŒÙ† (H2S Scavenger Triazine)",
     "Ø­Ø°Ùâ€ŒÚ©Ù†Ù†Ø¯Ù‡ Ø³ÙˆÙ„ÙÛŒØ¯ Ù‡ÛŒØ¯Ø±ÙˆÚ˜Ù† Ø§ÛŒØ±Ø§Ù† (H2S Scavenger Iran)",
     "ØªØ±ÛŒâ€ŒØ¢Ø²ÛŒÙ† ØªØ£Ù…ÛŒÙ†â€ŒÚ©Ù†Ù†Ø¯Ù‡ Ø§ÛŒØ±Ø§Ù† (Triazine Supplier Iran)",
@@ -382,8 +382,8 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
     { "@type": "PropertyValue" as const, name: "Appearance", value: "Clear to light yellow liquid" },
     { "@type": "PropertyValue" as const, name: "pH", value: "9.5-11.0" },
     { "@type": "PropertyValue" as const, name: "Shelf Life", value: "12 months" },
-    { "@type": "PropertyValue" as const, name: "Flash Point", value: ">93 Â°C (>200 Â°F)" },
-    { "@type": "PropertyValue" as const, name: "Density", value: "~1.10 g/mL at 20 Â°C" },
+    { "@type": "PropertyValue" as const, name: "Flash Point", value: ">93 °C (>200 °F)" },
+    { "@type": "PropertyValue" as const, name: "Density", value: "~1.10 g/mL at 20 °C" },
     { "@type": "PropertyValue" as const, name: "Solubility", value: "Fully miscible with water" },
   ],
 } as const;
@@ -432,7 +432,7 @@ export const MEA_TRIAZINE_COMPARISON = [
  * Use for geo-targeted SEO, FAQ schema, and landing-page generation.
  */
 export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
-  /* â”€â”€ USA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── USA ────────────────────────────────────────────────── */
   { keyword: "Triazine Scavenger", country: "United States" },
   { keyword: "MEA Triazine", country: "United States" },
   { keyword: "MEA-triazine Blends", country: "United States" },
@@ -472,7 +472,7 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "MEA triazine TSCA listed", country: "United States" },
   { keyword: "triazine dosing rate calculator", country: "United States" },
   { keyword: "MEA triazine CIF Houston", country: "United States" },
-  /* â”€â”€ India â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── India ──────────────────────────────────────────────── */
   { keyword: "JadeScan54", country: "India" },
   { keyword: "Triazine Based H2S Scavenging Chemical", country: "India" },
   { keyword: "MEA Triazine 78% H2S Scavenger", country: "India" },
@@ -480,7 +480,7 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "Kalpur TE", country: "India" },
   { keyword: "MEA Triazine / JDC H2S Scavenger", country: "India" },
   { keyword: "SP-BIO-TZ", country: "India" },
-  /* â”€â”€ China â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── China ──────────────────────────────────────────────── */
   { keyword: "MEA Triazine 78%", country: "China" },
   { keyword: "MEA Triazine 78", country: "China" },
   { keyword: "BK Biocide", country: "China" },
@@ -502,11 +502,11 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "s-Triazine-1,3,5-triethanol", country: "China" },
   { keyword: "MEA Triazine Actane", country: "China" },
   { keyword: "Oil Drilling Fluid", country: "China" },
-  /* â”€â”€ Saudi Arabia â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Saudi Arabia ───────────────────────────────────────── */
   { keyword: "Triazine Scavenger", country: "Saudi Arabia" },
   { keyword: "MEA Triazine 78%", country: "Saudi Arabia" },
   { keyword: "G-SCAV EA77", country: "Saudi Arabia" },
-  /* â”€â”€ Germany â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Germany ────────────────────────────────────────────── */
   { keyword: "Grotan HD", country: "Germany" },
   { keyword: "Grotan BK", country: "Germany" },
   { keyword: "Grotanol", country: "Germany" },
@@ -516,41 +516,41 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "KM 200", country: "Germany" },
   { keyword: "Dodigen NJ", country: "Germany" },
   { keyword: "Ottaform 204", country: "Germany" },
-  /* â”€â”€ UK â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── UK ─────────────────────────────────────────────────── */
   { keyword: "Acticide GR", country: "United Kingdom" },
   { keyword: "Amebact C", country: "United Kingdom" },
-  /* â”€â”€ Spain â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Spain ──────────────────────────────────────────────── */
   { keyword: "MEA Triazine 78%", country: "Spain" },
-  /* â”€â”€ Italy â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Italy ──────────────────────────────────────────────── */
   { keyword: "MEA Triazine 78%", country: "Italy" },
-  /* â”€â”€ Switzerland â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Switzerland ────────────────────────────────────────── */
   { keyword: "Nipacide BK", country: "Switzerland" },
   { keyword: "Triadine 3", country: "Switzerland" },
-  /* â”€â”€ Poland / Eastern Europe â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Poland / Eastern Europe ────────────────────────────── */
   { keyword: "Roksol T", country: "Poland" },
-  /* â”€â”€ Canada â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Canada ─────────────────────────────────────────────── */
   { keyword: "Permachem OB 2", country: "Canada" },
-  /* â”€â”€ Europe (multi-country) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Europe (multi-country) ─────────────────────────────── */
   { keyword: "Bactraclean", country: "Europe" },
   { keyword: "ETA 75", country: "Europe" },
   { keyword: "Acticide HHB", country: "Germany" },
-  /* â”€â”€ Vietnam â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Vietnam ──────────────────────────────────────────────── */
   { keyword: "MEA Triazine 78% Vietnam", country: "Vietnam" },
   { keyword: "H2S scavenger supplier Vietnam", country: "Vietnam" },
   { keyword: "cháº¥t háº¥p thá»¥ H2S triazine", country: "Vietnam" },
-  { keyword: "hÃ³a cháº¥t khá»­ hydro sulfide", country: "Vietnam" },
-  { keyword: "hÃ³a cháº¥t xá»­ lÃ½ khÃ­ chua triazine", country: "Vietnam" },
+  { keyword: "hóa cháº¥t khá»­ hydro sulfide", country: "Vietnam" },
+  { keyword: "hóa cháº¥t xá»­ lý khí chua triazine", country: "Vietnam" },
   { keyword: "triazine supplier Ho Chi Minh City", country: "Vietnam" },
   { keyword: "MEA Triazine import Vietnam", country: "Vietnam" },
   { keyword: "BK Biocide Vietnam", country: "Vietnam" },
   { keyword: "PetroVietnam H2S scavenger", country: "Vietnam" },
   { keyword: "oilfield chemicals Vietnam", country: "Vietnam" },
-  { keyword: "nhÃ  cung cáº¥p MEA triazine Viá»‡t Nam", country: "Vietnam" },
-  { keyword: "cháº¥t khá»­ H2S cho dáº§u khÃ­", country: "Vietnam" },
+  { keyword: "nhà cung cáº¥p MEA triazine Viá»‡t Nam", country: "Vietnam" },
+  { keyword: "cháº¥t khá»­ H2S cho dáº§u khí", country: "Vietnam" },
   { keyword: "MEA Triazine CIF Cat Lai", country: "Vietnam" },
   { keyword: "Dayong MEA Triazine", country: "Vietnam" },
   { keyword: "Grotan BK equivalent Vietnam", country: "Vietnam" },
-  /* â”€â”€ UAE / GCC â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── UAE / GCC ────────────────────────────────────────────── */
   { keyword: "MEA Triazine 78% UAE", country: "United Arab Emirates" },
   { keyword: "H2S scavenger supplier UAE", country: "United Arab Emirates" },
   { keyword: "MEA Triazine supplier Dubai", country: "United Arab Emirates" },
@@ -573,7 +573,7 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "oilfield chemical supplier Kuwait", country: "Kuwait" },
   { keyword: "GCC oilfield chemicals", country: "United Arab Emirates" },
   { keyword: "MENA region chemical supplier", country: "United Arab Emirates" },
-  /* â”€â”€ Oman â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Oman ─────────────────────────────────────────────── */
   { keyword: "MEA Triazine 78% Oman", country: "Oman" },
   { keyword: "H2S scavenger supplier Muscat", country: "Oman" },
   { keyword: "buy MEA Triazine Oman", country: "Oman" },
@@ -594,7 +594,7 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "Ù…ÙˆØ±Ø¯ Ù…ÙˆØ§Ø¯ ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠØ© Ù„Ø¥Ø²Ø§Ù„Ø© H2S ÙÙŠ Ø¹Ù…Ø§Ù†", country: "Oman" },
   { keyword: "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ø¹ÙÙ…Ø§Ù†", country: "Oman" },
   { keyword: "Ù…ÙˆØ§Ø¯ ÙƒÙŠÙ…ÙŠØ§Ø¦ÙŠØ© Ù„Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· Ø¹ÙÙ…Ø§Ù†", country: "Oman" },
-  /* â”€â”€ Egypt â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Egypt ────────────────────────────────────────────── */
   { keyword: "MEA Triazine 78% Egypt", country: "Egypt" },
   { keyword: "H2S scavenger supplier Egypt", country: "Egypt" },
   { keyword: "buy MEA Triazine Egypt", country: "Egypt" },
@@ -615,7 +615,7 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ù…ØµØ±", country: "Egypt" },
   { keyword: "ÙƒØ§Ø³Ø­ ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† Ù…ØµØ±", country: "Egypt" },
   { keyword: "Ù…ÙˆØ±Ø¯ ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† Ù…ØµØ±", country: "Egypt" },
-  /* â”€â”€ Brazil â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Brazil ───────────────────────────────────────────── */
   { keyword: "MEA Triazine 78% Brazil", country: "Brazil" },
   { keyword: "H2S scavenger supplier Brazil", country: "Brazil" },
   { keyword: "buy MEA Triazine Brazil", country: "Brazil" },
@@ -633,10 +633,10 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "oilfield chemical import Brazil IBAMA", country: "Brazil" },
   { keyword: "removedor de H2S triazina MEA", country: "Brazil" },
   { keyword: "fornecedor de triazina MEA Brasil", country: "Brazil" },
-  { keyword: "captador de sulfeto de hidrogÃªnio", country: "Brazil" },
-  { keyword: "triazina para operaÃ§Ãµes de prÃ©-sal", country: "Brazil" },
+  { keyword: "captador de sulfeto de hidrogênio", country: "Brazil" },
+  { keyword: "triazina para operações de pré-sal", country: "Brazil" },
   { keyword: "comprar triazina MEA 78% Brasil", country: "Brazil" },
-  /* â”€â”€ Saudi Arabia â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Saudi Arabia ────────────────────────────────────── */
   { keyword: "MEA Triazine 78% Saudi Arabia", country: "Saudi Arabia" },
   { keyword: "H2S scavenger supplier Saudi Arabia", country: "Saudi Arabia" },
   { keyword: "buy MEA Triazine Saudi Arabia", country: "Saudi Arabia" },
@@ -663,7 +663,7 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "Ù…ÙˆØ±Ø¯ ÙƒÙŠÙ…Ø§ÙˆÙŠØ§Øª Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· Ø§Ù„Ø³Ø¹ÙˆØ¯ÙŠØ©", country: "Saudi Arabia" },
   { keyword: "ÙƒØ§Ø³Ø­ ÙƒØ¨Ø±ÙŠØªÙŠØ¯ Ø§Ù„Ù‡ÙŠØ¯Ø±ÙˆØ¬ÙŠÙ† Ø£Ø±Ø§Ù…ÙƒÙˆ", country: "Saudi Arabia" },
   { keyword: "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ø§Ù„Ø³Ø¹ÙˆØ¯ÙŠØ©", country: "Saudi Arabia" },
-  /* â”€â”€ Iraq â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Iraq ──────────────────────────────────────────── */
   { keyword: "MEA Triazine 78% Iraq", country: "Iraq" },
   { keyword: "H2S scavenger supplier Iraq", country: "Iraq" },
   { keyword: "buy MEA Triazine Iraq", country: "Iraq" },
@@ -688,7 +688,7 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "Ù…ÙˆØ±Ø¯ ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† Ø§Ù„Ø¨ØµØ±Ø©", country: "Iraq" },
   { keyword: "ÙƒØ§Ø³Ø­ H2S Ø­Ù‚Ù„ Ø§Ù„Ø±Ù…ÙŠÙ„Ø©", country: "Iraq" },
   { keyword: "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ø§Ù„Ø¹Ø±Ø§Ù‚", country: "Iraq" },
-  /* â”€â”€ Qatar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Qatar ──────────────────────────────────────────── */
   { keyword: "MEA Triazine 78% Qatar", country: "Qatar" },
   { keyword: "MEA triazine supplier Qatar", country: "Qatar" },
   { keyword: "H2S scavenger supplier Qatar", country: "Qatar" },
@@ -719,7 +719,7 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ù‚Ø·Ø±", country: "Qatar" },
   { keyword: "ÙƒÙŠÙ…Ø§ÙˆÙŠØ§Øª Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· Ù‚Ø·Ø±", country: "Qatar" },
   { keyword: "ÙƒØ§Ø³Ø­ H2S Ø­Ù‚Ù„ Ø§Ù„Ø´Ù…Ø§Ù„", country: "Qatar" },
-  /* â”€â”€ Kuwait â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Kuwait ──────────────────────────────────────────── */
   { keyword: "MEA Triazine 78% Kuwait", country: "Kuwait" },
   { keyword: "MEA triazine supplier Kuwait", country: "Kuwait" },
   { keyword: "H2S scavenger supplier Kuwait", country: "Kuwait" },
@@ -745,7 +745,7 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "Ù…ÙˆØ±Ø¯ ØªØ±Ø§ÙŠØ§Ø²ÙŠÙ† Ø§Ù„ÙƒÙˆÙŠØª", country: "Kuwait" },
   { keyword: "Ù…Ø¹Ø§Ù„Ø¬Ø© Ø§Ù„ØºØ§Ø² Ø§Ù„Ø­Ø§Ù…Ø¶ Ø§Ù„ÙƒÙˆÙŠØª", country: "Kuwait" },
   { keyword: "ÙƒÙŠÙ…Ø§ÙˆÙŠØ§Øª Ø­Ù‚ÙˆÙ„ Ø§Ù„Ù†ÙØ· Ø§Ù„ÙƒÙˆÙŠØª", country: "Kuwait" },
-  /* â”€â”€ Thailand â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Thailand ─────────────────────────────────────────── */
   { keyword: "MEA Triazine 78% Thailand", country: "Thailand" },
   { keyword: "MEA triazine supplier Thailand", country: "Thailand" },
   { keyword: "H2S scavenger supplier Thailand", country: "Thailand" },
@@ -767,9 +767,9 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
   { keyword: "à¸ªà¸²à¸£à¸à¸³à¸ˆà¸±à¸” H2S à¹„à¸•à¸£à¸­à¸°à¸‹à¸µà¸™", country: "Thailand" },
   { keyword: "à¸ªà¸²à¸£à¸”à¸±à¸à¸ˆà¸±à¸šà¹„à¸®à¹‚à¸”à¸£à¹€à¸ˆà¸™à¸‹à¸±à¸¥à¹„à¸Ÿà¸”à¹Œ", country: "Thailand" },
   { keyword: "à¸ªà¸²à¸£à¸šà¸³à¸šà¸±à¸”à¸à¹Šà¸²à¸‹à¹€à¸›à¸£à¸µà¹‰à¸¢à¸§", country: "Thailand" },
-  { keyword: "à¹€à¸„à¸¡à¸µà¸ à¸±à¸“à¸‘à¹Œà¸ªà¸³à¸«à¸£à¸±à¸šà¸­à¸¸à¸•à¸ªà¸²à¸«à¸à¸£à¸£à¸¡à¸™à¹‰à¸³à¸¡à¸±à¸™à¹à¸¥à¸°à¹à¸à¹Šà¸ª", country: "Thailand" },
-  { keyword: "à¸ªà¸²à¸£à¹€à¸„à¸¡à¸µà¸‚à¸ˆà¸±à¸”à¹„à¸®à¹‚à¸”à¸£à¹€à¸ˆà¸™à¸‹à¸±à¸¥à¹„à¸Ÿà¸”à¹Œà¸à¹Šà¸²à¸‹à¸Šà¸µà¸§à¸ à¸²à¸ž", country: "Thailand" },
-  /* â”€â”€ Iran â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  { keyword: "à¹€à¸„à¸¡à¸µà¸ à¸±à¸“à¸‘à¹Œà¸ªà¸³à¸«à¸£à¸±à¸šà¸­à¸¸à¸•à¸ªà¸²à¸«à¸à¸£à¸£à¸¡à¸™à¹‰à¸³à¸¡à¸±à¸™à¹à¸¥à¸°à¹à¸à¹Šà¸ª", country: "Thailand" },
+  { keyword: "à¸ªà¸²à¸£à¹€à¸„à¸¡à¸µà¸‚à¸ˆà¸±à¸”à¹„à¸®à¹‚à¸”à¸£à¹€à¸ˆà¸™à¸‹à¸±à¸¥à¹„à¸Ÿà¸”à¹Œà¸à¹Šà¸²à¸‹à¸Šà¸µà¸§à¸ à¸²à¸ž", country: "Thailand" },
+  /* ── Iran ────────────────────────────────────────────── */
   { keyword: "MEA Triazine 78% Iran", country: "Iran" },
   { keyword: "MEA triazine supplier Iran", country: "Iran" },
   { keyword: "H2S scavenger supplier Iran", country: "Iran" },
@@ -796,12 +796,12 @@ export const MEA_TRIAZINE_SEARCH_KEYWORDS = [
 ] as const;
 
 /**
- * Competitor brand â†’ application mapping.
+ * Competitor brand → application mapping.
  * Shows where MEA Triazine 78% can serve as a drop-in alternative.
  * Use for comparison pages, FAQ schema, and "alternative to" SEO content.
  */
 export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
-  /* â”€â”€ Metalworking & Cutting Fluids â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Metalworking & Cutting Fluids ──────────────────────── */
   {
     brand: "Grotan BK",
     application: "Benchmark biocide for cutting fluids",
@@ -814,7 +814,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Metalworking",
     meaTriazineRole: "Cost-effective triazine alternative for metalworking biocide applications",
   },
-  /* â”€â”€ Industrial Preservation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Industrial Preservation ────────────────────────────── */
   {
     brand: "Grotan HD",
     application: "Technical preservation solution",
@@ -845,7 +845,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Industrial",
     meaTriazineRole: "Biocide additive for leather processing and technical fluid systems",
   },
-  /* â”€â”€ Coatings & Paints â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Coatings & Paints ──────────────────────────────────── */
   {
     brand: "Nipacide BK",
     application: "In-can preservative for paints",
@@ -858,7 +858,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Coatings",
     meaTriazineRole: "78% active triazine preservative for water-based coatings and emulsions",
   },
-  /* â”€â”€ Water Treatment & Paper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Water Treatment & Paper ────────────────────────────── */
   {
     brand: "Busan 1060",
     application: "Water treatment and slime control",
@@ -871,21 +871,21 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Industrial",
     meaTriazineRole: "Broad-spectrum antimicrobial triazine for industrial water systems",
   },
-  /* â”€â”€ Adhesives & Emulsions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Adhesives & Emulsions ──────────────────────────────── */
   {
     brand: "Onyxide 200",
     application: "Highly active bactericide for emulsions",
     industry: "Adhesives",
     meaTriazineRole: "High-activity bactericide for adhesive and emulsion preservation",
   },
-  /* â”€â”€ Oilfield â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Oilfield ───────────────────────────────────────────── */
   {
     brand: "Scavtreat",
     application: "Proprietary H2S scavenger blend (SLB)",
     industry: "Oilfield",
     meaTriazineRole: "Direct H2S scavenging alternative for upstream oil and gas operations",
   },
-  /* â”€â”€ Cleaning & Disinfection â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Cleaning & Disinfection ────────────────────────────── */
   {
     brand: "Bactraclean",
     application: "Professional cleaning products",
@@ -898,7 +898,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Global",
     meaTriazineRole: "Anti-mildew and antimicrobial triazine for global biocide applications",
   },
-  /* â”€â”€ Personal Care & Cosmetics â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Personal Care & Cosmetics ──────────────────────────── */
   {
     brand: "Miliden X-2",
     application: "Bactericide in cosmetic products",
@@ -911,7 +911,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Europe",
     meaTriazineRole: "Triazine biocide for European pesticide and cosmetic applications",
   },
-  /* â”€â”€ UAE/GCC Oilfield Branded Products â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── UAE/GCC Oilfield Branded Products ──────────────────── */
   {
     brand: "RXSOL-43-8160-210",
     application: "Triazine-based biocide for UAE/Oman oilfields (RX Chemicals)",
@@ -924,7 +924,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Oilfield",
     meaTriazineRole: "Indian-manufactured 78% MEA Triazine as competitive alternative to Saudi Multichem supply",
   },
-  /* â”€â”€ Oman-Market Branded Products â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Oman-Market Branded Products ───────────────────── */
   {
     brand: "SULFA-CLEAR 8411HC",
     application: "80% activity MEA Triazine H2S scavenger (Lubrizol, distributed in Oman)",
@@ -941,7 +941,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     brand: "MBBT H2S Scavenger",
     application: "Oilfield H2S scavenger (Muscat & Barka Business Trading, Oman)",
     industry: "Oilfield",
-    meaTriazineRole: "Direct supply of 78% MEA Triazine from India to Oman with 2â€“4 day Sohar Port transit as alternative to MBBT local supply",
+    meaTriazineRole: "Direct supply of 78% MEA Triazine from India to Oman with 2–4 day Sohar Port transit as alternative to MBBT local supply",
   },
   {
     brand: "G-SCAV EA77",
@@ -949,7 +949,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Oilfield",
     meaTriazineRole: "Higher 78% concentration alternative to G-SCAV EA77 for GCC oilfield operations",
   },
-  /* â”€â”€ USA Oilfield Branded Products â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── USA Oilfield Branded Products ──────────────────────── */
   {
     brand: "Pro3",
     application: "Non-triazine and triazine-blend H2S scavenger (Q2 Technologies)",
@@ -986,7 +986,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Oilfield",
     meaTriazineRole: "Direct triazine scavenger alternative to Geocon Kontin product",
   },
-  /* â”€â”€ High-Purity / Specialty â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── High-Purity / Specialty ────────────────────────────── */
   {
     brand: "Protectol HT",
     application: "BASF brand for high-purity triazine",
@@ -1005,7 +1005,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Industrial",
     meaTriazineRole: "Water-soluble triazine biocide alternative to alcohol-based KM 200 formulations",
   },
-  /* â”€â”€ Qatar-Market Branded Products â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Qatar-Market Branded Products ─────────────────────── */
   {
     brand: "BKC Gulf Triazine Scavenger",
     application: "Qatar-focused triazine H2S scavenger supply (BKC Gulf)",
@@ -1034,7 +1034,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     brand: "Deluxe MEA (Qatar)",
     application: "Mono Ethanol Amine supplier in Qatar (Deluxe Trading Services WLL)",
     industry: "Gas Treatment",
-    meaTriazineRole: "MEA Triazine 78% (finished H2S scavenger product) vs raw MEA â€” higher concentration and ready-to-use for Qatar gas treatment",
+    meaTriazineRole: "MEA Triazine 78% (finished H2S scavenger product) vs raw MEA — higher concentration and ready-to-use for Qatar gas treatment",
   },
   {
     brand: "K2P MEA-T",
@@ -1042,10 +1042,10 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Oilfield",
     meaTriazineRole: "Direct manufacturer 78% MEA Triazine as alternative to K2P Chemical MEA-T for gas sweetening and H2S removal",
   },
-  /* â”€â”€ Kuwait-Market Branded Products â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Kuwait-Market Branded Products ─────────────────────── */
   {
     brand: "Bait Al Aseel H2S Scavenger",
-    application: "Kuwait-based Hâ‚‚S Scavenger â€“ Triazine Based supply (Bait Al Aseel Trading, Shuwaikh)",
+    application: "Kuwait-based H₂S Scavenger – Triazine Based supply (Bait Al Aseel Trading, Shuwaikh)",
     industry: "Oilfield",
     meaTriazineRole: "Direct manufacturer-priced 78% MEA Triazine as competitive alternative to Bait Al Aseel triazine supply for KOC and KNPC operations",
   },
@@ -1053,7 +1053,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     brand: "DK Petrochemicals MEA (Kuwait)",
     application: "Mono Ethanol Amine commodity chemical (Dar Al Kuwait Petrochemical Company)",
     industry: "Gas Treatment",
-    meaTriazineRole: "MEA Triazine 78% (finished H2S scavenger) vs raw MEA â€” higher concentration and ready-to-use for Kuwait sour crude operations",
+    meaTriazineRole: "MEA Triazine 78% (finished H2S scavenger) vs raw MEA — higher concentration and ready-to-use for Kuwait sour crude operations",
   },
   {
     brand: "HME-FILM MEA Triazine",
@@ -1073,18 +1073,18 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Oilfield",
     meaTriazineRole: "Indian-manufactured 78% MEA Triazine with guaranteed concentration and batch traceability as alternative to Chinese-sourced Xipeng product",
   },
-  /* â”€â”€ Thailand-Market Branded Products â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Thailand-Market Branded Products ──────────────────── */
   {
     brand: "Brenntag MEA (Thailand)",
     application: "Monoethanolamine distributor in Thailand (Brenntag Ingredients Thailand, Bangkok)",
     industry: "Gas Treatment / Chemical Processing",
-    meaTriazineRole: "MEA Triazine 78% (finished H2S scavenger) vs raw MEA distributed by Brenntag â€” higher concentration, ready-to-use, no further processing needed",
+    meaTriazineRole: "MEA Triazine 78% (finished H2S scavenger) vs raw MEA distributed by Brenntag — higher concentration, ready-to-use, no further processing needed",
   },
   {
     brand: "PTT GC MEA (Thailand)",
     application: "Thai-manufactured raw Monoethanolamine (PTT Global Chemical, Map Ta Phut)",
     industry: "Gas Treatment / Petrochemical",
-    meaTriazineRole: "MEA Triazine 78% (finished scavenger product) vs PTT GC raw MEA â€” purpose-built H2S scavenger requiring no conversion or regeneration equipment",
+    meaTriazineRole: "MEA Triazine 78% (finished scavenger product) vs PTT GC raw MEA — purpose-built H2S scavenger requiring no conversion or regeneration equipment",
   },
   {
     brand: "Borregaard H2S Scavenger",
@@ -1098,24 +1098,24 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     industry: "Oilfield",
     meaTriazineRole: "Indian-manufactured 78% MEA Triazine with guaranteed batch quality, COA, and GHS documentation vs marketplace-sourced Chinese product with variable quality",
   },
-  /* â”€â”€ Iran-Market Branded Products â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Iran-Market Branded Products ─────────────────────── */
   {
     brand: "Tsorb3400 (Tasfyeh Group)",
-    application: "Iranian-manufactured MEA Triazine H2S scavenger (Tasfyeh Group, Iran â€” 50%, 60%, 80% variants)",
+    application: "Iranian-manufactured MEA Triazine H2S scavenger (Tasfyeh Group, Iran — 50%, 60%, 80% variants)",
     industry: "Oilfield",
     meaTriazineRole: "Cost-competitive Indian-manufactured 78% MEA Triazine as import alternative to Tsorb3400 with consistent concentration and batch documentation for Iran operations",
   },
   {
     brand: "Chemical Iran MEA",
-    application: "Raw Monoethanolamine supplier (Chemical Iran, Tehran â€” since 2011)",
+    application: "Raw Monoethanolamine supplier (Chemical Iran, Tehran — since 2011)",
     industry: "Gas Treatment",
-    meaTriazineRole: "MEA Triazine 78% (finished H2S scavenger) vs Chemical Iran raw MEA â€” higher H2S removal efficiency, non-regenerable, no conversion equipment needed",
+    meaTriazineRole: "MEA Triazine 78% (finished H2S scavenger) vs Chemical Iran raw MEA — higher H2S removal efficiency, non-regenerable, no conversion equipment needed",
   },
   {
     brand: "IranChemicalMine MEA",
     application: "High purity Monoethanolamine exporter (Iran Chemical Mine)",
     industry: "Gas Treatment",
-    meaTriazineRole: "MEA Triazine 78% (CAS 4719-04-4) vs raw MEA (CAS 141-43-5) â€” purpose-built scavenger for Iran oilfield operations",
+    meaTriazineRole: "MEA Triazine 78% (CAS 4719-04-4) vs raw MEA (CAS 141-43-5) — purpose-built scavenger for Iran oilfield operations",
   },
   {
     brand: "Triasorb (Iran supply)",

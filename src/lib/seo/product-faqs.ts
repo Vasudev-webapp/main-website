@@ -69,7 +69,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What brand names is MEA Triazine known by in Vietnam?",
     answer:
-      "MEA Triazine (CAS 4719-04-4) is recognized in Vietnam under several names including BK Biocide, H2S Scavenger Conc, MEA-T, Grotan BK (equivalent), and Vietnamese terms such as cháº¥t háº¥p thá»¥ H2S and hÃ³a cháº¥t xá»­ lÃ½ khÃ­ chua. Our product matches all specifications under these names.",
+      "MEA Triazine (CAS 4719-04-4) is recognized in Vietnam under several names including BK Biocide, H2S Scavenger Conc, MEA-T, Grotan BK (equivalent), and Vietnamese terms such as cháº¥t háº¥p thá»¥ H2S and hóa cháº¥t xá»­ lý khí chua. Our product matches all specifications under these names.",
   },
   {
     question: "Can you supply MEA Triazine 78% to the United States?",
@@ -154,7 +154,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "Can you supply MEA Triazine 78% to Brazil?",
     answer:
-      "Yes. Vasudev Chemo Pharma ships MEA Triazine 78% to Brazil via Santos Port and ParanaguÃ¡ with transit times of 20–25 days from India. We supply in 200-litre drums and 1,000-litre IBC totes with CIF Santos pricing available. Each shipment includes a Certificate of Analysis in Portuguese and English, a GHS-compliant SDS meeting ABNT-NBR standards, and documentation formatted for Receita Federal customs clearance.",
+      "Yes. Vasudev Chemo Pharma ships MEA Triazine 78% to Brazil via Santos Port and Paranaguá with transit times of 20–25 days from India. We supply in 200-litre drums and 1,000-litre IBC totes with CIF Santos pricing available. Each shipment includes a Certificate of Analysis in Portuguese and English, a GHS-compliant SDS meeting ABNT-NBR standards, and documentation formatted for Receita Federal customs clearance.",
   },
   {
     question: "Can MEA Triazine 78% be used in Brazilian pre-salt operations?",
@@ -234,7 +234,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What is the difference between raw MEA (Monoethanolamine) and MEA Triazine 78%?",
     answer:
-      "Raw Monoethanolamine (MEA, CAS 141-43-5) is a basic alkanolamine used for COâ‚‚ and Hâ‚‚S absorption in gas sweetening. MEA Triazine 78% (CAS 4719-04-4) is the finished product — a hexahydrotriazine synthesised from MEA and formaldehyde — specifically formulated as a non-regenerable Hâ‚‚S scavenger for oil and gas operations. MEA Triazine 78% delivers higher Hâ‚‚S removal efficiency per unit dose than raw MEA and does not require regeneration equipment. Suppliers like Deluxe Chemical and Chemway sell raw MEA; Vasudev Chemo Pharma supplies the finished MEA Triazine 78% scavenger.",
+      "Raw Monoethanolamine (MEA, CAS 141-43-5) is a basic alkanolamine used for CO₂ and H₂S absorption in gas sweetening. MEA Triazine 78% (CAS 4719-04-4) is the finished product — a hexahydrotriazine synthesised from MEA and formaldehyde — specifically formulated as a non-regenerable H₂S scavenger for oil and gas operations. MEA Triazine 78% delivers higher H₂S removal efficiency per unit dose than raw MEA and does not require regeneration equipment. Suppliers like Deluxe Chemical and Chemway sell raw MEA; Vasudev Chemo Pharma supplies the finished MEA Triazine 78% scavenger.",
   },
   {
     question: "Can you supply MEA Triazine 78% to Kuwait?",
@@ -249,7 +249,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What brand names is MEA Triazine known by in Kuwait?",
     answer:
-      "In Kuwait, MEA Triazine (CAS 4719-04-4) is available through Bait Al Aseel Trading (Hâ‚‚S Scavenger – Triazine Based, Shuwaikh), and DK Petrochemicals supplies raw MEA. International brands include RXSOL Triazine Based Biocide (DubiChem), HME-FILM MEA Triazine (MED Drilling Fluids), HS-1526-40 (Univar), SULFA-CLEAR 8411HC (Lubrizol), and Triasorb (Sintez-Oka). KOC service contractors use ChampionX, Baker Hughes, and Dorf Ketal brands. Our product is a direct equivalent to all these.",
+      "In Kuwait, MEA Triazine (CAS 4719-04-4) is available through Bait Al Aseel Trading (H₂S Scavenger – Triazine Based, Shuwaikh), and DK Petrochemicals supplies raw MEA. International brands include RXSOL Triazine Based Biocide (DubiChem), HME-FILM MEA Triazine (MED Drilling Fluids), HS-1526-40 (Univar), SULFA-CLEAR 8411HC (Lubrizol), and Triasorb (Sintez-Oka). KOC service contractors use ChampionX, Baker Hughes, and Dorf Ketal brands. Our product is a direct equivalent to all these.",
   },
   {
     question: "What documents are needed to import MEA Triazine 78% into Kuwait?",

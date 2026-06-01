@@ -22,6 +22,7 @@ import {
   MMA_TRIAZINE_SYNONYMS,
   EDDM_SYNONYMS,
   BENZALKONIUM_CHLORIDE_SYNONYMS,
+  SODIUM_XYLENE_SULFONATE_SYNONYMS,
   type ProductSynonyms,
 } from "@/lib/seo/product-synonyms";
 import {
@@ -63,6 +64,8 @@ const PRODUCT_SYNONYMS_MAP: Record<string, ProductSynonyms> = {
   "eddm-non-triazine-h2s-scavenger": EDDM_SYNONYMS,
   "benzalkonium-chloride-50": BENZALKONIUM_CHLORIDE_SYNONYMS,
   "benzalkonium-chloride-80": BENZALKONIUM_CHLORIDE_SYNONYMS,
+  "sodium-xylene-sulfonate-40": SODIUM_XYLENE_SULFONATE_SYNONYMS,
+  "sodium-xylene-sulfonate-90": SODIUM_XYLENE_SULFONATE_SYNONYMS,
 };
 
 type ProductKeywordConfig = {

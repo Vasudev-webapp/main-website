@@ -1,4 +1,4 @@
-﻿type ProductMetaOverride = {
+type ProductMetaOverride = {
   title: string;
   description: string;
 };
@@ -50,14 +50,14 @@ export const PRODUCT_META_OVERRIDES: Record<string, ProductMetaOverride> = {
       "Sodium Cumene Sulfonate 90% powder (SCS 90%, CAS 28348-53-0) high-active hydrotrope from ISO 9001 India manufacturer. Bulk export supply, COA, SDS & samples.",
   },
   "sodium-xylene-sulfonate-90": {
-    title: "Sodium Xylene Sulfonate 90% Manufacturer | SXS 90% Powder",
+    title: "Sodium Xylene Sulfonate 90% Manufacturer in India | SXS 90 Powder Exporter",
     description:
-      "Sodium Xylene Sulfonate 90% powder (SXS 90%, CAS 1300-72-7) hydrotrope manufacturer in India for detergent powders, alkaline cleaners & exports. Request quote.",
+      "Sodium Xylene Sulfonate 90% powder (SXS 90, CAS 1300-72-7) high-active hydrotrope from ISO 9001:2015 manufacturer in Gujarat, India. Bulk export for detergent powders & industrial dry blends. Request COA & sample.",
   },
   "sodium-xylene-sulfonate-40": {
-    title: "Sodium Xylene Sulfonate 40% Manufacturer & Exporter India | SXS 40",
+    title: "Sodium Xylene Sulfonate 40% Manufacturer in India | SXS 40 Liquid Exporter",
     description:
-      "SXS 40% liquid hydrotrope (CAS 1300-72-7) — ISO 9001:2015 manufacturer & global exporter from India. Bulk supply to UAE, USA, Vietnam. COA, MSDS, samples in 48 hrs.",
+      "Sodium Xylene Sulfonate 40% (SXS 40, CAS 1300-72-7) liquid hydrotrope from ISO 9001:2015 manufacturer in Gujarat, India. Coupling agent & solubilizer for detergents, cleaners, and agrochemicals. Bulk export in drums & IBC. Request COA & free sample.",
   },
   "eddm-non-triazine-h2s-scavenger": {
     title: "Non-Triazine Based H2S Scavenger | EDDM Manufacturer India",

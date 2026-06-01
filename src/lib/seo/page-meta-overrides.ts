@@ -168,15 +168,15 @@ export const PAGE_META_OVERRIDES: Record<string, PageMetaOverride> = {
   },
   "/product/sodium-xylene-sulfonate-90": {
     h1: "Sodium Xylene Sulfonate 90%",
-    title: "Sodium Xylene Sulfonate 90% Manufacturer | SXS 90% Powder",
+    title: "Sodium Xylene Sulfonate 90% Manufacturer in India | SXS 90 Powder Exporter",
     description:
-      "Sodium Xylene Sulfonate 90% powder (SXS 90%, CAS 1300-72-7) hydrotrope manufacturer in India for detergent powders, alkaline cleaners & exports. Request quote.",
+      "Sodium Xylene Sulfonate 90% powder (SXS 90, CAS 1300-72-7) high-active hydrotrope from ISO 9001:2015 manufacturer in Gujarat, India. Bulk export for detergent powders & industrial dry blends. Request COA & sample.",
   },
   "/product/sodium-xylene-sulfonate-40": {
     h1: "Sodium Xylene Sulfonate 40%",
-    title: "Sodium Xylene Sulfonate 40% Uses | SXS 40 Manufacturer",
+    title: "Sodium Xylene Sulfonate 40% Manufacturer in India | SXS 40 Liquid Exporter",
     description:
-      "Sodium Xylene Sulfonate 40% liquid (SXS 40, CAS 1300-72-7) uses include detergents, cleaners, agrochemicals and surfactant blends. Request COA and quote.",
+      "Sodium Xylene Sulfonate 40% (SXS 40, CAS 1300-72-7) liquid hydrotrope from ISO 9001:2015 manufacturer in Gujarat, India. Coupling agent & solubilizer for detergents, cleaners, and agrochemicals. Bulk export in drums & IBC. Request COA & free sample.",
   },
   "/product/benzalkonium-chloride-50": {
     h1: "Benzalkonium Chloride 50% (BKC 50%)",
@@ -911,8 +911,8 @@ export const PAGE_META_OVERRIDES: Record<string, PageMetaOverride> = {
       "MEA Triazine 78% H2S scavenger for petrochemical plants. Protects crackers, reformers, and downstream units from sulfide corrosion. Manufactured by Vasudev Chemo Pharma, India.",
   },
   "/industries/refining": {
-    h1: "H2S Scavenger for Refinery Operations â€” MEA Triazine 78%",
-    title: "H2S Scavenger for Refinery Operations â€” MEA Triazine 78% | Vasudev Chemo Pharma",
+    h1: "H2S Scavenger for Refinery Operations — MEA Triazine 78%",
+    title: "H2S Scavenger for Refinery Operations — MEA Triazine 78% | Vasudev Chemo Pharma",
     description:
       "MEA Triazine 78% H2S scavenger for petroleum refineries. Crude unit overheads, FCC off-gas, and tank vapour treatment. Manufactured by Vasudev Chemo Pharma, India.",
   },

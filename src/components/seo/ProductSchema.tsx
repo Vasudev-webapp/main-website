@@ -9,6 +9,10 @@ import {
   SXS_40_SCHEMA_ENRICHMENT,
 } from "@/lib/seo/sxs-40-content";
 import {
+  SXS_90_SLUG,
+  SXS_90_SCHEMA_ENRICHMENT,
+} from "@/lib/seo/sxs-90-content";
+import {
   SCS_40_SLUG,
   SCS_40_SCHEMA_ENRICHMENT,
 } from "@/lib/seo/scs-40-content";
@@ -55,6 +59,7 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
   const hasPrice = typeof product.price === "number" && Number.isFinite(product.price) && product.price > 0;
   const isEnrichedSlug = product.slug === MEA_TRIAZINE_SLUG;
   const isSxs40 = product.slug === SXS_40_SLUG;
+  const isSxs90 = product.slug === SXS_90_SLUG;
   const isScs40 = product.slug === SCS_40_SLUG;
   const isBkc50 = product.slug === BKC_50_SLUG;
   const isBkc80 = product.slug === BKC_80_SLUG;
@@ -143,6 +148,49 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
       "@type": "BusinessAudience",
       audienceType:
         "Detergent manufacturers, personal care formulators, agrochemical formulators, oilfield service companies, textile mills, paint/coatings manufacturers",
+    };
+    productSchema.areaServed = [
+      "India",
+      "United Arab Emirates",
+      "Saudi Arabia",
+      "Qatar",
+      "Oman",
+      "Kuwait",
+      "Iraq",
+      "United States",
+      "Vietnam",
+      "Thailand",
+      "Indonesia",
+      "Brazil",
+      "Egypt",
+      "South Africa",
+      "Türkiye",
+    ];
+  }
+
+  /* --- Slug-specific enrichment (Sodium Xylene Sulfonate 90%) --- */
+  if (isSxs90) {
+    const sxsEnrichment = SXS_90_SCHEMA_ENRICHMENT;
+    productSchema.alternateName = [...sxsEnrichment.alternateName];
+    productSchema.category = sxsEnrichment.category;
+    productSchema.countryOfOrigin = sxsEnrichment.countryOfOrigin;
+    productSchema.mpn = "VCP-SXS-90";
+    productSchema.additionalProperty = [
+      ...sxsEnrichment.identifierProperties.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+      ...sxsEnrichment.additionalProperty.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+    ];
+    productSchema.audience = {
+      "@type": "BusinessAudience",
+      audienceType:
+        "Detergent powder manufacturers, solid block & tablet formulators, personal care syndet bar manufacturers, agrochemical wettable powder formulators, oilfield service companies, textile auxiliaries producers",
     };
     productSchema.areaServed = [
       "India",
@@ -364,6 +412,36 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
   /* --- Slug-specific ChemicalSubstance enrichment (SXS 40%) --- */
   if (isSxs40) {
     const sxsEnrichment = SXS_40_SCHEMA_ENRICHMENT;
+    chemicalSchema.alternateName = [...sxsEnrichment.alternateName];
+    chemicalSchema.iupacName = sxsEnrichment.iupacName;
+    chemicalSchema.molecularWeight = "208.21 g/mol";
+    chemicalSchema.identifier = sxsEnrichment.identifierProperties.map((p) => ({
+      "@type": "PropertyValue",
+      name: p.name,
+      value: p.value,
+    }));
+    chemicalSchema.additionalProperty = [
+      {
+        "@type": "PropertyValue",
+        name: "InChI Key",
+        value: sxsEnrichment.inChIKey,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "SMILES",
+        value: sxsEnrichment.smiles,
+      },
+      ...sxsEnrichment.additionalProperty.map((p) => ({
+        "@type": "PropertyValue",
+        name: p.name,
+        value: p.value,
+      })),
+    ];
+  }
+
+  /* --- Slug-specific ChemicalSubstance enrichment (SXS 90%) --- */
+  if (isSxs90) {
+    const sxsEnrichment = SXS_90_SCHEMA_ENRICHMENT;
     chemicalSchema.alternateName = [...sxsEnrichment.alternateName];
     chemicalSchema.iupacName = sxsEnrichment.iupacName;
     chemicalSchema.molecularWeight = "208.21 g/mol";
