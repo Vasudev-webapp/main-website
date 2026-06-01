@@ -142,6 +142,90 @@ const CATEGORY_CONTENT: Record<
     supplySectionHeading:
       "Global Supply of Benzalkonium Chloride 80% (BKC 80%) Concentrate",
   },
+  "p-toluenesulfonic-acid": {
+    categoryLabel: "Catalyst Chemicals — p-Toluenesulfonic Acid (PTSA)",
+    categorySummary:
+      "p-Toluenesulfonic Acid (PTSA, CAS 104-15-4) is a strong organic acid catalyst manufactured by Vasudev Chemo Pharma. It is widely used in organic synthesis, polymer curing (for amino, furan, and phenolic resins), pharmaceutical API manufacturing, and as an acid catalyst in the coatings and plastics industries. Supplied as high-purity crystalline monohydrate with strict moisture controls.",
+    supplySectionHeading:
+      "Global Supply of p-Toluenesulfonic Acid (PTSA) Catalyst",
+  },
+  "sodium-cumene-sulfonate-40": {
+    categoryLabel: "Surfactant & Hydrotrope Chemicals — Sodium Cumene Sulfonate 40% (SCS 40%)",
+    categorySummary:
+      "Sodium Cumene Sulfonate 40% (SCS 40%, CAS 28348-53-0) is an aqueous hydrotrope solution manufactured by Vasudev Chemo Pharma. It acts as a solubilizer, coupling agent, and viscosity reducer in liquid laundry detergents, industrial cleaning concentrates, and agrochemical formulations. SCS 40% helps maintain phase stability and low cloud points in surfactant-rich formulations.",
+    supplySectionHeading:
+      "Global Supply of Sodium Cumene Sulfonate 40% (SCS 40%) Liquid",
+  },
+  "sodium-cumene-solid-sulfonate-40": {
+    categoryLabel: "Surfactant & Hydrotrope Chemicals — Sodium Cumene Sulfonate 40% (SCS 40%)",
+    categorySummary:
+      "Sodium Cumene Sulfonate 40% (SCS 40%, CAS 28348-53-0) is an aqueous hydrotrope solution manufactured by Vasudev Chemo Pharma. It acts as a solubilizer, coupling agent, and viscosity reducer in liquid laundry detergents, industrial cleaning concentrates, and agrochemical formulations. SCS 40% helps maintain phase stability and low cloud points in surfactant-rich formulations.",
+    supplySectionHeading:
+      "Global Supply of Sodium Cumene Sulfonate 40% (SCS 40%) Liquid",
+  },
+  "sodium-cumene-sulfonate-90": {
+    categoryLabel: "Surfactant & Hydrotrope Chemicals — Sodium Cumene Sulfonate 90% (SCS 90%) Powder",
+    categorySummary:
+      "Sodium Cumene Sulfonate 90% (SCS 90%, CAS 28348-53-0) is a high-active, free-flowing hydrotrope powder manufactured by Vasudev Chemo Pharma. It is used as a solubilizing and anti-caking agent in spray-dried powder detergents, automatic dishwasher detergents, and dry agricultural formulations. The 90% active powder is highly optimized for long-haul export, reducing water shipping weight and freight costs.",
+    supplySectionHeading:
+      "Global Supply of Sodium Cumene Sulfonate 90% (SCS 90%) Powder",
+  },
+  "sodium-xylene-sulfonate-40": {
+    categoryLabel: "Surfactant & Hydrotrope Chemicals — Sodium Xylene Sulfonate 40% (SXS 40%) Liquid",
+    categorySummary:
+      "Sodium Xylene Sulfonate 40% (SXS 40%, CAS 1300-72-7) is a liquid hydrotrope solution manufactured by Vasudev Chemo Pharma. It is a key formulation ingredient used as a coupling agent, solubilizer, and viscosity control modifier in liquid laundry detergents, dishwashing liquids, shampoo, and personal care products. SXS 40% prevents gel formation and phase separation in highly built electrolyte systems.",
+    supplySectionHeading:
+      "Global Supply of Sodium Xylene Sulfonate 40% (SXS 40%) Liquid",
+  },
+  "sodium-xylene-solid-sulfonate-90": {
+    categoryLabel: "Surfactant & Hydrotrope Chemicals — Sodium Xylene Sulfonate 90% (SXS 90%) Powder",
+    categorySummary:
+      "Sodium Xylene Sulfonate 90% (SXS 90%, CAS 1300-72-7) is a high-active hydrotrope powder manufactured by Vasudev Chemo Pharma. Designed for use in powdered detergents, dishwash powders, and dry agricultural formulations as an anti-caking and coupling agent. SXS 90% powder provides excellent export logistics cost-efficiency, eliminating shipped water weights.",
+    supplySectionHeading:
+      "Global Supply of Sodium Xylene Sulfonate 90% (SXS 90%) Powder",
+  },
+  "sodium-xylene-sulfonate-90": {
+    categoryLabel: "Surfactant & Hydrotrope Chemicals — Sodium Xylene Sulfonate 90% (SXS 90%) Powder",
+    categorySummary:
+      "Sodium Xylene Sulfonate 90% (SXS 90%, CAS 1300-72-7) is a high-active hydrotrope powder manufactured by Vasudev Chemo Pharma. Designed for use in powdered detergents, dishwash powders, and dry agricultural formulations as an anti-caking and coupling agent. SXS 90% powder provides excellent export logistics cost-efficiency, eliminating shipped water weights.",
+    supplySectionHeading:
+      "Global Supply of Sodium Xylene Sulfonate 90% (SXS 90%) Powder",
+  },
+  "bis-2-chloroethyl-amine-hydrochloride": {
+    categoryLabel: "Pharmaceutical Intermediates — Bis(2-chloroethyl)amine Hydrochloride",
+    categorySummary:
+      "Bis(2-chloroethyl)amine Hydrochloride (CAS 821-48-2) is a high-purity pharmaceutical intermediate manufactured by Vasudev Chemo Pharma. It serves as a key heterocyclic building block in the synthesis of oncology drug substances (nitrogen mustards like cyclophosphamide) and other active pharmaceutical ingredients (APIs).",
+    supplySectionHeading:
+      "Global Supply of Bis(2-chloroethyl)amine Hydrochloride Intermediate",
+  },
+  "di-ethyl-amino-ethyl-chloride-hydrochloride": {
+    categoryLabel: "Pharmaceutical Intermediates — 2-Diethylaminoethyl Chloride Hydrochloride (DEC HCl)",
+    categorySummary:
+      "2-Diethylaminoethyl Chloride Hydrochloride (DEC HCl / DEAEC HCl, CAS 869-24-9) is a specialty chemical intermediate manufactured by Vasudev Chemo Pharma. It acts as an active alkylating agent in the synthesis of pharmaceutical drugs, including local anesthetics (procaine), cardiovascular agents (amiodarone), and antihistamines.",
+    supplySectionHeading:
+      "Global Supply of 2-Diethylaminoethyl Chloride Hydrochloride",
+  },
+  "2-amino-5-methylthiazole": {
+    categoryLabel: "Pharmaceutical Intermediates — 2-Amino-5-Methylthiazole (AMIT)",
+    categorySummary:
+      "2-Amino-5-Methylthiazole (AMIT, CAS 7305-71-7) is a heterocyclic organic intermediate manufactured by Vasudev Chemo Pharma. It is widely utilized as a precursor in the synthesis of pharmaceutical therapeutics and active agrochemical pesticide ingredients.",
+    supplySectionHeading:
+      "Global Supply of 2-Amino-5-Methylthiazole (AMIT) Intermediate",
+  },
+  "2-chloroethylamine-hydrochloride": {
+    categoryLabel: "Pharmaceutical Intermediates — 2-Chloroethylamine Hydrochloride (CEA HCl)",
+    categorySummary:
+      "2-Chloroethylamine Hydrochloride (CEA HCl, CAS 870-24-6) is a high-purity organic reagent and intermediate manufactured by Vasudev Chemo Pharma. It is used as an aminoethylating agent in the chemical synthesis of active pharmaceutical ingredients, surfactants, and agricultural crop-protection agents.",
+    supplySectionHeading:
+      "Global Supply of 2-Chloroethylamine Hydrochloride (CEA HCl)",
+  },
+  "eddm-non-triazine-h2s-scavenger": {
+    categoryLabel: "Non-Triazine H2S Scavengers — EDDM (Ethylene Glycol Bis-Hemiformal)",
+    categorySummary:
+      "EDDM (Ethylene Glycol Bis-Hemiformal, CAS 3586-55-8) is a non-triazine liquid hydrogen sulfide (H2S) scavenger and oilfield biocide manufactured by Vasudev Chemo Pharma. It removes toxic H2S from natural gas, crude oil, and produced water without the carbonate scaling issues of conventional triazines, making it the preferred choice for offshore platforms and high-scaling environments.",
+    supplySectionHeading:
+      "Global Supply of EDDM (Non-Triazine) H2S Scavenger",
+  },
 };
 
 /* ── Keyword grouping patterns ───────────────────────────────────── */

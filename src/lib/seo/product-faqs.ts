@@ -1,4 +1,4 @@
-﻿type FAQItem = {
+type FAQItem = {
   question: string;
   answer: string;
 };
@@ -686,19 +686,225 @@ export const BENZALKONIUM_CHLORIDE_80_FAQS: FAQItem[] = [
   },
 ];
 
+export const MMA_TRIAZINE_40_FAQS: FAQItem[] = [
+  {
+    question: "What is MMA Triazine 40% (Monomethylamine Triazine) H2S Scavenger used for?",
+    answer: "MMA Triazine 40% is an aqueous non-hazardous liquid H2S scavenger (CAS 13745-98-7) used in refinery processes, natural gas sweetening, biogas treatment, and wastewater odor control. It is preferred when a BTX-free formulation is required to meet environmental and discharge limits."
+  },
+  {
+    question: "How does MMA Triazine 40% compare to MEA Triazine 78%?",
+    answer: "MMA Triazine 40% is completely free of BTEX (benzene, toluene, ethylbenzene, xylene) emissions during thermal degradation, making it more environmentally compliant in refinery settings. MEA Triazine 78% is higher in active concentration but can release trace MEA or formaldehyde byproducts depending on operating temperatures."
+  },
+  {
+    question: "Which global ports do you ship MMA Triazine 40% to?",
+    answer: "We ship MMA Triazine 40% worldwide via FOB Mundra/Hazira or CIF terms to global hubs including Jebel Ali (UAE), Houston (USA), Santos (Brazil), Cat Lai (Vietnam), and Laem Chabang (Thailand). Export packing is in 250 kg HDPE drums or 1,000 kg IBC totes, with a minimum order quantity (MOQ) of 1 MT."
+  }
+];
+
+export const PTSA_FAQS: FAQItem[] = [
+  {
+    question: "What is p-Toluenesulfonic Acid (PTSA) crystalline catalyst?",
+    answer: "p-Toluenesulfonic Acid (PTSA, CAS 104-15-4) is a strong organic sulfonic acid catalyst supplied as a crystalline monohydrate. It is widely used for polymer curing (thermosetting resins like amino, furan, and phenolic systems), organic synthesis, pharmaceutical APIs, and plasticizer preparation."
+  },
+  {
+    question: "What certifications do you provide for PTSA exports?",
+    answer: "We supply PTSA monohydrate from our ISO 9001:2015 certified facility in Gujarat, India. Every export batch is accompanied by a Certificate of Analysis (COA), Safety Data Sheet (SDS), and Technical Data Sheet (TDS). We also offer Halal and Kosher certification on request."
+  },
+  {
+    question: "What is the packing and shipping standard for PTSA?",
+    answer: "PTSA is packed in export-grade 25 kg woven HDPE bags with inner LDPE liners, 500 kg big bags, or 1,000 kg jumbo bags to ensure moisture protection. We export globally under HS Code 29041090 with typical sea transits of 7 to 30 days depending on destination port."
+  }
+];
+
+export const EDDM_FAQS: FAQItem[] = [
+  {
+    question: "What is EDDM (Ethylene Glycol Bis-Hemiformal) H2S Scavenger?",
+    answer: "EDDM (CAS 3586-55-8) is a non-triazine, formaldehyde-release liquid H2S scavenger and biocide. It is designed to remove hydrogen sulfide in crude oil and natural gas pipelines without causing the calcium carbonate scaling or solid precipitation often experienced with triazine-based H2S scavengers."
+  },
+  {
+    question: "When should I choose EDDM instead of MEA Triazine?",
+    answer: "Choose EDDM H2S Scavenger when treating sour gas or oil in high-mineral water systems, offshore platforms, or pipelines prone to calcium carbonate scaling. Conventional triazine H2S scavengers raise system pH, leading to scaling; EDDM has a lower pH impact, avoiding scaling."
+  },
+  {
+    question: "What is your export shipping capability for EDDM?",
+    answer: "We manufacture and export EDDM globally in 250 kg drums and 1,000 kg IBC tanks. We offer CIF delivery to major offshore and oilfield hubs, including Houston, Jebel Ali, Dammam, and Basra. Our EDDM meets international quality standards with complete GHS SDS and batch COA verification."
+  }
+];
+
+export const BIS_2_CHLOROETHYL_AMINE_FAQS: FAQItem[] = [
+  {
+    question: "What is Bis(2-chloroethyl)amine Hydrochloride used for?",
+    answer: "Bis(2-chloroethyl)amine Hydrochloride (CAS 821-48-2) is a pharmaceutical intermediate utilized as a key building block in the synthesis of oncology drug compounds (nitrogen mustards like cyclophosphamide) and other specialty chemical compounds."
+  },
+  {
+    question: "What quality standards do you follow for Bis(2-chloroethyl)amine HCl?",
+    answer: "We manufacture Bis(2-chloroethyl)amine HCl under strict quality controls at our ISO-certified plant in Gujarat. We guarantee high chemical purity (>=99.0% by GC) and control trace moisture to ensure stability. Safe handling and comprehensive regulatory documentation are provided."
+  },
+  {
+    question: "How is Bis(2-chloroethyl)amine Hydrochloride packaged for export?",
+    answer: "Due to its corrosive nature, it is packaged in UN-approved 25 kg fiber drums with double sealed PE inner liners. We ship under strict hazardous goods transport protocols (UN 3261) with complete shipping documents to global API manufacturers."
+  }
+];
+
+export const DEAEC_FAQS: FAQItem[] = [
+  {
+    question: "What is 2-Diethylaminoethyl Chloride Hydrochloride (DEC HCl / DEAEC HCl)?",
+    answer: "2-Diethylaminoethyl Chloride Hydrochloride (DEC HCl, CAS 869-24-9) is an organic intermediate and active alkylating agent used in the synthesis of active pharmaceutical ingredients (APIs), including amiodarone, procaine local anesthetics, and antihistamines."
+  },
+  {
+    question: "What is the purity specification of your DEC HCl?",
+    answer: "Our DEC HCl / DEAEC HCl is manufactured to meet pharmaceutical specifications with a minimum purity of 99.0% by HPLC. We control volatile organic impurities and maintain low moisture levels to preserve stability during global transit."
+  },
+  {
+    question: "What packaging and export terms do you offer for DEAEC HCl?",
+    answer: "We supply DEAEC HCl in 25 kg UN-approved fiber drums with protective polyethylene bags. We support CIF, FOB, and CFR shipping terms from Hazira, Mundra, and Nhava Sheva ports in India, ensuring smooth customs handling and delivery."
+  }
+];
+
+export const AMIT_FAQS: FAQItem[] = [
+  {
+    question: "What is 2-Amino-5-methylthiazole (AMIT) heterocyclic intermediate?",
+    answer: "2-Amino-5-methylthiazole (AMIT, CAS 7305-71-7) is a high-purity heterocyclic building block used as an intermediate in the synthesis of pharmaceutical therapeutics and active agricultural pesticide ingredients."
+  },
+  {
+    question: "What are the storage guidelines for AMIT?",
+    answer: "AMIT should be stored in dry, cool, and well-ventilated conditions in tightly closed original packaging. It is mildly light-sensitive and should be kept away from direct sunlight, strong oxidizers, and open flames. The shelf life is 24 months."
+  },
+  {
+    question: "Can you export AMIT globally in bulk?",
+    answer: "Yes, Vasudev Chemo Pharma exports AMIT in bulk quantities (packed in 25 kg fiber drums or woven bags) to pharmaceutical and agrochemical formulators worldwide, with complete batch COA, SDS, and custom clearance paperwork."
+  }
+];
+
+export const CEA_FAQS: FAQItem[] = [
+  {
+    question: "What is 2-Chloroethylamine Hydrochloride (CEA HCl) reagent?",
+    answer: "2-Chloroethylamine Hydrochloride (CEA HCl, CAS 870-24-6) is a crystalline organic synthesis intermediate. It is used as an aminoethylating agent in the chemical synthesis of active pharmaceuticals, agrochemical active ingredients, and surfactant chemicals."
+  },
+  {
+    question: "What is the purity and assay of your CEA HCl?",
+    answer: "We supply CEA HCl with a minimum assay of 98.5% (typically >=99.0% by titration). Free amine and moisture levels are kept under strict limits to prevent dimerization or polymerization during storage."
+  },
+  {
+    question: "What are your export terms for CEA HCl?",
+    answer: "We export CEA HCl in 25 kg fiber drums with inner PE liners from Mundra and Hazira ports. We support CIF shipping to major manufacturing locations in Southeast Asia, Europe, and the Americas, providing full hazardous shipping documentation."
+  }
+];
+
+export const TRIAZINE_H2S_SCAVENGER_GENERAL_FAQS: FAQItem[] = [
+  {
+    question: "What are triazine-based H2S scavengers used for in oilfield operations?",
+    answer: "Triazine-based H2S scavengers react irreversibly with toxic hydrogen sulfide (H2S) in sour gas, crude oil, biogas, and wastewater. They prevent pipeline corrosion (sour gas embrittlement), ensure safety compliance for personnel, and sweeten the gas to meet pipeline transmission specifications."
+  },
+  {
+    question: "What types of triazine scavengers does Vasudev Chemo Pharma supply?",
+    answer: "We manufacture and supply MEA Triazine (Monoethanolamine Triazine) in 50%, 60%, and 78% concentrations, and MMA Triazine (Monomethylamine Triazine) in 40% concentration. MMA is preferred for BTX-free environmental compliance, while MEA is the standard for high-speed H2S reaction kinetics."
+  },
+  {
+    question: "How do you handle global distribution and export logistics?",
+    answer: "We distribute triazine scavengers in 200L HDPE drums, 1,000L IBC totes, and 20-22 MT bulk ISO tanks. We ship CIF to major global oilfield and gas processing hubs in the UAE, Saudi Arabia, Oman, USA, Brazil, Egypt, and Southeast Asia."
+  }
+];
+
+export const METAL_WORKING_FLUIDS_FAQS: FAQItem[] = [
+  {
+    question: "What is the role of triazine biocide in metalworking fluids?",
+    answer: "Triazine-based biocides act as broad-spectrum preservatives in metalworking fluids, cutting fluids, grinding coolants, and CNC machining fluids. They control bacteria, fungi, and yeasts, preventing fluid degradation, rancidity, rust, and foul odors."
+  },
+  {
+    question: "Is triazine biocide compatible with common cutting fluid formulations?",
+    answer: "Yes, our triazine biocide (CAS 4719-04-4) is highly compatible with water-soluble, semi-synthetic, and synthetic metalworking fluid formulations. It is stable at elevated pH and processing temperatures, offering prolonged tank-side preservation."
+  },
+  {
+    question: "What packaging sizes and export MOQs do you support?",
+    answer: "We supply metalworking fluid biocides in 250 kg drums and 1,000 kg IBC totes. The export MOQ is 1 MT, and we offer competitive CIF pricing to industrial buyers and lubricant blenders worldwide."
+  }
+];
+
+export const BIOCIDE_OIL_GAS_FAQS: FAQItem[] = [
+  {
+    question: "Why is triazine biocide used in oil and gas pipelines?",
+    answer: "Triazine oilfield biocides control sulfate-reducing bacteria (SRB) and acid-producing bacteria (APB) that cause microbially influenced corrosion (MIC) in oilfield water injection systems, hydrotest waters, pipeline networks, and produced water tanks."
+  },
+  {
+    question: "How does triazine biocide prevent souring in reservoirs?",
+    answer: "By continuously dosing triazine biocide into water injection systems, SRB growth is halted, preventing them from producing hydrogen sulfide gas. This controls oilfield souring, protects subsea lines, and maintains petroleum product quality."
+  },
+  {
+    question: "Do you supply oilfield biocides to Middle East and North American operators?",
+    answer: "Yes, we ship high-quality oilfield biocides CIF to Jebel Ali (UAE), Dammam (Saudi Arabia), Sohar (Oman), and Houston (USA). We provide full chemical registration documentation, GHS SDS, and Certificate of Analysis with each shipment."
+  }
+];
+
+export const MEA_TRIAZINE_78_HIGH_CONCENTRATION_FAQS: FAQItem[] = [
+  {
+    question: "What is High Concentration MEA Triazine 78% H2S Scavenger?",
+    answer: "High Concentration MEA Triazine 78% (CAS 4719-04-4) is a premium H2S scavenger featuring a minimum of 78% active matter. It is engineered for maximum H2S scavenging capacity per unit volume, making it ideal for deepwater offshore wells and high-sour gas processing systems."
+  },
+  {
+    question: "Why buy MEA Triazine 78% instead of the 50% concentration?",
+    answer: "The 78% concentration reduces shipping water weight by 36%, delivering substantial freight savings per active kilogram. It also occupies less storage footprint on offshore platforms and reduces container/drum disposal costs for the end-user."
+  },
+  {
+    question: "What packaging and logistics are supported for bulk 78% triazine?",
+    answer: "We supply MEA Triazine 78% in heavy-duty 200L drums, 1,000L IBC totes, and 22 MT ISO tanks. We ship from Hazira and Mundra ports with direct CIF routing to E&P companies and distributors worldwide."
+  }
+];
+
+export const MMA_TRIAZINE_40_BTX_FREE_FAQS: FAQItem[] = [
+  {
+    question: "What is BTX-Free MMA Triazine 40% H2S Scavenger?",
+    answer: "BTX-Free MMA Triazine 40% (CAS 13745-98-7) is a liquid H2S scavenger based on monomethylamine. It is specifically formulated to eliminate benzene, toluene, and xylene (BTX) emissions, ensuring compliance with strict environmental regulations in onshore refineries and gas facilities."
+  },
+  {
+    question: "How does BTX-Free MMA Triazine protect refinery equipment?",
+    answer: "It reacts rapidly with H2S in gas streams or crude oil without producing solid scale or deposits (such as calcium carbonate), preventing plugging in contactor towers, overhead condensators, and heat exchangers."
+  },
+  {
+    question: "Do you export BTX-Free MMA Triazine 40% under regulatory compliance?",
+    answer: "Yes. We export BTX-Free MMA Triazine to the USA, EU, and Gulf markets in compliant 250 kg HDPE drums and 1,000 kg IBC totes. All shipments include REACH-compliance declarations, OSHA-compliant GHS SDS, and ISO quality assurances."
+  }
+];
+
 export const PRODUCT_PAGE_FAQS: Record<string, FAQItem[]> = {
   "mea-triazine-78-h2s-scavenger": MEA_TRIAZINE_PRODUCT_PAGE_FAQS,
   "sodium-cumene-sulfonate-40": SODIUM_CUMENE_SULFONATE_40_FAQS,
+  "sodium-cumene-solid-sulfonate-40": SODIUM_CUMENE_SULFONATE_40_FAQS,
   "sodium-cumene-sulfonate-90": SODIUM_CUMENE_SULFONATE_90_FAQS,
   "sodium-xylene-sulfonate-40": SODIUM_XYLENE_SULFONATE_40_FAQS,
+  "sodium-xylene-solid-sulfonate-90": SODIUM_XYLENE_SULFONATE_90_FAQS,
   "sodium-xylene-sulfonate-90": SODIUM_XYLENE_SULFONATE_90_FAQS,
   "benzalkonium-chloride-50": BENZALKONIUM_CHLORIDE_50_FAQS,
   "benzalkonium-chloride-80": BENZALKONIUM_CHLORIDE_80_FAQS,
+  "mma-triazine-40": MMA_TRIAZINE_40_FAQS,
+  "p-toluenesulfonic-acid": PTSA_FAQS,
+  "eddm-non-triazine-h2s-scavenger": EDDM_FAQS,
+  "bis-2-chloroethyl-amine-hydrochloride": BIS_2_CHLOROETHYL_AMINE_FAQS,
+  "di-ethyl-amino-ethyl-chloride-hydrochloride": DEAEC_FAQS,
+  "2-amino-5-methylthiazole": AMIT_FAQS,
+  "2-chloroethylamine-hydrochloride": CEA_FAQS,
+  "triazine-h2s-scavenger-general": TRIAZINE_H2S_SCAVENGER_GENERAL_FAQS,
+  "metal-working-fluids": METAL_WORKING_FLUIDS_FAQS,
+  "biocide-oil-gas": BIOCIDE_OIL_GAS_FAQS,
+  "mea-triazine-78-high-concentration": MEA_TRIAZINE_78_HIGH_CONCENTRATION_FAQS,
+  "mma-triazine-40-btx-free": MMA_TRIAZINE_40_BTX_FREE_FAQS,
 };
 
 export const PRODUCT_FALLBACK_FAQS: Record<string, FAQItem[]> = {
   "mea-triazine-78-h2s-scavenger": MEA_TRIAZINE_FALLBACK_FAQS,
-  "mma-triazine-40": MMA_TRIAZINE_FALLBACK_FAQS,
+  "mma-triazine-40": MMA_TRIAZINE_40_FAQS,
+  "p-toluenesulfonic-acid": PTSA_FAQS,
+  "eddm-non-triazine-h2s-scavenger": EDDM_FAQS,
+  "bis-2-chloroethyl-amine-hydrochloride": BIS_2_CHLOROETHYL_AMINE_FAQS,
+  "di-ethyl-amino-ethyl-chloride-hydrochloride": DEAEC_FAQS,
+  "2-amino-5-methylthiazole": AMIT_FAQS,
+  "2-chloroethylamine-hydrochloride": CEA_FAQS,
+  "triazine-h2s-scavenger-general": TRIAZINE_H2S_SCAVENGER_GENERAL_FAQS,
+  "metal-working-fluids": METAL_WORKING_FLUIDS_FAQS,
+  "biocide-oil-gas": BIOCIDE_OIL_GAS_FAQS,
+  "mea-triazine-78-high-concentration": MEA_TRIAZINE_78_HIGH_CONCENTRATION_FAQS,
+  "mma-triazine-40-btx-free": MMA_TRIAZINE_40_BTX_FREE_FAQS,
 };
+
 
 

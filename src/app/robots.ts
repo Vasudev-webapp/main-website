@@ -2,53 +2,7 @@ import type { MetadataRoute } from "next";
 
 const SITE_URL = "https://www.vasudevchemopharma.com";
 
-// Old site paths that no longer exist — block crawling so Google drops them.
-const OLD_SITE_PATHS = [
-  "/products",
-  "/insights",
-  "/insights/*",
-  "/aboutus",
-  "/ourservices",
-  "/index.html",
-  "/MEA-Triazine",
-  "/p-toluenesulfonic-acid",
-  "/5.0",
-  "/products/mea-triazine-78",
-  "/products/manganese-sulphate",
-  "/product/mea-triazine-78",
-  "/product/mea-triazine-78-scavenger",
-  "/product/active-pharmaceutical-ingredients",
-  "/product/albendazole",
-  "/product/ketoconazole",
-  "/product/pregabalin",
-  "/product/copper-sulphate",
-  "/product/manganese-sulphate",
-  "/service/chemical-manufacturing-services",
-  "/service/custom-chemical-formulation",
-  "/service/chemical-supply-chain-management",
-  "/service/advanced-control-systems",
-  "/service/process-optimization",
-  "/legal-pages/privacy-policy",
-  "/compare/mea-triazine-vs-yogi-intermediates",
-  "/compare/mea-triazine-vs-jay-dinesh-chemicals",
-  "/compare/mea-triazine-vs-tacelene-chem",
-  "/compare/mea-triazine-vs-venus-ethoxyethers",
-  "/compare/mea-triazine-vs-kwantum-india",
-  "/compare/mea-triazine-vs-geocon-products-india",
-  "/compare/mea-triazine-vs-k2p-chemicals",
-  "/compare/mea-triazine-vs-nipacide-bk",
-  "/compare/mea-triazine-vs-imperial-oilfield-chemicals",
-  "/compare/mea-triazine-vs-melzer-chemicals",
-  "/compare/mea-triazine-vs-esteem-industries",
-  "/resources/biocide-h2s-scavenger-dual-function",
-  "/applications/drilling-fluids-biocide",
-  "/case-study/precision-cnc-milling-for-automotive-components",
-  "/case-study/automated-assembly-line-optimization",
-  "/case-study/lightweight-castings-for-industrial-equipment",
-  "/blog/ai-iot-breakthroughs-chemical-manufacturing-efficiency",
-  "/supply/mea-triazine-78/india",
-];
-
+// Admin, internal, and temporary directories should be blocked from crawling.
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -63,7 +17,6 @@ export default function robots(): MetadataRoute.Robots {
           "/api/",
           "/tmp",
           "/tmp/*",
-          ...OLD_SITE_PATHS,
         ],
       },
       {
@@ -95,7 +48,6 @@ export default function robots(): MetadataRoute.Robots {
           "/payload",
           "/payload/*",
           "/api/",
-          ...OLD_SITE_PATHS,
         ],
       },
     ],

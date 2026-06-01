@@ -19,6 +19,12 @@ import { getProductMediaOverride } from "@/lib/seo/product-media-overrides";
 import { PRODUCT_FALLBACK_FAQS, PRODUCT_PAGE_FAQS } from "@/lib/seo/product-faqs";
 import { PRODUCT_DIRECT_ANSWERS } from "@/lib/seo/product-direct-answers";
 import {
+  MEA_TRIAZINE_SYNONYMS,
+  MMA_TRIAZINE_SYNONYMS,
+  EDDM_SYNONYMS,
+  BENZALKONIUM_CHLORIDE_SYNONYMS,
+} from "@/lib/seo/product-synonyms";
+import {
   MEA_TRIAZINE_SLUG,
   MEA_TRIAZINE_COMPARISON,
   MEA_TRIAZINE_MARKET_LANGUAGE_CODES,
@@ -339,6 +345,28 @@ const SEARCH_CONSOLE_INTENT_GUIDES: Record<
       },
     ],
   },
+  "eddm-non-triazine-h2s-scavenger": {
+    heading: "Buyer searches this page answers",
+    summary:
+      "Procurement and technical teams frequently evaluate EDDM, non-triazine based scavengers, and ethylene glycol hemiformals for high-scaling sour service applications.",
+    items: [
+      {
+        query: "EDDM H2S scavenger",
+        answer:
+          "EDDM (Ethylenedioxydimethanol, CAS 3586-55-8) is a non-triazine liquid scavenger used to selectively remove H2S without raising pH or causing carbonate scaling.",
+      },
+      {
+        query: "non triazine H2S scavenger",
+        answer:
+          "A sulfur scavenger chemistry that does not contain nitrogen or amine groups, avoiding spent triazine residues, catalyst poisoning, and salt precipitation.",
+      },
+      {
+        query: "EDDM manufacturer India",
+        answer:
+          "Vasudev Chemo Pharma manufactures and supplies high-active (≥ 90%) EDDM at our ISO 9001:2015 certified plant in Gujarat, India, for domestic and export markets.",
+      },
+    ],
+  },
 };
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -356,16 +384,32 @@ export default async function ProductDetailPage({
   const isMeaTriazine = slug === MEA_TRIAZINE_SLUG;
   const isSxs40 = slug === SXS_40_SLUG;
   const isScs40 = slug === SCS_40_SLUG;
+  const synonymMap: Record<string, typeof MEA_TRIAZINE_SYNONYMS> = {
+    "mea-triazine-78-h2s-scavenger": MEA_TRIAZINE_SYNONYMS,
+    "mma-triazine-40": MMA_TRIAZINE_SYNONYMS,
+    "mma-triazine-40-btx-free": MMA_TRIAZINE_SYNONYMS,
+    "eddm-non-triazine-h2s-scavenger": EDDM_SYNONYMS,
+    "benzalkonium-chloride-50": BENZALKONIUM_CHLORIDE_SYNONYMS,
+    "benzalkonium-chloride-80": BENZALKONIUM_CHLORIDE_SYNONYMS,
+  };
+  const activeSynonyms = synonymMap[slug];
   const synonymData: {
     intro: string;
     groups: { heading: string; items: string[] }[];
     casNote?: string;
     closingText: string;
-  } = {
-    intro: "",
-    groups: [],
-    closingText: "",
-  };
+  } = activeSynonyms
+    ? {
+        intro: activeSynonyms.intro,
+        groups: activeSynonyms.groups,
+        casNote: activeSynonyms.casNote,
+        closingText: activeSynonyms.closingText,
+      }
+    : {
+        intro: "",
+        groups: [],
+        closingText: "",
+      };
   const productPageFaqs = PRODUCT_PAGE_FAQS[slug] ?? PRODUCT_FALLBACK_FAQS[slug] ?? [];
   const directAnswer = PRODUCT_DIRECT_ANSWERS[slug];
   const searchConsoleIntentGuide = SEARCH_CONSOLE_INTENT_GUIDES[slug];
@@ -1205,7 +1249,7 @@ export default async function ProductDetailPage({
             </section>
           )}
 
-          {false && (
+          {synonymData.groups.length > 0 && (
             <section id="synonyms" className="mb-16">
               <h2 className="font-heading text-h3 text-primary mb-4">
                 Also Known As / Synonyms / Trade Names

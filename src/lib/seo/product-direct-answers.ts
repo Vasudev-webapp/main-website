@@ -31,4 +31,8 @@ export const PRODUCT_DIRECT_ANSWERS: Record<string, string> = {
 
   "benzalkonium-chloride-80":
     "Benzalkonium Chloride 80% (BKC 80%) is the high-active 80 ± 1% aqueous concentrate of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5). It is the export-economical grade preferred by global disinfectant brands and sanitiser blenders who dilute on-site to 50%, 25%, or 10% — delivering 60% more active matter per kilogram shipped than BKC 50% and equivalent to Lonza Bardac® 2280 and Stepan BTC® 8358 reference grades.",
+
+  "eddm-non-triazine-h2s-scavenger":
+    "EDDM (Ethylenedioxydimethanol, CAS 3586-55-8) is a non-triazine based H2S scavenger and biocide supplied at ≥ 90% active substance content. It selectively removes hydrogen sulphide from natural gas, crude oil, produced water, and biogas without raising fluid pH or causing calcium carbonate scaling, making it ideal for offshore platforms and high-scaling environments."
 };
+
