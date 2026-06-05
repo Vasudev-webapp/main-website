@@ -20,7 +20,7 @@ const features = [
 
 export default function WhyChooseSection() {
   return (
-    <section className="py-20 lg:py-32 bg-light">
+    <section className="py-12 lg:py-20 bg-light">
       <div className="max-w-container mx-auto px-6 lg:px-10">
         {/* Client Logos Marquee */}
         <div className="flex flex-wrap items-center justify-center gap-12 mb-16 opacity-40">

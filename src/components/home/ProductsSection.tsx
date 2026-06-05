@@ -37,7 +37,7 @@ export default async function ProductsSection() {
   }
 
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="py-12 lg:py-20 relative overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 z-0">
         <Image

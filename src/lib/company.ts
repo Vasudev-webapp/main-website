@@ -45,28 +45,30 @@ function toCompanyInfo(doc: any): CompanyInfoData {
         }))
     : [];
 
-  const phoneNumbers = mappedPhoneNumbers.length > 0 ? mappedPhoneNumbers : [];
+  const phoneNumbers = mappedPhoneNumbers.length > 0
+    ? mappedPhoneNumbers
+    : [{ label: "Export Sales / WhatsApp", number: "+91 9898837713" }];
 
   return {
-    companyName: doc?.companyName || "",
-    primaryEmail: doc?.primaryEmail || "",
-    secondaryEmail: doc?.secondaryEmail || "",
+    companyName: doc?.companyName || "Vasudev Chemo Pharma",
+    primaryEmail: doc?.primaryEmail || "info@vasudevchemopharma.com",
+    secondaryEmail: doc?.secondaryEmail || "export@vasudevchemopharma.com",
     phoneNumbers,
-    address: doc?.address || "",
-    mapUrl: doc?.mapUrl || "",
+    address: doc?.address || "Plot No. H-3062, GIDC Ankleshwar - 393002, Gujarat, India",
+    mapUrl: doc?.mapUrl || "https://maps.google.com/?q=Plot+No.+H-3062,+GIDC+Ankleshwar+-+393002,+Gujarat,+India",
     brochureUrl: doc?.brochureUrl || BROCHURE_URL,
     yearsOfExperience:
-      typeof doc?.yearsOfExperience === "number"
+      typeof doc?.yearsOfExperience === "number" && doc.yearsOfExperience > 0
         ? doc.yearsOfExperience
-        : 0,
+        : 8,
     foundingYear:
       typeof doc?.foundingYear === "number" && doc.foundingYear > 1900
         ? doc.foundingYear
-        : undefined,
+        : 2018,
     workingHours: {
-      monToFri: doc?.workingHours?.monToFri || "",
-      saturday: doc?.workingHours?.saturday || "",
-      sunday: doc?.workingHours?.sunday || "",
+      monToFri: doc?.workingHours?.monToFri || "9:00 AM - 6:00 PM",
+      saturday: doc?.workingHours?.saturday || "9:00 AM - 4:00 PM",
+      sunday: doc?.workingHours?.sunday || "Closed",
     },
   };
 }

@@ -200,6 +200,86 @@ export const PRODUCT_INTERNAL_LINKS: Record<string, ProductInternalLinks> = {
       ...INDUSTRY_LINKS.oilgas,
     ],
   },
+  "triazine-h2s-scavenger-general": {
+    relatedProducts: [
+      { href: "/product/mea-triazine-78-high-concentration", label: "MEA Triazine 78% (High Concentration)", context: "Premium high-concentration H2S scavenger" },
+      { href: "/product/mma-triazine-40-btx-free", label: "MMA Triazine 40% (BTX-Free)", context: "Eco-compliant BTX-free triazine H2S scavenger" },
+      { href: "/product/eddm-non-triazine-h2s-scavenger", label: "EDDM Non-Triazine H2S Scavenger", context: "Non-nitrogen non-triazine based H2S scavenger" },
+    ],
+    relatedPages: [
+      { href: "/mea-triazine-vs-mma-triazine", label: "MEA vs MMA Triazine Comparison", context: "Compare MEA and MMA triazine scavengers" },
+      { href: "/how-h2s-scavengers-work", label: "How H2S Scavengers Work", context: "Technical guide to H2S scavenging chemistry" },
+      { href: "/compare", label: "Product Comparisons", context: "Compare H2S scavenger products side by side" },
+      ...DEFAULT_LINKS,
+    ],
+    industryPages: [
+      ...INDUSTRY_LINKS.oilgas,
+      ...INDUSTRY_LINKS.waterTreatment,
+      ...INDUSTRY_LINKS.metalworking,
+      ...INDUSTRY_LINKS.paperMill,
+    ],
+  },
+  "metal-working-fluids": {
+    relatedProducts: [
+      { href: "/product/triazine-h2s-scavenger-general", label: "Triazine Based H2S Scavenger (General)", context: "General triazine chemical variants" },
+      { href: "/product/biocide-oil-gas", label: "Biocide for Oil & Gas Industries", context: "Oilfield biocides and preservatives" },
+    ],
+    relatedPages: [
+      { href: "/how-h2s-scavengers-work", label: "How H2S Scavengers Work", context: "Technical chemistry insights" },
+      ...DEFAULT_LINKS,
+    ],
+    industryPages: [
+      ...INDUSTRY_LINKS.metalworking,
+      ...INDUSTRY_LINKS.waterTreatment,
+    ],
+  },
+  "biocide-oil-gas": {
+    relatedProducts: [
+      { href: "/product/triazine-h2s-scavenger-general", label: "Triazine Based H2S Scavenger (General)", context: "General triazine chemical variants" },
+      { href: "/product/mea-triazine-78-high-concentration", label: "MEA Triazine 78% (High Concentration)", context: "Premium high-concentration H2S scavenger" },
+    ],
+    relatedPages: [
+      { href: "/how-h2s-scavengers-work", label: "How H2S Scavengers Work", context: "Technical chemistry insights" },
+      ...DEFAULT_LINKS,
+    ],
+    industryPages: [
+      ...INDUSTRY_LINKS.oilgas,
+      ...INDUSTRY_LINKS.waterTreatment,
+    ],
+  },
+  "mea-triazine-78-high-concentration": {
+    relatedProducts: [
+      { href: "/product/triazine-h2s-scavenger-general", label: "Triazine Based H2S Scavenger (General)", context: "General triazine chemical variants" },
+      { href: "/product/mma-triazine-40-btx-free", label: "MMA Triazine 40% (BTX-Free)", context: "Eco-compliant BTX-free triazine H2S scavenger" },
+    ],
+    relatedPages: [
+      { href: "/mea-triazine-vs-mma-triazine", label: "MEA vs MMA Triazine Comparison", context: "Compare MEA and MMA triazine scavengers" },
+      { href: "/how-h2s-scavengers-work", label: "How H2S Scavengers Work", context: "Technical guide to H2S scavenging chemistry" },
+      { href: "/compare", label: "Product Comparisons", context: "Compare H2S scavenger products side by side" },
+      ...DEFAULT_LINKS,
+    ],
+    industryPages: [
+      ...INDUSTRY_LINKS.oilgas,
+      ...INDUSTRY_LINKS.waterTreatment,
+    ],
+  },
+  "mma-triazine-40-btx-free": {
+    relatedProducts: [
+      { href: "/product/mea-triazine-78-high-concentration", label: "MEA Triazine 78% (High Concentration)", context: "Premium high-concentration H2S scavenger" },
+      { href: "/product/triazine-h2s-scavenger-general", label: "Triazine Based H2S Scavenger (General)", context: "General triazine chemical variants" },
+    ],
+    relatedPages: [
+      { href: "/mea-triazine-vs-mma-triazine", label: "MEA vs MMA Triazine Comparison", context: "Compare MEA and MMA triazine scavengers" },
+      { href: "/how-h2s-scavengers-work", label: "How H2S Scavengers Work", context: "Technical guide to H2S scavenging chemistry" },
+      { href: "/compare", label: "Product Comparisons", context: "Compare H2S scavenger products side by side" },
+      ...DEFAULT_LINKS,
+    ],
+    industryPages: [
+      ...INDUSTRY_LINKS.oilgas,
+      ...INDUSTRY_LINKS.waterTreatment,
+      ...INDUSTRY_LINKS.paperMill,
+    ],
+  },
 };
 
 /**

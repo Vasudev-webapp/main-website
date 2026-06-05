@@ -1403,6 +1403,266 @@ Strategic export markets: USA (EPA-registered formulators), UAE / Saudi Arabia (
       },
     ],
   },
+  "h2s-scavenger-oil-gas-industry": {
+    slug: "h2s-scavenger-oil-gas-industry",
+    title: "H2S Scavenger for Oil and Gas Industry — MEA 78% & MMA 40%",
+    description: "Premium liquid H2S scavenger for the oil and gas industry. Dosing packages of MEA Triazine 78% & MMA Triazine 40% for global export. Request MSDS.",
+    keywords: [
+      "H2S scavenger for oil and gas industry",
+      "oilfield hydrogen sulfide scavenger",
+      "sour gas sweetening chemical",
+      "triazine sulfide removal",
+    ],
+    h1: "H2S Scavenger for Oil and Gas Industry",
+    intro: "The oil and gas industry regularly processes fluids containing high concentrations of hydrogen sulfide gas (H2S). Dosing a specialized H2S scavenger for oil and gas industry operations helps prevent sulfide stress cracking (SSC) in metal pipes, protects expensive gas processing equipment, and keeps personnel safe from toxic gases.",
+    sections: [
+      {
+        heading: "Mitigating Sulfide Risks in Upstream Production",
+        id: "mitigating-sulfide-risks",
+        body: "Hydrogen sulfide is extremely toxic, causing immediate respiratory paralysis at high concentrations. Dosing chemical scavengers neutralizes this gas before it can evolve into the headspace of separators or storage assets. This ensures compliance with occupational safety regulations and pipeline specifications."
+      },
+      {
+        heading: "Direct Sourcing for Oilfield Operations",
+        id: "oilfield-direct-sourcing",
+        body: "Vasudev Chemo Pharma supplies premium organic triazine lines designed for direct pipeline injection, separator towers, and storage tank treatments. We manufacture high-purity MEA Triazine 78% and BTX-free MMA Triazine 40% solutions, offering chemical stability and high performance under varying temperatures."
+      }
+    ],
+    specs: [
+      { label: "MEA Triazine 78% active", value: "78% ± 1% active matter" },
+      { label: "MMA Triazine 40% active", value: "40% ± 1% active (BTX-free)" },
+      { label: "Product Forms", value: "Liquid solutions ready for injection" },
+      { label: "Recommended Dosing", value: "1 - 4 ppm per ppm of H2S removed" }
+    ],
+    benefits: [
+      "Irreversible reaction chemistry prevents sulfide regeneration",
+      "Helps meet standard gas pipeline requirements (< 4 ppm)",
+      "High thermal stability suitable for deep downhole wells",
+      "Available in bulk ISO tanks, IBCs, and HDPE drums"
+    ],
+    relatedCountries: [
+      { name: "USA", slug: "usa" },
+      { name: "UAE", slug: "uae" },
+      { name: "Saudi Arabia", slug: "saudi-arabia" }
+    ],
+    faqs: [
+      {
+        question: "What is the typical injection point for H2S scavengers in oil and gas?",
+        answer: "Scavengers are typically injected continuously at the wellhead, ahead of the separator, or directly into transmission pipelines to maximize residence and contact time."
+      },
+      {
+        question: "Can MEA Triazine be used in offshore oil production?",
+        answer: "Yes, but offshore operators often prefer monomethylamine (MMA) triazines because they prevent calcium carbonate scaling, which can block downhole subsea lines."
+      }
+    ]
+  },
+  "h2s-removal-natural-gas": {
+    slug: "h2s-removal-natural-gas",
+    title: "Hydrogen Sulfide Removal from Natural Gas | MEA 78% & MMA 40%",
+    description: "Optimize your gas sweetening process. We supply high-active triazine solutions for hydrogen sulfide removal from natural gas. Request pricing.",
+    keywords: [
+      "Hydrogen Sulfide Removal from Natural Gas",
+      "gas sweetening triazine",
+      "scrubbing sour gas",
+      "bubble tower chemical",
+    ],
+    h1: "Hydrogen Sulfide Removal from Natural Gas",
+    intro: "Natural gas containing hydrogen sulfide is termed 'sour gas' and cannot be transported or sold due to severe safety risks and equipment corrosion. The chemical removal of hydrogen sulfide from natural gas involves running the gas through contact towers containing aqueous triazine solutions. This drops vapor-phase H2S levels down to standard pipeline specifications (typically below 4 ppm).",
+    sections: [
+      {
+        heading: "Meeting Gas Pipeline Specifications",
+        id: "meeting-gas-specs",
+        body: "To protect transport networks, natural gas must contain negligible quantities of H2S. Passing sour gas through bubble towers or contactor columns containing diluted triazine solutions guarantees rapid, selective mass-transfer of hydrogen sulfide, converting it into water-soluble dithiazine salts."
+      },
+      {
+        heading: "High-Active Sweetening Chemicals",
+        id: "gas-sweetening-chemicals",
+        body: "We manufacture MEA Triazine 78% H2S Scavenger, the industry standard for high-volume bubble towers, offering maximum scavenging efficiency. For dry gas streams or operations sensitive to scale deposition, our MMA Triazine 40% provides a non-scaling, BTX-free alternative."
+      }
+    ],
+    specs: [
+      { label: "Treatment Method", value: "Liquid scrubbing or direct injection" },
+      { label: "Optimal Gas Temp", value: "20 °C - 60 °C" },
+      { label: "Primary Scavenger", value: "MEA Triazine 78% (high active)" },
+      { label: "Alternative Scavenger", value: "MMA Triazine 40% (BTX-free)" }
+    ],
+    benefits: [
+      "Achieves target H2S concentration of < 4 ppm",
+      "Eliminates capital-intensive regenerable stripping columns",
+      "Reaction byproducts partition fully into the water phase",
+      "High gas sweetening speed with low chemical consumption"
+    ],
+    relatedCountries: [
+      { name: "Qatar", slug: "qatar" },
+      { name: "UAE", slug: "uae" },
+      { name: "Saudi Arabia", slug: "saudi-arabia" }
+    ],
+    faqs: [
+      {
+        question: "How is H2S removed from natural gas using triazine?",
+        answer: "Sour gas is passed through a liquid bath or sprayed with triazine, causing H2S to react chemically with the triazine ring to form water-soluble dithiazine."
+      },
+      {
+        question: "What is the difference between solid and liquid H2S removal systems?",
+        answer: "Solid systems (such as iron sponge) utilize dry reactive beds, which require physical replacement. Liquid systems (such as triazine) allow for automated continuous injection and simpler operation."
+      }
+    ]
+  },
+  "oilfield-production-chemical-h2s-scavenger": {
+    slug: "oilfield-production-chemical-h2s-scavenger",
+    title: "Oilfield Production Chemical H2S Scavenger | Vasudev Chemo",
+    description: "Direct sourcing for oilfield production chemical H2S scavengers. ISO certified manufacturer supplying MEA 78% and MMA 40%. Request quotes.",
+    keywords: [
+      "Oilfield Production Chemical H2S Scavenger",
+      "oilfield production chemical",
+      "sulfide control agent",
+      "triazine supplier",
+    ],
+    h1: "Oilfield Production Chemical H2S Scavenger",
+    intro: "During the production phase of sour wells, hydrogen sulfide gas emerges mixed with oil, gas, and produced water. Injecting a stable oilfield production chemical H2S scavenger converts toxic sulfides into benign, water-soluble products. This mitigates corrosion in production separators, pipelines, and storage tanks.",
+    sections: [
+      {
+        heading: "Maximizing Safety and Asset Protection",
+        id: "asset-protection",
+        body: "Production pipelines are subject to severe localized corrosion and embrittlement when exposed to free sulfides. Dosing organic H2S scavengers directly into gathering systems stabilizes the stream, protecting multi-phase flow equipment and shipping pipelines from sulfur-induced structural failures."
+      },
+      {
+        heading: "Production Chemicals Portfolio",
+        id: "production-portfolio",
+        body: "We supply MEA Triazine 78% for standard high-active gas sweetening and MMA Triazine 40% for applications where scale prevention is critical. Both grades are manufactured in our ISO 9001:2015 certified plant in Gujarat, India, with rigorous testing for chemical shelf life and activity."
+      }
+    ],
+    specs: [
+      { label: "Application Type", value: "Upstream oilfield production chemistry" },
+      { label: "Standard Packing", value: "220L HDPE drums, 1000L IBCs, ISO tanks" },
+      { label: "Shelf Life", value: "12 - 24 months (stable storage)" },
+      { label: "Solubility", value: "Highly water-soluble" }
+    ],
+    benefits: [
+      "Extends the operational life of carbon steel production pipes",
+      "Highly selective reaction does not consume carbon dioxide",
+      "Reduces volatile H2S odor in production storage assets",
+      "Direct from manufacturer pricing ensures high cost efficiency"
+    ],
+    relatedCountries: [
+      { name: "USA", slug: "usa" },
+      { name: "Brazil", slug: "brazil" },
+      { name: "Vietnam", slug: "vietnam" }
+    ],
+    faqs: [
+      {
+        question: "Does the H2S scavenger react with carbon dioxide (CO2)?",
+        answer: "Triazine based scavengers react selectively with H2S over CO2, which prevents unnecessary chemical consumption in high-CO2 gas fields."
+      },
+      {
+        question: "What is the flash point of your liquid oilfield scavengers?",
+        answer: "Our standard aqueous triazine scavengers have a high flash point (typically > 100°C), making them safe for transport and offshore use."
+      }
+    ]
+  },
+  "oilfield-h2s-scavenger": {
+    slug: "oilfield-h2s-scavenger",
+    title: "Oilfield H2S Scavenger Manufacturer | Pipeline Treatment",
+    description: "Direct supply of oilfield H2S scavengers. We manufacture premium MEA Triazine 78% and BTX-Free MMA Triazine 40% for global export. Inquire now.",
+    keywords: [
+      "Oilfield H2S Scavenger",
+      "oilfield sour gas treatment",
+      "wellhead scavenger injection",
+      "refinery amine triazine",
+    ],
+    h1: "Oilfield H2S Scavenger Chemicals",
+    intro: "Sulfide corrosion leads to hydrogen embrittlement and catastrophic metal failure. Dosing an oilfield H2S scavenger is standard practice to preserve steel pipelines, separators, and storage infrastructure. Vasudev Chemo Pharma supplies high-active, stable liquid chemicals for direct wellhead injection and refinery processing.",
+    sections: [
+      {
+        heading: "Preventing Sulfide Corrosion in Extraction & Transport",
+        id: "preventing-corrosion",
+        body: "Acidic hydrogen sulfide readily attacks steel, creating iron sulfide scale and causing micro-cracks. Applying a high-purity triazine scavenger reacts irreversibly with H2S, neutralizing its acidity and halting the sulfide corrosion loop in upstream flowlines and production vessels."
+      },
+      {
+        heading: "Product Performance and Availability",
+        id: "oilfield-grades",
+        body: "We produce MEA Triazine 78% for maximum chemical scrubbing efficiency and monomethylamine (MMA) Triazine 40% for BTX-free operations. Our products conform to NACE standards and are supplied with batch-specific Certificates of Analysis (COA)."
+      }
+    ],
+    specs: [
+      { label: "Corrosion Mitigation", value: "Conforms to NACE compliance criteria" },
+      { label: "Formulation Base", value: "MEA Triazine (78%) / MMA Triazine (40%)" },
+      { label: "Free Amine Limit", value: "Strictly controlled to prevent scaling" },
+      { label: "Pour Point", value: "Up to -20 °C (winterized grades available)" }
+    ],
+    benefits: [
+      "Mitigates hydrogen-induced cracking in flowlines",
+      "Suitable for continuous low-dosage injection systems",
+      "Ensures transport safety by dropping H2S ppm to zero",
+      "Exported directly from Gujarat ports with complete documentation"
+    ],
+    relatedCountries: [
+      { name: "USA", slug: "usa" },
+      { name: "Saudi Arabia", slug: "saudi-arabia" },
+      { name: "UAE", slug: "uae" }
+    ],
+    faqs: [
+      {
+        question: "How do you test the effectiveness of an oilfield H2S scavenger?",
+        answer: "Operators measure H2S levels in the gas stream before and after injection using gas detector tubes or online electrochemical sensors."
+      },
+      {
+        question: "Can spent scavenger affect desalter water in refineries?",
+        answer: "Yes, unreacted triazines and byproducts can accumulate in desalter water, increasing chemical oxygen demand (COD). Proper dosing prevents this."
+      }
+    ]
+  },
+  "industrial-h2s-removal-chemical": {
+    slug: "industrial-h2s-removal-chemical",
+    title: "Industrial H2S Removal Chemical Supplier | Vasudev Chemo",
+    description: "Premium industrial H2S removal chemical supplier. High active MEA Triazine 78% and MMA Triazine 40% for natural gas and wastewater. Inquire today.",
+    keywords: [
+      "Industrial H2S Removal Chemical",
+      "wastewater sulfide abatement",
+      "refinery sour gas scrubber",
+      "industrial desulfurization chemical",
+    ],
+    h1: "Premium Industrial H2S Removal Chemicals",
+    intro: "Beyond oil and gas, hydrogen sulfide occurs in municipal sewer networks, paper mills, distilleries, and geothermal power facilities. An industrial H2S removal chemical must react quickly to prevent odor complaints and safe exposure limit violations. Our amine-based organic liquid scavengers are engineered to deliver high reaction speeds and thermal stability.",
+    sections: [
+      {
+        heading: "Broad Spectrum Sulfide Management Sourcing",
+        id: "broad-spectrum-abatement",
+        body: "Industrial facilities generate dissolved sulfides in stagnant, anaerobic waters. Dosing our industrial-grade scavengers directly into wastewater streams or scrubbers neutralizes H2S at the source, preventing toxic emissions and eliminating rotten-egg odors."
+      },
+      {
+        heading: "Core Chemical Portfolio",
+        id: "industrial-portfolio",
+        body: "We synthesize MEA Triazine 78% H2S Scavenger, offering maximum desulfurization kinetics for gas scrubbers, and MMA Triazine 40% for applications where low aromatic content and scale control are required."
+      }
+    ],
+    specs: [
+      { label: "Industrial Applications", value: "Gas, wastewater, paper pulp, geothermal" },
+      { label: "Kinetics", value: "Instantaneous gas-liquid chemical reaction" },
+      { label: "pH Range", value: "Effective in neutral to highly alkaline environments" },
+      { label: "Water Solubility", value: "100% miscible in aqueous streams" }
+    ],
+    benefits: [
+      "Quickly eliminates rotten-egg odor in wastewater tanks",
+      "Helps factories meet environmental safety emission caps",
+      "High chemical stability prevents solids sedimentation",
+      "Cost-effective supply directly from primary synthesis manufacturer"
+    ],
+    relatedCountries: [
+      { name: "Thailand", slug: "thailand" },
+      { name: "Vietnam", slug: "vietnam" },
+      { name: "Brazil", slug: "brazil" }
+    ],
+    faqs: [
+      {
+        question: "What safety precautions are needed during handling?",
+        answer: "Since triazines are alkaline organic amines, operators must wear chemical-resistant gloves, goggles, and face shields to prevent contact with skin or eyes."
+      },
+      {
+        question: "Are these chemicals bio-degradable?",
+        answer: "Standard aqueous triazine solutions show moderate to high biodegradability under diluted conditions, which is beneficial for industrial wastewater systems."
+      }
+    ]
+  },
 };
 
 export const APPLICATION_PAGES_DATA: Record<string, ApplicationPageData> =

@@ -38,7 +38,7 @@ const companyLinks = [
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "/legal/privacy-policy" },
-  { label: "Sitemap", href: "/sitemap.xml" },
+  { label: "Sitemap", href: "/sitemap" },
 ];
 
 function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {

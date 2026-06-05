@@ -492,7 +492,8 @@ export const BKC_APPLICATIONS_KEYWORDS = dedupe([
 
 /* ── Utility: merge clusters without duplicates ───────────────────── */
 export function mergeKeywordClusters(
-  ...clusters: readonly (readonly string[])[]
+  ...clusters: readonly (readonly string[] | undefined | null)[]
 ): string[] {
-  return dedupe(clusters.flatMap((cluster) => [...cluster]));
+  return dedupe(clusters.flatMap((cluster) => (cluster ? [...cluster] : [])));
 }
+

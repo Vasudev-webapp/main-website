@@ -46,7 +46,7 @@ const regions = [
 
 export default function GlobalSupplySection() {
   return (
-    <section className="py-20 lg:py-32">
+    <section className="py-12 lg:py-20">
       <div className="max-w-container mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="text-center mb-14">

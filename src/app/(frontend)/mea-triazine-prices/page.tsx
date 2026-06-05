@@ -312,15 +312,15 @@ export default function MeaTriazinePricesPage() {
                 </p>
               </Link>
               <Link
-                href="/mea-triazine-production-plant-cost"
+                href="/h2s-scavenger-oil-gas"
                 className="rounded-2xl border border-gray-200 bg-light p-5 hover:border-accent/40 hover:shadow-md transition-all"
               >
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">Cost guide</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">Industry page</p>
                 <h3 className="font-heading text-h5 text-primary mt-2">
-                  MEA Triazine Production Plant Cost
+                  H2S Scavenger in Oil & Gas
                 </h3>
                 <p className="text-sm text-gray-600 mt-2">
-                  CAPEX guide for buyers evaluating in-house manufacturing vs. sourcing.
+                  Applications, dosing, and benefits for upstream & midstream streams.
                 </p>
               </Link>
               <Link

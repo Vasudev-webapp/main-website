@@ -25,7 +25,7 @@ export default async function AboutSection() {
   const experiencePeriodLabel = `// ${startYear} - ${currentYear} //`;
 
   return (
-    <section id="about" className="py-20 lg:py-32">
+    <section id="about" className="py-12 lg:py-20">
       <div className="max-w-container mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Column */}

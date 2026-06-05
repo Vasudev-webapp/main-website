@@ -100,12 +100,6 @@ export const PAGE_META_OVERRIDES: Record<string, PageMetaOverride> = {
     description:
       "MEA Triazine 78% price guide — cost per MT, drum/IBC/bulk rates, and factors that affect pricing. Get a same-day quote from an ISO 9001 India manufacturer.",
   },
-  "/mea-triazine-production-plant-cost": {
-    h1: "MEA Triazine Production Plant Cost",
-    title: "MEA Triazine Production Plant Cost – CAPEX Guide",
-    description:
-      "MEA Triazine 78% production plant cost guide — CAPEX ranges, equipment, feedstock, utilities & feasibility factors. Or skip CAPEX: supply from an ISO 9001 India manufacturer.",
-  },
   "/supply/mea-triazine-78": {
     h1: "MEA Triazine 78% Global Supply",
     title: "MEA Triazine 78% Manufacturer — Direct Factory Supply | Vasudev Chemo Pharma",

@@ -684,3 +684,171 @@ export const SODIUM_XYLENE_SULFONATE_SYNONYMS: ProductSynonyms = {
   closingText:
     "If your specification, MSDS, formulation manual, or customs filing lists any of the above names or the CAS number 1300-72-7, Vasudev Chemo Pharma can supply the matching product. We provide both 40% liquid and 90% powder grades in bulk drums, IBC totes, and container loads. Contact us for COA, SDS, samples, and specification alignment.",
 };
+
+export const TRIAZINE_SCAVENGER_GENERAL_SYNONYMS: ProductSynonyms = {
+  intro:
+    "Triazine Based H2S Scavengers are supplied under several chemical names, designations, and application terms. Our product portfolio meets the requirements of the following specifications:",
+  groups: [
+    {
+      heading: "IUPAC and Chemical Names",
+      items: [
+        "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine",
+        "1,3,5-Trimethylhexahydro-1,3,5-triazine",
+        "1,3,5-Triazine-1,3,5(2H,4H,6H)-triethanol",
+        "2,2',2''-(1,3,5-triazinane-1,3,5-triyl)triethanol",
+        "Triazinetriethanol",
+        "Hexahydrotriazine Triethanol (HHT)",
+        "sym-Trimethyl-hexahydrotriazine",
+      ],
+    },
+    {
+      heading: "Generic and Trade Names",
+      items: [
+        "MEA Triazine",
+        "MMA Triazine",
+        "Triazine H2S Scavenger",
+        "Triazine Biocide",
+        "Amine-based H2S Scavenger",
+        "Formaldehyde Condensate Biocide",
+      ],
+    },
+    {
+      heading: "Application Names",
+      items: [
+        "Hydrogen Sulfide Scavenger",
+        "Mercaptan Scavenger",
+        "Sour Gas Sweetener / Sweetening Agent",
+        "Gas Desulfurizer",
+        "Offshore and Onshore H2S Scavenger",
+        "Pipeline Corrosion Inhibitor and Scavenger Blend",
+      ],
+    },
+  ],
+  casNote: "CAS Numbers: 4719-04-4 (MEA Based) / 108-74-7 (MMA Based)",
+  closingText:
+    "If your specification lists any of the above names or the CAS numbers 4719-04-4 or 108-74-7, Vasudev Chemo Pharma can supply the matching grade. Contact us for a quote.",
+};
+
+export const METAL_WORKING_FLUIDS_SYNONYMS: ProductSynonyms = {
+  intro:
+    "Triazine-based metalworking fluid biocides are known by several synonyms and application titles in industrial machining, formulating, and preservation sectors:",
+  groups: [
+    {
+      heading: "IUPAC and Chemical Names",
+      items: [
+        "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine",
+        "1,3,5-Triazine-1,3,5(2H,4H,6H)-triethanol",
+        "2,2',2''-(hexahydro-1,3,5-triazine-1,3,5-triyl)triethanol",
+        "Triazinetriethanol",
+      ],
+    },
+    {
+      heading: "Trade and Brand Equivalents",
+      items: [
+        "Grotan BK (equivalent)",
+        "Bioban GK (equivalent)",
+        "Onyxide 200 (equivalent)",
+        "Triadine 3 / Triadine 10 (equivalent)",
+        "Troyshield B2 (equivalent)",
+        "Protectol HT (equivalent)",
+      ],
+    },
+    {
+      heading: "Application Names",
+      items: [
+        "Metalworking Fluid Preservative",
+        "MWF Biocide",
+        "Cutting Fluid Preservative",
+        "Coolant Microbiocide",
+        "Formaldehyde-Releasing Biocide",
+        "In-Can Preservative for Alkaline Systems",
+        "CNC Fluid Odor Control Agent",
+      ],
+    },
+  ],
+  casNote: "CAS Number: 4719-04-4 | EC Number: 225-208-0",
+  closingText:
+    "If your formulation manual or raw material specification lists these synonyms, Vasudev Chemo Pharma can supply equivalent grades. Contact us for technical support.",
+};
+
+export const BIOCIDE_OIL_GAS_SYNONYMS: ProductSynonyms = {
+  intro:
+    "Oil & Gas biocides, primarily triazine-based, are marketed and specified under various generic and application-specific chemical terms globally:",
+  groups: [
+    {
+      heading: "Chemical and IUPAC Names",
+      items: [
+        "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine",
+        "1,3,5-Triazine-1,3,5(2H,4H,6H)-triethanol",
+        "Triazinetriethanol",
+        "Formaldehyde-Amine Condensate",
+      ],
+    },
+    {
+      heading: "Application-Based Names",
+      items: [
+        "Oilfield Biocide",
+        "Sulfate-Reducing Bacteria (SRB) Biocide",
+        "Acid-Producing Bacteria (APB) Biocide",
+        "Water Injection System Sanitizer",
+        "Produced Water Biocide",
+        "Hydrostatic Test Biocide",
+        "Fracturing Fluid Microbiocide",
+        "Pipeline Preservation Biocide",
+      ],
+    },
+    {
+      heading: "Trade and Brand References",
+      items: [
+        "Grotan BK (equivalent)",
+        "Onyxide 200 (equivalent)",
+        "Bioban GK (equivalent)",
+        "Protectol HT (equivalent)",
+      ],
+    },
+  ],
+  casNote: "CAS Number: 4719-04-4 | EC Number: 225-208-0",
+  closingText:
+    "Vasudev Chemo Pharma supplies high-efficiency biocides tailored for oilfield microbial control. Contact us to align specifications or request samples.",
+};
+
+export const MEA_TRIAZINE_78_HIGH_CONC_SYNONYMS: ProductSynonyms = {
+  intro:
+    "MEA Triazine 78% (High Concentration) is referenced in international logistics, trade, and engineering specifications under several synonyms and equivalent titles:",
+  groups: [
+    {
+      heading: "Chemical and IUPAC Names",
+      items: [
+        "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine (78% Active Matter)",
+        "1,3,5-Triazine-1,3,5(2H,4H,6H)-triethanol (78% Solution)",
+        "2,2',2''-(1,3,5-triazinane-1,3,5-triyl)triethanol",
+        "Triazinetriethanol 78%",
+      ],
+    },
+    {
+      heading: "Trade Names and Brand Equivalents",
+      items: [
+        "MEA Triazine 78% Solution",
+        "High-Active MEA Triazine",
+        "MEA based Triazine 78%",
+        "BASOLON SC 78 (equivalent)",
+        "Sulfa-Clear 8411HC (equivalent)",
+        "G-SCAV EA77 (equivalent)",
+      ],
+    },
+    {
+      heading: "Application-Based Names",
+      items: [
+        "High-Concentration H2S Scavenger",
+        "Export-Grade Hydrogen Sulfide Scavenger",
+        "Offshore H2S Scavenger Solution",
+        "Biogas Desulfurization Agent",
+        "Wastewater H2S Neutralizer",
+      ],
+    },
+  ],
+  casNote: "CAS Number: 4719-04-4 | HS Code: 29336990",
+  closingText:
+    "If your specification demands high-concentration MEA Triazine (78% active), Vasudev Chemo Pharma can supply the matching grade in drums, IBCs, or ISO tanks. Contact us today.",
+};
+

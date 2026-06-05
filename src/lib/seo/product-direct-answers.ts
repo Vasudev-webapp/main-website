@@ -33,6 +33,21 @@ export const PRODUCT_DIRECT_ANSWERS: Record<string, string> = {
     "Benzalkonium Chloride 80% (BKC 80%) is the high-active 80 ± 1% aqueous concentrate of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5). It is the export-economical grade preferred by global disinfectant brands and sanitiser blenders who dilute on-site to 50%, 25%, or 10% — delivering 60% more active matter per kilogram shipped than BKC 50% and equivalent to Lonza Bardac® 2280 and Stepan BTC® 8358 reference grades.",
 
   "eddm-non-triazine-h2s-scavenger":
-    "EDDM (Ethylenedioxydimethanol, CAS 3586-55-8) is a non-triazine based H2S scavenger and biocide supplied at ≥ 90% active substance content. It selectively removes hydrogen sulphide from natural gas, crude oil, produced water, and biogas without raising fluid pH or causing calcium carbonate scaling, making it ideal for offshore platforms and high-scaling environments."
+    "EDDM (Ethylenedioxydimethanol, CAS 3586-55-8) is a non-triazine based H2S scavenger and biocide supplied at ≥ 90% active substance content. It selectively removes hydrogen sulphide from natural gas, crude oil, produced water, and biogas without raising fluid pH or causing calcium carbonate scaling, making it ideal for offshore platforms and high-scaling environments.",
+
+  "triazine-h2s-scavenger-general":
+    "Triazine Based H2S Scavengers (MEA/MMA, CAS 4719-04-4 / 108-74-7) are liquid formulations containing 20% to 80% active matter. They irreversibly scavenge hydrogen sulfide from natural gas, crude oil, and biogas, preventing pipeline corrosion and ensuring safety in refineries, petrochemical plants, and oilfield systems.",
+
+  "metal-working-fluids":
+    "Triazine-based metalworking fluid biocides are formaldehyde-releasing preservatives that extend fluid life in CNC machining, cutting, and grinding applications. Acting as bactericides and fungicides, they prevent microbial slime, foul odor, and emulsion splitting under alkaline conditions (pH 8.5–10.5) in automotive and aerospace metal processing.",
+
+  "biocide-oil-gas":
+    "Oil & Gas biocides (primarily triazine-based) are specialty disinfectants (CAS 4719-04-4) designed to control sulfate-reducing bacteria (SRB) and acid-producing bacteria (APB). They prevent microbial-influenced corrosion (MIC) and biofouling in water injection systems, produced water handling, pipeline hydrostatic testing, and oilfield fracturing fluids.",
+
+  "mea-triazine-78-high-concentration":
+    "MEA Triazine 78% High Concentration is a premium monoethanolamine-based H2S scavenger (CAS 4719-04-4) with ≥ 78% active matter. Used in offshore drilling, remote gas plants, and global bulk export, it maximizes hydrogen sulfide neutralization per liter to lower freight costs, minimize storage footprints, and prevent pipeline corrosion.",
+
+  "mma-triazine-40-btx-free":
+    "MMA Triazine 40% BTX-Free is an eco-compliant mono-methylamine-based H2S scavenger (CAS 108-74-7) formulated with 40% active matter and zero aromatic content. It selectively removes hydrogen sulfide from gas streams, refinery overheads, and municipal wastewater systems without introducing hazardous benzene, toluene, or xylene compounds."
 };
 

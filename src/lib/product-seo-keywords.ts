@@ -23,6 +23,10 @@ import {
   EDDM_SYNONYMS,
   BENZALKONIUM_CHLORIDE_SYNONYMS,
   SODIUM_XYLENE_SULFONATE_SYNONYMS,
+  TRIAZINE_SCAVENGER_GENERAL_SYNONYMS,
+  METAL_WORKING_FLUIDS_SYNONYMS,
+  BIOCIDE_OIL_GAS_SYNONYMS,
+  MEA_TRIAZINE_78_HIGH_CONC_SYNONYMS,
   type ProductSynonyms,
 } from "@/lib/seo/product-synonyms";
 import {
@@ -66,6 +70,10 @@ const PRODUCT_SYNONYMS_MAP: Record<string, ProductSynonyms> = {
   "benzalkonium-chloride-80": BENZALKONIUM_CHLORIDE_SYNONYMS,
   "sodium-xylene-sulfonate-40": SODIUM_XYLENE_SULFONATE_SYNONYMS,
   "sodium-xylene-sulfonate-90": SODIUM_XYLENE_SULFONATE_SYNONYMS,
+  "triazine-h2s-scavenger-general": TRIAZINE_SCAVENGER_GENERAL_SYNONYMS,
+  "metal-working-fluids": METAL_WORKING_FLUIDS_SYNONYMS,
+  "biocide-oil-gas": BIOCIDE_OIL_GAS_SYNONYMS,
+  "mea-triazine-78-high-concentration": MEA_TRIAZINE_78_HIGH_CONC_SYNONYMS,
 };
 
 type ProductKeywordConfig = {

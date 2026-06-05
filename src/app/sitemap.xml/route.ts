@@ -8,6 +8,7 @@ import { COUNTRY_SLUGS } from "@/lib/seo/country-pages-data";
 import { COMPETITOR_SLUGS } from "@/lib/seo/competitor-comparison-data";
 import { APPLICATION_SLUGS } from "@/lib/seo/application-pages-data";
 import { RESOURCE_SLUGS } from "@/lib/seo/resource-articles-data";
+import { CUSTOM_LANDING_PAGES_DATA } from "@/lib/seo/custom-landing-pages-data";
 import { products as staticProducts } from "@/lib/products";
 import {
   buildApplicationPagePath,
@@ -76,12 +77,13 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/h2s-scavenger-oil-gas", changeFrequency: "weekly", priority: 0.9 },
   { path: "/hydrotropes-global-export", changeFrequency: "weekly", priority: 0.9 },
   { path: "/mea-triazine-prices", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/mea-triazine-production-plant-cost", changeFrequency: "monthly", priority: 0.8 },
   { path: "/supply/mea-triazine-78", changeFrequency: "weekly", priority: 0.85 },
   { path: "/compare", changeFrequency: "weekly", priority: 0.8 },
   { path: "/applications", changeFrequency: "weekly", priority: 0.8 },
   { path: "/resources", changeFrequency: "weekly", priority: 0.75 },
+  { path: "/sitemap", changeFrequency: "weekly", priority: 0.8 },
   { path: "/legal/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/legal-pages/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
   // ── BKC (Benzalkonium Chloride) support pages — Day 3 additions ──
   { path: "/benzalkonium-chloride-50-vs-80", changeFrequency: "monthly", priority: 0.85 },
   { path: "/bkc-uses-applications", changeFrequency: "monthly", priority: 0.85 },
@@ -198,7 +200,7 @@ export async function GET() {
   try {
     const liveSlugs = await getAllProductSlugs();
     if (liveSlugs.length > 0) {
-      productSlugs = liveSlugs;
+      productSlugs = Array.from(new Set([...fallbackProductSlugs, ...liveSlugs]));
     }
   } catch (err) {
     console.error("Failed to fetch product slugs for sitemap", { error: err });
@@ -285,6 +287,9 @@ export async function GET() {
     ),
     ...RESOURCE_SLUGS.map((slug) =>
       buildEntry(buildResourceArticlePath(slug), "monthly", 0.75, now)
+    ),
+    ...Object.values(CUSTOM_LANDING_PAGES_DATA).map((page) =>
+      buildEntry(`/${page.category}/${page.slug}`, "weekly", 0.85, now)
     ),
   ];
 
