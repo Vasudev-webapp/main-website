@@ -1,4 +1,5 @@
 import type { BlogEntry } from "./seo-blog-data";
+import { REMOVED_PRODUCT_SLUGS } from "@/lib/removed-products";
 
 type Intent = "Buying Guides" | "Research Guides";
 
@@ -41,6 +42,8 @@ const AUTHOR = {
   name: "Vasudev Chemo Pharma",
   creds: "ISO 9001:2015 Certified Manufacturer of Industrial & Specialty Chemicals",
 };
+
+const hiddenProductSlugs = new Set<string>(REMOVED_PRODUCT_SLUGS);
 
 const products: HydrotropeProduct[] = [
   {
@@ -95,7 +98,9 @@ const products: HydrotropeProduct[] = [
     pairedSlug: "sodium-xylene-sulfonate-40",
     pairedName: "Sodium Xylene Sulfonate 40%",
   },
-];
+].filter(
+  (product): product is HydrotropeProduct => !hiddenProductSlugs.has(product.slug)
+);
 
 const buyingTopics: HydrotropeTopic[] = [
   {

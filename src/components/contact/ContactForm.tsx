@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { useEffect, useMemo, useState } from "react";
 import SocialLinksRow from "@/components/SocialLinksRow";
+import { REMOVED_PRODUCT_SLUGS } from "@/lib/removed-products";
 import {
   INSTAGRAM_URL,
   LINKEDIN_URL,
@@ -71,6 +72,7 @@ const INDUSTRIES = [
   { value: "other", label: "Other" },
 ];
 
+const hiddenProductSlugs = new Set<string>(REMOVED_PRODUCT_SLUGS);
 const PRODUCTS = [
   { value: "mea-triazine-78-h2s-scavenger", label: "MEA Triazine 78% H2S Scavenger" },
   { value: "mea-triazine-60", label: "MEA Triazine 60%" },
@@ -87,7 +89,7 @@ const PRODUCTS = [
   { value: "bis-2-chloroethyl-amine-hydrochloride", label: "Bis(2-chloroethyl)amine HCl" },
   { value: "di-ethyl-amino-ethyl-chloride-hydrochloride", label: "Di Ethyl Amino Ethyl Chloride HCl" },
   { value: "other", label: "Other / Multiple Products" },
-];
+].filter(({ value }) => value === "other" || !hiddenProductSlugs.has(value));
 
 const INQUIRY_TYPES = [
   { value: "quote", label: "Request Pricing / Quote" },

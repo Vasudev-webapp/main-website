@@ -5,6 +5,7 @@ import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import FAQSchema from "@/components/seo/FAQSchema";
 import { SITE_URL } from "@/lib/seo/seo-route-helpers";
+import { REMOVED_PRODUCT_SLUGS } from "@/lib/removed-products";
 
 export const revalidate = 3600;
 
@@ -42,6 +43,8 @@ const PILLAR_FAQS = [
       "Vasudev Chemo Pharma manufactures Sodium Cumene Sulfonate (40% liquid and 90% powder) and Sodium Xylene Sulfonate (40% liquid and 90% powder) at its ISO 9001:2015 certified plant at GIDC Ankleshwar, Gujarat. Export-ready packaging, batch COA, REACH pre-registration, and Kosher/Halal certification are standard; export MOQ is 1 MT.",
   },
 ];
+
+const hiddenProductSlugs = new Set<string>(REMOVED_PRODUCT_SLUGS);
 
 const HYDROTROPE_PRODUCTS = [
   {
@@ -84,7 +87,7 @@ const HYDROTROPE_PRODUCTS = [
     summary:
       "Free-flowing powder for spray-dried detergent, built alkaline cleaner concentrates, and agrochemical water-dispersible granules. Preferred for global export lanes.",
   },
-];
+].filter(({ slug }) => !hiddenProductSlugs.has(slug));
 
 const CLUSTER_ARTICLES = [
   {

@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import GoogleTranslate from "./GoogleTranslate";
 
 /* ── Static nav links (no dropdown) ──────────────────────────────────── */
+
 /* ── Dropdown: Products ──────────────────────────────────────────────── */
 const productsDropdown = {
   label: "Products",
@@ -21,10 +22,10 @@ const productsDropdown = {
     {
       heading: "Surfactant Chemicals",
       links: [
-        { label: "Sodium Cumene Sulfonate 40%", href: "/product/sodium-cumene-sulfonate-40" },
-        { label: "Sodium Cumene Sulfonate 90%", href: "/product/sodium-cumene-sulfonate-90" },
-        { label: "Sodium Xylene Sulfonate 40%", href: "/product/sodium-xylene-sulfonate-40" },
-        { label: "Sodium Xylene Sulfonate 90%", href: "/product/sodium-xylene-sulfonate-90" },
+        { label: "EDDM - Non Triazine H2S Scavenger", href: "/product/eddm-non-triazine-h2s-scavenger", accent: true },
+        { label: "Benzalkonium Chloride 50%", href: "/product/benzalkonium-chloride-50"},
+        { label: "Benzalkonium Chloride 80%", href: "/product/benzalkonium-chloride-80"},
+        { label: "All Products", href: "/product" },
       ],
     },
   ],

@@ -3,14 +3,16 @@ import Image from "next/image";
 import SocialLinksRow from "@/components/SocialLinksRow";
 import { getCompanyInfo } from "@/lib/company";
 import { SOCIAL_LINKS } from "@/lib/social-links";
+import { REMOVED_PRODUCT_SLUGS } from "@/lib/removed-products";
 
+const hiddenProductSlugs = new Set<string>(REMOVED_PRODUCT_SLUGS);
 const productLinks = [
   { label: "MEA Triazine 78%", href: "/product/mea-triazine-78-h2s-scavenger" },
   { label: "MMA Triazine 40%", href: "/product/mma-triazine-40" },
   { label: "Sodium Cumene Sulfonate 40%", href: "/product/sodium-cumene-sulfonate-40" },
   { label: "Sodium Xylene Sulfonate 40%", href: "/product/sodium-xylene-sulfonate-40" },
   { label: "All Products", href: "/product" },
-];
+].filter(({ href }) => !hiddenProductSlugs.has(href.replace("/product/", "")));
 
 const industryLinks = [
   { label: "Oil & Gas", href: "/industries/oil-gas-h2s-scavenger" },
