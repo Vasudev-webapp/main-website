@@ -4,7 +4,6 @@ import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import { getAllProducts } from "@/lib/products-payload";
-import { products as staticProducts } from "@/lib/products";
 import { CATEGORY_LABELS, Product } from "@/lib/types";
 import { getCategoryPriorityMap } from "@/lib/product-sequencing";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
@@ -41,8 +40,9 @@ export default async function ProductPage() {
   }
   try {
     products = await getAllProducts();
-  } catch {
-    products = staticProducts;
+  } catch (error) {
+    console.error("Failed to load products from CMS:", error);
+    products = [];
   }
 
   const sortedProducts = [...products].sort((a, b) => {

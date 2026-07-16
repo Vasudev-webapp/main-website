@@ -27,7 +27,7 @@ const config: Config = {
       fontFamily: {
         heading: ["var(--font-mona-sans)", "sans-serif"],
         // font for headings and titles
-        body: ["var(--font-geist)", "sans-serif"],
+        body: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
         // font for body text and paragraphs
       },
       fontSize: {

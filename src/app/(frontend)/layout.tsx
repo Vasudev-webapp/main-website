@@ -159,6 +159,23 @@ export default function FrontendLayout({
         <link rel="preconnect" href="https://framerusercontent.com" />
         <link rel="dns-prefetch" href="https://framerusercontent.com" />
 
+        {/* Preconnect to the primary product/industry image CDN (Vercel Blob) */}
+        <link
+          rel="preconnect"
+          href="https://atjtpw4vvodv5rtp.public.blob.vercel-storage.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="dns-prefetch"
+          href="https://atjtpw4vvodv5rtp.public.blob.vercel-storage.com"
+        />
+
+        {/* Google-hosted images used in some sections */}
+        <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
+
+        {/* Flag icons used by the language switcher (loaded on demand) */}
+        <link rel="dns-prefetch" href="https://flagcdn.com" />
+
         {/* Preconnect to Google services (analytics/fonts if used) */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

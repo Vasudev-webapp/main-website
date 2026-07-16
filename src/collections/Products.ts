@@ -36,6 +36,20 @@ export const Products: CollectionConfig = {
       required: true,
     },
     {
+      name: "titleSize",
+      type: "select",
+      defaultValue: "default",
+      options: [
+        { label: "Default (large)", value: "default" },
+        { label: "Medium (for longer names)", value: "medium" },
+        { label: "Small (for very long names)", value: "small" },
+      ],
+      admin: {
+        position: "sidebar",
+        description: "Controls the product name font size on the page. Use Medium or Small if the name wraps awkwardly.",
+      },
+    },
+    {
       name: "slug",
       type: "text",
       required: true,

@@ -41,6 +41,7 @@ export interface Product {
   id: number;
   name: string;
   slug: string;
+  titleSize?: "default" | "medium" | "small";
   productPriority?: number;
   sku: string;
   formula: string;

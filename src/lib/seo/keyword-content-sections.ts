@@ -220,11 +220,11 @@ const CATEGORY_CONTENT: Record<
       "Global Supply of 2-Chloroethylamine Hydrochloride (CEA HCl)",
   },
   "eddm-non-triazine-h2s-scavenger": {
-    categoryLabel: "Non-Triazine H2S Scavengers — EDDM (Ethylene Glycol Bis-Hemiformal)",
+    categoryLabel: "Non-Triazine H₂S Scavenger & Industrial Biocide — EDDM (Ethylenedioxy Dimethanol)",
     categorySummary:
-      "EDDM (Ethylene Glycol Bis-Hemiformal, CAS 3586-55-8) is a non-triazine liquid hydrogen sulfide (H2S) scavenger and oilfield biocide manufactured by Vasudev Chemo Pharma. It removes toxic H2S from natural gas, crude oil, and produced water without the carbonate scaling issues of conventional triazines, making it the preferred choice for offshore platforms and high-scaling environments.",
+      "EDDM (Ethylenedioxy Dimethanol, CAS 3586-55-8) is a controlled-release formaldehyde donor biocide and non-triazine hydrogen sulfide scavenger manufactured by Vasudev Chemo Pharma. It selectively removes H₂S without salt precipitation, pH shift, or catalyst poisoning — advantages that make it the preferred alternative to triazine-based scavengers in offshore, refinery, and high-scaling environments. EDDM also serves as an in-can preservative for metalworking fluids, paints, adhesives, polymer dispersions, and water treatment systems. Available at 90%, 92%, and 95% purity as a direct replacement for Preventol® EDDM, Vinkocide® 825, Grotan TK5, and Nipacide FC.",
     supplySectionHeading:
-      "Global Supply of EDDM (Non-Triazine) H2S Scavenger",
+      "Global Supply of EDDM Non-Triazine H₂S Scavenger & Biocide",
   },
 };
 

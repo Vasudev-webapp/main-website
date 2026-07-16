@@ -44,6 +44,7 @@ export default async function ProductsSection() {
           src="https://framerusercontent.com/images/8VGjgC528A5Gc4HiKedmx0Ak.png"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover opacity-10"
         />
       </div>
@@ -81,6 +82,7 @@ export default async function ProductsSection() {
                     src={product.image}
                     alt={product.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, 192px"
                     className="object-cover"
                   />
                 </div>

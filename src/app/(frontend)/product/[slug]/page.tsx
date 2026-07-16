@@ -38,7 +38,6 @@ import {
 } from "@/lib/seo/mea-triazine-schema-data";
 import {
   EDDM_SLUG,
-  EDDM_DISPLAY_NAME,
 } from "@/lib/seo/eddm-constants";
 import { COUNTRY_PAGES_DATA } from "@/lib/seo/country-pages-data";
 import { COMPETITOR_PAGES_DATA } from "@/lib/seo/competitor-comparison-data";
@@ -407,11 +406,9 @@ export default async function ProductDetailPage({
   const isScs40 = slug === SCS_40_SLUG;
   const isEddm = slug === EDDM_SLUG;
   
-  // Enriched page heading for display
-  const pageHeading = isEddm ? EDDM_DISPLAY_NAME : product.name;
-  
-  // Display name for product references (breadcrumbs, tables, CTAs, etc.)
-  const displayName = isEddm ? EDDM_DISPLAY_NAME : product.name;
+  // Product name sourced exclusively from CMS — any change in Payload is reflected live
+  const pageHeading = product.name;
+  const displayName = product.name;
   const synonymMap: Record<string, typeof MEA_TRIAZINE_SYNONYMS> = {
     "mea-triazine-78-h2s-scavenger": MEA_TRIAZINE_SYNONYMS,
     "mma-triazine-40": MMA_TRIAZINE_SYNONYMS,
@@ -755,7 +752,13 @@ export default async function ProductDetailPage({
               <SectionLabel>{categoryLabel}</SectionLabel>
 
               {/* H1 — Product Name (SEO critical) */}
-              <h1 className="font-heading text-[clamp(2rem,10vw,5.5rem)] leading-[1.05] [overflow-wrap:anywhere] hyphens-auto text-primary mt-4 mb-3">
+              <h1 className={`font-heading leading-[1.05] [overflow-wrap:anywhere] hyphens-auto text-primary mt-4 mb-3 ${
+                product.titleSize === "small"
+                  ? "text-[clamp(1.25rem,4vw,2.5rem)]"
+                  : product.titleSize === "medium"
+                    ? "text-[clamp(1.5rem,6vw,3.5rem)]"
+                    : "text-[clamp(2rem,10vw,5.5rem)]"
+              }`}>
                 {pageHeading}
                 {product.formula ? (
                   <span className="block text-base md:text-lg text-secondary font-normal mt-3">

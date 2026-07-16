@@ -125,6 +125,7 @@ function toProduct(doc: any): Product {
     id: doc.id,
     name: doc.name,
     slug: doc.slug,
+    titleSize: doc.titleSize ?? "default",
     productPriority:
       typeof doc.productPriority === "number" ? doc.productPriority : undefined,
     sku: doc.sku ?? "",

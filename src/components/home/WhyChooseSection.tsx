@@ -43,6 +43,7 @@ export default function WhyChooseSection() {
               src="https://atjtpw4vvodv5rtp.public.blob.vercel-storage.com/Vasudev/Why%20Choose%20Us%20Post.svg"
               alt="Why Choose Image"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </div>

@@ -107,6 +107,7 @@ export default async function AboutSection() {
               src={siteImages.statStepImageUrl || "https://lh3.googleusercontent.com/d/1Z5199bCRGk6XIgdA6p_RdadeP-38aBFl=s0"}
               alt="About Step Image"
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
           </div>
@@ -125,6 +126,7 @@ export default async function AboutSection() {
                 src={siteImages.experienceImageUrl || "https://lh3.googleusercontent.com/d/1Z5199bCRGk6XIgdA6p_RdadeP-38aBFl=s0"}
                 alt="About Image"
                 fill
+                sizes="96px"
                 className="object-cover"
               />
             </div>

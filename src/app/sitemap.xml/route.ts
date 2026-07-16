@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import { getAllProductSlugs } from "@/lib/products-payload";
-import { getAllProductSlugs as getStaticProductSlugs } from "@/lib/products";
+import { getAllProducts } from "@/lib/products-payload";
 import { blogData } from "@/app/(frontend)/blog/[slug]/seo-blog-data";
 import { getAllBlogSlugs } from "@/lib/blogs-payload";
 import { CASE_STUDY_SLUGS } from "@/lib/case-studies-data";
@@ -9,7 +8,6 @@ import { COMPETITOR_SLUGS } from "@/lib/seo/competitor-comparison-data";
 import { APPLICATION_SLUGS } from "@/lib/seo/application-pages-data";
 import { RESOURCE_SLUGS } from "@/lib/seo/resource-articles-data";
 import { CUSTOM_LANDING_PAGES_DATA } from "@/lib/seo/custom-landing-pages-data";
-import { products as staticProducts } from "@/lib/products";
 import {
   buildApplicationPagePath,
   buildComparisonPagePath,
@@ -193,18 +191,16 @@ function canonicalCountrySlugs(): string[] {
 }
 
 export async function GET() {
-  const fallbackProductSlugs = getStaticProductSlugs();
-  let productSlugs: string[] = fallbackProductSlugs;
+  let productSlugs: string[] = [];
   let liveBlogs: LiveBlogSlug[] = [];
+  let liveProducts: { slug: string; name: string; imageUrl?: string; metaDescription?: string; description?: string }[] = [];
 
   try {
-    const liveSlugs = await getAllProductSlugs();
-    if (liveSlugs.length > 0) {
-      productSlugs = Array.from(new Set([...fallbackProductSlugs, ...liveSlugs]));
-    }
+    const products = await getAllProducts();
+    productSlugs = products.map((p) => p.slug);
+    liveProducts = products;
   } catch (err) {
     console.error("Failed to fetch product slugs for sitemap", { error: err });
-    productSlugs = fallbackProductSlugs;
   }
 
   try {
@@ -220,7 +216,7 @@ export async function GET() {
       buildEntry(route.path, route.changeFrequency, route.priority, now)
     ),
     ...productSlugs.map((slug) => {
-      const product = staticProducts.find((p) => p.slug === slug);
+      const product = liveProducts.find((p) => p.slug === slug);
       const entry = buildEntry(
         `/product/${slug}`,
         "monthly",

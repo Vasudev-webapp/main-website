@@ -3,7 +3,6 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
-import { products as staticProducts } from "@/lib/products";
 import { getAllProducts } from "@/lib/products-payload";
 import { CUSTOM_LANDING_PAGES_DATA } from "@/lib/seo/custom-landing-pages-data";
 import { COUNTRY_PAGES_DATA } from "@/lib/seo/country-pages-data";
@@ -157,16 +156,12 @@ const productNodes = [
 ];
 
 export default async function SitemapPage() {
-  // 1. Fetch and merge all products (static + dynamic)
-  let allProducts = [...staticProducts];
+  // 1. Fetch all products exclusively from Payload CMS
+  let allProducts: Awaited<ReturnType<typeof getAllProducts>> = [];
   try {
     const liveProducts = await getAllProducts();
     if (liveProducts && liveProducts.length > 0) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const merged = new Map<string, any>();
-      staticProducts.forEach(p => merged.set(p.slug, p));
-      liveProducts.forEach(p => merged.set(p.slug, p));
-      allProducts = Array.from(merged.values());
+      allProducts = liveProducts;
     }
   } catch (err) {
     console.error("Error fetching products for visual sitemap", err);

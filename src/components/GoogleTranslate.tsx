@@ -178,6 +178,10 @@ export default function GoogleTranslate() {
           src={`https://flagcdn.com/w20/${currentLang.countryCode}.png`} 
           srcSet={`https://flagcdn.com/w40/${currentLang.countryCode}.png 2x`}
           alt={currentLang.label} 
+          width={20}
+          height={15}
+          loading="lazy"
+          decoding="async"
           className="w-5 shadow-sm rounded-[2px]"
         />
         <span>{currentLang.code.toUpperCase()}</span>
@@ -209,6 +213,10 @@ export default function GoogleTranslate() {
                     src={`https://flagcdn.com/w20/${lang.countryCode}.png`} 
                     srcSet={`https://flagcdn.com/w40/${lang.countryCode}.png 2x`}
                     alt={lang.label} 
+                    width={20}
+                    height={15}
+                    loading="lazy"
+                    decoding="async"
                     className="w-5 shadow-sm rounded-[2px]"
                   />
                 </span>

@@ -74,7 +74,9 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, s-maxage=2592000, stale-while-revalidate=86400',
+            // Browser (max-age) + CDN (s-maxage) caching so Lighthouse "efficient
+            // cache lifetimes" is satisfied. s-maxage alone is not counted by the browser.
+            value: 'public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=86400',
           },
         ],
       },
@@ -83,7 +85,19 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, s-maxage=2592000, stale-while-revalidate=86400',
+            value: 'public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      {
+        // Static assets served directly from /public (favicon, og images, icons, fonts, etc.).
+        // Regex source is supported by Next's path matcher; browser max-age satisfies
+        // Lighthouse "efficient cache lifetimes".
+        source: '/(.*\\.(?:png|jpg|jpeg|gif|webp|avif|svg|ico|woff|woff2))',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=86400',
           },
         ],
       },

@@ -60,9 +60,9 @@ export const PRODUCT_META_OVERRIDES: Record<string, ProductMetaOverride> = {
       "Sodium Xylene Sulfonate 40% (SXS 40, CAS 1300-72-7) liquid hydrotrope from ISO 9001:2015 manufacturer in Gujarat, India. Coupling agent & solubilizer for detergents, cleaners, and agrochemicals. Bulk export in drums & IBC. Request COA & free sample.",
   },
   "eddm-non-triazine-h2s-scavenger": {
-    title: "EDDM (Ethylenedioxy)dimethanol CAS 3586-55-8 — Non-Triazine H₂S Scavenger Manufacturer | Vasudev Chemo Pharma India",
+    title: "Buy EDDM (Ethylenedioxy Dimethanol) CAS 3586-55-8 | Non-Triazine H₂S Scavenger & Biocide Manufacturer India",
     description:
-      "EDDM (ethylenedioxy)dimethanol, CAS 3586-55-8, non-triazine H2S scavenger at ≥90% active. Manufactured in Gujarat, India. COA, SDS, TDS, drum/IBC/bulk export. ISO 9001:2015 certified supplier.",
+      "Buy EDDM (Ethylenedioxy Dimethanol) CAS 3586-55-8 — Indian manufacturer. Non-triazine H2S scavenger & industrial biocide. 90-95% purity. Preventol EDDM alternative. ISO 9001. Global supply.",
   },
 };
 
