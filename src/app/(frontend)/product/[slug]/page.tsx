@@ -36,6 +36,10 @@ import {
   MEA_TRIAZINE_METADATA,
   MEA_TRIAZINE_OG_LOCALES,
 } from "@/lib/seo/mea-triazine-schema-data";
+import {
+  EDDM_SLUG,
+  EDDM_DISPLAY_NAME,
+} from "@/lib/seo/eddm-constants";
 import { COUNTRY_PAGES_DATA } from "@/lib/seo/country-pages-data";
 import { COMPETITOR_PAGES_DATA } from "@/lib/seo/competitor-comparison-data";
 import { APPLICATION_PAGES_DATA } from "@/lib/seo/application-pages-data";
@@ -401,11 +405,18 @@ export default async function ProductDetailPage({
   const isSxs40 = slug === SXS_40_SLUG;
   const isSxs90 = slug === SXS_90_SLUG;
   const isScs40 = slug === SCS_40_SLUG;
+  const isEddm = slug === EDDM_SLUG;
+  
+  // Enriched page heading for display
+  const pageHeading = isEddm ? EDDM_DISPLAY_NAME : product.name;
+  
+  // Display name for product references (breadcrumbs, tables, CTAs, etc.)
+  const displayName = isEddm ? EDDM_DISPLAY_NAME : product.name;
   const synonymMap: Record<string, typeof MEA_TRIAZINE_SYNONYMS> = {
     "mea-triazine-78-h2s-scavenger": MEA_TRIAZINE_SYNONYMS,
     "mma-triazine-40": MMA_TRIAZINE_SYNONYMS,
     "mma-triazine-40-btx-free": MMA_TRIAZINE_SYNONYMS,
-    "eddm-non-triazine-h2s-scavenger": EDDM_SYNONYMS,
+    [EDDM_SLUG]: EDDM_SYNONYMS,
     "benzalkonium-chloride-50": BENZALKONIUM_CHLORIDE_SYNONYMS,
     "benzalkonium-chloride-80": BENZALKONIUM_CHLORIDE_SYNONYMS,
     "sodium-xylene-sulfonate-40": SODIUM_XYLENE_SULFONATE_SYNONYMS,
@@ -708,7 +719,7 @@ export default async function ProductDetailPage({
               </li>
               <li>/</li>
               <li>
-                <span className="font-medium text-primary">{product.name}</span>
+                <span className="font-medium text-primary">{displayName}</span>
               </li>
             </ol>
           </nav>
@@ -720,8 +731,8 @@ export default async function ProductDetailPage({
             <div className="bg-light rounded-3xl p-4 sm:p-8 self-start min-h-[360px]">
               {resolvedPrimaryImageUrl || safeImages.length > 0 || safeVideos.length > 0 ? (
                 <ProductImageGallery
-                  productName={product.name}
-                  productLabel={`${product.name}${product.casNumber ? ` (CAS ${product.casNumber})` : ""}`}
+                  productName={displayName}
+                  productLabel={`${displayName}${product.casNumber ? ` (CAS ${product.casNumber})` : ""}`}
                   primaryImageUrl={resolvedPrimaryImageUrl}
                   fallbackImageUrl={mediaOverride.primaryImageUrl}
                   images={safeImages}
@@ -745,7 +756,7 @@ export default async function ProductDetailPage({
 
               {/* H1 — Product Name (SEO critical) */}
               <h1 className="font-heading text-[clamp(2rem,10vw,5.5rem)] leading-[1.05] [overflow-wrap:anywhere] hyphens-auto text-primary mt-4 mb-3">
-                {product.name}
+                {pageHeading}
                 {product.formula ? (
                   <span className="block text-base md:text-lg text-secondary font-normal mt-3">
                     {product.formula}
@@ -781,7 +792,7 @@ export default async function ProductDetailPage({
                   <tbody>
                     <tr className="border-b border-gray-100">
                       <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50 w-40">Product Name</td>
-                      <td className="px-5 py-3 font-semibold text-primary">{product.name}</td>
+                      <td className="px-5 py-3 font-semibold text-primary">{displayName}</td>
                     </tr>
                     <tr className="border-b border-gray-100">
                       <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50">SKU</td>
@@ -815,7 +826,7 @@ export default async function ProductDetailPage({
                   href={`/contact?product=${product.slug}`}
                   className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark transition-colors text-white text-sm font-medium px-8 py-4 rounded-full"
                 >
-                  Request a Quote for {product.name}
+                  Request a Quote for {displayName}
                 </Link>
                 <Link
                   href={`/contact?product=${product.slug}&type=sample`}
@@ -837,7 +848,7 @@ export default async function ProductDetailPage({
           {directAnswer && (
             <section
               id="direct-answer"
-              aria-label={`Direct answer: what is ${product.name}`}
+              aria-label={`Direct answer: what is ${displayName}`}
               className="mb-12"
             >
               <div className="border-l-4 border-accent bg-light rounded-r-2xl px-6 py-5">
@@ -855,7 +866,7 @@ export default async function ProductDetailPage({
           {searchConsoleIntentGuide && (
             <section
               id="search-intent"
-              aria-label={`Common buyer searches for ${product.name}`}
+              aria-label={`Common buyer searches for ${displayName}`}
               className="mb-12"
             >
               <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
@@ -889,7 +900,7 @@ export default async function ProductDetailPage({
 
           <section id="description" className="mb-16">
             <h2 className="font-heading text-h3 text-primary mb-6">
-              About {product.name}
+              About {displayName}
             </h2>
             {product.description ? (
               <div className="prose prose-gray max-w-none text-gray-600 leading-relaxed">

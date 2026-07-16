@@ -24,6 +24,14 @@ import {
   BKC_80_SLUG,
   BKC_80_SCHEMA_ENRICHMENT,
 } from "@/lib/seo/bkc-80-content";
+import {
+  EDDM_SLUG,
+  EDDM_SHORT_NAME,
+  EDDM_ALTERNATE_NAMES,
+  EDDM_CAS_NUMBER,
+  EDDM_FORMULA,
+  EDDM_MOLECULAR_WEIGHT,
+} from "@/lib/seo/eddm-constants";
 
 
 type ProductSchemaProps = {
@@ -63,6 +71,7 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
   const isScs40 = product.slug === SCS_40_SLUG;
   const isBkc50 = product.slug === BKC_50_SLUG;
   const isBkc80 = product.slug === BKC_80_SLUG;
+  const isEddm = product.slug === EDDM_SLUG;
 
   /* --- Base Product schema (all products) --- */
   const productSchema: Record<string, unknown> = {
@@ -123,6 +132,19 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
     productSchema.countryOfOrigin = enrichment.countryOfOrigin;
     productSchema.audience = enrichment.audience;
     productSchema.areaServed = enrichment.areaServed;
+  }
+
+  /* --- Slug-specific enrichment ((Ethylenedioxy)dimethanol / EDDM) --- */
+  if (isEddm) {
+    productSchema.name = EDDM_SHORT_NAME;
+    productSchema.alternateName = [...EDDM_ALTERNATE_NAMES];
+    productSchema.category = "Specialty chemical";
+    productSchema.countryOfOrigin = "India";
+    productSchema.additionalProperty = [
+      { "@type": "PropertyValue", name: "CAS Number", value: EDDM_CAS_NUMBER },
+      { "@type": "PropertyValue", name: "Molecular Formula", value: EDDM_FORMULA },
+      { "@type": "PropertyValue", name: "Molecular Weight", value: EDDM_MOLECULAR_WEIGHT },
+    ];
   }
 
   /* --- Slug-specific enrichment (Sodium Xylene Sulfonate 40%) --- */
@@ -408,6 +430,18 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
       }
       : undefined,
   };
+
+  if (isEddm) {
+    chemicalSchema.name = EDDM_SHORT_NAME;
+    chemicalSchema.alternateName = [...EDDM_ALTERNATE_NAMES];
+    chemicalSchema.molecularFormula = EDDM_FORMULA;
+    chemicalSchema.molecularWeight = EDDM_MOLECULAR_WEIGHT;
+    chemicalSchema.identifier = {
+      "@type": "PropertyValue",
+      name: "CAS Number",
+      value: EDDM_CAS_NUMBER,
+    };
+  }
 
   /* --- Slug-specific ChemicalSubstance enrichment (SXS 40%) --- */
   if (isSxs40) {

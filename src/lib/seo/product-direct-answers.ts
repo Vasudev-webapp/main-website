@@ -33,7 +33,7 @@ export const PRODUCT_DIRECT_ANSWERS: Record<string, string> = {
     "Benzalkonium Chloride 80% (BKC 80%) is the high-active 80 ± 1% aqueous concentrate of Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC, CAS 8001-54-5). It is the export-economical grade preferred by global disinfectant brands and sanitiser blenders who dilute on-site to 50%, 25%, or 10% — delivering 60% more active matter per kilogram shipped than BKC 50% and equivalent to Lonza Bardac® 2280 and Stepan BTC® 8358 reference grades.",
 
   "eddm-non-triazine-h2s-scavenger":
-    "EDDM (Ethylenedioxydimethanol, CAS 3586-55-8) is a non-triazine based H2S scavenger and biocide supplied at ≥ 90% active substance content. It selectively removes hydrogen sulphide from natural gas, crude oil, produced water, and biogas without raising fluid pH or causing calcium carbonate scaling, making it ideal for offshore platforms and high-scaling environments.",
+    "EDDM (Ethylenedioxy)dimethanol, CAS 3586-55-8, is a non-triazine, formaldehyde-based H₂S scavenger supplied at ≥90% active content. It removes hydrogen sulfide from oil & gas, biogas, and water treatment systems without forming scale or poisoning catalysts. Manufactured by Vasudev Chemo Pharma in Gujarat, India, with COA, SDS, TDS, drum/IBC/bulk packaging, and global export support.",
 
   "triazine-h2s-scavenger-general":
     "Triazine Based H2S Scavengers (MEA/MMA, CAS 4719-04-4 / 108-74-7) are liquid formulations containing 20% to 80% active matter. They irreversibly scavenge hydrogen sulfide from natural gas, crude oil, and biogas, preventing pipeline corrosion and ensuring safety in refineries, petrochemical plants, and oilfield systems.",
@@ -50,4 +50,3 @@ export const PRODUCT_DIRECT_ANSWERS: Record<string, string> = {
   "mma-triazine-40-btx-free":
     "MMA Triazine 40% BTX-Free is an eco-compliant mono-methylamine-based H2S scavenger (CAS 108-74-7) formulated with 40% active matter and zero aromatic content. It selectively removes hydrogen sulfide from gas streams, refinery overheads, and municipal wastewater systems without introducing hazardous benzene, toluene, or xylene compounds."
 };
-

@@ -718,16 +718,36 @@ export const PTSA_FAQS: FAQItem[] = [
 
 export const EDDM_FAQS: FAQItem[] = [
   {
-    question: "What is EDDM (Ethylene Glycol Bis-Hemiformal) H2S Scavenger?",
-    answer: "EDDM (CAS 3586-55-8) is a non-triazine, formaldehyde-release liquid H2S scavenger and biocide. It is designed to remove hydrogen sulfide in crude oil and natural gas pipelines without causing the calcium carbonate scaling or solid precipitation often experienced with triazine-based H2S scavengers."
+    question: "What is EDDM (ethylenedioxy)dimethanol?",
+    answer: "(Ethylenedioxy)dimethanol is the chemical identified on this page as EDDM, with CAS No. 3586-55-8. Vasudev Chemo Pharma provides product and technical information for qualified industrial buyers. Confirm the intended application, grade, and regulatory suitability with the technical team before use."
   },
   {
-    question: "When should I choose EDDM instead of MEA Triazine?",
-    answer: "Choose EDDM H2S Scavenger when treating sour gas or oil in high-mineral water systems, offshore platforms, or pipelines prone to calcium carbonate scaling. Conventional triazine H2S scavengers raise system pH, leading to scaling; EDDM has a lower pH impact, avoiding scaling."
+    question: "What is the CAS No. for (ethylenedioxy)dimethanol?",
+    answer: "The CAS No. for (ethylenedioxy)dimethanol is 3586-55-8. Include this identifier when requesting a quotation, COA, SDS/MSDS, TDS, or specification review so that the requested material can be identified consistently across purchasing and technical documents."
   },
   {
-    question: "What is your export shipping capability for EDDM?",
-    answer: "We manufacture and export EDDM globally in 250 kg drums and 1,000 kg IBC tanks. We offer CIF delivery to major offshore and oilfield hubs, including Houston, Jebel Ali, Dammam, and Basra. Our EDDM meets international quality standards with complete GHS SDS and batch COA verification."
+    question: "Who manufactures (ethylenedioxy)dimethanol in India?",
+    answer: "Vasudev Chemo Pharma presents (ethylenedioxy)dimethanol, CAS No. 3586-55-8, for qualified industrial buyers from India. Buyers can contact the company to confirm the current manufacturing status, applicable grade, documentation, and supply terms for their requirement."
+  },
+  {
+    question: "What purity or grades are available for EDDM?",
+    answer: "Available EDDM grades and assay values must be confirmed against the current approved specification and batch documentation. Request the relevant specification or sample COA with the intended application and destination so the technical and commercial teams can confirm the appropriate material."
+  },
+  {
+    question: "Is a COA available for EDDM?",
+    answer: "A Certificate of Analysis can be requested for EDDM as part of the buyer-qualification and quotation process. Availability, test parameters, and release criteria should be confirmed against the current approved specification for the exact grade and batch being discussed."
+  },
+  {
+    question: "Are SDS/MSDS and TDS available for EDDM?",
+    answer: "SDS/MSDS and technical-data documentation can be requested for EDDM. The documents supplied should correspond to the approved product grade and current regulatory requirements. Always review the current safety document before handling, storage, transport, or formulation work."
+  },
+  {
+    question: "What packaging options are available for EDDM?",
+    answer: "Packaging options for EDDM depend on the approved grade, order quantity, destination, and transport requirements. Ask for the currently available pack sizes and export packaging details with your enquiry. Vasudev Chemo Pharma can then confirm suitable commercial options for the proposed shipment."
+  },
+  {
+    question: "How can I request an EDDM quotation or sample?",
+    answer: "Send the required quantity, destination, intended application, preferred packaging, and documentation needs through the product enquiry form or contact page. The commercial team can review qualification requirements and respond with the relevant specification, packaging, documentation, and quotation information."
   }
 ];
 
