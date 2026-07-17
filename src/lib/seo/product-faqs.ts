@@ -84,7 +84,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What are the equivalent brand names for MEA Triazine in the US market?",
     answer:
-      "In the US market, MEA Triazine 78% (CAS 4719-04-4) is sold under brands including Pro3 and Pro3 HT (Q2 Technologies), PureMark M500 and PureMark B800 (Foremark Performance), HSCAV-80 (Geocon), Bioban GK (Dow), Onyxide 200 (Lonza), Protectol HT (BASF), and Triadine 3 (Arxada). Our product is a direct equivalent to all of these.",
+      "In the US market, MEA Triazine 78% (CAS 4719-04-4) is sold under brands including Pro3 and Pro3 HT (Q2 Technologies), PureMark M500 and PureMark B800 (Foremark Performance), HSCAV-80 (Geocon), Bioban GK (Dow), Onyxide 200 (Lonza), Protectol HT (BASF), and Triadine 3 (Arxada). Our MEA Triazine 78% is offered as a functional alternative to these products; buyers should confirm equivalence against CAS number, active concentration, application fit, and SDS/TDS details before substitution.",
   },
   {
     question: "How does your pricing compare to US oilfield service companies?",
@@ -104,7 +104,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What brand names is MEA Triazine known by in the UAE and GCC?",
     answer:
-      "In the UAE/GCC market, MEA Triazine (CAS 4719-04-4) is recognized under brand names including RXSOL-43-8160-210 (RX Chemicals), G-SCAV EA77, BASOLON SC 78 (BASF), STEPANQUAT 200 (Stepan), Grotan BK, and Protectol HT (BASF). Saudi Multichem Company is a regional producer. Our product is a direct equivalent to all these brands.",
+      "In the UAE/GCC market, MEA Triazine (CAS 4719-04-4) is recognized under brand names including RXSOL-43-8160-210 (RX Chemicals), G-SCAV EA77, BASOLON SC 78 (BASF), STEPANQUAT 200 (Stepan), Grotan BK, and Protectol HT (BASF). Saudi Multichem Company is a regional producer. Our MEA Triazine 78% is offered as a functional alternative to these brands; buyers should confirm equivalence against CAS number, active concentration, application fit, and SDS/TDS details before substitution.",
   },
   {
     question: "Does the product meet Abu Dhabi EHS and UAE regulatory requirements?",
@@ -124,7 +124,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What brand names is MEA Triazine known by in Oman?",
     answer:
-      "In Oman, MEA Triazine (CAS 4719-04-4) is recognized under brand names including RXSOL H2S Scavenger (RXSOL-11-5014-210, Oman Chemical), MC MX 2-1106 (Muscat Chemical), SULFA-CLEAR 8411HC (Lubrizol), OS TRI-SCAV (OSS Ltd.), BASOLON SC 78, and SINE PF77. Muscat & Barka Business Trading (MBBT) and Oman Oil Industry Supplies & Services (OOISS) also supply triazine-based H2S scavengers. Our product is a direct equivalent to all these brands.",
+      "In Oman, MEA Triazine (CAS 4719-04-4) is recognized under brand names including RXSOL H2S Scavenger (RXSOL-11-5014-210, Oman Chemical), MC MX 2-1106 (Muscat Chemical), SULFA-CLEAR 8411HC (Lubrizol), OS TRI-SCAV (OSS Ltd.), BASOLON SC 78, and SINE PF77. Muscat & Barka Business Trading (MBBT) and Oman Oil Industry Supplies & Services (OOISS) also supply triazine-based H2S scavengers. Our MEA Triazine 78% is offered as a functional alternative to these brands; buyers should confirm equivalence against CAS number, active concentration, application fit, and SDS/TDS details before substitution.",
   },
   {
     question: "What documents are needed to import MEA Triazine 78% into Oman?",
@@ -144,7 +144,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What brand names is MEA Triazine known by in Egypt?",
     answer:
-      "In Egypt, MEA Triazine (CAS 4719-04-4) is supplied under brand names including ACPA H2S Scavenger (Alexandria Company for Petroleum Additives), AquaNile H2S Scavenger (Giza/Cairo), MPC H2S Scavenger (Alamia Oil Services Group, Alexandria), and Scomi Egypt drilling chemicals. International brands such as SULFA-CLEAR 8411HC (Lubrizol), ICG MEA Triazine (International Chemical Group), and CACIDE 301 are also distributed. Our product is a direct equivalent to all these brands.",
+      "In Egypt, MEA Triazine (CAS 4719-04-4) is supplied under brand names including ACPA H2S Scavenger (Alexandria Company for Petroleum Additives), AquaNile H2S Scavenger (Giza/Cairo), MPC H2S Scavenger (Alamia Oil Services Group, Alexandria), and Scomi Egypt drilling chemicals. International brands such as SULFA-CLEAR 8411HC (Lubrizol), ICG MEA Triazine (International Chemical Group), and CACIDE 301 are also distributed. Our MEA Triazine 78% is offered as a functional alternative to these brands; buyers should confirm equivalence against CAS number, active concentration, application fit, and SDS/TDS details before substitution.",
   },
   {
     question: "What documents are needed to import MEA Triazine 78% into Egypt?",
@@ -159,12 +159,12 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "Can MEA Triazine 78% be used in Brazilian pre-salt operations?",
     answer:
-      "Yes. MEA Triazine 78% meets the requirements of Petrobras specification ET-3010.00-1260-010-PNG-027 for Hexa-hidro-1,3,5-tris(hidroxietil)-s-triazina with minimum 70% concentration. It is suitable for H2S scavenging in Santos Basin pre-salt fields (Buzios, Tupi, Lula), Campos Basin operations, FPSO topside gas sweetening, and deepwater wellhead injection applications.",
+      "Yes. MEA Triazine 78% can be supplied to align with the concentration and identity referenced in Petrobras specification ET-3010.00-1260-010-PNG-027 for Hexa-hidro-1,3,5-tris(hidroxietil)-s-triazina (minimum 70% concentration); confirm current specification requirements with our technical team. It is suitable for H2S scavenging in Santos Basin pre-salt fields (Buzios, Tupi, Lula), Campos Basin operations, FPSO topside gas sweetening, and deepwater wellhead injection applications.",
   },
   {
     question: "What brand names is MEA Triazine known by in Brazil?",
     answer:
-      "In Brazil, MEA Triazine (CAS 4719-04-4, also known as MEA-Triazina) is supplied under brand names including Global Trend MEA-Triazina 78% (Rio de Janeiro), SCAVTREAT 1063 (Clariant Oil Services), ABATE S-200 (Dow Chemical), Brenntag MEA/Triazine, SULFA-CLEAR 8411HC (Lubrizol), BerrySweet 80% (Berryman Chemical), ICS-5780 (ICG), and Nalco/Ecolab H2S Scavenger. Our product is a direct equivalent to all these brands.",
+      "In Brazil, MEA Triazine (CAS 4719-04-4, also known as MEA-Triazina) is supplied under brand names including Global Trend MEA-Triazina 78% (Rio de Janeiro), SCAVTREAT 1063 (Clariant Oil Services), ABATE S-200 (Dow Chemical), Brenntag MEA/Triazine, SULFA-CLEAR 8411HC (Lubrizol), BerrySweet 80% (Berryman Chemical), ICS-5780 (ICG), and Nalco/Ecolab H2S Scavenger. Our MEA Triazine 78% is offered as a functional alternative to these brands; buyers should confirm equivalence against CAS number, active concentration, application fit, and SDS/TDS details before substitution.",
   },
   {
     question: "What documents are needed to import MEA Triazine 78% into Brazil?",
@@ -184,7 +184,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What brand names is MEA Triazine known by in Saudi Arabia?",
     answer:
-      "In Saudi Arabia, MEA Triazine (CAS 4719-04-4) is manufactured and supplied under brand names including Chemara HS-1501 (Saudi Multichem, Dammam), G-SCAV Triazine 78% (Global Company for Chemical Industries, Jubail), SUGEST H2S Scavenger (Aramco vendor #10045611), NassGuard MEA, REPC Triazine, UCC Triazine (United Chemical Company), and Alkemist KSA. SABIC produces monoethanolamine (MEA) raw material at Jubail. Our product is a direct equivalent to all these brands.",
+      "In Saudi Arabia, MEA Triazine (CAS 4719-04-4) is manufactured and supplied under brand names including Chemara HS-1501 (Saudi Multichem, Dammam), G-SCAV Triazine 78% (Global Company for Chemical Industries, Jubail), SUGEST H2S Scavenger (Aramco vendor #10045611), NassGuard MEA, REPC Triazine, UCC Triazine (United Chemical Company), and Alkemist KSA. SABIC produces monoethanolamine (MEA) raw material at Jubail. Our MEA Triazine 78% is offered as a functional alternative to these brands; buyers should confirm equivalence against CAS number, active concentration, application fit, and SDS/TDS details before substitution.",
   },
   {
     question: "What documents and certifications are needed to import MEA Triazine 78% into Saudi Arabia?",
@@ -204,7 +204,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What brand names is MEA Triazine known by in Iraq?",
     answer:
-      "As there are no significant domestic manufacturers of MEA Triazine in Iraq, the product is supplied by local distributors and importers including Tawreed (Baghdad), ALDUHA Engineering Group (Basra), SAHARA Middle East Petroleum Services (North Rumaila), Federal Group / Advanced Chemicals (Erbil), Sama Alyarmouk (Baghdad), Petrobon (Iran/Iraq), and Ishtar Company. IOC contractors use Baker Hughes, ChampionX, and Dorf Ketal brands. Our product is a direct equivalent to all these supplies.",
+      "As there are no significant domestic manufacturers of MEA Triazine in Iraq, the product is supplied by local distributors and importers including Tawreed (Baghdad), ALDUHA Engineering Group (Basra), SAHARA Middle East Petroleum Services (North Rumaila), Federal Group / Advanced Chemicals (Erbil), Sama Alyarmouk (Baghdad), Petrobon (Iran/Iraq), and Ishtar Company. IOC contractors use Baker Hughes, ChampionX, and Dorf Ketal brands. Our MEA Triazine 78% is offered as a functional alternative to these supplies; buyers should confirm equivalence against CAS number, active concentration, application fit, and SDS/TDS details before substitution.",
   },
   {
     question: "What documents are needed to import MEA Triazine 78% into Iraq?",
@@ -224,7 +224,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What brand names is MEA Triazine known by in Qatar?",
     answer:
-      "In Qatar, MEA Triazine (CAS 4719-04-4) is supplied through several brands and distributors including BKC Gulf Triazine Scavenger (Qatar-focused), RXSOL Triazine Based Biocide (DubiChem), HS-1526-40 (Univar Solutions), SULFA-CLEAR 8411HC (Lubrizol), G-SCAV EA77, BASOLON SC 78, and ICPL Triazine H2S Scavenger. Major oilfield service companies ChampionX, Baker Hughes, and Halliburton also supply triazine-based H2S scavengers for QatarEnergy operations. Our product is a direct equivalent to all these brands.",
+      "In Qatar, MEA Triazine (CAS 4719-04-4) is supplied through several brands and distributors including BKC Gulf Triazine Scavenger (Qatar-focused), RXSOL Triazine Based Biocide (DubiChem), HS-1526-40 (Univar Solutions), SULFA-CLEAR 8411HC (Lubrizol), G-SCAV EA77, BASOLON SC 78, and ICPL Triazine H2S Scavenger. Major oilfield service companies ChampionX, Baker Hughes, and Halliburton also supply triazine-based H2S scavengers for QatarEnergy operations. Our MEA Triazine 78% is offered as a functional alternative to these brands; buyers should confirm equivalence against CAS number, active concentration, application fit, and SDS/TDS details before substitution.",
   },
   {
     question: "What documents are needed to import MEA Triazine 78% into Qatar?",
@@ -249,7 +249,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What brand names is MEA Triazine known by in Kuwait?",
     answer:
-      "In Kuwait, MEA Triazine (CAS 4719-04-4) is available through Bait Al Aseel Trading (H₂S Scavenger – Triazine Based, Shuwaikh), and DK Petrochemicals supplies raw MEA. International brands include RXSOL Triazine Based Biocide (DubiChem), HME-FILM MEA Triazine (MED Drilling Fluids), HS-1526-40 (Univar), SULFA-CLEAR 8411HC (Lubrizol), and Triasorb (Sintez-Oka). KOC service contractors use ChampionX, Baker Hughes, and Dorf Ketal brands. Our product is a direct equivalent to all these.",
+      "In Kuwait, MEA Triazine (CAS 4719-04-4) is available through Bait Al Aseel Trading (H₂S Scavenger – Triazine Based, Shuwaikh), and DK Petrochemicals supplies raw MEA. International brands include RXSOL Triazine Based Biocide (DubiChem), HME-FILM MEA Triazine (MED Drilling Fluids), HS-1526-40 (Univar), SULFA-CLEAR 8411HC (Lubrizol), and Triasorb (Sintez-Oka). KOC service contractors use ChampionX, Baker Hughes, and Dorf Ketal brands. Our MEA Triazine 78% is offered as a functional alternative to these products; buyers should confirm equivalence against CAS number, active concentration, application fit, and SDS/TDS details before substitution.",
   },
   {
     question: "What documents are needed to import MEA Triazine 78% into Kuwait?",
@@ -274,7 +274,7 @@ export const MEA_TRIAZINE_FALLBACK_FAQS: FAQItem[] = [
   {
     question: "What brand names is MEA Triazine known by in Thailand?",
     answer:
-      "In Thailand, MEA Triazine (CAS 4719-04-4) is supplied through Chinese brands like BK Biocide, Dayong MEA Triazine, IRO MEA Triazine, and ECHEMI. International brands include HS-1526-40 (Univar), SULFA-CLEAR 8411HC (Lubrizol), and Borregaard H2S Scavenger. Brenntag Ingredients Thailand, PTT Global Chemical, and Krungthep Trading supply raw MEA (not the finished triazine scavenger). Our product is a direct equivalent to all triazine-based H2S scavenger brands.",
+      "In Thailand, MEA Triazine (CAS 4719-04-4) is supplied through Chinese brands like BK Biocide, Dayong MEA Triazine, IRO MEA Triazine, and ECHEMI. International brands include HS-1526-40 (Univar), SULFA-CLEAR 8411HC (Lubrizol), and Borregaard H2S Scavenger. Brenntag Ingredients Thailand, PTT Global Chemical, and Krungthep Trading supply raw MEA (not the finished triazine scavenger). Our MEA Triazine 78% is offered as a functional alternative to these triazine-based H2S scavenger brands; buyers should confirm equivalence against CAS number, active concentration, application fit, and SDS/TDS details before substitution.",
   },
   {
     question: "Can MEA Triazine 78% be used for biogas H2S removal in Thailand?",

@@ -182,7 +182,7 @@ export default function QuickEnquiryModal() {
                   value={formData.requirement}
                   onChange={handleChange}
                   className={`${inputClass} resize-none ${
-                    formData.requirement.trim().length > 0 && formData.requirement.trim().split(/\\s+/).filter(Boolean).length < 10
+                    formData.requirement.trim().length > 0 && formData.requirement.trim().split(/\s+/).filter(Boolean).length < 10
                       ? "border-red-300 focus:border-red-400 bg-red-50/30"
                       : ""
                   }`}
@@ -190,15 +190,15 @@ export default function QuickEnquiryModal() {
                 />
                 <div className="mt-1.5 flex justify-between items-center">
                   <span className={`text-xs ${
-                    formData.requirement.trim().length > 0 && formData.requirement.trim().split(/\\s+/).filter(Boolean).length < 10
+                    formData.requirement.trim().length > 0 && formData.requirement.trim().split(/\s+/).filter(Boolean).length < 10
                       ? "text-red-500"
                       : "text-gray-400"
                   }`}>
-                    Word count: {formData.requirement.trim().split(/\\s+/).filter(Boolean).length}
+                    Word count: {formData.requirement.trim().split(/\s+/).filter(Boolean).length}
                   </span>
-                  {formData.requirement.trim().length > 0 && formData.requirement.trim().split(/\\s+/).filter(Boolean).length < 10 && (
+                  {formData.requirement.trim().length > 0 && formData.requirement.trim().split(/\s+/).filter(Boolean).length < 10 && (
                     <span className="text-[10px] text-red-500 font-medium px-2 py-0.5 bg-red-50 rounded-full border border-red-100">
-                      Need {10 - formData.requirement.trim().split(/\\s+/).filter(Boolean).length} more
+                      Need {10 - formData.requirement.trim().split(/\s+/).filter(Boolean).length} more
                     </span>
                   )}
                 </div>

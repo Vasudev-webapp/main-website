@@ -19,6 +19,12 @@ import { getProductMediaOverride } from "@/lib/seo/product-media-overrides";
 import { PRODUCT_FALLBACK_FAQS, PRODUCT_PAGE_FAQS } from "@/lib/seo/product-faqs";
 import { PRODUCT_DIRECT_ANSWERS } from "@/lib/seo/product-direct-answers";
 import {
+  resolveMeta,
+  resolveDirectAnswer,
+  generateFAQs,
+  isProductEngineEnabled,
+} from "@/lib/seo-engine";
+import {
   MEA_TRIAZINE_SYNONYMS,
   MMA_TRIAZINE_SYNONYMS,
   EDDM_SYNONYMS,
@@ -38,6 +44,7 @@ import {
 } from "@/lib/seo/mea-triazine-schema-data";
 import {
   EDDM_SLUG,
+  EDDM_DISPLAY_NAME,
 } from "@/lib/seo/eddm-constants";
 import { COUNTRY_PAGES_DATA } from "@/lib/seo/country-pages-data";
 import { COMPETITOR_PAGES_DATA } from "@/lib/seo/competitor-comparison-data";
@@ -118,16 +125,27 @@ export async function generateMetadata({
     const isMeaTriazine = slug === MEA_TRIAZINE_SLUG;
     const metaOverride = PRODUCT_META_OVERRIDES[slug];
 
+    // Engine fallback (new products only). Gated so curated + bare existing
+    // products keep their exact title/description precedence untouched.
+    const engineMeta = isProductEngineEnabled(product)
+      ? resolveMeta(product, {
+          hardcodedTitle: metaOverride?.title,
+          hardcodedDescription: metaOverride?.description,
+        })
+      : null;
+
     const title = isMeaTriazine
       ? MEA_TRIAZINE_METADATA.title
       : metaOverride?.title ||
         product.metaTitle ||
+        engineMeta?.title ||
         `${product.name}${product.casNumber ? ` (CAS ${product.casNumber})` : ""} — ${CATEGORY_LABELS[product.category]} | Vasudev Chemo Pharma`;
 
     const description = isMeaTriazine
       ? "MEA Triazine 78% (CAS 4719-04-4) — H2S scavenger for oil & gas, wastewater & biogas. Drum, IBC & bulk supply from India."
       : metaOverride?.description ||
         product.metaDescription ||
+        engineMeta?.description ||
         `Buy ${product.name}${product.casNumber ? ` (CAS ${product.casNumber})` : ""} from Vasudev Chemo Pharma — ISO 9001:2015 certified manufacturer in Gujarat, India. Export-ready packaging. Request a quote today.`;
 
     const keywordConfig = getProductSeoKeywords(
@@ -168,6 +186,7 @@ export async function generateMetadata({
         ...keywordConfig.longTailKeywords,
         `${product.name} CAS number`.toLowerCase(),
         `buy ${product.name} industrial grade`.toLowerCase(),
+        ...(engineMeta?.keywords ?? []),
       ],
       robots: {
         index: true,
@@ -364,7 +383,7 @@ const SEARCH_CONSOLE_INTENT_GUIDES: Record<
       },
     ],
   },
-  "eddm-non-triazine-h2s-scavenger": {
+  [EDDM_SLUG]: {
     heading: "Buyer searches this page answers",
     summary:
       "Procurement and technical teams frequently evaluate EDDM, non-triazine based scavengers, and ethylene glycol hemiformals for high-scaling sour service applications.",
@@ -407,8 +426,8 @@ export default async function ProductDetailPage({
   const isEddm = slug === EDDM_SLUG;
   
   // Product name sourced exclusively from CMS — any change in Payload is reflected live
-  const pageHeading = product.name;
-  const displayName = product.name;
+  const pageHeading = isEddm ? EDDM_DISPLAY_NAME : product.name;
+  const displayName = isEddm ? EDDM_DISPLAY_NAME : product.name;
   const synonymMap: Record<string, typeof MEA_TRIAZINE_SYNONYMS> = {
     "mea-triazine-78-h2s-scavenger": MEA_TRIAZINE_SYNONYMS,
     "mma-triazine-40": MMA_TRIAZINE_SYNONYMS,
@@ -442,7 +461,12 @@ export default async function ProductDetailPage({
         closingText: "",
       };
   const productPageFaqs = PRODUCT_PAGE_FAQS[slug] ?? PRODUCT_FALLBACK_FAQS[slug] ?? [];
-  const directAnswer = PRODUCT_DIRECT_ANSWERS[slug];
+  // Engine gate: true only when a product opts into the new engine CMS
+  // fields. Keeps curated + bare existing products byte-identical.
+  const engineEnabled = isProductEngineEnabled(product);
+  const directAnswer = engineEnabled
+    ? resolveDirectAnswer(product, { hardcoded: PRODUCT_DIRECT_ANSWERS[slug] })
+    : PRODUCT_DIRECT_ANSWERS[slug];
   const searchConsoleIntentGuide = SEARCH_CONSOLE_INTENT_GUIDES[slug];
   const keywordContentSections = getProductKeywordContentSections(slug);
   const internalLinks = getProductInternalLinks(slug);
@@ -460,7 +484,9 @@ export default async function ProductDetailPage({
         ? isSxs40
           ? product.faqs
           : product.faqs.slice(0, 6)
-        : [];
+        : engineEnabled
+          ? generateFAQs(product)
+          : [];
   const categoryLabel = CATEGORY_LABELS[product.category];
   const relatedProducts = await getRelatedProducts(
     product.slug,
@@ -866,41 +892,6 @@ export default async function ProductDetailPage({
           )}
 
           {/* ─── 3. PRODUCT DESCRIPTION / OVERVIEW ──────────────────── */}
-          {searchConsoleIntentGuide && (
-            <section
-              id="search-intent"
-              aria-label={`Common buyer searches for ${displayName}`}
-              className="mb-12"
-            >
-              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">
-                  Common buyer searches
-                </p>
-                <h2 className="font-heading text-h4 text-primary">
-                  {searchConsoleIntentGuide.heading}
-                </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-600">
-                  {searchConsoleIntentGuide.summary}
-                </p>
-                <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-                  {searchConsoleIntentGuide.items.map((item) => (
-                    <div
-                      key={item.query}
-                      className="rounded-xl border border-gray-100 bg-light p-4"
-                    >
-                      <h3 className="font-heading text-base font-semibold text-primary">
-                        {item.query}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                        {item.answer}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          )}
-
           <section id="description" className="mb-16">
             <h2 className="font-heading text-h3 text-primary mb-6">
               About {displayName}
@@ -2316,6 +2307,42 @@ export default async function ProductDetailPage({
                 Choice; Cosmetic Ingredient Review (CIR) Expert Panel; OECD 301B
                 aerobic biodegradability test.
               </p>
+            </section>
+          )}
+
+          {/* ─── COMMON BUYER SEARCHES (moved above FAQ) ───────────── */}
+          {searchConsoleIntentGuide && (
+            <section
+              id="search-intent"
+              aria-label={`Common buyer searches for ${displayName}`}
+              className="mb-12"
+            >
+              <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">
+                  Common buyer searches
+                </p>
+                <h2 className="font-heading text-h4 text-primary">
+                  {searchConsoleIntentGuide.heading}
+                </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-600">
+                  {searchConsoleIntentGuide.summary}
+                </p>
+                <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+                  {searchConsoleIntentGuide.items.map((item) => (
+                    <div
+                      key={item.query}
+                      className="rounded-xl border border-gray-100 bg-light p-4"
+                    >
+                      <h3 className="font-heading text-base font-semibold text-primary">
+                        {item.query}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                        {item.answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </section>
           )}
 

@@ -27,6 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!page || page.category !== "solutions") return {};
 
   const canonicalPath = `/solutions/${page.slug}`;
+  // Consolidate near-duplicate variants onto one authoritative page when set.
+  const canonicalUrl = buildAbsoluteUrl(page.canonicalOverride ?? canonicalPath);
 
   return applyPageMetaOverride(canonicalPath, {
     title: page.title,
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       page.keywords
     ),
     alternates: {
-      canonical: buildAbsoluteUrl(canonicalPath),
+      canonical: canonicalUrl,
     },
     openGraph: {
       title: page.title,

@@ -5,7 +5,7 @@
 
 export const EDDM_SLUG = "eddm-non-triazine-h2s-scavenger" as const;
 
-export const EDDM_DISPLAY_NAME = "EDDM (Ethylenedioxy)dimethanol CAS 3586-55-8 — Non-Triazine H₂S Scavenger";
+export const EDDM_DISPLAY_NAME = "EDDM (Ethylenedioxy)dimethanol — Non-Triazine H₂S Scavenger";
 
 export const EDDM_SHORT_NAME = "EDDM (Ethylenedioxy)dimethanol";
 

@@ -4,6 +4,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
   "triazine-based-h2s-scavenger": {
     slug: "triazine-based-h2s-scavenger",
     category: "solutions",
+    canonicalOverride: "/solutions/h2s-scavenger",
     title: "Triazine Based H2S Scavenger Manufacturer | B2B Bulk Supply",
     description: "Buy high-performance triazine based H2S scavengers from Vasudev Chemo Pharma. ISO 9001:2015 supplier of MEA 78% and MMA 40% grades. Request a COA today.",
     h1: "High-Performance Triazine Based H2S Scavenger for Industrial Abatement",
@@ -84,6 +85,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
   "hydrogen-sulfide-scavenger": {
     slug: "hydrogen-sulfide-scavenger",
     category: "solutions",
+    canonicalOverride: "/solutions/h2s-scavenger",
     title: "Hydrogen Sulfide Scavenger Manufacturer | Vasudev Chemo",
     description: "Protect your pipelines and personnel. We manufacture high-purity hydrogen sulfide scavenger chemistry for global export. Inquire for bulk pricing.",
     h1: "Specialty Hydrogen Sulfide Scavenger Chemistry",

@@ -99,6 +99,78 @@ export interface Product {
 
   // FAQ
   faqs: ProductFAQ[];
+
+  // ─── SEO Engine inputs (all optional) ──────────────────────
+  // Populated for NEW products to drive auto-generated SEO/AEO/GEO.
+  // Existing products leave these empty and rely on hardcoded
+  // overrides in src/lib/seo/*, which always take priority.
+  iupacName?: string;
+  alternateNames?: string[];
+  inchiKey?: string;
+  smiles?: string;
+  einecs?: string;
+  unNumber?: string;
+  chemicalClass?: string;
+  baseChemistry?: string;
+  activeContent?: string;
+  physicalForm?: PhysicalForm;
+
+  exportMarkets?: string[];
+  portOfLoading?: string[];
+  transitDays?: Record<string, string>;
+  incoterms?: string[];
+  localBrandEquivalents?: Record<string, string[]>;
+  localLanguageNames?: Record<string, string[]>;
+  targetBuyers?: string[];
+  competitorBrands?: string[];
+
+  primaryKeyword?: string;
+  secondaryKeywords?: string[];
+  searchIntent?: SearchIntent;
+  directAnswerSnippet?: string;
+  audienceType?: string;
+  areaServed?: string[];
+  manufacturingLocation?: string;
+
+  rankingMetrics?: Partial<ProductRankingMetrics>;
+  seoScoreOverride?: number;
+}
+
+export type PhysicalForm =
+  | "liquid"
+  | "powder"
+  | "crystal"
+  | "paste"
+  | "gas"
+  | "other";
+
+export type SearchIntent = "transactional" | "commercial" | "informational";
+
+/**
+ * 1-10 scored inputs that drive the SEO ranking calculator.
+ * All optional; the calculator applies a neutral default (5) when absent.
+ */
+export interface ProductRankingMetrics {
+  // Commercial value
+  exportVolumePotential: number;
+  pricePerMT: number;
+  marginCategory: "high" | "medium" | "low";
+  repeatOrderLikelihood: number;
+  // Market competition
+  searchVolumeEstimate: number;
+  competitorDensity: number;
+  brandRecognition: number;
+  // Content opportunity
+  technicalComplexity: number;
+  faqPotential: number;
+  comparisonOpportunity: number;
+  educationalValue: number;
+  // Gulf-specific
+  gulfDemandScore: number;
+  oilGasRelevance: number;
+  regulatoryAdvantageSASO: boolean;
+  arabicContentNeed: number;
+  gccCompetitorGap: number;
 }
 
 /** Category display labels */

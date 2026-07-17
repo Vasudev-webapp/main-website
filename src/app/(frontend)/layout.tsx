@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { GeistSans } from "geist/font/sans";
+import { Geist } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -22,6 +22,11 @@ const monaSans = localFont({
   display: "swap",
   weight: "200 900",
   fallback: ["system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+});
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
 });
 
 export const metadata: Metadata = {
@@ -182,7 +187,8 @@ export default function FrontendLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>
       <body
-        className={`${monaSans.variable} ${GeistSans.variable} antialiased`}
+        className={`${monaSans.variable} ${geistSans.variable} antialiased`}
+        suppressHydrationWarning
       >
         <SiteJsonLd />
         <CopyProtection />

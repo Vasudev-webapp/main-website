@@ -10,6 +10,77 @@ type ProductCacheEntry<T> = {
 const PRODUCT_CACHE_TTL_MS = Number(process.env.PRODUCT_CACHE_TTL_MS || 60 * 1000);
 const PRODUCT_CACHE_KEY = '__Vasudev_products_cache__';
 const PRODUCT_IN_FLIGHT_KEY = "__Vasudev_products_in_flight__";
+const PRODUCT_SELECT_FIELDS = {
+  id: true,
+  name: true,
+  titleSize: true,
+  slug: true,
+  sku: true,
+  formula: true,
+  casNumber: true,
+  category: true,
+  productPriority: true,
+  subcategory: true,
+  metaTitle: true,
+  metaDescription: true,
+  description: true,
+  appearance: true,
+  molecularWeight: true,
+  hsCode: true,
+  specs: true,
+  safetyClass: true,
+  ghsPictograms: true,
+  signalWord: true,
+  hazardStatements: true,
+  complianceDisclaimer: true,
+  documents: true,
+  applications: true,
+  industries: true,
+  price: true,
+  priceUnit: true,
+  currency: true,
+  unitOfMeasure: true,
+  grades: true,
+  packaging: true,
+  minOrderQuantity: true,
+  originCountry: true,
+  certifications: true,
+  supplier: true,
+  imageUrl: true,
+  documentUrl: true,
+  images: true,
+  status: true,
+  faqs: true,
+
+  // ─── SEO engine inputs (must be selected or toProduct maps them to undefined) ───
+  iupacName: true,
+  alternateNames: true,
+  inchiKey: true,
+  smiles: true,
+  einecs: true,
+  unNumber: true,
+  chemicalClass: true,
+  baseChemistry: true,
+  activeContent: true,
+  physicalForm: true,
+  exportMarkets: true,
+  portOfLoading: true,
+  transitDays: true,
+  incoterms: true,
+  localBrandEquivalents: true,
+  localLanguageNames: true,
+  targetBuyers: true,
+  competitorBrands: true,
+  primaryKeyword: true,
+  secondaryKeywords: true,
+  searchIntent: true,
+  directAnswerSnippet: true,
+  audienceType: true,
+  areaServed: true,
+  manufacturingLocation: true,
+  rankingMetrics: true,
+  seoScoreOverride: true,
+} as const;
 
 function getProductCacheStore(): Map<string, ProductCacheEntry<unknown>> {
   const globalScope = globalThis as typeof globalThis & {
@@ -163,6 +234,51 @@ function toProduct(doc: any): Product {
     images: mappedImages,
     status: doc.status ?? "active",
     faqs: doc.faqs ?? [],
+
+    // ─── SEO engine inputs (optional; undefined when unset) ────
+    iupacName: doc.iupacName ?? undefined,
+    alternateNames: Array.isArray(doc.alternateNames) ? doc.alternateNames : undefined,
+    inchiKey: doc.inchiKey ?? undefined,
+    smiles: doc.smiles ?? undefined,
+    einecs: doc.einecs ?? undefined,
+    unNumber: doc.unNumber ?? undefined,
+    chemicalClass: doc.chemicalClass ?? undefined,
+    baseChemistry: doc.baseChemistry ?? undefined,
+    activeContent: doc.activeContent ?? undefined,
+    physicalForm: doc.physicalForm ?? undefined,
+
+    exportMarkets: Array.isArray(doc.exportMarkets) ? doc.exportMarkets : undefined,
+    portOfLoading: Array.isArray(doc.portOfLoading) ? doc.portOfLoading : undefined,
+    transitDays:
+      doc.transitDays && typeof doc.transitDays === "object" ? doc.transitDays : undefined,
+    incoterms: Array.isArray(doc.incoterms) ? doc.incoterms : undefined,
+    localBrandEquivalents:
+      doc.localBrandEquivalents && typeof doc.localBrandEquivalents === "object"
+        ? doc.localBrandEquivalents
+        : undefined,
+    localLanguageNames:
+      doc.localLanguageNames && typeof doc.localLanguageNames === "object"
+        ? doc.localLanguageNames
+        : undefined,
+    targetBuyers: Array.isArray(doc.targetBuyers) ? doc.targetBuyers : undefined,
+    competitorBrands: Array.isArray(doc.competitorBrands) ? doc.competitorBrands : undefined,
+
+    primaryKeyword: doc.primaryKeyword ?? undefined,
+    secondaryKeywords: Array.isArray(doc.secondaryKeywords)
+      ? doc.secondaryKeywords
+      : undefined,
+    searchIntent: doc.searchIntent ?? undefined,
+    directAnswerSnippet: doc.directAnswerSnippet ?? undefined,
+    audienceType: doc.audienceType ?? undefined,
+    areaServed: Array.isArray(doc.areaServed) ? doc.areaServed : undefined,
+    manufacturingLocation: doc.manufacturingLocation ?? undefined,
+
+    rankingMetrics:
+      doc.rankingMetrics && typeof doc.rankingMetrics === "object"
+        ? doc.rankingMetrics
+        : undefined,
+    seoScoreOverride:
+      typeof doc.seoScoreOverride === "number" ? doc.seoScoreOverride : undefined,
   };
 }
 
@@ -173,6 +289,7 @@ export async function getAllProducts(): Promise<Product[]> {
     const result = await payload.find({
       collection: "products",
       where: { status: { equals: "active" } },
+      select: PRODUCT_SELECT_FIELDS,
       limit: 200,
       sort: "name",
     });
@@ -200,6 +317,7 @@ export async function getProductBySlug(slug: string): Promise<Product | undefine
           { status: { equals: "active" } },
         ],
       },
+      select: PRODUCT_SELECT_FIELDS,
       limit: 1,
     });
 
@@ -214,6 +332,7 @@ export async function getAllProductSlugs(): Promise<string[]> {
     const result = await payload.find({
       collection: "products",
       where: { status: { equals: "active" } },
+      select: { slug: true },
       limit: 200,
     });
 
@@ -245,6 +364,7 @@ export async function getRelatedProducts(
           { status: { equals: "active" } },
         ],
       },
+      select: PRODUCT_SELECT_FIELDS,
       limit: 100,
       sort: "name",
     });

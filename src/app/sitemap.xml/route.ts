@@ -15,6 +15,13 @@ import {
   buildResourceArticlePath,
   normalizeCountrySlug,
 } from "@/lib/seo/seo-route-helpers";
+import type { Product } from "@/lib/types";
+import {
+  isProductEngineEnabled,
+  GULF_COUNTRY_BY_CODE,
+  buildGulfSupplyPath,
+  isHandBuiltSupplySlug,
+} from "@/lib/seo-engine";
 
 const SITE_URL = "https://www.vasudevchemopharma.com";
 
@@ -81,7 +88,9 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/resources", changeFrequency: "weekly", priority: 0.75 },
   { path: "/sitemap", changeFrequency: "weekly", priority: 0.8 },
   { path: "/legal/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
-  { path: "/legal-pages/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
+  // NOTE: /legal-pages/privacy-policy intentionally omitted — it 301-redirects
+  // to /legal/privacy-policy (see that route). Listing a redirecting URL in the
+  // sitemap is a hygiene error; the page itself remains live via the redirect.
   // ── BKC (Benzalkonium Chloride) support pages — Day 3 additions ──
   { path: "/benzalkonium-chloride-50-vs-80", changeFrequency: "monthly", priority: 0.85 },
   { path: "/bkc-uses-applications", changeFrequency: "monthly", priority: 0.85 },
@@ -194,11 +203,13 @@ export async function GET() {
   let productSlugs: string[] = [];
   let liveBlogs: LiveBlogSlug[] = [];
   let liveProducts: { slug: string; name: string; imageUrl?: string; metaDescription?: string; description?: string }[] = [];
+  let gulfSupplyProducts: Product[] = [];
 
   try {
     const products = await getAllProducts();
     productSlugs = products.map((p) => p.slug);
     liveProducts = products;
+    gulfSupplyProducts = products;
   } catch (err) {
     console.error("Failed to fetch product slugs for sitemap", { error: err });
   }
@@ -284,10 +295,30 @@ export async function GET() {
     ...RESOURCE_SLUGS.map((slug) =>
       buildEntry(buildResourceArticlePath(slug), "monthly", 0.75, now)
     ),
-    ...Object.values(CUSTOM_LANDING_PAGES_DATA).map((page) =>
-      buildEntry(`/${page.category}/${page.slug}`, "weekly", 0.85, now)
-    ),
+    ...Object.values(CUSTOM_LANDING_PAGES_DATA)
+      // Skip variants that canonicalize to another page — advertise only the
+      // canonical URL. The variant page stays live (it just isn't listed here).
+      .filter((page) => !page.canonicalOverride)
+      .map((page) =>
+        buildEntry(`/${page.category}/${page.slug}`, "weekly", 0.85, now)
+      ),
   ];
+
+  // Generic Gulf country supply pages for engine-enabled products.
+  // MEA Triazine is excluded — it has a dedicated hand-built supply hub.
+  // Only markets in each product's exportMarkets that are Gulf countries emit.
+  for (const product of gulfSupplyProducts) {
+    if (isHandBuiltSupplySlug(product.slug)) continue;
+    if (!isProductEngineEnabled(product)) continue;
+    const markets = Array.isArray(product.exportMarkets) ? product.exportMarkets : [];
+    for (const code of markets) {
+      const country = GULF_COUNTRY_BY_CODE[code];
+      if (!country) continue;
+      rawEntries.push(
+        buildEntry(buildGulfSupplyPath(product.slug, country.slug), "weekly", 0.8, now)
+      );
+    }
+  }
 
   // Dedupe by URL so overlapping slug sources can't emit the same <loc> twice.
   const entries = Array.from(

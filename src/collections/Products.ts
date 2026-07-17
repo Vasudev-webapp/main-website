@@ -323,5 +323,216 @@ export const Products: CollectionConfig = {
         { name: "answer", type: "textarea", required: true },
       ],
     },
+
+    // ═══════════════════════════════════════════════════════════
+    // SEO ENGINE INPUTS (all optional — power the auto-generation
+    // layer for NEW products. Existing products with hardcoded
+    // overrides in src/lib/seo/* are unaffected; those overrides
+    // always take priority over engine-generated output.)
+    // ═══════════════════════════════════════════════════════════
+
+    // ─── Extended Chemical Identity ────────────────────────────
+    {
+      name: "iupacName",
+      type: "text",
+      admin: { description: "Full IUPAC name. Feeds ChemicalSubstance schema." },
+    },
+    {
+      name: "alternateNames",
+      type: "json",
+      admin: {
+        description:
+          'JSON array of synonyms, trade names, abbreviations, e.g. ["ADBAC", "Alkyl Dimethyl Benzyl Ammonium Chloride"]. Feeds schema alternateName + AEO synonyms.',
+      },
+    },
+    {
+      name: "inchiKey",
+      type: "text",
+      admin: { description: "InChI Key hash (optional)." },
+    },
+    {
+      name: "smiles",
+      type: "text",
+      admin: { description: "SMILES notation (optional)." },
+    },
+    {
+      name: "einecs",
+      type: "text",
+      admin: { description: "EINECS / EC number (optional)." },
+    },
+    {
+      name: "unNumber",
+      type: "text",
+      admin: { description: "UN transport number (optional)." },
+    },
+    {
+      name: "chemicalClass",
+      type: "text",
+      admin: {
+        description:
+          'Chemical family used as schema category, e.g. "H2S Scavenger", "Hydrotrope", "Quaternary Ammonium".',
+      },
+    },
+    {
+      name: "baseChemistry",
+      type: "text",
+      admin: { description: 'e.g. "Monoethanolamine + Formaldehyde condensate".' },
+    },
+    {
+      name: "activeContent",
+      type: "text",
+      admin: { description: 'e.g. "78 ± 1%". Used in direct-answer + meta.' },
+    },
+    {
+      name: "physicalForm",
+      type: "select",
+      options: [
+        { label: "Liquid", value: "liquid" },
+        { label: "Powder", value: "powder" },
+        { label: "Crystal", value: "crystal" },
+        { label: "Paste", value: "paste" },
+        { label: "Gas", value: "gas" },
+        { label: "Other", value: "other" },
+      ],
+      admin: { description: "Physical form. Used in direct-answer snippet." },
+    },
+
+    // ─── Export & Gulf Focus ───────────────────────────────────
+    {
+      name: "exportMarkets",
+      type: "json",
+      admin: {
+        description:
+          'JSON array of target countries in priority order (Gulf first), e.g. ["UAE", "Saudi Arabia", "Qatar"]. Drives country pages + geo keywords.',
+      },
+    },
+    {
+      name: "portOfLoading",
+      type: "json",
+      admin: { description: 'JSON array, e.g. ["Mundra", "Hazira", "Kandla"].' },
+    },
+    {
+      name: "transitDays",
+      type: "json",
+      admin: {
+        description:
+          'JSON object of country -> transit window, e.g. {"UAE":"3-5","Saudi Arabia":"4-7"}.',
+      },
+    },
+    {
+      name: "incoterms",
+      type: "json",
+      admin: { description: 'JSON array, e.g. ["FOB", "CIF", "CFR"].' },
+    },
+    {
+      name: "localBrandEquivalents",
+      type: "json",
+      admin: {
+        description:
+          'JSON object of country -> competitor brands, e.g. {"UAE":["RXSOL...","G-SCAV EA77"]}.',
+      },
+    },
+    {
+      name: "localLanguageNames",
+      type: "json",
+      admin: {
+        description:
+          'JSON object of language -> names, e.g. {"arabic":["..."],"farsi":["..."]}.',
+      },
+    },
+    {
+      name: "targetBuyers",
+      type: "json",
+      admin: {
+        description:
+          'JSON array of buyer types, e.g. ["Oilfield service companies","Detergent formulators"]. Feeds schema BusinessAudience.',
+      },
+    },
+    {
+      name: "competitorBrands",
+      type: "json",
+      admin: {
+        description:
+          'JSON array of global competitor brands, e.g. ["Lonza Bardac 2280","Stepan BTC 8358"]. Drives comparison keywords.',
+      },
+    },
+
+    // ─── SEO / AEO / GEO Engine ────────────────────────────────
+    {
+      name: "primaryKeyword",
+      type: "text",
+      admin: { description: "Main ranking target keyword for this product." },
+    },
+    {
+      name: "secondaryKeywords",
+      type: "json",
+      admin: { description: "JSON array of long-tail / secondary keywords." },
+    },
+    {
+      name: "searchIntent",
+      type: "select",
+      options: [
+        { label: "Transactional (buy now)", value: "transactional" },
+        { label: "Commercial (compare/research)", value: "commercial" },
+        { label: "Informational (learn)", value: "informational" },
+      ],
+      defaultValue: "transactional",
+      admin: { description: "Primary search intent this page should serve." },
+    },
+    {
+      name: "directAnswerSnippet",
+      type: "textarea",
+      admin: {
+        description:
+          "40-55 word AEO snippet for AI engines. If blank, the engine auto-generates one from CAS, active content, form, and applications.",
+      },
+    },
+    {
+      name: "audienceType",
+      type: "textarea",
+      admin: { description: "Who buys this (schema BusinessAudience audienceType)." },
+    },
+    {
+      name: "areaServed",
+      type: "json",
+      admin: { description: "JSON array of countries served (schema areaServed)." },
+    },
+    {
+      name: "manufacturingLocation",
+      type: "text",
+      defaultValue: "Ankleshwar, Gujarat, India",
+      admin: { description: "Manufacturing location for E-E-A-T + direct answer." },
+    },
+
+    // ─── Ranking Calculator Inputs ─────────────────────────────
+    {
+      name: "rankingMetrics",
+      type: "json",
+      admin: {
+        description:
+          'Optional JSON object of 1-10 metric inputs, e.g. {"exportVolumePotential":8,"gulfDemandScore":9,"oilGasRelevance":10}. Drives SEO priority + content depth. Blank = engine uses neutral defaults.',
+      },
+    },
+    {
+      name: "seoScoreOverride",
+      type: "number",
+      min: 0,
+      max: 100,
+      validate: (value: number | null | undefined) => {
+        if (value === undefined || value === null) return true; // may remain unset
+        if (typeof value !== "number" || Number.isNaN(value)) {
+          return "SEO score override must be a number.";
+        }
+        if (value < 0 || value > 100) {
+          return "SEO score override must be between 0 and 100.";
+        }
+        return true;
+      },
+      admin: {
+        position: "sidebar",
+        description:
+          "Optional manual 0-100 SEO priority score. Overrides the calculated ranking score when set.",
+      },
+    },
   ],
 };

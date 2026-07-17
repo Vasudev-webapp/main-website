@@ -49,12 +49,12 @@ export default function StickyAnchorNav({
         navbarHidden ? "top-0" : "top-[73px]"
       }`}
     >
-      <div className="flex flex-wrap gap-3 py-3 max-w-container mx-auto">
+      <div className="flex flex-nowrap gap-3 py-3 max-w-container mx-auto overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         {links.map((link) => (
           <a
             key={link.id}
             href={`#${link.id}`}
-            className="text-sm font-medium text-gray-500 hover:text-accent transition-colors px-3 py-1.5 rounded-full hover:bg-accent/5"
+            className="whitespace-nowrap shrink-0 text-sm font-medium text-gray-500 hover:text-accent transition-colors px-3 py-1.5 rounded-full hover:bg-accent/5"
           >
             {link.label}
           </a>

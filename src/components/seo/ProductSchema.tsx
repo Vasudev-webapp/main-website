@@ -26,12 +26,18 @@ import {
 } from "@/lib/seo/bkc-80-content";
 import {
   EDDM_SLUG,
+  EDDM_DISPLAY_NAME,
   EDDM_SHORT_NAME,
   EDDM_ALTERNATE_NAMES,
   EDDM_CAS_NUMBER,
   EDDM_FORMULA,
   EDDM_MOLECULAR_WEIGHT,
 } from "@/lib/seo/eddm-constants";
+import {
+  isProductEngineEnabled,
+  buildProductSchemaEnrichment,
+  buildChemicalSchemaEnrichment,
+} from "@/lib/seo-engine";
 
 
 type ProductSchemaProps = {
@@ -136,8 +142,8 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
 
   /* --- Slug-specific enrichment ((Ethylenedioxy)dimethanol / EDDM) --- */
   if (isEddm) {
-    productSchema.name = EDDM_SHORT_NAME;
-    productSchema.alternateName = [...EDDM_ALTERNATE_NAMES];
+    productSchema.name = EDDM_DISPLAY_NAME;
+    productSchema.alternateName = [EDDM_SHORT_NAME, EDDM_DISPLAY_NAME, ...EDDM_ALTERNATE_NAMES];
     productSchema.category = "Specialty chemical";
     productSchema.countryOfOrigin = "India";
     productSchema.additionalProperty = [
@@ -432,8 +438,8 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
   };
 
   if (isEddm) {
-    chemicalSchema.name = EDDM_SHORT_NAME;
-    chemicalSchema.alternateName = [...EDDM_ALTERNATE_NAMES];
+    chemicalSchema.name = EDDM_DISPLAY_NAME;
+    chemicalSchema.alternateName = [EDDM_SHORT_NAME, EDDM_DISPLAY_NAME, ...EDDM_ALTERNATE_NAMES];
     chemicalSchema.molecularFormula = EDDM_FORMULA;
     chemicalSchema.molecularWeight = EDDM_MOLECULAR_WEIGHT;
     chemicalSchema.identifier = {
@@ -591,6 +597,27 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
         value: p.value,
       })),
     ];
+  }
+
+  /* --- Engine fallback enrichment (new products only) ---------
+     Applied ONLY when the product has NO hardcoded per-slug
+     enrichment above AND has opted into the SEO engine via CMS
+     fields. Existing curated products are never touched, so their
+     JSON-LD stays byte-identical. */
+  const hasHardcodedEnrichment =
+    isEnrichedSlug ||
+    isEddm ||
+    isSxs40 ||
+    isSxs90 ||
+    isScs40 ||
+    isBkc50 ||
+    isBkc80 ||
+    H2S_CATEGORY_SLUGS.includes(product.slug) ||
+    BIOCIDE_SLUGS.includes(product.slug);
+
+  if (!hasHardcodedEnrichment && isProductEngineEnabled(product)) {
+    Object.assign(productSchema, buildProductSchemaEnrichment(product));
+    Object.assign(chemicalSchema, buildChemicalSchemaEnrichment(product));
   }
 
   return (

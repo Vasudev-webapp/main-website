@@ -960,7 +960,7 @@ export const MEA_TRIAZINE_COMPETITOR_APPLICATIONS = [
     brand: "PureMark M500",
     application: "MEA triazine scavenger (Foremark Performance)",
     industry: "Oilfield",
-    meaTriazineRole: "Direct equivalent to Foremark PureMark M500 for oil and gas H2S scavenging",
+    meaTriazineRole: "Functional alternative to Foremark PureMark M500 for oil and gas H2S scavenging (confirm equivalence against specification)",
   },
   {
     brand: "PureMark B800",

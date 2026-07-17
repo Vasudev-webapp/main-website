@@ -38,9 +38,6 @@ build_error.log
 .env*.local
 .env.production
 .env.staging
-update-site-urls.js
-all-urls.txt
-seed.ts
 
 # payload
 payload.db
@@ -76,19 +73,35 @@ desktop.ini
 
 # generated reports
 *.report.html
+localhost_*.report.html
 
 # content strategy context (docs — not app code)
 /content-strategy-context/
 
 # local SEO workspace (not app code)
-claude-seo/
+/claude-seo/
 
 # claude code local harness config
 .claude/
 
-# ad-hoc test scripts (often contain plaintext credentials)
+# ad-hoc test/one-off scripts
 test-db.js
 test-payload.ts
 test_out.txt
 all-site-urls.txt
-localhost_*.report.html
+all-urls.txt
+
+# dev archive — one-off scripts, SQL, backups (not needed in production)
+/_dev-archive/
+
+# empty local-only folders
+/assets/
+
+# seed scripts (dev-only, not deployed)
+src/seed.ts
+src/seed-bkc.ts
+
+# python cache (from claude-seo or other tooling)
+__pycache__/
+*.py[cod]
+*$py.class

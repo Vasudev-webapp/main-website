@@ -25,6 +25,14 @@ export type LandingPageData = {
   keywords?: string[];
   datePublished?: string | Date;
   dateModified?: string | Date;
+  /**
+   * Optional absolute path (e.g. "/solutions/h2s-scavenger") to use as the
+   * canonical URL instead of this page's own path. Used to consolidate
+   * near-duplicate variants onto one authoritative page WITHOUT removing
+   * the variant — it stays live and crawlable but points ranking signals
+   * at the canonical page.
+   */
+  canonicalOverride?: string;
 };
 
 type Props = {

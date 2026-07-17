@@ -308,6 +308,7 @@ const seedProducts = [
     sku: "VCP-IND-0006",
     formula: "C₄H₁₀O₄",
     casNumber: "3586-55-8",
+    iupacName: "2-(hydroxymethoxy)ethoxymethanol",
     category: "industrial",
     subcategory: "Oilfield Chemicals",
     description: "EDDM (Ethylenedioxydimethanol) is a non-triazine based H₂S scavenger and slow-release formaldehyde donor used for hydrogen sulphide removal in oil and gas production, water treatment, and industrial applications. Unlike triazine-based scavengers, EDDM does not contain nitrogen or amine groups, making it an ideal alternative where triazine by-products (such as dithiazines or spent triazine polymers) are undesirable. EDDM reacts selectively with H₂S at ambient temperature through an exothermic process, converting hydrogen sulphide into non-hazardous by-products without causing salt precipitation, corrosion, or catalyst poisoning. The product is fully miscible with water, operates effectively across a pH range of 6–11, and is compatible with most oilfield and industrial chemical systems. Manufactured by Vasudev Chemo Pharma at our ISO 9001:2015 certified facility in Gujarat, India, EDDM is supplied at ≥ 90% active substance content with guaranteed total aldehyde content > 45%. It is also used as a liquid in-can preservative (bactericide) for water-based systems including metalworking fluids, polymer dispersions, pigment slurries, and concrete additives.",
