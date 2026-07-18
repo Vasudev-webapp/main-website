@@ -21,6 +21,8 @@ import {
   GULF_COUNTRY_BY_CODE,
   buildGulfSupplyPath,
   isHandBuiltSupplySlug,
+  resolveGulfSupply,
+  isGulfSupplyPageIndexable,
 } from "@/lib/seo-engine";
 
 const SITE_URL = "https://www.vasudevchemopharma.com";
@@ -95,6 +97,17 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/benzalkonium-chloride-50-vs-80", changeFrequency: "monthly", priority: 0.85 },
   { path: "/bkc-uses-applications", changeFrequency: "monthly", priority: 0.85 },
   { path: "/bkc-vs-ddac-vs-ctab", changeFrequency: "monthly", priority: 0.85 },
+  // ── EDDM (Ethylenedioxy dimethanol, CAS 3586-55-8) support pages ──
+  { path: "/eddm-grades-selection-guide", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/eddm-in-can-preservative-coatings", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/eddm-metalworking-fluid-biocide", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/eddm-multiphase-h2s-scavenger", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/eddm-cas-3586-55-8-properties", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/how-eddm-works-formaldehyde-donor", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/eddm-synonyms-trade-names", changeFrequency: "monthly", priority: 0.75 },
+  { path: "/eddm-dosage-guide", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/eddm-price-supplier-india", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/eddm-vs-isothiazolinone-biocides", changeFrequency: "monthly", priority: 0.85 },
 ];
 
 const SERVICE_SLUGS = [
@@ -314,6 +327,10 @@ export async function GET() {
     for (const code of markets) {
       const country = GULF_COUNTRY_BY_CODE[code];
       if (!country) continue;
+      // Only advertise indexable country pages. Data-thin near-duplicates are
+      // noindex,follow (see isGulfSupplyPageIndexable) and must not be listed.
+      const supply = resolveGulfSupply(product, country.slug);
+      if (!supply || !isGulfSupplyPageIndexable(supply)) continue;
       rawEntries.push(
         buildEntry(buildGulfSupplyPath(product.slug, country.slug), "weekly", 0.8, now)
       );

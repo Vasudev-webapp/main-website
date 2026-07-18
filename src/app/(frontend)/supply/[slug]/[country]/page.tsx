@@ -14,9 +14,20 @@ import {
   buildGulfSupplyPath,
   buildGulfCountryMeta,
   buildGulfCountryFAQs,
+  isGulfSupplyPageIndexable,
 } from "@/lib/seo-engine";
 
 export const revalidate = 3600;
+
+// Visible last-updated stamp for supply pages (SEO Rule 3). Supply facts
+// (transit windows, incoterms, documentation) are time-sensitive.
+const SUPPLY_UPDATED_ISO = "2026-07-18";
+const SUPPLY_UPDATED_LABEL = new Date(SUPPLY_UPDATED_ISO).toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+});
 
 // Generated on-demand via ISR to avoid exhausting DB connections at build.
 export async function generateStaticParams() {
@@ -39,12 +50,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const meta = buildGulfCountryMeta(product, supply);
     const canonicalPath = buildGulfSupplyPath(product.slug, supply.country.slug);
     const canonicalUrl = buildAbsoluteUrl(canonicalPath);
+    // Doorway-page guard: index only when the page carries product×country-unique
+    // content (local brands / local-language names); otherwise noindex,follow.
+    const indexable = isGulfSupplyPageIndexable(supply);
 
     return applyPageMetaOverride(canonicalUrl, {
       title: meta.title,
       description: meta.description,
       keywords: meta.keywords,
       alternates: { canonical: canonicalUrl },
+      robots: indexable
+        ? { index: true, follow: true, googleBot: { index: true, follow: true } }
+        : { index: false, follow: true, googleBot: { index: false, follow: true } },
       openGraph: {
         title: meta.title,
         description: meta.description,
@@ -129,6 +146,12 @@ export default async function ProductCountrySupplyPage({ params }: Props) {
               Vasudev Chemo Pharma to {gulf.name} via {gulf.mainPort}, with {transit} transit
               from India. Batch COA, GHS-compliant SDS, and {gulf.regulatoryBody} documentation
               provided with every shipment.
+            </p>
+            <p className="mt-4 text-sm text-gray-500">
+              Last updated:{" "}
+              <time dateTime={SUPPLY_UPDATED_ISO} className="font-medium text-primary">
+                {SUPPLY_UPDATED_LABEL}
+              </time>
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link

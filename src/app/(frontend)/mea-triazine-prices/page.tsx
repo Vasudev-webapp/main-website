@@ -13,6 +13,15 @@ import {
 
 const SITE_URL = "https://www.vasudevchemopharma.com";
 const CANONICAL = `${SITE_URL}/mea-triazine-prices`;
+// Visible last-updated stamp for this time-sensitive pricing guide (SEO Rule 3).
+// Update this date whenever the pricing factors / packaging / MOQ content changes.
+const PRICE_GUIDE_UPDATED_ISO = "2026-07-18";
+const PRICE_GUIDE_UPDATED_LABEL = new Date(PRICE_GUIDE_UPDATED_ISO).toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+});
 
 export const metadata: Metadata = applyPageMetaOverride("/mea-triazine-prices", {
   title: "MEA Triazine Prices – 78% H2S Scavenger Cost Guide",
@@ -198,6 +207,13 @@ export default function MeaTriazinePricesPage() {
             </div>
             <p className="text-xs text-gray-400 mt-3">
               Export MOQ: 1 MT &nbsp;·&nbsp; Domestic MOQ: 220 kg &nbsp;·&nbsp; Quotes issued same-day
+            </p>
+            <p className="text-sm text-gray-500 mt-4">
+              Last updated:{" "}
+              <time dateTime={PRICE_GUIDE_UPDATED_ISO} className="font-medium text-primary">
+                {PRICE_GUIDE_UPDATED_LABEL}
+              </time>{" "}
+              — pricing factors reviewed periodically; request a live quote for current rates.
             </p>
           </section>
 

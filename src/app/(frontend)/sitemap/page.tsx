@@ -118,6 +118,39 @@ const productNodes = [
     ],
   },
   {
+    id: "eddm",
+    name: "EDDM (Ethylenedioxy)dimethanol — Non-Triazine H2S Scavenger",
+    href: "/product/eddm-non-triazine-h2s-scavenger",
+    description: "Slow-release formaldehyde-donor biocide and non-triazine H2S scavenger (CAS 3586-55-8) for water-based preservation and oil & gas desulfurization.",
+    connections: [
+      {
+        group: "Solutions & Chemistry Guides",
+        pages: [
+          { label: "How EDDM Works (Formaldehyde-Donor Mechanism)", href: "/how-eddm-works-formaldehyde-donor" },
+          { label: "EDDM CAS 3586-55-8 Properties & Specifications", href: "/eddm-cas-3586-55-8-properties" },
+          { label: "EDDM Synonyms & Chemical Names", href: "/eddm-synonyms-trade-names" },
+          { label: "EDDM vs Isothiazolinone Biocides", href: "/eddm-vs-isothiazolinone-biocides" },
+          { label: "EDDM Multiphase H2S Scavenger", href: "/eddm-multiphase-h2s-scavenger" },
+        ],
+      },
+      {
+        group: "Applications & Selection",
+        pages: [
+          { label: "EDDM Grades 90% / 92% / 95% — Selection Guide", href: "/eddm-grades-selection-guide" },
+          { label: "EDDM In-Can Preservative for Coatings & Adhesives", href: "/eddm-in-can-preservative-coatings" },
+          { label: "EDDM Biocide for Metalworking Fluids", href: "/eddm-metalworking-fluid-biocide" },
+          { label: "EDDM Dosage & Use-Level Guide", href: "/eddm-dosage-guide" },
+        ],
+      },
+      {
+        group: "Pricing & Supply",
+        pages: [
+          { label: "EDDM Price & Supplier — India & Bulk Export", href: "/eddm-price-supplier-india" },
+        ],
+      },
+    ],
+  },
+  {
     id: "bkc-biocide",
     name: "Benzalkonium Chloride (BKC 50% & 80%)",
     href: "/product/benzalkonium-chloride-50",

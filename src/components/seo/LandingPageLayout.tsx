@@ -45,9 +45,9 @@ function getWordCount(page: LandingPageData): number {
   return text.trim().split(/\s+/).length;
 }
 
-function toIsoDate(value?: string | Date): string {
+function toIsoDate(value?: string | Date): string | undefined {
   if (value instanceof Date) {
-    return value.toISOString().split("T")[0];
+    return Number.isNaN(value.getTime()) ? undefined : value.toISOString().split("T")[0];
   }
 
   if (typeof value === "string") {
@@ -62,7 +62,9 @@ function toIsoDate(value?: string | Date): string {
     }
   }
 
-  return new Date().toISOString().split("T")[0];
+  // Never fabricate a date: absent/invalid input yields undefined so the
+  // Article schema omits the field and no "today" date is displayed.
+  return undefined;
 }
 
 export default function LandingPageLayout({ page, categoryPath }: Props) {
@@ -75,6 +77,21 @@ export default function LandingPageLayout({ page, categoryPath }: Props) {
     page.category.charAt(0).toUpperCase() + page.category.slice(1);
   const datePublished = toIsoDate(page.datePublished);
   const dateModified = toIsoDate(page.dateModified);
+  // Only surface a visible date when the page data actually supplies one, so
+  // the visible "Last updated" stamp always matches the Article schema and we
+  // never display a fabricated/auto-"today" date (SEO Rule 3 & Rule 4). Prefer
+  // the modified date, falling back to the published date — but do not derive
+  // one absent date from the other.
+  const displayIso = dateModified ?? datePublished;
+  const hasExplicitDate = Boolean(displayIso);
+  const visibleUpdatedDate = displayIso
+    ? new Date(`${displayIso}T00:00:00Z`).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        timeZone: "UTC",
+      })
+    : "";
 
   return (
     <>
@@ -109,6 +126,14 @@ export default function LandingPageLayout({ page, categoryPath }: Props) {
               <p className="mt-6 text-lg leading-relaxed text-secondary">
                 {page.intro}
               </p>
+              {hasExplicitDate && (
+                <p className="mt-4 text-sm text-gray-500">
+                  Last updated:{" "}
+                  <time dateTime={displayIso} className="font-medium text-primary">
+                    {visibleUpdatedDate}
+                  </time>
+                </p>
+              )}
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href={MEA_TRIAZINE_PRODUCT_PATH}

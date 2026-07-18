@@ -9,7 +9,6 @@ const BRAND = "Vasudev Chemo Pharma";
 export function buildGulfSupplyPath(productSlug: string, countrySlug: string): string {
   return `/supply/${productSlug}/${countrySlug}`;
 }
-
 export type GulfSupply = {
   country: GulfCountry;
   /** Transit window from India (product override or country default). */
@@ -68,6 +67,21 @@ export function resolveGulfSupply(
   const localNames = product.localLanguageNames?.[country.language] ?? [];
 
   return { country, transit, incoterms, loadingPorts, localBrands, localNames };
+}
+
+
+/**
+ * Doorway-page guard (SEO Rule 6). A generic country supply page only earns
+ * indexation when it carries product×country-UNIQUE content beyond the shared
+ * template. Country facts (port, transit, regulator, operations) are identical
+ * across every product for a given country, so they do NOT make a page unique.
+ * The product×country-specific signals are local brand equivalents and
+ * local-language names — when at least one is present the page is substantive
+ * enough to index; otherwise it stays crawlable but noindex,follow so thin
+ * near-duplicates never compete in the index.
+ */
+export function isGulfSupplyPageIndexable(supply: GulfSupply): boolean {
+  return supply.localBrands.length > 0 || supply.localNames.length > 0;
 }
 
 

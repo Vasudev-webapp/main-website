@@ -1,5 +1,13 @@
 import { LandingPageData } from "@/components/seo/LandingPageLayout";
 
+/**
+ * Content-review baseline date for landing pages that do not set their own
+ * datePublished/dateModified. Surfaces a visible "Last updated" stamp and
+ * matching Article schema (SEO Rule 3 & Rule 4). Bump this when the landing
+ * content is reviewed/updated, or set per-entry dates for finer control.
+ */
+export const CONTENT_REVIEWED_DATE = "2026-07-18";
+
 export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
   "triazine-based-h2s-scavenger": {
     slug: "triazine-based-h2s-scavenger",
@@ -886,5 +894,16 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
 };
 
 export function getCustomPageData(slug: string): LandingPageData | null {
-  return CUSTOM_LANDING_PAGES_DATA[slug] ?? null;
+  const page = CUSTOM_LANDING_PAGES_DATA[slug];
+  if (!page) return null;
+
+  // Ensure every landing page carries a visible/structured last-updated date
+  // (SEO Rule 3). Entries may set their own datePublished/dateModified to
+  // override; otherwise fall back to the content-review baseline date. Update
+  // CONTENT_REVIEWED_DATE (or set per-entry dates) whenever content changes.
+  return {
+    ...page,
+    datePublished: page.datePublished ?? CONTENT_REVIEWED_DATE,
+    dateModified: page.dateModified ?? CONTENT_REVIEWED_DATE,
+  };
 }
