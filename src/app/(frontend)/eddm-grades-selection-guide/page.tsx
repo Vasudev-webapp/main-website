@@ -58,7 +58,7 @@ const faqs = [
   {
     question: "What is the difference between EDDM 90%, 92% and 95%?",
     answer:
-      "All three are the same chemical — (ethylenedioxy)dimethanol, CAS 3586-55-8 — differing primarily in active content, with related differences in total aldehyde, appearance and typical application. EDDM 90% and 92% are the standard commercial grades (total aldehyde ≥45%) used for most in-can preservation and metalworking-fluid applications. EDDM 95% is a high-purity grade (total aldehyde ≥47%, tighter colour) preferred where lower water content or higher active-per-kg dosing economy is required, such as concentrated oilfield H2S scavenger blends.",
+      "All three are the same chemical — (ethylenedioxy)dimethanol, CAS 3586-55-8 — with active content as the primary difference. The 95% grade also carries tighter appearance and specification distinctions, and it is typically preferred where lower water content or higher active-per-kg dosing economy is required, such as concentrated oilfield H2S scavenger blends. EDDM 90% and 92% remain the standard commercial grades for most in-can preservation and metalworking-fluid applications.",
   },
   {
     question: "Which EDDM grade should I use for metalworking fluids?",
@@ -109,18 +109,22 @@ export default function EddmGradesSelectionGuidePage() {
               </h1>
               <p className="text-secondary text-lg mt-6">
                 A brand-free selection guide for (ethylenedioxy)dimethanol (EDDM, CAS 3586-55-8)
-                across its three commercial active-content grades. Same chemical — different active
-                content, freight economics and formulation convenience. Use the logic below to pick
-                the right grade for metalworking fluids, in-can preservation, or non-triazine H₂S
-                scavenging.
+                across its three commercial active-content grades. Same chemical — active content is the
+                primary difference, while the 95% grade also carries tighter appearance and specification
+                distinctions and is preferred for lower-water or more concentrated applications. Use the
+                logic below to pick the right grade for metalworking fluids, in-can preservation, or
+                non-triazine H₂S scavenging.
               </p>
               {/* Direct-answer block for AEO */}
               <div className="mt-8 border-l-4 border-accent bg-surface p-5 rounded">
                 <p className="text-primary font-medium">
                   Quick answer: choose EDDM 90–92% for most preservation and metalworking-fluid
-                  duties, and EDDM 95% when you need higher active-per-kg economy or lower water
-                  content — for example concentrated oilfield H₂S scavenger blends. Performance is
-                  set by your in-use dosage (0.10–0.30%), not by the supplied grade.
+                  duties, and EDDM 95% when you need higher active-per-kg economy, lower water
+                  content, or the tighter appearance/specification profile of the high-purity grade —
+                  for example concentrated oilfield H₂S scavenger blends. For preservation and
+                  metalworking-fluid duties, performance is set by your in-use dosage (0.10–0.30%),
+                  not by the supplied grade alone; H₂S-scavenging duty is instead dosed to the
+                  sulfide load and required contact time rather than a fixed percentage.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 mt-8">

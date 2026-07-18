@@ -108,6 +108,22 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/eddm-dosage-guide", changeFrequency: "monthly", priority: 0.8 },
   { path: "/eddm-price-supplier-india", changeFrequency: "weekly", priority: 0.9 },
   { path: "/eddm-vs-isothiazolinone-biocides", changeFrequency: "monthly", priority: 0.85 },
+  // ── Triazine / H2S scavenger support pages (MEA 78% / MMA 40%) ──
+  { path: "/triazine-injection-vs-contactor-tower", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/sagd-h2s-scavenger", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/lpg-h2s-scavenger", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/sour-water-stripper-h2s", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/refinery-fuel-gas-h2s-scavenger", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/storage-tank-h2s-scavenger", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/marine-bunker-fuel-h2s-scavenger", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/produced-water-h2s-scavenger", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/tank-truck-railcar-h2s-transport", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/spent-triazine-monitoring", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/triazine-foaming-emulsion-troubleshooting", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/custom-triazine-blends-formulations", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/triazine-corrosion-inhibitor-compatibility", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/triazine-vs-nitrite-scavenger", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/triazine-vs-non-triazine-scavenger", changeFrequency: "monthly", priority: 0.85 },
 ];
 
 const SERVICE_SLUGS = [

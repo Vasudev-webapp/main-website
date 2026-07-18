@@ -55,6 +55,26 @@ const productNodes = [
     description: "Our flagship amine-based non-regenerative hydrogen sulfide scavenger for oilfield and gas operations.",
     connections: [
       {
+        group: "Applications & Technical Guides",
+        pages: [
+          { label: "Direct Injection vs Contactor Tower", href: "/triazine-injection-vs-contactor-tower" },
+          { label: "SAGD H2S Scavenging", href: "/sagd-h2s-scavenger" },
+          { label: "LPG H2S Scavenging", href: "/lpg-h2s-scavenger" },
+          { label: "Sour Water Stripper H2S Control", href: "/sour-water-stripper-h2s" },
+          { label: "Refinery Fuel-Gas H2S Scavenging", href: "/refinery-fuel-gas-h2s-scavenger" },
+          { label: "Storage Tank Vapor-Space H2S", href: "/storage-tank-h2s-scavenger" },
+          { label: "Marine & Bunker-Fuel H2S Suppression", href: "/marine-bunker-fuel-h2s-scavenger" },
+          { label: "Produced Water H2S Control", href: "/produced-water-h2s-scavenger" },
+          { label: "Tank Truck & Railcar Transport H2S", href: "/tank-truck-railcar-h2s-transport" },
+          { label: "Spent Triazine & Residual-Amine Monitoring", href: "/spent-triazine-monitoring" },
+          { label: "Foaming & Emulsion Troubleshooting", href: "/triazine-foaming-emulsion-troubleshooting" },
+          { label: "Custom Triazine Blends & Formulations", href: "/custom-triazine-blends-formulations" },
+          { label: "Triazine + Corrosion Inhibitor Compatibility", href: "/triazine-corrosion-inhibitor-compatibility" },
+          { label: "Triazine vs Nitrite/Nitrate Scavengers", href: "/triazine-vs-nitrite-scavenger" },
+          { label: "Triazine vs Non-Triazine Scavengers", href: "/triazine-vs-non-triazine-scavenger" },
+        ],
+      },
+      {
         group: "Solutions & Chemistry Guides",
         pages: [
           { label: "Triazine Based H2S Scavenger", href: "/solutions/triazine-based-h2s-scavenger" },

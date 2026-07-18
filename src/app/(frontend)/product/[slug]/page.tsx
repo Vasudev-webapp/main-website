@@ -750,8 +750,9 @@ export default async function ProductDetailPage({
           {/* ─── 2. PRODUCT HERO ────────────────────────────────────── */}
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
 
-            {/* Left — Product Image */}
-            <div className="bg-light rounded-3xl p-4 sm:p-8 self-start min-h-[360px]">
+            {/* Left — Product Image (sticky on desktop: stays in view while
+                the details column scrolls, until the sticky anchor nav docks) */}
+            <div className="bg-light rounded-3xl p-4 sm:p-8 self-start min-h-[360px] lg:sticky lg:top-[89px]">
               {resolvedPrimaryImageUrl || safeImages.length > 0 || safeVideos.length > 0 ? (
                 <ProductImageGallery
                   productName={displayName}
@@ -786,11 +787,6 @@ export default async function ProductDetailPage({
                     : "text-[clamp(2rem,10vw,5.5rem)]"
               }`}>
                 {pageHeading}
-                {product.formula ? (
-                  <span className="block text-base md:text-lg text-secondary font-normal mt-3">
-                    {product.formula}
-                  </span>
-                ) : null}
               </h1>
 
               {/* Chemical identity row */}
@@ -803,7 +799,7 @@ export default async function ProductDetailPage({
                 )}
                 {product.casNumber && (
                   <span className="inline-flex items-center gap-1.5 bg-light rounded-full px-4 py-2 text-sm font-medium text-primary">
-                    <span className="text-accent font-semibold">CAS:</span>{" "}
+                    <span className="text-accent font-semibold">CAS No.:</span>{" "}
                     {product.casNumber}
                   </span>
                 )}
@@ -865,7 +861,7 @@ export default async function ProductDetailPage({
                 </Link>
               </div>
               <p className="text-xs text-gray-400 mt-2">
-                Export: 1 MT minimum order &nbsp;·&nbsp; Domestic: 220 kg minimum order
+                Export: 1 MT minimum order &nbsp;·&nbsp; Domestic: {product.minOrderQuantity || "To be confirmed"} minimum order
               </p>
             </div>
           </section>

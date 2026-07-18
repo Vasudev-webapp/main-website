@@ -22,7 +22,7 @@ export const revalidate = 3600;
 // Visible last-updated stamp for supply pages (SEO Rule 3). Supply facts
 // (transit windows, incoterms, documentation) are time-sensitive.
 const SUPPLY_UPDATED_ISO = "2026-07-18";
-const SUPPLY_UPDATED_LABEL = new Date(SUPPLY_UPDATED_ISO).toLocaleDateString("en-GB", {
+const SUPPLY_UPDATED_LABEL = new Date(`${SUPPLY_UPDATED_ISO}T00:00:00Z`).toLocaleDateString("en-GB", {
   day: "numeric",
   month: "long",
   year: "numeric",

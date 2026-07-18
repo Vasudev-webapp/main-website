@@ -16,7 +16,7 @@ const CANONICAL = `${SITE_URL}/mea-triazine-prices`;
 // Visible last-updated stamp for this time-sensitive pricing guide (SEO Rule 3).
 // Update this date whenever the pricing factors / packaging / MOQ content changes.
 const PRICE_GUIDE_UPDATED_ISO = "2026-07-18";
-const PRICE_GUIDE_UPDATED_LABEL = new Date(PRICE_GUIDE_UPDATED_ISO).toLocaleDateString("en-GB", {
+const PRICE_GUIDE_UPDATED_LABEL = new Date(`${PRICE_GUIDE_UPDATED_ISO}T00:00:00Z`).toLocaleDateString("en-GB", {
   day: "numeric",
   month: "long",
   year: "numeric",

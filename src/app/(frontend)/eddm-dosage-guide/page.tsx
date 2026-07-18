@@ -65,7 +65,7 @@ const faqs = [
   {
     question: "How do I set the right EDDM dose?",
     answer:
-      "Work back from the target in-use active concentration. Dose = (target active % × batch weight) ÷ grade active fraction. For example, to reach 0.20% active in a 1000 kg batch using EDDM 90%: (0.0020 × 1000) ÷ 0.90 ≈ 2.22 kg of product. Always validate microbial efficacy in your finished product before commercial use.",
+      "Work back from the target in-use active concentration. Convert the target percentage to a decimal before calculating product quantity; for example, 0.20% active becomes 0.0020. For a 1000 kg batch using EDDM 90%, the calculation is (0.0020 × 1000) ÷ 0.90 ≈ 2.22 kg of product. Always validate microbial efficacy in your finished product before commercial use.",
   },
   {
     question: "Does the EDDM grade change the dose?",
@@ -105,15 +105,16 @@ export default function EddmDosageGuidePage() {
               </h1>
               <p className="text-secondary text-lg mt-6">
                 How much (ethylenedioxy)dimethanol (EDDM, CAS 3586-55-8) to use — by application, with
-                the logic to set and validate your dose. Preservation duties use a percentage of the
-                finished product; H₂S scavenging is set by the sulfide load to be removed.
+                the logic to set and validate your dose. Preservation duties are best handled on an
+                active-concentration basis in the finished product; H₂S scavenging is set by the sulfide
+                load to be removed.
               </p>
               <div className="mt-8 border-l-4 border-accent bg-surface p-5 rounded">
                 <p className="text-primary font-medium">
                   Quick answer: for in-can preservation and metalworking fluids, dose EDDM to
-                  0.10–0.30% active in the finished product. Set the amount of product from the target
-                  active level and your grade&apos;s active fraction, then validate microbial efficacy
-                  before scale-up. For H₂S scavenging, dose to the sulfide load, not a fixed percentage.
+                  0.10–0.30% active concentration in the finished product. Set the amount of product
+                  from the target active level and your grade&apos;s active fraction, then validate microbial
+                  efficacy before scale-up. For H₂S scavenging, dose to the sulfide load, not a fixed percentage.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 mt-8">
@@ -185,7 +186,7 @@ export default function EddmDosageGuidePage() {
             <pre className="bg-surface p-4 rounded text-sm mb-6 overflow-x-auto">
 {`Product to add (kg) = (target active % × batch weight) ÷ grade active fraction
 
-Example — 0.20% active in a 1000 kg batch using EDDM 90%:
+Example — 0.20% active concentration = 0.0020 for the calculation in a 1000 kg batch using EDDM 90%:
 = (0.0020 × 1000) ÷ 0.90
 ≈ 2.22 kg EDDM 90% product`}
             </pre>

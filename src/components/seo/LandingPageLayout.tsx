@@ -77,11 +77,6 @@ export default function LandingPageLayout({ page, categoryPath }: Props) {
     page.category.charAt(0).toUpperCase() + page.category.slice(1);
   const datePublished = toIsoDate(page.datePublished);
   const dateModified = toIsoDate(page.dateModified);
-  // Only surface a visible date when the page data actually supplies one, so
-  // the visible "Last updated" stamp always matches the Article schema and we
-  // never display a fabricated/auto-"today" date (SEO Rule 3 & Rule 4). Prefer
-  // the modified date, falling back to the published date — but do not derive
-  // one absent date from the other.
   const displayIso = dateModified ?? datePublished;
   const hasExplicitDate = Boolean(displayIso);
   const visibleUpdatedDate = displayIso
