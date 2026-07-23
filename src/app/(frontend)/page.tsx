@@ -17,6 +17,11 @@ import {
   mergeKeywordClusters,
 } from "@/lib/seo/keyword-clusters";
 
+// Homepage reads the live product catalogue from the CMS (ProductsSection +
+// GlobalSupplySection). Use ISR so new/updated products appear without a full
+// redeploy, while avoiding a live DB read on every request.
+export const revalidate = 3600;
+
 export const metadata: Metadata = applyPageMetaOverride("/", {
   title:
     "Vasudev Chemo Pharma — India's Leading MEA Triazine 78% Manufacturer",

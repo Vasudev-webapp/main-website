@@ -33,6 +33,16 @@ export type LandingPageData = {
    * at the canonical page.
    */
   canonicalOverride?: string;
+  /**
+   * Optional product-funnel targeting. When omitted, the layout defaults to
+   * MEA Triazine 78% (backward compatible with existing pages). Set these so a
+   * landing page's hero CTA, contact link and "Related products" box point at
+   * the product this page is actually built to sell (e.g. BKC 50% / 80%).
+   */
+  primaryProductPath?: string;
+  primaryProductLabel?: string;
+  contactProductSlug?: string;
+  relatedProductLinks?: { href: string; label: string }[];
 };
 
 type Props = {
@@ -72,6 +82,18 @@ export default function LandingPageLayout({ page, categoryPath }: Props) {
   const relatedResources = FEATURED_RESOURCE_SLUGS.slice(0, 3)
     .map((resourceSlug) => RESOURCE_ARTICLES_DATA[resourceSlug])
     .filter(Boolean);
+
+  // Product-funnel targets — default to MEA Triazine 78% for backward compat.
+  const primaryProductPath = page.primaryProductPath ?? MEA_TRIAZINE_PRODUCT_PATH;
+  const primaryProductLabel =
+    page.primaryProductLabel ?? "View MEA Triazine 78% product";
+  const contactProductSlug =
+    page.contactProductSlug ?? "mea-triazine-78-h2s-scavenger";
+  const relatedProductLinks =
+    page.relatedProductLinks ?? [
+      { href: "/product/mea-triazine-78-h2s-scavenger", label: "MEA Triazine 78% H2S Scavenger" },
+      { href: "/product/mma-triazine-40", label: "MMA Triazine 40% (BTX-Free)" },
+    ];
 
   const categoryLabel =
     page.category.charAt(0).toUpperCase() + page.category.slice(1);
@@ -131,13 +153,13 @@ export default function LandingPageLayout({ page, categoryPath }: Props) {
               )}
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
-                  href={MEA_TRIAZINE_PRODUCT_PATH}
+                  href={primaryProductPath}
                   className="inline-flex items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-dark"
                 >
-                  View MEA Triazine 78% product
+                  {primaryProductLabel}
                 </Link>
                 <Link
-                  href="/contact?product=mea-triazine-78-h2s-scavenger"
+                  href={`/contact?product=${contactProductSlug}`}
                   className="inline-flex items-center rounded-full border border-accent px-6 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent/10"
                 >
                   Ask for application support
@@ -197,18 +219,15 @@ export default function LandingPageLayout({ page, categoryPath }: Props) {
             <div className="rounded-3xl border border-gray-200 bg-white p-6">
               <h2 className="font-heading text-h4 text-primary">Related products</h2>
               <div className="mt-5 space-y-3">
-                <Link
-                  href="/product/mea-triazine-78-h2s-scavenger"
-                  className="block rounded-2xl bg-light px-4 py-3 text-sm font-medium text-primary transition-all hover:bg-accent/10 hover:text-accent"
-                >
-                  MEA Triazine 78% H2S Scavenger
-                </Link>
-                <Link
-                  href="/product/mma-triazine-40"
-                  className="block rounded-2xl bg-light px-4 py-3 text-sm font-medium text-primary transition-all hover:bg-accent/10 hover:text-accent"
-                >
-                  MMA Triazine 40% (BTX-Free)
-                </Link>
+                {relatedProductLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-2xl bg-light px-4 py-3 text-sm font-medium text-primary transition-all hover:bg-accent/10 hover:text-accent"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
             </div>
 

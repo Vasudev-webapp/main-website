@@ -10,8 +10,10 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import FAQSchema from "@/components/seo/FAQSchema";
 import AuthorByline from "@/components/blog/AuthorByline";
 import TableOfContents from "@/components/blog/TableOfContents";
+import BlogProductAside from "@/components/blog/BlogProductAside";
 import { blogData, type BlogEntry } from "./seo-blog-data";
 import { getBlogImageOverride } from "@/lib/blogs-payload";
+import { getProductBySlug } from "@/lib/products-payload";
 
 export const revalidate = 3600;
 
@@ -39,6 +41,19 @@ function countWords(blog: BlogEntry): number {
     blog.closing,
   ].join(" ");
   return text.split(/\s+/).filter(Boolean).length;
+}
+
+/**
+ * Resolve the product a blog relates to: explicit `relatedProductSlug` wins,
+ * otherwise fall back to the first `/product/...` internal link in the post.
+ */
+function resolveRelatedProductSlug(blog: BlogEntry): string | undefined {
+  if (blog.relatedProductSlug) return blog.relatedProductSlug;
+  for (const link of blog.internalLinks) {
+    const match = link.href.match(/^\/product\/([^/?#]+)/);
+    if (match) return match[1];
+  }
+  return undefined;
 }
 
 /* ------------------------------------------------------------------ */
@@ -119,6 +134,17 @@ export default async function BlogDetailPage({
 
   const relatedBlogs = allBlogs.filter((b) => b.slug !== slug).slice(0, 3);
 
+  const relatedProductSlug = resolveRelatedProductSlug(blog);
+  let relatedProduct: Awaited<ReturnType<typeof getProductBySlug>> = undefined;
+  if (relatedProductSlug) {
+    try {
+      relatedProduct = await getProductBySlug(relatedProductSlug);
+    } catch (err) {
+      relatedProduct = undefined;
+      console.error("BlogDetailPage: related product lookup failed", err);
+    }
+  }
+
   const tocItems = blog.sections.map((s) => ({
     id: s.id,
     label: s.heading,
@@ -189,7 +215,7 @@ export default async function BlogDetailPage({
 
         {/* ── Author byline ── */}
         <section className="pb-8">
-          <div className="max-w-3xl mx-auto px-6 lg:px-10">
+          <div className="max-w-5xl mx-auto px-6 lg:px-10">
             <AuthorByline
               name={blog.author}
               credentials={blog.authorCredentials}
@@ -199,10 +225,17 @@ export default async function BlogDetailPage({
           </div>
         </section>
 
-        {/* ── Content ── */}
+        {/* ── Content + product aside ── */}
         <section className="pb-20">
-          <div className="max-w-3xl mx-auto px-6 lg:px-10">
-            <div className="prose prose-lg max-w-none">
+          <div className="max-w-5xl mx-auto px-6 lg:px-10">
+            <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12 lg:items-start">
+              {/* Sticky product aside — appears above content on mobile,
+                  top-right and sticky on desktop. */}
+              <aside className="mb-10 lg:mb-0 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-28">
+                <BlogProductAside product={relatedProduct} />
+              </aside>
+
+              <div className="prose prose-lg max-w-none lg:col-start-1 lg:row-start-1">
               {/* Table of contents for pillar posts (1500+ words) */}
               {isPillar && <TableOfContents items={tocItems} />}
 
@@ -312,6 +345,7 @@ export default async function BlogDetailPage({
                   </ul>
                 </div>
               )}
+              </div>
             </div>
           </div>
         </section>

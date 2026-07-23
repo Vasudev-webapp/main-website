@@ -99,6 +99,26 @@ import {
   SCS_40_COMPARISON_TABLE,
   SCS_40_REGULATORY_MATRIX,
 } from "@/lib/seo/scs-40-content";
+import BkcContentSections from "@/components/product/BkcContentSections";
+import {
+  BKC_50_SLUG,
+  BKC_50_CHEMICAL_IDENTIFIERS,
+  BKC_50_GENERIC_SYNONYMS,
+  BKC_50_TRADE_NAMES,
+  BKC_50_APPLICATION_BLOCKS,
+  BKC_50_COMPARISON_TABLE,
+  BKC_50_REGULATORY_MATRIX,
+} from "@/lib/seo/bkc-50-content";
+import {
+  BKC_80_SLUG,
+  BKC_80_CHEMICAL_IDENTIFIERS,
+  BKC_80_GENERIC_SYNONYMS,
+  BKC_80_TRADE_NAMES,
+  BKC_80_APPLICATION_BLOCKS,
+  BKC_80_COMPARISON_TABLE,
+  BKC_80_REGULATORY_MATRIX,
+  BKC_80_DILUTION_TABLE,
+} from "@/lib/seo/bkc-80-content";
 
 /* ─── ISR: revalidate product pages every hour ──────────────── */
 export const revalidate = 3600;
@@ -423,6 +443,8 @@ export default async function ProductDetailPage({
   const isSxs40 = slug === SXS_40_SLUG;
   const isSxs90 = slug === SXS_90_SLUG;
   const isScs40 = slug === SCS_40_SLUG;
+  const isBkc50 = slug === BKC_50_SLUG;
+  const isBkc80 = slug === BKC_80_SLUG;
   const isEddm = slug === EDDM_SLUG;
   
   // Product name sourced exclusively from CMS — any change in Payload is reflected live
@@ -819,6 +841,14 @@ export default async function ProductDetailPage({
                       <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50 w-40">Product Name</td>
                       <td className="px-5 py-3 font-semibold text-primary">{displayName}</td>
                     </tr>
+                    {isMeaTriazine && (
+                      <tr className="border-b border-gray-100">
+                        <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50">Chemical Name (IUPAC)</td>
+                        <td className="px-5 py-3 text-primary">
+                          Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine
+                        </td>
+                      </tr>
+                    )}
                     <tr className="border-b border-gray-100">
                       <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50">SKU</td>
                       <td className="px-5 py-3 text-primary">{product.sku || "—"}</td>
@@ -900,6 +930,82 @@ export default async function ProductDetailPage({
               <ContentPlaceholder label="Product description — 2-3 paragraphs covering what the product is, how it is manufactured, key benefits, and why buyers should choose Vasudev as supplier. Should include the product name, formula, and CAS number naturally for SEO." />
             )}
           </section>
+
+          {/* ─── MEA: CHEMICAL-NAME BUYING-INTENT SECTION (SEO) ──────── */}
+          {isMeaTriazine && (
+            <section id="chemical-name" className="mb-16">
+              <h2 className="font-heading text-h3 text-primary mb-6">
+                Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine — Manufacturer, Supplier &amp; Exporter in India
+              </h2>
+              <div className="prose prose-gray max-w-none text-gray-600 leading-relaxed">
+                <p>
+                  <strong>Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine</strong>{" "}
+                  (CAS 4719-04-4) is the IUPAC chemical name for MEA Triazine 78%,
+                  a triazine-based hydrogen sulphide (H₂S) scavenger. Vasudev Chemo
+                  Pharma is a direct <strong>manufacturer of
+                  hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine in India</strong>,
+                  producing it at our ISO 9001:2015 certified plant in Ankleshwar,
+                  Gujarat.
+                </p>
+                <p>
+                  As a hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine{" "}
+                  <strong>supplier in India</strong> and{" "}
+                  <strong>exporter from India</strong>, we supply this H₂S scavenger
+                  in 200 L drums, 1000 L IBC totes and bulk tanker loads, with a
+                  batch Certificate of Analysis (COA), Safety Data Sheet (SDS) and
+                  Technical Data Sheet (TDS) on every shipment. It is also referenced
+                  as monoethanolamine triazine, 1,3,5-triazine-1,3,5(2H,4H,6H)-triethanol
+                  and triazinetriethanol.
+                </p>
+                <p>
+                  Buyers in oil &amp; gas, refineries, biogas and wastewater treatment
+                  source hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine directly from
+                  us for factory-direct pricing and export-ready documentation.{" "}
+                  <Link href="/contact?product=mea-triazine-78-h2s-scavenger" className="text-accent hover:underline font-medium">
+                    Request a quote
+                  </Link>{" "}
+                  for supply to your country.
+                </p>
+              </div>
+            </section>
+          )}
+
+          {/* ─── BKC 50% / 80%: CHEMICAL IDENTITY, APPLICATIONS, COMPARISON, REGULATORY ─── */}
+          {isBkc50 && (
+            <BkcContentSections
+              productName={product.name}
+              productSlug={product.slug}
+              skuBrand="VCP-SFC-0005"
+              identifiers={BKC_50_CHEMICAL_IDENTIFIERS}
+              genericSynonyms={BKC_50_GENERIC_SYNONYMS}
+              tradeNames={BKC_50_TRADE_NAMES}
+              applicationBlocks={BKC_50_APPLICATION_BLOCKS}
+              comparison={{
+                title: "BKC 50% vs BKC 80%, DDAC & CTAB",
+                headers: ["Attribute", "BKC 50% (this product)", "BKC 80%", "DDAC", "CTAB"],
+                rows: BKC_50_COMPARISON_TABLE.map((r) => [r.attribute, r.bkc50, r.bkc80, r.ddac, r.ctab]),
+              }}
+              regulatory={BKC_50_REGULATORY_MATRIX}
+            />
+          )}
+          {isBkc80 && (
+            <BkcContentSections
+              productName={product.name}
+              productSlug={product.slug}
+              skuBrand="VCP-SFC-0006"
+              identifiers={BKC_80_CHEMICAL_IDENTIFIERS}
+              genericSynonyms={BKC_80_GENERIC_SYNONYMS}
+              tradeNames={BKC_80_TRADE_NAMES}
+              applicationBlocks={BKC_80_APPLICATION_BLOCKS}
+              comparison={{
+                title: "BKC 80% vs BKC 50% & Global Brand Grades",
+                headers: ["Attribute", "BKC 80% (Vasudev)", "BKC 50%", "Lonza Bardac\u00AE 2280", "Stepan BTC\u00AE 8358"],
+                rows: BKC_80_COMPARISON_TABLE.map((r) => [r.attribute, r.bkc80Vasudev, r.bkc50, r.lonzaBardac2280, r.stepanBTC8358]),
+              }}
+              regulatory={BKC_80_REGULATORY_MATRIX}
+              dilution={BKC_80_DILUTION_TABLE}
+            />
+          )}
 
           {/* ─── SXS-40: CHEMICAL IDENTIFIERS & SYNONYMS ───────────────── */}
           {isSxs40 && (

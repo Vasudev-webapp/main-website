@@ -93,6 +93,17 @@ const productNodes = [
         ],
       },
       {
+        group: "Chemical-Name Pages (Hexahydro Triazine)",
+        pages: [
+          { label: "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine (CAS 4719-04-4)", href: "/solutions/hexahydro-1-3-5-tris-2-hydroxyethyl-s-triazine" },
+          { label: "Hexahydro-triazine Manufacturer in India", href: "/solutions/hexahydro-tris-2-hydroxyethyl-s-triazine-manufacturer-india" },
+          { label: "Hexahydro-triazine Supplier & Price", href: "/solutions/hexahydro-tris-2-hydroxyethyl-s-triazine-supplier-price" },
+          { label: "Hexahydro-triazine Exporter from India", href: "/solutions/hexahydro-tris-2-hydroxyethyl-s-triazine-exporter-india" },
+          { label: "Hexahydro-triazine SDS & Specifications", href: "/solutions/hexahydro-tris-2-hydroxyethyl-s-triazine-sds-specifications" },
+          { label: "Hexahydro-triazine Uses & Applications", href: "/solutions/hexahydro-tris-2-hydroxyethyl-s-triazine-uses-applications" },
+        ],
+      },
+      {
         group: "Export & Supply Regions",
         pages: [
           { label: "MEA Triazine 78% Supplier Hub", href: "/supply/mea-triazine-78-supplier" },
@@ -122,6 +133,36 @@ const productNodes = [
     href: "/product/mma-triazine-40",
     description: "Scale-preventive, low-scaling H2S scavenger optimized for high-temperature offshore environments.",
     connections: [
+      {
+        group: "Pricing & Sales",
+        pages: [
+          { label: "MMA Triazine 40% Price & Supplier — India", href: "/mma-triazine-40-price-supplier-india" },
+          { label: "Buy MMA Triazine 40% H2S Scavenger", href: "/buy-mma-triazine-40-h2s-scavenger" },
+          { label: "Bulk Order, Packaging & MOQ", href: "/mma-triazine-40-bulk-order-packaging-moq" },
+          { label: "Export & Global Supply Countries", href: "/mma-triazine-40-export-supply-countries" },
+          { label: "Specifications, COA & Datasheet", href: "/mma-triazine-40-specifications-coa-datasheet" },
+        ],
+      },
+      {
+        group: "Applications & Marketing",
+        pages: [
+          { label: "Why Choose MMA Triazine 40%", href: "/why-choose-mma-triazine-40-h2s-scavenger" },
+          { label: "MMA Triazine 40% for Natural Gas Sweetening", href: "/mma-triazine-40-natural-gas-sweetening" },
+          { label: "MMA Triazine 40% for Crude Oil Stabilisation", href: "/mma-triazine-40-crude-oil-stabilisation" },
+          { label: "Applications & Industries Served", href: "/mma-triazine-40-applications-industries" },
+          { label: "MMA Triazine 40% for Biogas H2S Removal", href: "/mma-triazine-40-biogas-h2s-removal" },
+        ],
+      },
+      {
+        group: "Research & Technical Guides",
+        pages: [
+          { label: "MMA Triazine CAS 108-74-7 Properties", href: "/mma-triazine-40-cas-108-74-7-properties" },
+          { label: "How MMA Triazine Works (Reaction Chemistry)", href: "/how-mma-triazine-works-h2s-scavenging" },
+          { label: "Dosage & Injection Rate Guide", href: "/mma-triazine-40-dosage-injection-rate-guide" },
+          { label: "Synonyms & Trade Names", href: "/mma-triazine-40-synonyms-trade-names" },
+          { label: "Safety, Handling & Storage", href: "/mma-triazine-40-safety-handling-storage" },
+        ],
+      },
       {
         group: "Solutions & Chemistry Guides",
         pages: [
@@ -188,6 +229,47 @@ const productNodes = [
         group: "Manufacturing & Location Hubs",
         pages: [
           { label: "Industrial Biocide Manufacturer India", href: "/location/industrial-biocide-manufacturer-india" },
+        ],
+      },
+      {
+        group: "BKC 50% — Buying & Technical",
+        pages: [
+          { label: "BKC 50% — CAS 8001-54-5 (ADBAC) Identity", href: "/solutions/benzalkonium-chloride-50-cas-8001-54-5-adbac" },
+          { label: "BKC 50% Specifications, SDS & COA", href: "/solutions/benzalkonium-chloride-50-specifications-sds-coa" },
+          { label: "BKC 50% Dosage & Dilution Guide", href: "/solutions/benzalkonium-chloride-50-dosage-dilution-guide" },
+          { label: "BKC 50% Brand Equivalents", href: "/solutions/benzalkonium-chloride-50-brand-equivalents" },
+          { label: "BKC 50% Manufacturer in India", href: "/solutions/benzalkonium-chloride-50-manufacturer-india" },
+          { label: "BKC 50% Supplier — Price & MOQ", href: "/solutions/benzalkonium-chloride-50-supplier-price" },
+          { label: "BKC 50% Exporter from India", href: "/solutions/benzalkonium-chloride-50-exporter-india" },
+        ],
+      },
+      {
+        group: "BKC 80% — Buying & Technical",
+        pages: [
+          { label: "BKC 80% — CAS 8001-54-5 (ADBAC) Concentrate", href: "/solutions/benzalkonium-chloride-80-cas-8001-54-5-adbac" },
+          { label: "BKC 80% Specifications, SDS & COA", href: "/solutions/benzalkonium-chloride-80-specifications-sds-coa" },
+          { label: "BKC 80% Dilution Guide", href: "/solutions/benzalkonium-chloride-80-dilution-guide" },
+          { label: "BKC 80% Brand Equivalents", href: "/solutions/benzalkonium-chloride-80-brand-equivalents" },
+          { label: "BKC 80% Manufacturer in India", href: "/solutions/benzalkonium-chloride-80-manufacturer-india" },
+          { label: "BKC 80% Supplier — Price & MOQ", href: "/solutions/benzalkonium-chloride-80-supplier-price" },
+          { label: "BKC 80% Exporter from India", href: "/solutions/benzalkonium-chloride-80-exporter-india" },
+        ],
+      },
+      {
+        group: "BKC Applications by Industry",
+        pages: [
+          { label: "Hospital & Healthcare Disinfectant", href: "/solutions/benzalkonium-chloride-hospital-disinfectant" },
+          { label: "Food & Beverage CIP/COP Sanitiser", href: "/solutions/benzalkonium-chloride-food-beverage-cip-sanitiser" },
+          { label: "Cosmetic Preservative (INCI)", href: "/solutions/benzalkonium-chloride-cosmetic-preservative" },
+          { label: "Pharmaceutical Preservative", href: "/solutions/benzalkonium-chloride-pharmaceutical-preservative" },
+          { label: "Swimming Pool & Spa Algicide", href: "/solutions/benzalkonium-chloride-swimming-pool-spa-algicide" },
+          { label: "Cooling Tower & HVAC Biocide", href: "/solutions/benzalkonium-chloride-cooling-tower-hvac-biocide" },
+          { label: "Poultry & Dairy Farm Disinfectant", href: "/solutions/benzalkonium-chloride-poultry-dairy-farm-disinfectant" },
+          { label: "Veterinary Disinfectant", href: "/solutions/benzalkonium-chloride-veterinary-disinfectant" },
+          { label: "Wood Preservation", href: "/solutions/benzalkonium-chloride-wood-preservation" },
+          { label: "Textile Antimicrobial Finish", href: "/solutions/benzalkonium-chloride-textile-antimicrobial-finish" },
+          { label: "Oilfield & Produced-Water Biocide", href: "/solutions/benzalkonium-chloride-oilfield-produced-water-biocide" },
+          { label: "Phase-Transfer Catalyst", href: "/solutions/benzalkonium-chloride-phase-transfer-catalyst" },
         ],
       },
     ],

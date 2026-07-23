@@ -124,6 +124,22 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/triazine-corrosion-inhibitor-compatibility", changeFrequency: "monthly", priority: 0.8 },
   { path: "/triazine-vs-nitrite-scavenger", changeFrequency: "monthly", priority: 0.85 },
   { path: "/triazine-vs-non-triazine-scavenger", changeFrequency: "monthly", priority: 0.85 },
+  // ── Sodium Cumene Sulfonate (SCS 40% & 90%, CAS 28348-53-0) support pages ──
+  { path: "/scs-40-vs-scs-90-selection-guide", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/sodium-cumene-sulfonate-vs-sodium-xylene-sulfonate", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/best-hydrotrope-liquid-detergent", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/sodium-cumene-sulfonate-sls-free-sulfate-free", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/sodium-cumene-sulfonate-cas-28348-53-0-properties", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/sodium-cumene-sulfonate-synonyms-trade-names", changeFrequency: "monthly", priority: 0.75 },
+  { path: "/how-sodium-cumene-sulfonate-works-hydrotrope", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/is-sodium-cumene-sulfonate-safe-biodegradable", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/sodium-cumene-sulfonate-liquid-detergent-dishwash", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/sodium-cumene-sulfonate-shampoo-personal-care", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/sodium-cumene-sulfonate-electroplating-bath-additive", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/sodium-cumene-sulfonate-agrochemical-adjuvant", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/sodium-cumene-sulfonate-hard-surface-cleaner-degreaser", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/sodium-cumene-sulfonate-dosage-formulation-guide", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/sodium-cumene-sulfonate-price-supplier-india", changeFrequency: "weekly", priority: 0.9 },
 ];
 
 const SERVICE_SLUGS = [

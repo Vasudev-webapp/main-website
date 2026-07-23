@@ -24,6 +24,12 @@ export type BlogEntry = {
   internalLinks: { text: string; href: string }[];
   externalLinks: { text: string; href: string }[];
   faqs?: { question: string; answer: string }[];
+  /**
+   * Product this article is about, used to render the sticky product aside.
+   * Optional — when omitted, the page auto-derives it from the first
+   * `/product/...` entry in `internalLinks`. Set explicitly to override.
+   */
+  relatedProductSlug?: string;
 };
 
 /* ------------------------------------------------------------------ */
@@ -412,6 +418,7 @@ export const blogData: Record<string, BlogEntry> = {
       "P-Toluenesulfonic Acid as a versatile industrial catalyst",
       "Sodium Cumene Sulfonate as a versatile hydrotrope",
       "MMA Triazine 40% for BTEX-free H2S scavenging",
+      "2-Amino-5-Methylthiazole as a key pharmaceutical & agrochemical building block",
     ],
     quote:
       '"Specialty chemicals are the silent enablers of modern industry. Behind every fuel that burns cleanly, every medicine that heals, and every crop that thrives, there are specialty chemicals performing invisible but indispensable functions."',

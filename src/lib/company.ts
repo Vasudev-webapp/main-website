@@ -90,7 +90,15 @@ export const getCompanyInfo = cache(async function getCompanyInfo(): Promise<Com
       const data = await payload.findGlobal({ slug: "company-info" });
       return toCompanyInfo(data);
     } catch (error) {
-      console.error("[getCompanyInfo] Error fetching company-info:", error);
+      // Most commonly this fires when the "company-info" global has never been
+      // saved in the CMS: with the Postgres adapter, findGlobal on a global that
+      // has no row throws instead of returning defaults. The fallback below
+      // supplies correct company data, so the site keeps working. Log a concise,
+      // non-alarming note (not a full error stack) and recover.
+      const reason = error instanceof Error ? error.message : String(error);
+      console.warn(
+        `[getCompanyInfo] Using built-in fallback company info. Populate it once in the CMS admin under Settings → Company Information to manage it from the dashboard. Reason: ${reason}`
+      );
       return toCompanyInfo(null);
     }
   })();
