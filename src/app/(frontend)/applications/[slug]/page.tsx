@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import SectionLabel from "@/components/SectionLabel";
 import ArticleSchema from "@/components/seo/ArticleSchema";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   APPLICATION_PAGES_DATA,
@@ -130,6 +131,11 @@ export default async function ApplicationDetailPage({
         <section className="mb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-4xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Applications", url: `${SITE_URL}/applications` },
+          { name: page.h1, url: buildAbsoluteUrl(canonicalPath) },
+        ]} className="mb-6" />
               <SectionLabel>Application guide</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display text-primary mt-4">
                 {page.h1}

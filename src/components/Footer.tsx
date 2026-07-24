@@ -101,12 +101,6 @@ export default async function Footer() {
           across the Middle East, Americas, and Asia-Pacific.
         </p>
 
-        <SocialLinksRow
-          links={SOCIAL_LINKS}
-          className="mb-10 flex flex-wrap items-center gap-3"
-          itemClassName="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/70 transition-colors hover:border-white/30 hover:bg-white/10 hover:text-white"
-        />
-
         <div className="grid grid-cols-2 gap-8 border-b border-white/10 pb-10 md:grid-cols-4">
           <FooterColumn title="Products" links={productLinks} />
           <FooterColumn title="Industries" links={industryLinks} />

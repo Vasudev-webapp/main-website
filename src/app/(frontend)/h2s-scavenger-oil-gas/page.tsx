@@ -5,6 +5,7 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   SULFIDE_SCAVENGER_KEYWORDS,
@@ -118,6 +119,13 @@ export default function H2SScavengerOilGasPage() {
           <div className="absolute inset-0 z-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
           <div className="max-w-container mx-auto px-6 lg:px-10 relative z-10">
             <div className="max-w-4xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          {
+            name: "H2S Scavenger for Oil & Gas",
+            url: `${SITE_URL}/h2s-scavenger-oil-gas`,
+          },
+        ]} className="mb-6" />
               <SectionLabel>Oil & Gas Solutions</SectionLabel>
               <h1 className="font-heading text-h1 lg:text-display font-bold mt-4 text-primary leading-tight">
                 High-Performance H2S Scavenger for Oil & Gas

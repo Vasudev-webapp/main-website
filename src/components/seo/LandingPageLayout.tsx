@@ -2,6 +2,7 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import ArticleSchema from "@/components/seo/ArticleSchema";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   buildAbsoluteUrl,
@@ -97,6 +98,18 @@ export default function LandingPageLayout({ page, categoryPath }: Props) {
 
   const categoryLabel =
     page.category.charAt(0).toUpperCase() + page.category.slice(1);
+
+  // Only these landing-page category indexes exist as real pages; the others
+  // (solutions, supply, export, location) have no index route, so linking to
+  // them would 404. Include the category crumb only when its index exists.
+  const CATEGORY_INDEX_EXISTS: Record<string, boolean> = { about: true };
+  const breadcrumbItems = [
+    { name: "Home", url: SITE_URL },
+    ...(CATEGORY_INDEX_EXISTS[page.category]
+      ? [{ name: categoryLabel, url: `${SITE_URL}/${categoryPath}` }]
+      : []),
+    { name: page.h1, url: buildAbsoluteUrl(canonicalPath) },
+  ];
   const datePublished = toIsoDate(page.datePublished);
   const dateModified = toIsoDate(page.dateModified);
   const displayIso = dateModified ?? datePublished;
@@ -123,19 +136,14 @@ export default function LandingPageLayout({ page, categoryPath }: Props) {
         authorCredentials="Technical Content"
         wordCount={getWordCount(page)}
       />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", url: SITE_URL },
-          { name: categoryLabel, url: `${SITE_URL}/${categoryPath}` },
-          { name: page.h1, url: buildAbsoluteUrl(canonicalPath) },
-        ]}
-      />
+      <BreadcrumbSchema items={breadcrumbItems} />
       <FAQSchema items={page.faqs} />
 
       <main className="pt-28 pb-20">
         <section className="mb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-4xl">
+              <Breadcrumbs items={breadcrumbItems} className="mb-6" />
               <SectionLabel>{categoryLabel} Guide</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display text-primary mt-4">
                 {page.h1}

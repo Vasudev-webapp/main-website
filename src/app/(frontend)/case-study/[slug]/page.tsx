@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { CASE_STUDIES, CASE_STUDY_DATA } from "@/lib/case-studies-data";
 
 export function generateStaticParams() {
@@ -71,6 +72,17 @@ export default async function CaseStudyDetailPage({
                 <span className="text-sm font-medium text-accent">
                   {cs.category}
                 </span>
+                <Breadcrumbs items={[
+          { name: "Home", url: "https://www.vasudevchemopharma.com" },
+          {
+            name: "Case Studies",
+            url: "https://www.vasudevchemopharma.com/case-study",
+          },
+          {
+            name: cs.title,
+            url: `https://www.vasudevchemopharma.com/case-study/${slug}`,
+          },
+        ]} className="mb-6" />
                 <h1 className="font-heading text-display font-semibold text-primary mt-3">
                   {cs.title}
                 </h1>

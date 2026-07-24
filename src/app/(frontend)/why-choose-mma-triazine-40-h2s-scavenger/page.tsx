@@ -3,6 +3,7 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import FaqAccordion from "@/components/seo/FaqAccordion";
 import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
@@ -96,6 +97,10 @@ export default function WhyChooseMmaTriazine40Page() {
         <section className="pt-32 pb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Why Choose MMA Triazine 40%", url: `${SITE_URL}${PATH}` },
+        ]} className="mb-6" />
               <SectionLabel>Product advantages</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display font-semibold mt-4 text-primary">
                 Why Choose MMA Triazine 40% H₂S Scavenger

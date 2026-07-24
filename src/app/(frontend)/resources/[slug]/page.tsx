@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import SectionLabel from "@/components/SectionLabel";
 import ArticleSchema from "@/components/seo/ArticleSchema";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   RESOURCE_ARTICLES_DATA,
@@ -133,6 +134,11 @@ export default async function ResourceArticlePage({
         <section className="mb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-4xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Resources", url: `${SITE_URL}/resources` },
+          { name: article.title, url: buildAbsoluteUrl(canonicalPath) },
+        ]} className="mb-6" />
               <SectionLabel>{article.category}</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display text-primary mt-4">
                 {article.h1}

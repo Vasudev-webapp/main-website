@@ -3,6 +3,7 @@ import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { COMPETITOR_PAGES_DATA } from "@/lib/seo/competitor-comparison-data";
 import {
   buildComparisonPagePath,
@@ -56,6 +57,10 @@ export default function ComparisonIndexPage() {
         <section className="mb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Compare", url: `${SITE_URL}/compare` },
+        ]} className="mb-6" />
               <SectionLabel>Alternatives</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display text-primary mt-4">
                 MEA Triazine 78% competitor comparison pages

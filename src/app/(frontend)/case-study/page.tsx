@@ -3,6 +3,7 @@ import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import Image from "next/image";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { CASE_STUDIES } from "@/lib/case-studies-data";
 
 export const revalidate = 3600;
@@ -38,6 +39,13 @@ export default function CaseStudyPage() {
       <main>
         <section className="pt-32 pb-20">
           <div className="max-w-container mx-auto px-6 lg:px-10">
+            <Breadcrumbs items={[
+          { name: "Home", url: "https://www.vasudevchemopharma.com" },
+          {
+            name: "Case Studies",
+            url: CASE_STUDY_URL,
+          },
+        ]} className="mb-6" />
             <h1 className="font-heading text-display font-semibold text-primary mb-4">
               Chemical Industry Case Studies
             </h1>

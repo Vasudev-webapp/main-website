@@ -209,6 +209,19 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // ─── Legacy asset / old-slug 301s with a genuine replacement ───
+      {
+        // Old static datasheet asset path → live technical datasheet resource.
+        source: '/static/media/VCP-003-TDS.pdf',
+        destination: '/resources/mea-triazine-technical-datasheet',
+        permanent: true,
+      },
+      {
+        // Truncated legacy blog slug → its live successor article.
+        source: '/blog/mea-triazine-a-hydrogen-sulfide-scavenger-for-natu',
+        destination: '/blog/what-is-mea-triazine-best-h2s-scavenger-oil-gas',
+        permanent: true,
+      },
       {
         source: '/products',
         destination: '/product',
@@ -305,11 +318,6 @@ const nextConfig = {
         destination: '/product/p-toluenesulfonic-acid',
         permanent: true,
       },
-      {
-        source: '/5.0',
-        destination: '/',
-        permanent: true,
-      },
       // ─── 404 fixes: insights (old blog) ────────────────────
       {
         source: '/insights/:slug*',
@@ -317,46 +325,10 @@ const nextConfig = {
         permanent: true,
       },
       // ─── 404 fixes: removed/non-existent products ──────────
-      {
-        source: '/product/albendazole',
-        destination: '/product',
-        permanent: true,
-      },
-      {
-        source: '/product/ketoconazole',
-        destination: '/product',
-        permanent: true,
-      },
-      {
-        source: '/product/pregabalin',
-        destination: '/product',
-        permanent: true,
-      },
-      {
-        source: '/product/copper-sulphate',
-        destination: '/product',
-        permanent: true,
-      },
-      {
-        source: '/product/copper-sulphate/',
-        destination: '/product',
-        permanent: true,
-      },
-      {
-        source: '/product/manganese-sulphate',
-        destination: '/product',
-        permanent: true,
-      },
-      {
-        source: '/products/manganese-sulphate',
-        destination: '/product',
-        permanent: true,
-      },
-      {
-        source: '/products/manganese-sulphate/',
-        destination: '/product',
-        permanent: true,
-      },
+      // NOTE: albendazole, ketoconazole, pregabalin, copper-sulphate and
+      // manganese-sulphate are permanently discontinued with no equivalent
+      // product. They are served as 410 Gone from middleware.ts (see GONE_PATHS)
+      // instead of soft-301 to /product, so search engines drop them cleanly.
       // ─── 404 fixes: non-existent compare pages ─────────────
       {
         source: '/compare/mea-triazine-vs-yogi-intermediates',
@@ -424,26 +396,10 @@ const nextConfig = {
         destination: '/applications',
         permanent: true,
       },
-      {
-        source: '/case-study/precision-cnc-milling-for-automotive-components',
-        destination: '/case-study',
-        permanent: true,
-      },
-      {
-        source: '/case-study/automated-assembly-line-optimization',
-        destination: '/case-study',
-        permanent: true,
-      },
-      {
-        source: '/case-study/lightweight-castings-for-industrial-equipment',
-        destination: '/case-study',
-        permanent: true,
-      },
-      {
-        source: '/blog/ai-iot-breakthroughs-chemical-manufacturing-efficiency',
-        destination: '/blog',
-        permanent: true,
-      },
+      // NOTE: the three old manufacturing-template case studies
+      // (precision-cnc-milling…, automated-assembly-line…, lightweight-castings…)
+      // and the template blog post ai-iot-breakthroughs… have no equivalent
+      // content and are served as 410 Gone from middleware.ts (see GONE_PATHS).
       // ─── 404 fixes: supply page with invalid country ───────
       {
         source: '/supply/mea-triazine-78/india',

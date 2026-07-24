@@ -7,6 +7,7 @@ import { getAllProducts } from "@/lib/products-payload";
 import { CATEGORY_LABELS, Product } from "@/lib/types";
 import { getCategoryPriorityMap } from "@/lib/product-sequencing";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 export const revalidate = 3600;
 
@@ -76,6 +77,10 @@ export default async function ProductPage() {
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
               <div>
+                <Breadcrumbs items={[
+          { name: "Home", url: "https://www.vasudevchemopharma.com" },
+          { name: "Products", url: "https://www.vasudevchemopharma.com/product" },
+        ]} className="mb-6" />
                 <SectionLabel>Our Chemical Products</SectionLabel>
                 <h1 className="font-heading text-display font-semibold mt-4">
                   Industrial, Specialty & Surfactant Chemicals

@@ -5,6 +5,7 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   SULFIDE_SCAVENGER_KEYWORDS,
@@ -167,6 +168,13 @@ export default function HowH2SScavengersWorkPage() {
         <section className="pt-32 pb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          {
+            name: "How H2S Scavengers Work",
+            url: `${SITE_URL}/how-h2s-scavengers-work`,
+          },
+        ]} className="mb-6" />
               <SectionLabel>Technical guide</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display font-semibold mt-4 text-primary">
                 How H2S Scavengers Work — A Complete Technical Guide

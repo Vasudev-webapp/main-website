@@ -33,6 +33,66 @@ const SUSPICIOUS_AGENTS = [
 
 const CANONICAL_HOST = 'www.vasudevchemopharma.com';
 const CHALLENGE_COOKIE_NAME = 'edge_challenge_clearance';
+
+// Legacy URLs that are permanently gone with NO equivalent replacement.
+// Serving 410 Gone (instead of a soft 301 to a parent page) tells search
+// engines to drop them quickly and prevents them recurring as soft-404s in
+// Search Console. URLs that DO have a genuine replacement are 301'd in
+// next.config.mjs instead. Products still marketed via other pages must NOT be
+// listed here (that is a content-consolidation decision, not a deletion).
+const GONE_PATHS = new Set<string>([
+  // Discontinued pharma SKUs (company exited pharma APIs; no equivalent).
+  '/product/albendazole',
+  '/product/ketoconazole',
+  '/product/pregabalin',
+  // Discontinued mineral SKUs (flagged in REMOVED_PRODUCT_SLUGS; no equivalent).
+  '/product/copper-sulphate',
+  '/product/manganese-sulphate',
+  '/products/manganese-sulphate',
+  // Old manufacturing-template case studies (no equivalent content).
+  '/case-study/precision-cnc-milling-for-automotive-components',
+  '/case-study/automated-assembly-line-optimization',
+  '/case-study/lightweight-castings-for-industrial-equipment',
+  // Old manufacturing-template blog post (no equivalent content).
+  '/blog/ai-iot-breakthroughs-chemical-manufacturing-efficiency',
+  // Junk URL indexed by mistake.
+  '/5.0',
+]);
+
+function isGonePath(pathname: string): boolean {
+  // Normalise a single trailing slash so /foo and /foo/ match the same rule.
+  const normalized =
+    pathname.length > 1 && pathname.endsWith('/')
+      ? pathname.slice(0, -1)
+      : pathname;
+  return GONE_PATHS.has(normalized);
+}
+
+function buildGoneResponse(): NextResponse {
+  const body =
+    '<!doctype html><html lang="en"><head><meta charset="utf-8">' +
+    '<meta name="robots" content="noindex"><title>410 — Gone</title></head>' +
+    '<body style="font-family:system-ui,sans-serif;max-width:40rem;margin:6rem auto;padding:0 1.5rem;text-align:center">' +
+    '<h1>410 &mdash; Gone</h1>' +
+    '<p>This page has been permanently removed and is no longer available.</p>' +
+    '<p><a href="/">Return to homepage</a> &middot; <a href="/product">Browse products</a></p>' +
+    '</body></html>';
+
+  return new NextResponse(body, {
+    status: 410,
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'X-Robots-Tag': 'noindex',
+      'Cache-Control': 'public, max-age=3600',
+      // Mirror the site's baseline security headers — middleware short-circuits
+      // before next.config headers() apply, so set them explicitly here.
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+    },
+  });
+}
+
 const CHALLENGE_ROUTE = '/api/security/challenge';
 const EDGE_CHALLENGE_SECRET = process.env.EDGE_CHALLENGE_SECRET;
 const BLOCKED_COUNTRIES = parseCountrySet(process.env.EDGE_BLOCK_COUNTRIES);
@@ -188,6 +248,13 @@ function normalizeLegacyPath(pathname: string): string {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // ── 410 Gone: permanently removed legacy URLs with no replacement ──
+  // Runs first and is terminal — a dead URL should not incur a www/https
+  // redirect hop before returning 410. Applies to both www and non-www hosts.
+  if (isGonePath(pathname)) {
+    return buildGoneResponse();
+  }
 
   // ── Non-www → www redirect (301 Permanent) ──────────────────────
   // This must run before any other normalization so that search

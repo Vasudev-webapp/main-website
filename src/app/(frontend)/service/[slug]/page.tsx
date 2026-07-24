@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 const serviceData: Record<string, {
   title: string;
@@ -113,6 +114,14 @@ export default async function ServiceDetailPage({
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
+                <Breadcrumbs items={[
+          { name: "Home", url: "https://www.vasudevchemopharma.com" },
+          { name: "Services", url: "https://www.vasudevchemopharma.com/service" },
+          {
+            name: service.title,
+            url: `https://www.vasudevchemopharma.com/service/${slug}`,
+          },
+        ]} className="mb-6" />
                 <SectionLabel>Our services</SectionLabel>
                 <h1 className="font-heading text-display font-semibold mt-4">
                   {service.title}

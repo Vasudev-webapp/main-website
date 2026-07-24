@@ -6,6 +6,7 @@ import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import { getCompanyInfo } from "@/lib/company";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 export const revalidate = 3600;
 
@@ -61,6 +62,10 @@ export default async function AboutPage() {
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
+                <Breadcrumbs items={[
+          { name: "Home", url: "https://www.vasudevchemopharma.com" },
+          { name: "About", url: "https://www.vasudevchemopharma.com/about" },
+        ]} className="mb-6" />
                 <SectionLabel>Who we are</SectionLabel>
                 <h1 className="font-heading text-display font-semibold mt-4">
                   About Vasudev Chemo Pharma

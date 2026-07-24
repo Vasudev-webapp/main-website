@@ -6,6 +6,29 @@ export const CompanyInfo: GlobalConfig = {
   admin: {
     group: "Settings",
   },
+  hooks: {
+    // Make CMS edits appear on the frontend in real time: clear the in-process
+    // company-info cache and revalidate every route that uses the root layout
+    // (the footer, contact details, etc. live there). Imports are dynamic and
+    // wrapped in try/catch so loading this config outside a Next.js request
+    // context (migrations, the Payload CLI) never breaks.
+    afterChange: [
+      async () => {
+        try {
+          const { clearCompanyInfoCache } = await import("@/lib/company");
+          clearCompanyInfoCache();
+        } catch {
+          /* cache module unavailable in this context — ignore */
+        }
+        try {
+          const { revalidatePath } = await import("next/cache");
+          revalidatePath("/", "layout");
+        } catch {
+          /* not in a Next.js request context — ignore */
+        }
+      },
+    ],
+  },
   fields: [
     {
       name: "companyName",

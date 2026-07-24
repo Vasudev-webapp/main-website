@@ -5,6 +5,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { getCompanyInfo } from "@/lib/company";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 // Lazy-load ContactForm — not part of LCP
 const ContactForm = dynamic(() => import("@/components/contact/ContactForm"), {
@@ -58,6 +59,10 @@ export default async function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Left */}
               <div>
+                <Breadcrumbs items={[
+          { name: "Home", url: "https://www.vasudevchemopharma.com" },
+          { name: "Contact", url: "https://www.vasudevchemopharma.com/contact" },
+        ]} className="mb-6" />
                 <h1 className="font-heading text-display font-semibold text-primary">
                   Contact Vasudev Chemo Pharma
                 </h1>

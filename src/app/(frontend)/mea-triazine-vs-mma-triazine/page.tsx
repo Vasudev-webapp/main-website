@@ -5,6 +5,7 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   MEA_VS_MMA_KEYWORDS,
@@ -217,6 +218,13 @@ export default function MeaVsMmaTriazinePage() {
         <section className="pt-32 pb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          {
+            name: "MEA Triazine vs MMA Triazine",
+            url: `${SITE_URL}/mea-triazine-vs-mma-triazine`,
+          },
+        ]} className="mb-6" />
               <SectionLabel>Comparison guide</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display font-semibold mt-4 text-primary">
                 MEA Triazine vs MMA Triazine — Which H2S Scavenger Should You

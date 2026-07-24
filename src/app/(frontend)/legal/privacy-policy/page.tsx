@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 export const revalidate = 86400;
 
@@ -36,6 +37,13 @@ export default function PrivacyPolicyPage() {
         <section className="pt-32 pb-20">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="mb-12">
+              <Breadcrumbs items={[
+          { name: "Home", url: "https://www.vasudevchemopharma.com" },
+          {
+            name: "Privacy Policy",
+            url: "https://www.vasudevchemopharma.com/legal/privacy-policy",
+          },
+        ]} className="mb-6" />
               <h1 className="font-heading text-display font-semibold text-primary">
                 Privacy policy
               </h1>

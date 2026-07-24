@@ -11,6 +11,7 @@ import { APPLICATION_PAGES_DATA } from "@/lib/seo/application-pages-data";
 import { RESOURCE_ARTICLES_DATA } from "@/lib/seo/resource-articles-data";
 import { blogData } from "@/app/(frontend)/blog/[slug]/seo-blog-data";
 import { getAllBlogSlugs } from "@/lib/blogs-payload";
+import { REMOVED_PRODUCT_SLUGS } from "@/lib/removed-products";
 import {
   buildApplicationPagePath,
   buildComparisonPagePath,
@@ -77,16 +78,7 @@ const productNodes = [
       {
         group: "Solutions & Chemistry Guides",
         pages: [
-          { label: "Triazine Based H2S Scavenger", href: "/solutions/triazine-based-h2s-scavenger" },
-          { label: "H2S Scavenger Chemicals", href: "/solutions/h2s-scavenger" },
-          { label: "Hydrogen Sulfide Scavengers", href: "/solutions/hydrogen-sulfide-scavenger" },
-          { label: "MEA Triazine Scavenger", href: "/solutions/mea-triazine-h2s-scavenger" },
-          { label: "High Performance Scavengers", href: "/solutions/high-performance-triazine-scavenger" },
-          { label: "Liquid Scavenger Chemistry", href: "/solutions/liquid-h2s-scavenger-manufacturer" },
-          { label: "Sulfide Scavengers", href: "/solutions/sulfide-scavenger" },
-          { label: "Hydrogen Sulfide Removal Solutions", href: "/solutions/hydrogen-sulfide-removal" },
-          { label: "Triazine Scavenger Chemical", href: "/solutions/triazine-scavenger-chemical" },
-          { label: "H2S Treatment Chemical Package", href: "/solutions/h2s-treatment-chemical" },
+          { label: "H2S Scavenger Chemicals (Solutions Hub)", href: "/solutions/h2s-scavenger" },
           { label: "H2S Scavenger for Oil & Gas", href: "/h2s-scavenger-oil-gas" },
           { label: "How H2S Scavengers Work", href: "/how-h2s-scavengers-work" },
           { label: "MEA Triazine Prices & Dosing Cost", href: "/mea-triazine-prices" },
@@ -276,14 +268,29 @@ const productNodes = [
   },
   {
     id: "hydrotropes",
-    name: "Hydrotrope Coupling Agents (SXS & SCS)",
-    href: "/product/sodium-xylene-sulfonate-40",
-    description: "High-performance hydrotropes (Sodium Xylene Sulfonate & Sodium Cumene Sulfonate) in liquid/powder forms.",
+    name: "Hydrotrope Coupling Agents (Sodium Cumene Sulfonate)",
+    href: "/product/sodium-cumene-sulfonate-40",
+    description: "High-performance hydrotropes — Sodium Cumene Sulfonate 40% (liquid) and 90% (powder) — used as coupling agents, solubilisers, and viscosity reducers in detergents, cleaners, agrochemicals, and personal care.",
     connections: [
       {
-        group: "Global Supply & Export",
+        group: "Products",
         pages: [
+          { label: "Sodium Cumene Sulfonate 40% (Liquid Hydrotrope)", href: "/product/sodium-cumene-sulfonate-40" },
+          { label: "Sodium Cumene Sulfonate 90% (Powder Hydrotrope)", href: "/product/sodium-cumene-sulfonate-90" },
+        ],
+      },
+      {
+        group: "Guides & Global Supply",
+        pages: [
+          { label: "Hydrotropes Guide", href: "/hydrotropes" },
           { label: "Hydrotropes Global Export", href: "/hydrotropes-global-export" },
+        ],
+      },
+      {
+        group: "Buying & Technical Guides",
+        pages: [
+          { label: "SCS 40% Manufacturer in India — Bulk Supply", href: "/blog/sodium-cumene-sulfonate-40-manufacturer-india-bulk-supply" },
+          { label: "SCS 90% Price, MOQ & Packaging", href: "/blog/sodium-cumene-sulfonate-90-price-quote-moq-packaging" },
         ],
       },
     ],
@@ -324,26 +331,39 @@ export default async function SitemapPage() {
     console.error("Error fetching live blogs for visual sitemap", e);
   }
 
+  // A blog whose slug belongs to a removed product (e.g. buried SXS grades) is
+  // not served by the blog route and would 404 — exclude it from the directory.
+  const belongsToRemovedProduct = (slug: string): boolean =>
+    REMOVED_PRODUCT_SLUGS.some(
+      (removed) => slug === removed || slug.startsWith(`${removed}-`)
+    );
+
   const blogMap = new Map<string, { slug: string; title: string; category?: string }>();
   Object.entries(blogData).forEach(([slug, blog]) => {
+    if (belongsToRemovedProduct(slug)) return;
     blogMap.set(slug, { slug, title: blog.title, category: blog.category });
   });
   liveBlogs.forEach(blog => {
+    if (belongsToRemovedProduct(blog.slug)) return;
     if (!blogMap.has(blog.slug)) {
       blogMap.set(blog.slug, { slug: blog.slug, title: blog.title, category: "CMS Blog" });
     }
   });
   const allBlogs = Array.from(blogMap.values());
 
-  // 3. Group custom landing pages by category
-  const groupedCustomPages = Object.values(CUSTOM_LANDING_PAGES_DATA).reduce((acc, page) => {
-    const cat = page.category;
-    if (!acc[cat]) {
-      acc[cat] = [];
-    }
-    acc[cat].push(page);
-    return acc;
-  }, {} as Record<string, typeof CUSTOM_LANDING_PAGES_DATA[string][]>);
+  // 3. Group custom landing pages by category. Exclude variants that
+  // canonicalize elsewhere (Phase 2 consolidation) so the directory advertises
+  // one authoritative page per intent instead of near-duplicates.
+  const groupedCustomPages = Object.values(CUSTOM_LANDING_PAGES_DATA)
+    .filter((page) => !page.canonicalOverride)
+    .reduce((acc, page) => {
+      const cat = page.category;
+      if (!acc[cat]) {
+        acc[cat] = [];
+      }
+      acc[cat].push(page);
+      return acc;
+    }, {} as Record<string, typeof CUSTOM_LANDING_PAGES_DATA[string][]>);
 
   return (
     <>
@@ -446,11 +466,11 @@ export default async function SitemapPage() {
                 </span>
               </Link>
               <Link
-                href="/legal-pages/privacy-policy"
+                href="/legal/privacy-policy"
                 className="flex flex-col p-6 bg-white rounded-2xl border border-gray-200/80 hover:shadow-md hover:border-accent/30 transition-all group"
               >
                 <span className="text-base font-semibold text-primary group-hover:text-accent transition-colors">
-                  Privacy Policy (Legal Pages)
+                  Privacy Policy
                 </span>
                 <span className="text-sm text-secondary mt-2 flex-grow leading-relaxed">
                   Legal compliance, data protection, and user rights information.

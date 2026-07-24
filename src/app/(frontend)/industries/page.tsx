@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 const SITE_URL = "https://www.vasudevchemopharma.com";
 
@@ -160,6 +161,10 @@ export default function IndustriesIndexPage() {
         <section className="mb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Industries", url: `${SITE_URL}/industries` },
+        ]} className="mb-6" />
               <SectionLabel>Industry solutions</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display text-primary mt-4">
                 Industries We Serve

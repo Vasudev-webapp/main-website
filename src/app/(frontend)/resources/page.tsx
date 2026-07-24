@@ -3,6 +3,7 @@ import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { RESOURCE_ARTICLES_DATA } from "@/lib/seo/resource-articles-data";
 import {
   buildResourceArticlePath,
@@ -171,6 +172,10 @@ export default function ResourcesIndexPage() {
         <section className="mb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Resources", url: `${SITE_URL}/resources` },
+        ]} className="mb-6" />
               <SectionLabel>Knowledge base</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display text-primary mt-4">
                 MEA Triazine technical resources and downloads

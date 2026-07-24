@@ -4,6 +4,7 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 const SITE_URL = "https://www.vasudevchemopharma.com";
 
@@ -114,6 +115,10 @@ export default function HydrotropesGlobalExportPage() {
         <section className="pt-32 pb-20 bg-primary text-white">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-4xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Global Export", url: `${SITE_URL}/hydrotropes-global-export` },
+        ]} className="mb-6" />
               <SectionLabel className="text-white/80 border-white/20">Global Reach</SectionLabel>
               <h1 className="font-heading text-h1 lg:text-display font-bold mt-4 leading-tight">
                 Global Exporter of Sodium Cumene & Xylene Sulphonate

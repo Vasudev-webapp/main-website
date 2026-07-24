@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   COMPETITOR_PAGES_DATA,
@@ -122,6 +123,11 @@ export default async function ComparisonDetailPage({
         <section className="mb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-4xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Compare", url: `${SITE_URL}/compare` },
+          { name: page.competitorBrand, url: buildAbsoluteUrl(canonicalPath) },
+        ]} className="mb-6" />
               <SectionLabel>{page.competitorOrigin}</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display text-primary mt-4">
                 {page.h1}

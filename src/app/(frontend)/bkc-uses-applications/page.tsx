@@ -4,6 +4,7 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   BKC_CORE_KEYWORDS,
@@ -121,6 +122,10 @@ export default function BKCUsesApplicationsPage() {
         <section className="pt-32 pb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "BKC Uses & Applications", url: `${SITE_URL}/bkc-uses-applications` },
+        ]} className="mb-6" />
               <SectionLabel>Application guide</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display font-semibold mt-4 text-primary">
                 Benzalkonium Chloride (BKC) Uses & Applications — Complete Guide

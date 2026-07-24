@@ -4,6 +4,7 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   BKC_CORE_KEYWORDS,
@@ -115,6 +116,10 @@ export default function BKC50Vs80Page() {
         <section className="pt-32 pb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "BKC 50% vs BKC 80%", url: `${SITE_URL}/benzalkonium-chloride-50-vs-80` },
+        ]} className="mb-6" />
               <SectionLabel>Comparison guide</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display font-semibold mt-4 text-primary">
                 BKC 50% vs BKC 80% — Which Benzalkonium Chloride Should You Buy?

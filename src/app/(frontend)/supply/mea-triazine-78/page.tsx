@@ -3,6 +3,7 @@ import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { COUNTRY_PAGES_DATA } from "@/lib/seo/country-pages-data";
 import {
   buildCountryPagePath,
@@ -326,6 +327,10 @@ export default function MeaTriazineSupplyIndexPage() {
         <section className="mb-20">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "MEA Triazine 78%", url: `${SITE_URL}/supply/mea-triazine-78` },
+        ]} className="mb-6" />
               <SectionLabel>Direct manufacturer</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display text-primary mt-4">
                 MEA Triazine 78% — India&apos;s best H2S scavenger manufacturer

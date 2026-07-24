@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   COUNTRY_PAGES_DATA,
@@ -131,6 +132,11 @@ export default async function CountrySupplyPage({
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.3fr_0.7fr]">
               <div>
+                <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "MEA Triazine 78% Supply", url: `${SITE_URL}/supply/mea-triazine-78` },
+          { name: page.countryName, url: buildAbsoluteUrl(canonicalPath) },
+        ]} className="mb-6" />
                 <SectionLabel>{page.regionLabel}</SectionLabel>
                 <div className="mt-4 flex items-start gap-4">
                   <span className="text-4xl" aria-hidden="true">

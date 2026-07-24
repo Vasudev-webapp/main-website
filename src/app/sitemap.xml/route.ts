@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getAllProducts } from "@/lib/products-payload";
 import { blogData } from "@/app/(frontend)/blog/[slug]/seo-blog-data";
 import { getAllBlogSlugs } from "@/lib/blogs-payload";
+import { REMOVED_PRODUCT_SLUGS } from "@/lib/removed-products";
 import { CASE_STUDY_SLUGS } from "@/lib/case-studies-data";
 import { COUNTRY_SLUGS } from "@/lib/seo/country-pages-data";
 import { COMPETITOR_SLUGS } from "@/lib/seo/competitor-comparison-data";
@@ -124,22 +125,12 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/triazine-corrosion-inhibitor-compatibility", changeFrequency: "monthly", priority: 0.8 },
   { path: "/triazine-vs-nitrite-scavenger", changeFrequency: "monthly", priority: 0.85 },
   { path: "/triazine-vs-non-triazine-scavenger", changeFrequency: "monthly", priority: 0.85 },
-  // ── Sodium Cumene Sulfonate (SCS 40% & 90%, CAS 28348-53-0) support pages ──
-  { path: "/scs-40-vs-scs-90-selection-guide", changeFrequency: "monthly", priority: 0.85 },
-  { path: "/sodium-cumene-sulfonate-vs-sodium-xylene-sulfonate", changeFrequency: "monthly", priority: 0.85 },
-  { path: "/best-hydrotrope-liquid-detergent", changeFrequency: "monthly", priority: 0.85 },
-  { path: "/sodium-cumene-sulfonate-sls-free-sulfate-free", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/sodium-cumene-sulfonate-cas-28348-53-0-properties", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/sodium-cumene-sulfonate-synonyms-trade-names", changeFrequency: "monthly", priority: 0.75 },
-  { path: "/how-sodium-cumene-sulfonate-works-hydrotrope", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/is-sodium-cumene-sulfonate-safe-biodegradable", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/sodium-cumene-sulfonate-liquid-detergent-dishwash", changeFrequency: "monthly", priority: 0.85 },
-  { path: "/sodium-cumene-sulfonate-shampoo-personal-care", changeFrequency: "monthly", priority: 0.85 },
-  { path: "/sodium-cumene-sulfonate-electroplating-bath-additive", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/sodium-cumene-sulfonate-agrochemical-adjuvant", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/sodium-cumene-sulfonate-hard-surface-cleaner-degreaser", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/sodium-cumene-sulfonate-dosage-formulation-guide", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/sodium-cumene-sulfonate-price-supplier-india", changeFrequency: "weekly", priority: 0.9 },
+  // NOTE: The Sodium Cumene/Xylene Sulfonate (SCS/SXS) landing routes previously
+  // listed here were removed from the sitemap because the corresponding pages do
+  // not exist (no app route / no data) and returned 404. The SCS/SXS products are
+  // currently in REMOVED_PRODUCT_SLUGS, so their /product/* and generated blog
+  // pages are also inactive. Do not re-add these paths until the pages exist and
+  // return 200 (see the SCS/SXS product-vs-landing-page decision in Phase 2).
 ];
 
 const SERVICE_SLUGS = [
@@ -204,6 +195,16 @@ function buildAbsoluteUrl(path: string): string {
   return path ? `${SITE_URL}${path}` : SITE_URL;
 }
 
+// A blog slug "belongs to" a removed product when it equals the product slug or
+// is prefixed by it (e.g. "sodium-xylene-sulfonate-90-vs-other-hydrotropes").
+// Such blogs are not served by the blog route (which only renders static
+// blogData) and must not be advertised in the sitemap, or they surface as 404s.
+function belongsToRemovedProduct(slug: string): boolean {
+  return REMOVED_PRODUCT_SLUGS.some(
+    (removed) => slug === removed || slug.startsWith(`${removed}-`)
+  );
+}
+
 function buildEntry(
   path: string,
   changeFrequency: ChangeFrequency,
@@ -260,7 +261,9 @@ export async function GET() {
   }
 
   try {
-    liveBlogs = await getAllBlogSlugs();
+    liveBlogs = (await getAllBlogSlugs()).filter(
+      (blog) => !belongsToRemovedProduct(blog.slug)
+    );
   } catch (err) {
     console.error("Failed to fetch blog slugs for sitemap", { error: err });
   }
@@ -291,7 +294,9 @@ export async function GET() {
     ...SERVICE_SLUGS.map((slug) =>
       buildEntry(`/service/${slug}`, "monthly", 0.7, now)
     ),
-    ...Object.entries(blogData).map(([slug, blog]) => {
+    ...Object.entries(blogData)
+      .filter(([slug]) => !belongsToRemovedProduct(slug))
+      .map(([slug, blog]) => {
       const entry = buildEntry(
         `/blog/${slug}`,
         "monthly",

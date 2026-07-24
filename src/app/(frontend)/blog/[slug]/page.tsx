@@ -7,6 +7,7 @@ import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import SectionLabel from "@/components/SectionLabel";
 import ArticleSchema from "@/components/seo/ArticleSchema";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import AuthorByline from "@/components/blog/AuthorByline";
 import TableOfContents from "@/components/blog/TableOfContents";
@@ -150,6 +151,12 @@ export default async function BlogDetailPage({
     label: s.heading,
   }));
 
+  const breadcrumbItems = [
+    { name: "Home", url: "https://www.vasudevchemopharma.com" },
+    { name: "Blog", url: "https://www.vasudevchemopharma.com/blog" },
+    { name: blog.title, url: `https://www.vasudevchemopharma.com/blog/${slug}` },
+  ];
+
   return (
     <>
       {/* Schema markup */}
@@ -164,16 +171,7 @@ export default async function BlogDetailPage({
         authorCredentials={blog.authorCredentials}
         wordCount={wordCount}
       />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", url: "https://www.vasudevchemopharma.com" },
-          { name: "Blog", url: "https://www.vasudevchemopharma.com/blog" },
-          {
-            name: blog.title,
-            url: `https://www.vasudevchemopharma.com/blog/${slug}`,
-          },
-        ]}
-      />
+      <BreadcrumbSchema items={breadcrumbItems} />
       {blog.faqs && blog.faqs.length > 0 && (
         <FAQSchema
           items={blog.faqs.map((f) => ({ question: f.question, answer: f.answer }))}
@@ -184,6 +182,7 @@ export default async function BlogDetailPage({
         {/* ── Hero ── */}
         <section className="pt-32 pb-12">
           <div className="max-w-container mx-auto px-6 lg:px-10">
+            <Breadcrumbs items={breadcrumbItems} className="mb-8" />
             <div className="max-w-3xl mx-auto text-center">
               <div className="flex items-center justify-center gap-4 mb-6">
                 <span className="text-sm font-medium text-accent">

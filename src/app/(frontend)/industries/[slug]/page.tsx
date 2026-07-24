@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import {
   buildCountryPagePath,
@@ -1078,6 +1079,11 @@ export default async function IndustryPage({
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
+                <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Industries", url: `${SITE_URL}/industries` },
+          { name: page.title, url: `${SITE_URL}/industries/${slug}` },
+        ]} className="mb-6" />
                 <SectionLabel>Industry solutions</SectionLabel>
                 <h1 className="font-heading text-h2 lg:text-display font-semibold mt-4 text-primary">
                   {page.h1}

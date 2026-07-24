@@ -51,7 +51,7 @@ function toCompanyInfo(doc: any): CompanyInfoData {
 
   return {
     companyName: doc?.companyName || "Vasudev Chemo Pharma",
-    primaryEmail: doc?.primaryEmail || "info@vasudevchemopharma.com",
+    primaryEmail: doc?.primaryEmail || "sales@vasudevchemopharma.com",
     secondaryEmail: doc?.secondaryEmail || "export@vasudevchemopharma.com",
     phoneNumbers,
     address: doc?.address || "Plot No. H-3062, GIDC Ankleshwar - 393002, Gujarat, India",
@@ -75,20 +75,52 @@ function toCompanyInfo(doc: any): CompanyInfoData {
 
 import { cache } from "react";
 
-// Build-level singleton: during SSG Next.js generates many pages concurrently,
-// each calling getCompanyInfo. React.cache() only deduplicates within a single
-// request, so without this the DB pool is exhausted. This promise is shared
-// across all concurrent page renders within the same process.
+/**
+ * Short-lived cross-request cache TTL (ms). During SSG, Next.js renders many
+ * pages concurrently and each one calls getCompanyInfo; React.cache() only
+ * dedupes within a single request, so without a process-level cache the DB
+ * pool is exhausted. A TTL cache keeps that protection while still allowing
+ * CMS edits to appear without a restart. The afterChange hook on the
+ * "company-info" global also clears this cache for near-instant updates.
+ * Defaults to 60s; override with COMPANY_CACHE_TTL_MS.
+ */
+const COMPANY_CACHE_TTL_MS = (() => {
+  const val = Number(process.env.COMPANY_CACHE_TTL_MS);
+  return Number.isFinite(val) && val >= 0 ? val : 60_000;
+})();
+
+let _companyInfoCache: { data: CompanyInfoData; expiresAt: number } | null = null;
+// In-flight request dedup: shared across concurrent renders in the same process.
 let _companyInfoPromise: Promise<CompanyInfoData> | null = null;
 
+/**
+ * Clear the in-process company-info cache so the next read fetches fresh data
+ * from the DB. Called by the CompanyInfo global's afterChange hook so CMS
+ * edits take effect in real time within the same server process.
+ */
+export function clearCompanyInfoCache(): void {
+  _companyInfoCache = null;
+  _companyInfoPromise = null;
+}
+
 export const getCompanyInfo = cache(async function getCompanyInfo(): Promise<CompanyInfoData> {
+  const now = Date.now();
+
+  // Serve from the short-lived cache when still fresh.
+  if (_companyInfoCache && _companyInfoCache.expiresAt > now) {
+    return _companyInfoCache.data;
+  }
+
+  // Deduplicate concurrent fetches (e.g. during SSG) onto a single DB read.
   if (_companyInfoPromise) return _companyInfoPromise;
 
   _companyInfoPromise = (async () => {
     try {
       const payload = await getPayload();
       const data = await payload.findGlobal({ slug: "company-info" });
-      return toCompanyInfo(data);
+      const mapped = toCompanyInfo(data);
+      _companyInfoCache = { data: mapped, expiresAt: Date.now() + COMPANY_CACHE_TTL_MS };
+      return mapped;
     } catch (error) {
       // Most commonly this fires when the "company-info" global has never been
       // saved in the CMS: with the Postgres adapter, findGlobal on a global that
@@ -99,7 +131,14 @@ export const getCompanyInfo = cache(async function getCompanyInfo(): Promise<Com
       console.warn(
         `[getCompanyInfo] Using built-in fallback company info. Populate it once in the CMS admin under Settings → Company Information to manage it from the dashboard. Reason: ${reason}`
       );
-      return toCompanyInfo(null);
+      const mapped = toCompanyInfo(null);
+      // Cache the fallback for the TTL too, so a missing/unsaved global doesn't
+      // hammer the DB on every render.
+      _companyInfoCache = { data: mapped, expiresAt: Date.now() + COMPANY_CACHE_TTL_MS };
+      return mapped;
+    } finally {
+      // Release the in-flight dedup once resolved; the TTL cache now serves reads.
+      _companyInfoPromise = null;
     }
   })();
 

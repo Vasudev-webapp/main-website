@@ -134,6 +134,9 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
   "mea-triazine-h2s-scavenger": {
     slug: "mea-triazine-h2s-scavenger",
     category: "solutions",
+    // Near-duplicate doorway that competes with the real product page for the
+    // exact "MEA triazine H2S scavenger" query — canonicalize to the product.
+    canonicalOverride: "/product/mea-triazine-78-h2s-scavenger",
     title: "MEA Triazine H2S Scavenger Manufacturer | 78% Active",
     description: "High-active MEA Triazine 78% H2S Scavenger from India's leading B2B chemical manufacturer. Fast reaction kinetics, export packaging. Request MSDS.",
     h1: "Industrial Grade MEA Triazine H2S Scavenger",
@@ -174,6 +177,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
   "high-performance-triazine-scavenger": {
     slug: "high-performance-triazine-scavenger",
     category: "solutions",
+    canonicalOverride: "/solutions/h2s-scavenger",
     title: "High Performance Triazine Based Scavenger Manufacturer",
     description: "Master sour gas treatment. We manufacture high performance triazine based scavengers engineered for extreme temperatures and high-flow streams.",
     h1: "High Performance Triazine Based Scavengers for Severe Service",
@@ -214,6 +218,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
   "liquid-h2s-scavenger-manufacturer": {
     slug: "liquid-h2s-scavenger-manufacturer",
     category: "solutions",
+    canonicalOverride: "/solutions/h2s-scavenger",
     title: "Liquid H2S Scavenger Manufacturer | B2B Wholesale India",
     description: "Leading liquid H2S scavenger manufacturer in India. Vasudev Chemo Pharma supplies premium organic triazine formulations. Global logistics support.",
     h1: "B2B Liquid H2S Scavenger Manufacturer & Exporter",
@@ -254,6 +259,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
   "sulfide-scavenger": {
     slug: "sulfide-scavenger",
     category: "solutions",
+    canonicalOverride: "/solutions/h2s-scavenger",
     title: "Sulfide Scavenger Chemicals | Sour Gas Abatement",
     description: "Safe, efficient sulfide scavenger chemistry from Vasudev Chemo Pharma. Control hydrogen sulfide emissions in liquids and vapors. Bulk supply.",
     h1: "Sulfide Scavenger Chemistry for Liquid & Vapor Treatment",
@@ -294,6 +300,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
   "hydrogen-sulfide-removal": {
     slug: "hydrogen-sulfide-removal",
     category: "solutions",
+    canonicalOverride: "/solutions/h2s-scavenger",
     title: "Hydrogen Sulfide Removal Solutions | Industrial Gas Sweetening",
     description: "Complete hydrogen sulfide removal solutions from India's trusted chemical manufacturer. Explore triazine and non-triazine options. Request pricing.",
     h1: "Industrial Hydrogen Sulfide Removal Solutions",
@@ -334,6 +341,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
   "triazine-scavenger-chemical": {
     slug: "triazine-scavenger-chemical",
     category: "solutions",
+    canonicalOverride: "/solutions/h2s-scavenger",
     title: "Triazine Scavenger Chemical | MEA & MMA Liquid Supplier",
     description: "Secure your logistics. We supply commercial triazine scavenger chemicals in drums, IBCs, and ISO tanks directly from India. Contact us for quotes.",
     h1: "Premium Triazine Scavenger Chemical Formulations",
@@ -374,6 +382,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
   "h2s-treatment-chemical": {
     slug: "h2s-treatment-chemical",
     category: "solutions",
+    canonicalOverride: "/solutions/h2s-scavenger",
     title: "H2S Treatment Chemical Manufacturer | Oilfield Specialty Chemistry",
     description: "Bulk supply of H2S treatment chemicals. High active triazine formulations for natural gas, wastewater, and refineries. Request a quote.",
     h1: "Industrial H2S Treatment Chemicals",

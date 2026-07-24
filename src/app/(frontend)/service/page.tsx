@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FAQSchema from "@/components/seo/FAQSchema";
 import { getAllProducts } from "@/lib/products-payload";
 
@@ -134,6 +135,10 @@ export default async function ServicePage() {
         {/* Hero */}
         <section className="pt-32 pb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10 text-center">
+            <Breadcrumbs items={[
+              { name: "Home", url: "https://www.vasudevchemopharma.com" },
+              { name: "Services", url: "https://www.vasudevchemopharma.com/service" },
+            ]} className="mb-6" />
             <h1 className="font-heading text-display font-semibold">
               Chemical Manufacturing Services
             </h1>

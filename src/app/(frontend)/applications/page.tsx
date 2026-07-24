@@ -3,6 +3,7 @@ import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { APPLICATION_PAGES_DATA } from "@/lib/seo/application-pages-data";
 import {
   buildApplicationPagePath,
@@ -152,6 +153,10 @@ export default function ApplicationsIndexPage() {
         <section className="mb-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
+              <Breadcrumbs items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Applications", url: `${SITE_URL}/applications` },
+        ]} className="mb-6" />
               <SectionLabel>Use cases</SectionLabel>
               <h1 className="font-heading text-h2 lg:text-display text-primary mt-4">
                 MEA Triazine 78% application pages
