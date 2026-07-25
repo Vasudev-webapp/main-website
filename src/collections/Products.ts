@@ -1,6 +1,55 @@
 import type { CollectionConfig } from "payload";
 import { slugify } from "@/lib/slug";
 
+/**
+ * Make CMS edits to products appear on the frontend in real time (production
+ * parity with dev). Two production-only cache layers otherwise keep serving the
+ * stale version for up to an hour after an edit:
+ *   1. The in-process product query cache in `@/lib/products-payload`
+ *      (PRODUCT_CACHE_TTL_MS).
+ *   2. Next.js ISR page cache — product routes use `export const revalidate`.
+ *
+ * On every create/update/delete we clear the in-memory cache and issue
+ * on-demand `revalidatePath` calls for every route that renders product data.
+ * Imports are dynamic and wrapped in try/catch so loading this config outside a
+ * Next.js request context (migrations, the Payload CLI) never breaks.
+ *
+ * `slug` may change on an update, so we revalidate both the new and previous
+ * slug's detail page.
+ */
+async function revalidateProductRoutes(slugs: Array<string | undefined>): Promise<void> {
+  try {
+    const { clearProductCache } = await import("@/lib/products-payload");
+    clearProductCache();
+  } catch {
+    /* cache module unavailable in this context — ignore */
+  }
+
+  try {
+    const { revalidatePath } = await import("next/cache");
+
+    // Specific product detail pages (current + previous slug on rename).
+    for (const slug of slugs) {
+      if (typeof slug === "string" && slug.length > 0) {
+        revalidatePath(`/product/${slug}`);
+      }
+    }
+
+    // Product listing.
+    revalidatePath("/product");
+
+    // Sitemap route handler (own ISR cache, not under the frontend layout).
+    revalidatePath("/sitemap.xml");
+
+    // Home, related products, compare, industry/category pages, etc. all read
+    // product data and share the root layout — revalidate the whole tree so no
+    // cross-linked page keeps showing a removed/inactive product.
+    revalidatePath("/", "layout");
+  } catch {
+    /* not in a Next.js request context — ignore */
+  }
+}
+
 export const Products: CollectionConfig = {
   slug: "products",
   admin: {
@@ -25,6 +74,16 @@ export const Products: CollectionConfig = {
         }
 
         return next;
+      },
+    ],
+    afterChange: [
+      async ({ doc, previousDoc }) => {
+        await revalidateProductRoutes([doc?.slug, previousDoc?.slug]);
+      },
+    ],
+    afterDelete: [
+      async ({ doc }) => {
+        await revalidateProductRoutes([doc?.slug]);
       },
     ],
   },

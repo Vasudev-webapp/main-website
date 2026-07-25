@@ -106,6 +106,18 @@ function getProductInFlightStore(): Map<string, Promise<unknown>> {
   return globalScope[PRODUCT_IN_FLIGHT_KEY];
 }
 
+/**
+ * Clear the in-process product cache (and any in-flight request dedup) so the
+ * next read fetches fresh data from the DB. Called by the Products collection's
+ * afterChange / afterDelete hooks so CMS edits (e.g. setting a product to
+ * "inactive") take effect in real time within the same server process instead
+ * of lingering for up to PRODUCT_CACHE_TTL_MS.
+ */
+export function clearProductCache(): void {
+  getProductCacheStore().clear();
+  getProductInFlightStore().clear();
+}
+
 function getCachedEntry<T>(key: string): ProductCacheEntry<T> | null {
   const store = getProductCacheStore();
   const entry = store.get(key);
