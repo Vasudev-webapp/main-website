@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import { hydrotropeBlogListItems } from "./[slug]/hydrotrope-articles-data";
+import { triazineH2sBlogListItems } from "./[slug]/triazine-h2s-articles-data";
+import { nonTriazineH2sBlogListItems } from "./[slug]/non-triazine-h2s-articles-data";
 import BlogPageClient from "./BlogPageClient";
 import { getAllBlogImageOverrides } from "@/lib/blogs-payload";
 
@@ -22,6 +24,8 @@ type BlogListItem = {
 };
 
 const blogs: BlogListItem[] = [
+  ...triazineH2sBlogListItems,
+  ...nonTriazineH2sBlogListItems,
   ...hydrotropeBlogListItems,
   {
     slug: "what-is-mea-triazine-best-h2s-scavenger-oil-gas",

@@ -1,6 +1,20 @@
-import { getPayload } from "./payload";
 import type { Product } from "./types";
 import { isRemovedProductSlug } from "./removed-products";
+
+/**
+ * Resolve the Payload instance lazily.
+ *
+ * `payload.ts` -> `payload.config.ts` -> `collections/Products.ts` dynamically
+ * imports this module back, forming a dependency cycle. Statically importing
+ * `getPayload` from `./payload` makes that binding resolve as `undefined`
+ * ("getPayload is not a function") under the Next.js/Turbopack `app-rsc` module
+ * graph. Importing it dynamically at call time guarantees the wrapper module is
+ * fully evaluated before the binding is read, which breaks the init-order issue.
+ */
+async function getPayload() {
+  const mod = await import("./payload");
+  return mod.getPayload();
+}
 
 type ProductCacheEntry<T> = {
   value: T;

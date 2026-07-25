@@ -87,15 +87,18 @@ export async function generateMetadata({
   }
   const imageUrl = imageOverride || blog.image;
 
+  const seoTitle = blog.metaTitle ?? blog.title;
+  const seoDescription = blog.metaDescription ?? blog.excerpt;
+
   return applyPageMetaOverride(`/blog/${slug}`, {
-    title: blog.title,
-    description: blog.excerpt,
+    title: seoTitle,
+    description: seoDescription,
     alternates: {
       canonical: `https://www.vasudevchemopharma.com/blog/${slug}`,
     },
     openGraph: {
-      title: blog.title,
-      description: blog.excerpt,
+      title: seoTitle,
+      description: seoDescription,
       url: `https://www.vasudevchemopharma.com/blog/${slug}`,
       type: "article",
       publishedTime,
@@ -227,11 +230,16 @@ export default async function BlogDetailPage({
         {/* ── Content + product aside ── */}
         <section className="pb-20">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12 lg:items-start">
-              {/* Sticky product aside — appears above content on mobile,
-                  top-right and sticky on desktop. */}
-              <aside className="mb-10 lg:mb-0 lg:col-start-2 lg:row-start-1 lg:sticky lg:top-28">
-                <BlogProductAside product={relatedProduct} />
+            <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12 lg:items-stretch">
+              {/* Product aside — full-width above the article on mobile; on
+                  desktop it occupies the right column. The <aside> stretches to
+                  the full height of the article row (items-stretch), and the
+                  inner card is position:sticky so it stays pinned near the top
+                  of the viewport while the article content scrolls past it. */}
+              <aside className="mb-10 lg:mb-0 lg:col-start-2 lg:row-start-1">
+                <div className="lg:sticky lg:top-28">
+                  <BlogProductAside product={relatedProduct} />
+                </div>
               </aside>
 
               <div className="prose prose-lg max-w-none lg:col-start-1 lg:row-start-1">

@@ -52,7 +52,7 @@ export default async function ContactPage() {
           { name: "Contact", url: "https://www.vasudevchemopharma.com/contact" },
         ]}
       />
-      <main>
+      <main className="allow-copy">
         {/* Hero + Form */}
         <section className="pt-32 pb-20">
           <div className="max-w-container mx-auto px-6 lg:px-10">

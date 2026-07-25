@@ -1,5 +1,7 @@
 import { brandArticlesData } from "./brand-articles-data";
 import { hydrotropeArticlesData } from "./hydrotrope-articles-data";
+import { triazineH2sArticlesData } from "./triazine-h2s-articles-data";
+import { nonTriazineH2sArticlesData } from "./non-triazine-h2s-articles-data";
 
 /* ------------------------------------------------------------------ */
 /*  Blog data type (SEO-enriched)                                     */
@@ -9,6 +11,18 @@ export type BlogSection = { heading: string; id: string; body: string };
 
 export type BlogEntry = {
   title: string;
+  /**
+   * Optional SEO-only title used for the SERP `<title>` / OpenGraph title.
+   * Falls back to `title` when omitted. Keep to ~55–60 characters. The visible
+   * H1 always uses `title`, so this does not change on-page copy.
+   */
+  metaTitle?: string;
+  /**
+   * Optional SEO-only meta description used for the SERP description /
+   * OpenGraph description. Falls back to `excerpt` when omitted. Keep to
+   * ~150–160 characters. The visible intro copy still uses `excerpt`.
+   */
+  metaDescription?: string;
   date: string;
   lastUpdated: string;
   category: string;
@@ -39,6 +53,8 @@ export type BlogEntry = {
 export const blogData: Record<string, BlogEntry> = {
   ...brandArticlesData,
   ...hydrotropeArticlesData,
+  ...triazineH2sArticlesData,
+  ...nonTriazineH2sArticlesData,
 
   /* ================================================================== */
   /*  Month 2 — SEO Content Blog Posts                                  */

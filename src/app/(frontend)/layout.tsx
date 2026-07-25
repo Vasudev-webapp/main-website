@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+// Root layout imports global CSS (includes .allow-copy copy-exception rules).
 import { Geist } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";

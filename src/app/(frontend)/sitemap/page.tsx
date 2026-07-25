@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import { getAllProducts } from "@/lib/products-payload";
@@ -37,15 +36,19 @@ export const metadata: Metadata = applyPageMetaOverride("/sitemap", {
 });
 
 const mainPages = [
-  { label: "Home Page", href: "/", desc: "Overview of products, services, and company credentials." },
-  { label: "About Us", href: "/about", desc: "Our history, ISO certifications, and manufacturing capacity." },
-  { label: "All Products", href: "/product", desc: "Our complete catalog of industrial and specialty chemicals." },
-  { label: "Services", href: "/service", desc: "Custom synthesis, global logistics, and bulk contract supply." },
-  { label: "Industries Served", href: "/industries", desc: "Sectors we support including oil & gas, water treatment, and paper mills." },
-  { label: "Industry Insights (Blog)", href: "/blog", desc: "Technical articles on H2S abatement, biocides, and chemistry." },
-  { label: "Case Studies", href: "/case-study", desc: "Real-world desulfurization and preservation project outcomes." },
-  { label: "Product Comparisons", href: "/compare", desc: "Side-by-side analysis of various chemical formulations." },
-  { label: "Contact Us", href: "/contact", desc: "Inquire for bulk pricing, request COAs, MSDS, or samples." },
+  { label: "Home Page", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "All Products", href: "/product" },
+  { label: "Services", href: "/service" },
+  { label: "Industries Served", href: "/industries" },
+  { label: "Industry Insights (Blog)", href: "/blog" },
+  { label: "Case Studies", href: "/case-study" },
+  { label: "Product Comparisons", href: "/compare" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "BKC 50% vs 80% Comparison", href: "/benzalkonium-chloride-50-vs-80" },
+  { label: "BKC Uses & Applications", href: "/bkc-uses-applications" },
+  { label: "BKC vs DDAC vs CTAB Biocides", href: "/bkc-vs-ddac-vs-ctab" },
+  { label: "Privacy Policy", href: "/legal/privacy-policy" },
 ];
 
 const productNodes = [
@@ -53,7 +56,6 @@ const productNodes = [
     id: "mea-triazine",
     name: "MEA Triazine 78% H2S Scavenger",
     href: "/product/mea-triazine-78-h2s-scavenger",
-    description: "Our flagship amine-based non-regenerative hydrogen sulfide scavenger for oilfield and gas operations.",
     connections: [
       {
         group: "Applications & Technical Guides",
@@ -123,7 +125,6 @@ const productNodes = [
     id: "mma-triazine",
     name: "MMA Triazine 40% (BTX-Free)",
     href: "/product/mma-triazine-40",
-    description: "Scale-preventive, low-scaling H2S scavenger optimized for high-temperature offshore environments.",
     connections: [
       {
         group: "Pricing & Sales",
@@ -174,7 +175,6 @@ const productNodes = [
     id: "eddm",
     name: "EDDM (Ethylenedioxy)dimethanol — Non-Triazine H2S Scavenger",
     href: "/product/eddm-non-triazine-h2s-scavenger",
-    description: "Slow-release formaldehyde-donor biocide and non-triazine H2S scavenger (CAS 3586-55-8) for water-based preservation and oil & gas desulfurization.",
     connections: [
       {
         group: "Solutions & Chemistry Guides",
@@ -207,7 +207,6 @@ const productNodes = [
     id: "bkc-biocide",
     name: "Benzalkonium Chloride (BKC 50% & 80%)",
     href: "/product/benzalkonium-chloride-50",
-    description: "Broad-spectrum cationic quaternary ammonium biocides and preservative chemicals.",
     connections: [
       {
         group: "Comparisons & Applications",
@@ -270,7 +269,6 @@ const productNodes = [
     id: "hydrotropes",
     name: "Hydrotrope Coupling Agents (Sodium Cumene Sulfonate)",
     href: "/product/sodium-cumene-sulfonate-40",
-    description: "High-performance hydrotropes — Sodium Cumene Sulfonate 40% (liquid) and 90% (powder) — used as coupling agents, solubilisers, and viscosity reducers in detergents, cleaners, agrochemicals, and personal care.",
     connections: [
       {
         group: "Products",
@@ -297,8 +295,31 @@ const productNodes = [
   },
 ];
 
+type LinkItem = { label: string; href: string };
+
+function LinkSection({ title, links }: { title: string; links: LinkItem[] }) {
+  if (links.length === 0) return null;
+  return (
+    <section className="mb-10">
+      <h2 className="text-lg font-semibold text-primary mb-3">{title}</h2>
+      <ul className="list-disc pl-5 space-y-1.5">
+        {links.map((link) => (
+          <li key={link.href + link.label}>
+            <Link
+              href={link.href}
+              className="text-accent hover:underline break-words"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export default async function SitemapPage() {
-  // 1. Fetch all products exclusively from Payload CMS
+  // 1. Products from Payload CMS
   let allProducts: Awaited<ReturnType<typeof getAllProducts>> = [];
   try {
     const liveProducts = await getAllProducts();
@@ -306,64 +327,97 @@ export default async function SitemapPage() {
       allProducts = liveProducts;
     }
   } catch (err) {
-    console.error("Error fetching products for visual sitemap", err);
+    console.error("Error fetching products for sitemap", err);
   }
 
-  // Group products by subcategory
-  const groupedProducts = allProducts.reduce((acc, product) => {
-    const sub = product.subcategory || "Other Specialty Products";
-    if (!acc[sub]) {
-      acc[sub] = [];
-    }
-    acc[sub].push(product);
-    return acc;
-  }, {} as Record<string, typeof allProducts>);
+  const productLinks: LinkItem[] = allProducts
+    .filter((prod) => !REMOVED_PRODUCT_SLUGS.includes(prod.slug as (typeof REMOVED_PRODUCT_SLUGS)[number]))
+    .map((prod) => ({
+      label: prod.name,
+      href: `/product/${prod.slug}`,
+    }));
 
-  // 2. Fetch and merge all blogs (static + dynamic)
+  // 2. Blogs (static + dynamic)
   let liveBlogs: { slug: string; title: string }[] = [];
   try {
     const slugs = await getAllBlogSlugs();
-    liveBlogs = slugs.map(b => ({
+    liveBlogs = slugs.map((b) => ({
       slug: b.slug,
-      title: b.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
+      title: b.slug
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" "),
     }));
   } catch (e) {
-    console.error("Error fetching live blogs for visual sitemap", e);
+    console.error("Error fetching live blogs for sitemap", e);
   }
 
-  // A blog whose slug belongs to a removed product (e.g. buried SXS grades) is
-  // not served by the blog route and would 404 — exclude it from the directory.
   const belongsToRemovedProduct = (slug: string): boolean =>
     REMOVED_PRODUCT_SLUGS.some(
       (removed) => slug === removed || slug.startsWith(`${removed}-`)
     );
 
-  const blogMap = new Map<string, { slug: string; title: string; category?: string }>();
+  const blogMap = new Map<string, { slug: string; title: string }>();
   Object.entries(blogData).forEach(([slug, blog]) => {
     if (belongsToRemovedProduct(slug)) return;
-    blogMap.set(slug, { slug, title: blog.title, category: blog.category });
+    blogMap.set(slug, { slug, title: blog.title });
   });
-  liveBlogs.forEach(blog => {
+  liveBlogs.forEach((blog) => {
     if (belongsToRemovedProduct(blog.slug)) return;
     if (!blogMap.has(blog.slug)) {
-      blogMap.set(blog.slug, { slug: blog.slug, title: blog.title, category: "CMS Blog" });
+      blogMap.set(blog.slug, { slug: blog.slug, title: blog.title });
     }
   });
-  const allBlogs = Array.from(blogMap.values());
+  const blogLinks: LinkItem[] = Array.from(blogMap.values()).map((blog) => ({
+    label: blog.title,
+    href: `/blog/${blog.slug}`,
+  }));
 
-  // 3. Group custom landing pages by category. Exclude variants that
-  // canonicalize elsewhere (Phase 2 consolidation) so the directory advertises
-  // one authoritative page per intent instead of near-duplicates.
-  const groupedCustomPages = Object.values(CUSTOM_LANDING_PAGES_DATA)
+  // 3. Custom landing pages
+  const customPageLinks: LinkItem[] = Object.values(CUSTOM_LANDING_PAGES_DATA)
     .filter((page) => !page.canonicalOverride)
-    .reduce((acc, page) => {
-      const cat = page.category;
-      if (!acc[cat]) {
-        acc[cat] = [];
-      }
-      acc[cat].push(page);
-      return acc;
-    }, {} as Record<string, typeof CUSTOM_LANDING_PAGES_DATA[string][]>);
+    .map((page) => ({
+      label: page.title.split(" | ")[0],
+      href: `/${page.category}/${page.slug}`,
+    }));
+
+  // 4. Country supply pages
+  const countryLinks: LinkItem[] = Object.values(COUNTRY_PAGES_DATA).map(
+    (country) => ({
+      label: `${country.countryName} Supply`,
+      href: buildCountryPagePath(country.slug),
+    })
+  );
+
+  // 5. Competitor comparisons
+  const comparisonLinks: LinkItem[] = Object.values(COMPETITOR_PAGES_DATA).map(
+    (comp) => ({
+      label: `MEA Triazine vs ${comp.competitorBrand}`,
+      href: buildComparisonPagePath(comp.slug),
+    })
+  );
+
+  // 6. Applications
+  const applicationLinks: LinkItem[] = Object.values(APPLICATION_PAGES_DATA).map(
+    (app) => ({
+      label: app.h1,
+      href: buildApplicationPagePath(app.slug),
+    })
+  );
+
+  // 7. Resources
+  const resourceLinks: LinkItem[] = Object.values(RESOURCE_ARTICLES_DATA).map(
+    (res) => ({
+      label: res.title,
+      href: buildResourceArticlePath(res.slug),
+    })
+  );
+
+  // 8. Product connection links (flattened per product)
+  const productConnectionSections = productNodes.map((product) => ({
+    title: product.name,
+    links: product.connections.flatMap((group) => group.pages),
+  }));
 
   return (
     <>
@@ -373,370 +427,39 @@ export default async function SitemapPage() {
           { name: "Sitemap", url: "https://www.vasudevchemopharma.com/sitemap" },
         ]}
       />
-      <main className="pt-32 pb-24 bg-light min-h-screen">
-        <div className="max-w-container mx-auto px-6 lg:px-10">
-          
-          {/* Header */}
-          <div className="max-w-3xl mb-16">
-            <SectionLabel>Interactive Directory</SectionLabel>
-            <h1 className="font-heading text-display font-semibold text-primary mt-4">
-              Visual Sitemap &amp; Page Connections
-            </h1>
-            <p className="text-lg text-secondary leading-relaxed mt-6">
-              Browse the structural hierarchy of Vasudev Chemo Pharma&apos;s digital presence. 
-              Below is an outline of how our search-engine-optimized landing pages, 
-              regional supply nodes, and global exporting hubs connect to our core product lines.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-4 items-center">
-              <Link
-                href="/sitemap.xml"
-                target="_blank"
-                className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:underline"
-              >
-                <span>View XML Sitemap (For Search Engines)</span>
-                <span className="text-xs px-2 py-0.5 rounded bg-accent/10">XML</span>
-              </Link>
-            </div>
-          </div>
+      <main className="pt-32 pb-24 min-h-screen bg-white">
+        <div className="max-w-3xl mx-auto px-6">
+          <h1 className="text-2xl font-semibold text-primary mb-2">Sitemap</h1>
+          <p className="text-secondary mb-2">
+            All pages on Vasudev Chemo Pharma, listed in one place.
+          </p>
+          <p className="mb-10">
+            <Link
+              href="/sitemap.xml"
+              target="_blank"
+              className="text-accent hover:underline text-sm"
+            >
+              View XML Sitemap (for search engines)
+            </Link>
+          </p>
 
-          {/* Section 1: Main Brand Pages */}
-          <div className="mb-20">
-            <h2 className="font-heading text-h3 font-semibold text-primary mb-8 border-b border-gray-200 pb-3">
-              Main Brand Pages
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {mainPages.map((page) => (
-                <Link
-                  key={page.href}
-                  href={page.href}
-                  className="flex flex-col p-6 bg-white rounded-2xl border border-gray-200/80 hover:shadow-md hover:border-accent/30 transition-all group"
-                >
-                  <span className="text-base font-semibold text-primary group-hover:text-accent transition-colors">
-                    {page.label}
-                  </span>
-                  <span className="text-sm text-secondary mt-2 flex-grow leading-relaxed">
-                    {page.desc}
-                  </span>
-                  <span className="text-xs font-semibold text-accent mt-4 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Visit page &rarr;
-                  </span>
-                </Link>
-              ))}
-              {/* BKC sub-static pages */}
-              <Link
-                href="/benzalkonium-chloride-50-vs-80"
-                className="flex flex-col p-6 bg-white rounded-2xl border border-gray-200/80 hover:shadow-md hover:border-accent/30 transition-all group"
-              >
-                <span className="text-base font-semibold text-primary group-hover:text-accent transition-colors">
-                  BKC 50% vs 80% Comparison
-                </span>
-                <span className="text-sm text-secondary mt-2 flex-grow leading-relaxed">
-                  Detailed comparison between 50% and 80% active Benzalkonium Chloride.
-                </span>
-                <span className="text-xs font-semibold text-accent mt-4 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                  Visit page &rarr;
-                </span>
-              </Link>
-              <Link
-                href="/bkc-uses-applications"
-                className="flex flex-col p-6 bg-white rounded-2xl border border-gray-200/80 hover:shadow-md hover:border-accent/30 transition-all group"
-              >
-                <span className="text-base font-semibold text-primary group-hover:text-accent transition-colors">
-                  BKC Uses &amp; Applications
-                </span>
-                <span className="text-sm text-secondary mt-2 flex-grow leading-relaxed">
-                  Comprehensive overview of industrial and commercial uses of Benzalkonium Chloride.
-                </span>
-                <span className="text-xs font-semibold text-accent mt-4 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                  Visit page &rarr;
-                </span>
-              </Link>
-              <Link
-                href="/bkc-vs-ddac-vs-ctab"
-                className="flex flex-col p-6 bg-white rounded-2xl border border-gray-200/80 hover:shadow-md hover:border-accent/30 transition-all group"
-              >
-                <span className="text-base font-semibold text-primary group-hover:text-accent transition-colors">
-                  BKC vs DDAC vs CTAB Biocides
-                </span>
-                <span className="text-sm text-secondary mt-2 flex-grow leading-relaxed">
-                  Quaternary ammonium compounds side-by-side comparison for biocide applications.
-                </span>
-                <span className="text-xs font-semibold text-accent mt-4 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                  Visit page &rarr;
-                </span>
-              </Link>
-              <Link
-                href="/legal/privacy-policy"
-                className="flex flex-col p-6 bg-white rounded-2xl border border-gray-200/80 hover:shadow-md hover:border-accent/30 transition-all group"
-              >
-                <span className="text-base font-semibold text-primary group-hover:text-accent transition-colors">
-                  Privacy Policy
-                </span>
-                <span className="text-sm text-secondary mt-2 flex-grow leading-relaxed">
-                  Legal compliance, data protection, and user rights information.
-                </span>
-                <span className="text-xs font-semibold text-accent mt-4 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                  Visit page &rarr;
-                </span>
-              </Link>
-            </div>
-          </div>
+          <LinkSection title="Main Pages" links={mainPages} />
+          <LinkSection title="Products" links={productLinks} />
 
-          {/* Section 2: Complete Product Catalog Directory */}
-          <div className="mb-20">
-            <h2 className="font-heading text-h3 font-semibold text-primary mb-2 border-b border-gray-200 pb-3">
-              Full Product Directory
-            </h2>
-            <p className="text-sm text-secondary mb-8">
-              Explore our complete catalog of specialty and industrial chemicals, structured by subcategory.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {Object.entries(groupedProducts).map(([subcategory, items]) => (
-                <div key={subcategory} className="bg-white rounded-2xl border border-gray-200/80 p-6 flex flex-col justify-between">
-                  <div>
-                    <h3 className="font-heading text-base font-semibold text-primary border-b border-gray-100 pb-2 mb-4">
-                      {subcategory}
-                    </h3>
-                    <ul className="space-y-3">
-                      {items.map((prod) => (
-                        <li key={prod.slug}>
-                          <Link
-                            href={`/product/${prod.slug}`}
-                            className="group flex flex-col text-sm hover:text-accent transition-colors"
-                          >
-                            <span className="font-medium text-primary group-hover:text-accent">
-                              {prod.name}
-                            </span>
-                            {prod.casNumber && (
-                              <span className="text-xs text-secondary mt-0.5">
-                                CAS: {prod.casNumber} {prod.formula ? `| Formula: ${prod.formula}` : ""}
-                              </span>
-                            )}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          {productConnectionSections.map((section) => (
+            <LinkSection
+              key={section.title}
+              title={section.title}
+              links={section.links}
+            />
+          ))}
 
-          {/* Section 3: Core Product Relationship Map */}
-          <div className="mb-20">
-            <h2 className="font-heading text-h3 font-semibold text-primary mb-2">
-              Product &amp; Landing Page Connections
-            </h2>
-            <p className="text-sm text-secondary mb-8">
-              Click on any core product block to see all associated geo-locations, solutions, and export nodes.
-            </p>
-
-            <div className="space-y-12">
-              {productNodes.map((product) => (
-                <div
-                  key={product.id}
-                  className="bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden"
-                >
-                  {/* Product Header */}
-                  <div className="p-8 bg-dark text-white border-b border-gray-800">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                      <div>
-                        <span className="text-xs font-semibold text-accent uppercase tracking-wider">
-                          Core Product Line
-                        </span>
-                        <h3 className="font-heading text-h3 font-semibold mt-1">
-                          {product.name}
-                        </h3>
-                        <p className="text-sm text-white/70 mt-2 max-w-2xl leading-relaxed">
-                          {product.description}
-                        </p>
-                      </div>
-                      <div>
-                        <Link
-                          href={product.href}
-                          className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-dark whitespace-nowrap"
-                        >
-                          View Product Page
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Connected Pages Grid */}
-                  <div className="p-8 bg-white grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {product.connections.map((connGroup) => (
-                      <div key={connGroup.group} className="space-y-4">
-                        <h4 className="font-heading text-xs font-semibold text-primary/45 uppercase tracking-wider border-b border-gray-100 pb-2">
-                          {connGroup.group}
-                        </h4>
-                        <ul className="space-y-2.5">
-                          {connGroup.pages.map((p) => (
-                            <li key={p.href}>
-                              <Link
-                                // Convert sitemaps links correctly
-                                href={p.href}
-                                className="group flex items-start gap-2.5 text-sm text-secondary hover:text-accent transition-colors py-1"
-                              >
-                                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-300 group-hover:bg-accent transition-colors" />
-                                <span className="leading-relaxed">{p.label}</span>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Section 4: Global Supply Countries */}
-          <div className="mb-20">
-            <h2 className="font-heading text-h3 font-semibold text-primary mb-2 border-b border-gray-200 pb-3">
-              Global Supply Countries (MEA Triazine 78%)
-            </h2>
-            <p className="text-sm text-secondary mb-6">
-              Explore our regional supply logistics hubs and custom import compliance guides.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {Object.values(COUNTRY_PAGES_DATA).map((country) => (
-                <Link
-                  key={country.slug}
-                  href={buildCountryPagePath(country.slug)}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 rounded-full hover:border-accent/40 hover:text-accent transition-all text-sm font-medium text-primary"
-                >
-                  <span className="text-lg">{country.flag}</span>
-                  <span>{country.countryName} Supply</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Section 5: Custom Solutions & Landing Pages */}
-          <div className="mb-20">
-            <h2 className="font-heading text-h3 font-semibold text-primary mb-2 border-b border-gray-200 pb-3">
-              Solutions &amp; Custom Directories
-            </h2>
-            <p className="text-sm text-secondary mb-6">
-              Our targeted B2B landing pages for specific locations, solutions, about info, and export regions.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {Object.entries(groupedCustomPages).map(([category, pages]) => (
-                <div key={category} className="bg-white rounded-2xl border border-gray-200/80 p-6">
-                  <h3 className="font-heading text-sm font-semibold uppercase tracking-wider text-accent border-b border-gray-100 pb-2 mb-4">
-                    {category} Pages
-                  </h3>
-                  <ul className="space-y-2.5">
-                    {pages.map((p) => (
-                      <li key={p.slug}>
-                        <Link
-                          href={`/${p.category}/${p.slug}`}
-                          className="text-sm text-secondary hover:text-accent transition-colors block py-0.5"
-                        >
-                          {p.title.split(" | ")[0]}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Section 6: Use-Cases, Comparisons & Resources */}
-          <div className="mb-20 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Comparisons */}
-            <div className="bg-white rounded-2xl border border-gray-200/80 p-6">
-              <h2 className="font-heading text-base font-semibold text-primary border-b border-gray-100 pb-2 mb-4">
-                Competitor Comparisons
-              </h2>
-              <ul className="space-y-2.5">
-                {Object.values(COMPETITOR_PAGES_DATA).map((comp) => (
-                  <li key={comp.slug}>
-                    <Link
-                      href={buildComparisonPagePath(comp.slug)}
-                      className="text-sm text-secondary hover:text-accent transition-colors block py-0.5"
-                    >
-                      MEA Triazine vs {comp.competitorBrand}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Applications */}
-            <div className="bg-white rounded-2xl border border-gray-200/80 p-6">
-              <h2 className="font-heading text-base font-semibold text-primary border-b border-gray-100 pb-2 mb-4">
-                Applications &amp; Guides
-              </h2>
-              <ul className="space-y-2.5">
-                {Object.values(APPLICATION_PAGES_DATA).map((app) => (
-                  <li key={app.slug}>
-                    <Link
-                      href={buildApplicationPagePath(app.slug)}
-                      className="text-sm text-secondary hover:text-accent transition-colors block py-0.5"
-                    >
-                      {app.h1}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div className="bg-white rounded-2xl border border-gray-200/80 p-6">
-              <h2 className="font-heading text-base font-semibold text-primary border-b border-gray-100 pb-2 mb-4">
-                Technical Resources &amp; TDS/SDS
-              </h2>
-              <ul className="space-y-2.5">
-                {Object.values(RESOURCE_ARTICLES_DATA).map((res) => (
-                  <li key={res.slug}>
-                    <Link
-                      href={buildResourceArticlePath(res.slug)}
-                      className="text-sm text-secondary hover:text-accent transition-colors block py-0.5"
-                    >
-                      {res.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Section 7: Technical Blogs & Industry Insights */}
-          <div>
-            <h2 className="font-heading text-h3 font-semibold text-primary mb-2 border-b border-gray-200 pb-3">
-              Industry Insights &amp; Blog Posts
-            </h2>
-            <p className="text-sm text-secondary mb-8">
-              Explore our technical resources, regulatory compliance reviews, and green chemistry developments.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {allBlogs.map((blog) => (
-                <Link
-                  key={blog.slug}
-                  href={`/blog/${blog.slug}`}
-                  className="flex flex-col justify-between p-5 bg-white rounded-2xl border border-gray-200/80 hover:shadow-md hover:border-accent/30 transition-all group"
-                >
-                  <div>
-                    {blog.category && (
-                      <span className="text-xs font-semibold text-accent uppercase tracking-wider">
-                        {blog.category}
-                      </span>
-                    )}
-                    <h3 className="text-sm font-semibold text-primary group-hover:text-accent transition-colors mt-2">
-                      {blog.title}
-                    </h3>
-                  </div>
-                  <span className="text-xs font-semibold text-accent mt-4 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Read article &rarr;
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-
+          <LinkSection title="Solutions & Landing Pages" links={customPageLinks} />
+          <LinkSection title="Global Supply Countries" links={countryLinks} />
+          <LinkSection title="Competitor Comparisons" links={comparisonLinks} />
+          <LinkSection title="Applications & Guides" links={applicationLinks} />
+          <LinkSection title="Technical Resources (TDS/SDS)" links={resourceLinks} />
+          <LinkSection title="Blog & Industry Insights" links={blogLinks} />
         </div>
       </main>
     </>
