@@ -886,6 +886,145 @@ export const MMA_TRIAZINE_40_BTX_FREE_FAQS: FAQItem[] = [
   }
 ];
 
+/* ──────────────────────────────────────────────────────────────────
+ * BIT 20% (Benzisothiazolinone) — 12 PAA-style FAQs
+ * Slug: bit-20-benzisothiazolinone — CAS 2634-33-5
+ * ──────────────────────────────────────────────────────────────── */
+export const BIT_20_FAQS: FAQItem[] = [
+  {
+    question: "What is BIT 20% and what is it used for?",
+    answer:
+      "BIT 20% is a 20% active aqueous/glycolic solution of Benzisothiazolinone (1,2-Benzisothiazolin-3-one, CAS 2634-33-5) — a broad-spectrum industrial biocide used as an in-can preservative. It is added to water-based paints, coatings, adhesives, inks, detergents, and metalworking fluids to prevent spoilage by bacteria, mould fungi, and yeasts during storage and use.",
+  },
+  {
+    question: "What is the CAS number and chemical formula of BIT?",
+    answer:
+      "Benzisothiazolinone (BIT) has CAS number 2634-33-5, molecular formula C7H5NOS, and molecular weight 151.18 g/mol. It is also known by the EC/EINECS number 220-120-9. In the neat (100%) form it is a white to pale yellow crystalline solid with a melting point of 154–158°C; BIT 20% is the diluted liquid form supplied at 20% active content in a water/glycol carrier for easy handling and dosing.",
+  },
+  {
+    question: "Is Benzisothiazolinone the same as BIT and 1,2-Benzisothiazolin-3-one?",
+    answer:
+      "Yes. Benzisothiazolinone, BIT, 1,2-Benzisothiazolin-3-one, 1,2-Benzisothiazol-3(2H)-one, Benzisothiazolone, and Benz[d]isothiazol-3(2H)-one all refer to the same active substance under CAS 2634-33-5. BIT 20% is simply this active ingredient supplied as a ready-to-dose 20% solution rather than the neat crystalline powder (sometimes sold as BIT 85% or BIT 90%).",
+  },
+  {
+    question: "How does BIT 20% work as a preservative?",
+    answer:
+      "BIT interferes with the cellular metabolism of bacteria, fungi, and yeasts, inhibiting their growth and reproduction. As a broad-spectrum biocide, it is effective against both gram-positive and gram-negative bacteria as well as mould and yeast contamination, which is why it protects water-based formulations from the odour, discolouration, gas formation, and viscosity changes caused by microbial spoilage.",
+  },
+  {
+    question: "Is BIT 20% formaldehyde-free and VOC-free?",
+    answer:
+      "Yes. BIT 20% is formaldehyde-free and does not rely on slow formaldehyde release for its biocidal action, unlike some older preservative technologies. It is also VOC-free, helping formulators meet modern environmental and indoor air quality standards for paints, coatings, and household products sold in regulated markets.",
+  },
+  {
+    question: "What is the recommended dosage of BIT 20% in a formulation?",
+    answer:
+      "Typical use levels range from 0.05% to 0.4% (w/w) of BIT 20% depending on the application, the degree of microbial challenge, and storage conditions. Paints and coatings typically use 0.1–0.3%; detergents and household cleaners typically use 0.1–0.3%; cosmetics and personal care formulations are generally dosed at the lower end of this range. Always confirm the correct dosage with bench-scale preservative efficacy testing for your specific formulation.",
+  },
+  {
+    question: "What pH and temperature range is BIT 20% stable in?",
+    answer:
+      "BIT 20% is stable across a wide pH range — typically pH 2 to 12 — and remains effective at elevated processing temperatures up to approximately 100°C, with the active ingredient tolerating brief exposure to higher temperatures without significant loss of potency. This makes it suitable for alkaline detergents, high-pH latex paint systems, and formulations that undergo a heating step during manufacture.",
+  },
+  {
+    question: "In which industries and applications is BIT 20% used?",
+    answer:
+      "BIT 20% is used across paints and coatings (emulsion and architectural paints, waterborne coatings, pigment preparations), adhesives and sealants, inks and printing systems, detergents and household cleaning products, metalworking fluids and cutting oils, leather processing, textile finishing, construction chemicals (grouts, plasters, admixtures), wood preservation, oilfield drilling muds and packer fluids, water treatment, and cosmetic and personal care formulations.",
+  },
+  {
+    question: "Can BIT 20% be used in cosmetics and personal care products?",
+    answer:
+      "Benzisothiazolinone is used as a preservative in some personal care and cosmetic formulations, but its use is subject to regional cosmetic regulations and concentration limits (for example under the EU Cosmetic Regulation and Cosing database). Always confirm the current permitted concentration and any restrictions in your target market before formulating BIT into cosmetic or personal-care products, and consult the product SDS for handling guidance.",
+  },
+  {
+    question: "Is BIT 20% corrosive or an irritant — what safety precautions are needed?",
+    answer:
+      "The neat BIT 20% concentrate is classified as corrosive to skin and can cause serious eye damage (GHS05), and it is a known skin sensitiser that has been associated with occupational contact dermatitis in industries such as paint manufacturing, printing, and metalworking. Always wear chemical-resistant gloves, goggles, and protective clothing when handling BIT 20%, avoid skin and eye contact, and follow the Safety Data Sheet (SDS) for storage, handling, and spill-response guidance.",
+  },
+  {
+    question: "How should BIT 20% be stored and what is its shelf life?",
+    answer:
+      "Store BIT 20% in its original sealed container in a cool, dry, well-ventilated area away from direct sunlight and incompatible materials such as strong oxidisers. Under these conditions, BIT 20% typically has a shelf life of around 12 months from the date of manufacture. Check the Certificate of Analysis (COA) and SDS supplied with each batch for the exact expiry date and storage temperature range.",
+  },
+  {
+    question: "What packaging sizes does Vasudev Chemo Pharma supply BIT 20% in?",
+    answer:
+      "Vasudev Chemo Pharma supplies BIT 20% in 25 kg HDPE carboys, 200 kg HDPE drums, and 1,000 L IBC tanks, with bulk tanker loads available for large-volume contracts. Custom packaging can be arranged on request. Every shipment includes a batch-specific Certificate of Analysis (COA) and Safety Data Sheet (SDS), with Technical Data Sheets (TDS) available on request.",
+  },
+  {
+    question: "How is BIT 20% different from Preventol BIT 20 N, Nipacide BIT 20, or Mergal BIT20?",
+    answer:
+      "Preventol BIT 20 N (LANXESS), Nipacide BIT 20 (Clariant), and Mergal BIT20 (Ataman/Troy) are branded trade names for benzisothiazolinone solutions at approximately 20% active content — the same active substance and CAS number (2634-33-5) as Vasudev Chemo Pharma's BIT 20%. Buyers switching from an imported branded product to our BIT 20% should confirm equivalence against active content, pH, viscosity, and application performance; our technical team can support side-by-side formulation trials.",
+  },
+];
+
+/* ──────────────────────────────────────────────────────────────────
+ * Bronopol — 12 PAA-style FAQs
+ * Slug: bronopol — CAS 52-51-7
+ * ──────────────────────────────────────────────────────────────── */
+export const BRONOPOL_FAQS: FAQItem[] = [
+  {
+    question: "What is Bronopol and what is it used for?",
+    answer:
+      "Bronopol (2-Bromo-2-nitropropane-1,3-diol, CAS 52-51-7) is a broad-spectrum antimicrobial preservative supplied as a white to pale-yellow crystalline powder. It is used in cosmetics and personal care products, pharmaceutical formulations, industrial water treatment, metalworking fluids, paper mill systems, and oilfield chemicals to control bacterial contamination.",
+  },
+  {
+    question: "What is the CAS number and molecular formula of Bronopol?",
+    answer:
+      "Bronopol has CAS number 52-51-7, molecular formula C3H6BrNO4, and molecular weight 199.99 g/mol. It is also known by the EC/EINECS number 200-143-0 and UN Number 3241 for transport. Its INN (International Nonproprietary Name) is simply Bronopol.",
+  },
+  {
+    question: "Is 2-Bromo-2-nitropropane-1,3-diol the same as Bronopol?",
+    answer:
+      "Yes. Bronopol, 2-Bromo-2-nitropropane-1,3-diol, 2-Bromo-2-nitro-1,3-propanediol, and 1,3-Propanediol 2-bromo-2-nitro- all refer to the same active substance under CAS 52-51-7. Trade names including Bronocot, Bronosol, Onyxide 500, and Lexgard Bronopol also reference this identical compound.",
+  },
+  {
+    question: "How does Bronopol work as an antimicrobial preservative?",
+    answer:
+      "Bronopol's antimicrobial action is based on cross-linking sulfhydryl (thiol) groups in dehydrogenase enzymes on microbial cell surfaces, forming disulfide bridges that block cellular respiration and metabolism. This mechanism is highly effective against gram-negative bacteria, particularly Pseudomonas species, and does not primarily rely on formaldehyde release.",
+  },
+  {
+    question: "Is Bronopol a formaldehyde-releasing preservative?",
+    answer:
+      "Bronopol's primary antimicrobial activity comes from its electron-deficient bromine atom, not formaldehyde release. However, under alkaline conditions and elevated temperature, Bronopol can decompose and liberate low levels of formaldehyde and nitrite as secondary breakdown products, which is why it should not be combined with secondary amines in formulations.",
+  },
+  {
+    question: "What is the recommended use level of Bronopol in cosmetics?",
+    answer:
+      "Typical use levels for Bronopol in cosmetic and personal care formulations range from 0.02% to 0.1% (200-1,000 ppm), with most formulations dosed below the regulatory maximum limit. Confirm the current permitted concentration limit in your target market before finalising a cosmetic formulation, as regulations vary by jurisdiction.",
+  },
+  {
+    question: "What pH range is Bronopol most stable in?",
+    answer:
+      "Bronopol is most stable in aqueous solution at acidic to neutral pH (around pH 5.0-5.5 for a 1% solution). Stability decreases significantly at alkaline pH and elevated temperature, where decomposition accelerates and formaldehyde and nitrite release increases. Citric acid is commonly used to stabilise Bronopol solutions by lowering pH.",
+  },
+  {
+    question: "Is Bronopol safe for use in leave-on cosmetic products?",
+    answer:
+      "Bronopol's use in cosmetics has declined since the late 1980s due to nitrosamine formation risk when it decomposes in the presence of secondary amines or amides. Regulatory bodies in several markets, including Canada, have placed restrictions on Bronopol in certain cosmetic product categories — always confirm current permitted use and concentration limits for your target market.",
+  },
+  {
+    question: "What industries use Bronopol besides cosmetics?",
+    answer:
+      "Beyond personal care, Bronopol is widely used in industrial water treatment (cooling towers, air washer systems), metalworking and cutting fluids, paper mill and pulp processing, oilfield systems including drilling and production fluids, paints and adhesives, and household cleaning products, owing to its broad-spectrum activity and stability in aqueous systems.",
+  },
+  {
+    question: "Is Bronopol classified as hazardous?",
+    answer:
+      "Bronopol is classified with the GHS signal word Danger, including hazard statements for acute oral and dermal toxicity (H302, H312), skin and eye irritation/damage (H315, H318), and respiratory irritation (H335). Aquatic toxicity classification (e.g. H410 vs H411) varies by regulatory jurisdiction and SDS version, so always refer to the jurisdiction- and batch-specific SDS supplied with your shipment rather than treating any single aquatic hazard code as universal. Standard PPE — gloves, eye protection, and adequate ventilation — is required when handling the concentrate.",
+  },
+  {
+    question: "What packaging and grades does Vasudev Chemo Pharma supply Bronopol in?",
+    answer:
+      "Vasudev Chemo Pharma supplies Bronopol in Technical, Cosmetic, and Industrial grades, packaged in 25 kg fibre drums and 25 kg HDPE bags with liner, with custom packaging available on request. Every shipment includes a batch-specific Certificate of Analysis (COA) and Safety Data Sheet (SDS), with Technical Data Sheets available on request.",
+  },
+  {
+    question: "How is Bronopol different from BIT (Benzisothiazolinone)?",
+    answer:
+      "Bronopol (CAS 52-51-7) and BIT (CAS 2634-33-5) are chemically distinct preservatives. Bronopol is a nitro-bromo compound that is fast-acting against gram-negative bacteria, particularly Pseudomonas; BIT is an isothiazolinone with broader gram-positive, fungal, and yeast coverage plus better long-term thermal and pH stability. The two are frequently used together in blended preservative systems.",
+  },
+];
+
 export const PRODUCT_PAGE_FAQS: Record<string, FAQItem[]> = {
   "mea-triazine-78-h2s-scavenger": MEA_TRIAZINE_PRODUCT_PAGE_FAQS,
   "sodium-cumene-sulfonate-40": SODIUM_CUMENE_SULFONATE_40_FAQS,
@@ -908,6 +1047,8 @@ export const PRODUCT_PAGE_FAQS: Record<string, FAQItem[]> = {
   "biocide-oil-gas": BIOCIDE_OIL_GAS_FAQS,
   "mea-triazine-78-high-concentration": MEA_TRIAZINE_78_HIGH_CONCENTRATION_FAQS,
   "mma-triazine-40-btx-free": MMA_TRIAZINE_40_BTX_FREE_FAQS,
+  "bit-20-benzisothiazolinone": BIT_20_FAQS,
+  "bronopol": BRONOPOL_FAQS,
 };
 
 export const PRODUCT_FALLBACK_FAQS: Record<string, FAQItem[]> = {
@@ -924,6 +1065,8 @@ export const PRODUCT_FALLBACK_FAQS: Record<string, FAQItem[]> = {
   "biocide-oil-gas": BIOCIDE_OIL_GAS_FAQS,
   "mea-triazine-78-high-concentration": MEA_TRIAZINE_78_HIGH_CONCENTRATION_FAQS,
   "mma-triazine-40-btx-free": MMA_TRIAZINE_40_BTX_FREE_FAQS,
+  "bit-20-benzisothiazolinone": BIT_20_FAQS,
+  "bronopol": BRONOPOL_FAQS,
 };
 
 

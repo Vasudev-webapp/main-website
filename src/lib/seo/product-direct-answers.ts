@@ -48,5 +48,11 @@ export const PRODUCT_DIRECT_ANSWERS: Record<string, string> = {
     "MEA Triazine 78% High Concentration is a premium monoethanolamine-based H2S scavenger (CAS 4719-04-4) with ≥ 78% active matter. Used in offshore drilling, remote gas plants, and global bulk export, it maximizes hydrogen sulfide neutralization per liter to lower freight costs, minimize storage footprints, and prevent pipeline corrosion.",
 
   "mma-triazine-40-btx-free":
-    "MMA Triazine 40% BTX-Free is an eco-compliant mono-methylamine-based H2S scavenger (CAS 108-74-7) formulated with 40% active matter and zero aromatic content. It selectively removes hydrogen sulfide from gas streams, refinery overheads, and municipal wastewater systems without introducing hazardous benzene, toluene, or xylene compounds."
+    "MMA Triazine 40% BTX-Free is an eco-compliant mono-methylamine-based H2S scavenger (CAS 108-74-7) formulated with 40% active matter and zero aromatic content. It selectively removes hydrogen sulfide from gas streams, refinery overheads, and municipal wastewater systems without introducing hazardous benzene, toluene, or xylene compounds.",
+
+  "bit-20-benzisothiazolinone":
+    "BIT 20% (Benzisothiazolinone, CAS 2634-33-5) is a formaldehyde-free liquid in-can preservative supplied at 20% active content in a water/glycol carrier. It controls bacteria, mould, and yeast in water-based paints, adhesives, inks, metalworking fluids, and detergents, remaining stable across pH 2–12 and temperatures up to 100°C.",
+
+  "bronopol":
+    "Bronopol (2-Bromo-2-nitropropane-1,3-diol, CAS 52-51-7) is a broad-spectrum antimicrobial preservative supplied as a white to pale-yellow crystalline powder. It is fast-acting against gram-negative bacteria including Pseudomonas aeruginosa, and is used in cosmetics, water treatment, metalworking fluids, and paper mill systems at typical use levels of 0.02% to 0.1%.",
 };

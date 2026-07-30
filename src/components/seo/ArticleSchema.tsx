@@ -41,6 +41,10 @@ export default function ArticleSchema({
         "@type": "Organization",
         name: "Vasudev Chemo Pharma",
       },
+    // Note: `reviewedBy` is not a recognized property on schema.org Article
+    // (it is only defined on WebPage/QAPage), so it is intentionally omitted
+    // here to avoid emitting an unsupported property. Reviewer attribution is
+    // still rendered in the visible page UI (see resources/[slug]/page.tsx).
     publisher: {
       "@type": "Organization",
       name: "Vasudev Chemo Pharma",

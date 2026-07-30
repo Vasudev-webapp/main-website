@@ -19,6 +19,8 @@ import { BIS_2_CHLOROETHYL_AMINE_HCL_LONG_TAIL_KEYWORDS } from "./bis-2-chloroet
 import { DEAEC_HCL_LONG_TAIL_KEYWORDS } from "./di-ethyl-amino-ethyl-chloride-hydrochloride-keywords";
 import { AMIT_LONG_TAIL_KEYWORDS } from "./2-amino-5-methylthiazole-keywords";
 import { CEA_HCL_LONG_TAIL_KEYWORDS } from "./2-chloroethylamine-hydrochloride-keywords";
+import { BIT_20_BUYING_INTENT, BIT_20_RESEARCH_BASED } from "./bit-20-benzisothiazolinone-keywords";
+import { BRONOPOL_BUYING_INTENT, BRONOPOL_RESEARCH_BASED, BRONOPOL_INFORMATIONAL } from "./bronopol-keywords";
 
 export const EXPANDED_KEYWORDS = {
   "mea-triazine-78-h2s-scavenger": {
@@ -102,6 +104,14 @@ export const EXPANDED_KEYWORDS = {
   "2-chloroethylamine-hydrochloride": {
     buyingIntent: CEA_HCL_LONG_TAIL_KEYWORDS,
     researchBased: []
+  },
+  "bit-20-benzisothiazolinone": {
+    buyingIntent: BIT_20_BUYING_INTENT,
+    researchBased: BIT_20_RESEARCH_BASED
+  },
+  "bronopol": {
+    buyingIntent: BRONOPOL_BUYING_INTENT,
+    researchBased: [...BRONOPOL_RESEARCH_BASED, ...BRONOPOL_INFORMATIONAL]
   }
 };
 

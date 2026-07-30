@@ -64,6 +64,16 @@ export const PRODUCT_META_OVERRIDES: Record<string, ProductMetaOverride> = {
     description:
       "Buy EDDM (Ethylenedioxy Dimethanol) CAS 3586-55-8 — Indian manufacturer. Non-triazine H2S scavenger & industrial biocide. 90-95% purity. Preventol EDDM alternative. ISO 9001. Global supply.",
   },
+  "bit-20-benzisothiazolinone": {
+    title: "BIT 20% Benzisothiazolinone Manufacturer India",
+    description:
+      "BIT 20% (1,2-Benzisothiazolin-3-one, CAS 2634-33-5) formaldehyde-free in-can preservative from ISO 9001 Gujarat manufacturer. For paints, adhesives, inks, metalworking fluids & detergents. Preventol/Nipacide BIT 20 alternative. Request COA, SDS & sample.",
+  },
+  "bronopol": {
+    title: "Bronopol Manufacturer India | CAS 52-51-7",
+    description:
+      "Bronopol (2-Bromo-2-nitropropane-1,3-diol, CAS 52-51-7) broad-spectrum preservative from ISO 9001 Gujarat manufacturer. For cosmetics, water treatment, metalworking fluids & paper mills. Onyxide 500 alternative. Request COA, SDS & sample today.",
+  },
 };
 
 

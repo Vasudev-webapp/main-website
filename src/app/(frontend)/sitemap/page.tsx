@@ -293,6 +293,95 @@ const productNodes = [
       },
     ],
   },
+  {
+    id: "bit-20-biocide",
+    name: "BIT 20% (Benzisothiazolinone)",
+    href: "/product/bit-20-benzisothiazolinone",
+    connections: [
+      {
+        group: "Buying & Pricing",
+        pages: [
+          { label: "BIT 20% Price & Supplier Guide — India", href: "/resources/bit-20-price-supplier-india" },
+          { label: "Preventol / Nipacide / Mergal BIT 20 Alternative", href: "/resources/preventol-nipacide-mergal-bit-20-alternative-india" },
+        ],
+      },
+      {
+        group: "Applications & Selection",
+        pages: [
+          { label: "Benzisothiazolinone Uses in Paints & Coatings", href: "/resources/benzisothiazolinone-uses-paints-coatings" },
+          { label: "BIT 20% for Adhesives & Inks", href: "/resources/bit-20-for-adhesives-inks" },
+          { label: "BIT 20% for Metalworking Fluids", href: "/resources/bit-20-for-metalworking-fluids" },
+          { label: "BIT 20% as a Cosmetic & Personal Care Preservative", href: "/resources/bit-20-cosmetic-personal-care-preservative" },
+          { label: "BIT 20% for Detergents & Household Cleaning", href: "/resources/bit-20-detergent-household-cleaning-preservative" },
+          { label: "BIT 20% for Leather & Textile Processing", href: "/resources/bit-20-leather-textile-processing" },
+          { label: "BIT 20% for Construction Chemicals & Wood Preservation", href: "/resources/bit-20-construction-chemicals-wood-preservation" },
+        ],
+      },
+      {
+        group: "Technical & Safety Guides",
+        pages: [
+          { label: "BIT 20% Dosage Guide", href: "/resources/bit-20-dosage-guide" },
+          { label: "BIT 20% Safety, Handling & Storage", href: "/resources/bit-20-safety-handling-storage" },
+          { label: "Benzisothiazolinone Technical Data (CAS 2634-33-5)", href: "/resources/benzisothiazolinone-cas-2634-33-5-technical-data" },
+          { label: "Benzisothiazolinone Allergy, Toxicity & Environmental Impact", href: "/resources/benzisothiazolinone-allergy-toxicity-environmental-impact" },
+        ],
+      },
+      {
+        group: "Comparisons",
+        pages: [
+          { label: "BIT 20% vs MIT/CMIT Preservatives", href: "/resources/bit-20-vs-mit-cmit-preservatives" },
+          { label: "BIT vs Bronopol & Formaldehyde Biocides", href: "/resources/benzisothiazolinone-vs-bronopol-formaldehyde-biocides" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "bronopol-biocide",
+    name: "Bronopol",
+    href: "/product/bronopol",
+    connections: [
+      {
+        group: "Buying & Pricing",
+        pages: [
+          { label: "Bronopol Price & Supplier Guide — India", href: "/resources/bronopol-price-supplier-india" },
+          { label: "Onyxide 500 / Lexgard / Myacide Bronopol Alternative", href: "/resources/onyxide-500-lexgard-myacide-bronopol-alternative-india" },
+        ],
+      },
+      {
+        group: "Applications & Selection",
+        pages: [
+          { label: "Bronopol Uses in Cosmetics & Personal Care", href: "/resources/bronopol-uses-cosmetics-personal-care" },
+          { label: "Bronopol for Water Treatment & Cooling Towers", href: "/resources/bronopol-for-water-treatment-cooling-towers" },
+          { label: "Bronopol for Metalworking Fluids & Cutting Oils", href: "/resources/bronopol-for-metalworking-fluids-cutting-oils" },
+          { label: "Bronopol for Paper Mill & Pulp Processing", href: "/resources/bronopol-for-paper-mill-pulp-processing" },
+          { label: "Bronopol for Oilfield Drilling Fluids", href: "/resources/bronopol-for-oilfield-drilling-fluids" },
+          { label: "Bronopol for Household Cleaning Products", href: "/resources/bronopol-for-household-cleaning-products" },
+          { label: "Bronopol Pharmacopoeia Grades (IP/BP/Ph.Eur.)", href: "/resources/bronopol-pharmacopoeia-grades-ip-bp-ph-eur" },
+        ],
+      },
+      {
+        group: "Technical & Safety Guides",
+        pages: [
+          { label: "Bronopol Dosage Guide", href: "/resources/bronopol-dosage-guide" },
+          { label: "Bronopol Safety, Handling & Storage", href: "/resources/bronopol-safety-handling-storage" },
+          { label: "Bronopol Technical Data (CAS 52-51-7)", href: "/resources/bronopol-cas-52-51-7-technical-data" },
+          { label: "Bronopol Mechanism of Action & Pseudomonas Control", href: "/resources/bronopol-mechanism-of-action-pseudomonas" },
+          { label: "Bronopol Stability: pH & Temperature", href: "/resources/bronopol-stability-ph-temperature" },
+          { label: "Bronopol Compatibility with Surfactants", href: "/resources/bronopol-compatibility-surfactants-formulation" },
+          { label: "Bronopol Allergy, Toxicity & Environmental Impact", href: "/resources/bronopol-allergy-toxicity-environmental-impact" },
+          { label: "Bronopol Nitrosamine Formation Risk", href: "/resources/bronopol-nitrosamine-formation-risk" },
+        ],
+      },
+      {
+        group: "Comparisons",
+        pages: [
+          { label: "Bronopol vs BIT (Benzisothiazolinone)", href: "/resources/bronopol-vs-bit-benzisothiazolinone" },
+          { label: "Bronopol vs Formaldehyde Donors", href: "/resources/bronopol-vs-formaldehyde-donors" },
+          { label: "Bronopol vs Parabens Preservative Comparison", href: "/resources/bronopol-vs-parabens-preservative-comparison" },
+        ],
+      },
+    ],
+  },
 ];
 
 type LinkItem = { label: string; href: string };

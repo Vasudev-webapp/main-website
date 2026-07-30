@@ -226,14 +226,47 @@ const CATEGORY_CONTENT: Record<
     supplySectionHeading:
       "Global Supply of EDDM Non-Triazine H₂S Scavenger & Biocide",
   },
+  "bit-20-benzisothiazolinone": {
+    categoryLabel: "Speciality Chemicals — BIT 20% (Benzisothiazolinone)",
+    categorySummary:
+      "BIT 20% (1,2-Benzisothiazolin-3-one, CAS 2634-33-5) is a formaldehyde-free, broad-spectrum in-can preservative manufactured by Vasudev Chemo Pharma. Supplied as a 20% active aqueous/glycolic solution, it controls bacteria, mould fungi, and yeasts across paints, coatings, adhesives, inks, metalworking fluids, detergents, leather processing, and construction chemicals, remaining stable across a wide pH and temperature range. A direct alternative to Preventol® BIT 20 N, Nipacide™ BIT 20, and Mergal® BIT20.",
+    supplySectionHeading:
+      "Global Supply of BIT 20% (Benzisothiazolinone) Preservative",
+  },
+  "bronopol": {
+    categoryLabel: "Speciality Chemicals — Bronopol (2-Bromo-2-nitropropane-1,3-diol)",
+    categorySummary:
+      "Bronopol (2-Bromo-2-nitropropane-1,3-diol, CAS 52-51-7) is a broad-spectrum antimicrobial preservative manufactured by Vasudev Chemo Pharma, supplied as a white to pale-yellow crystalline powder. It is fast-acting against gram-negative bacteria, particularly Pseudomonas species, and is used across cosmetics and personal care, pharmaceutical preservation, industrial water treatment, metalworking fluids, paper mills, and oilfield systems. A direct alternative to Onyxide 500, Lexgard Bronopol, and Myacide grades.",
+    supplySectionHeading:
+      "Global Supply of Bronopol (CAS 52-51-7) Preservative",
+  },
 };
 
 /* ── Keyword grouping patterns ───────────────────────────────────── */
+
+// Slug groups used to scope product-specific application cards so that,
+// e.g., BIT 20%-branded cards never render on the Bronopol page (and vice
+// versa) even though both products' keyword lists share generic terms like
+// "metalworking" or "cooling water".
+const TRIAZINE_SLUGS = [
+  "mea-triazine-78-h2s-scavenger",
+  "mma-triazine-40",
+  "triazine-h2s-scavenger-general",
+  "metal-working-fluids",
+  "biocide-oil-gas",
+  "mea-triazine-78-high-concentration",
+  "mma-triazine-40-btx-free",
+  "eddm-non-triazine-h2s-scavenger",
+];
+const BKC_SLUGS = ["benzalkonium-chloride-50", "benzalkonium-chloride-80"];
+const BIT_SLUGS = ["bit-20-benzisothiazolinone"];
+const BRONOPOL_SLUGS = ["bronopol"];
 
 const APPLICATION_PATTERNS: {
   heading: string;
   description: string;
   patterns: RegExp[];
+  allowedSlugs?: string[];
 }[] = [
   {
     heading: "Oilfield & Gas Processing Applications",
@@ -242,66 +275,112 @@ const APPLICATION_PATTERNS: {
     patterns: [
       /oilfield|offshore|onshore|drilling|completion|production chemicals|wellhead|pipeline/i,
     ],
+    allowedSlugs: TRIAZINE_SLUGS,
   },
   {
     heading: "Refinery & Petrochemical Applications",
     description:
       "H2S scavenger and chemical treatment for refinery overhead, crude oil sweetening, and petrochemical processing operations.",
     patterns: [/refiner|petrochemical|crude oil|sweetening|desalter/i],
+    allowedSlugs: TRIAZINE_SLUGS,
   },
   {
     heading: "Biogas & Environmental Applications",
     description:
       "H2S removal from biogas, landfill gas, and wastewater treatment using triazine-based scavenging chemicals.",
     patterns: [/biogas|wastewater|environmental|waste|landfill|sour water/i],
+    allowedSlugs: TRIAZINE_SLUGS,
   },
   {
     heading: "Natural Gas & LPG Treatment",
     description:
       "Gas sweetening chemicals for natural gas processing, LPG purification, and gas pipeline integrity.",
     patterns: [/natural gas|lpg|gas processing|gas sweetening/i],
+    allowedSlugs: TRIAZINE_SLUGS,
   },
   {
     heading: "Biocide for Metalworking Fluids",
     description:
       "Triazine-based biocide for metalworking fluids — prevents bacterial and fungal growth in cutting fluids, coolants, grinding fluids, and CNC machining coolants. Extends fluid life and eliminates rancid odours.",
     patterns: [/metalworking|cutting fluid|coolant biocide|machining|grinding fluid|cnc/i],
+    allowedSlugs: TRIAZINE_SLUGS,
   },
   {
     heading: "Healthcare & Hospital Surface Disinfection",
     description:
       "Quaternary ammonium biocide (ADBAC / Benzalkonium Chloride) for hospital surface disinfection, clinical sanitation, and pharmaceutical-grade healthcare environments. Effective against bacteria, fungi, and enveloped viruses including SARS-CoV-2.",
     patterns: [/hospital|clinical|healthcare|medical|nosocomial|sars|coronavirus|surface disinfect/i],
+    allowedSlugs: BKC_SLUGS,
   },
   {
     heading: "Food & Beverage Industry CIP / COP Sanitation",
     description:
       "FDA 21 CFR 178.1010-compliant no-rinse food-contact sanitiser at 200 ppm active quat. Used in dairy, brewery, soft drink, and food packaging facilities.",
     patterns: [/food contact|cip|cop|dairy|brewery|food.beverage|food.contact|fda 21 cfr/i],
+    allowedSlugs: BKC_SLUGS,
   },
   {
     heading: "Pool, Spa, and Recreational Water Sanitation",
     description:
       "Algaecide and supplementary sanitiser for swimming pools, spas, fountains, and recreational water systems. Synergistic with chlorine.",
     patterns: [/swimming pool|pool algicide|spa water|recreational water|algaecide|algicide/i],
+    allowedSlugs: BKC_SLUGS,
   },
   {
     heading: "Cosmetic and Pharmaceutical Preservation",
     description:
       "INCI-listed cosmetic preservative (max 0.1% rinse-off, 0.05% leave-on per Cosmetics Europe Annex V). USP / BP / EP / IP / JP pharmacopoeia-compliant. Used in eye drops, nasal sprays, hair conditioners, and topical antiseptics.",
     patterns: [/cosmetic preservative|inci|hair conditioner|mouthwash|eye drops|nasal spray|pharmaceutical preservative|topical antiseptic/i],
+    allowedSlugs: BKC_SLUGS,
   },
   {
     heading: "Cooling Tower, HVAC, and Water Treatment Biocide",
     description:
       "Quaternary ammonium biocide for cooling towers, HVAC chillers, and recirculating water systems. Controls Legionella, sulphate-reducing bacteria, and biofilm.",
     patterns: [/cooling tower|hvac|legionella|biofilm|water treatment biocide/i],
+    allowedSlugs: BKC_SLUGS,
   },
   {
     heading: "Agricultural & Veterinary Disinfection",
     description:
       "Biosecurity disinfectant for poultry houses, dairy farms, hatcheries, greenhouses, and foot-baths. Used in livestock, animal husbandry, and crop biosecurity programs.",
     patterns: [/poultry|dairy farm|hatchery|veterinary|livestock|biosecurity|foot.bath|agricultural disinfect/i],
+    allowedSlugs: BKC_SLUGS,
+  },
+  {
+    heading: "In-Can Preservation for Paints, Coatings & Adhesives",
+    description:
+      "Formaldehyde-free BIT 20% preservative for water-based paints, coatings, adhesives, sealants, and printing inks — preventing bacterial and fungal spoilage during storage and use.",
+    patterns: [/paints|coatings|adhesives|sealants|inks|printing|emulsion|waterborne/i],
+    allowedSlugs: BIT_SLUGS,
+  },
+  {
+    heading: "Metalworking Fluids & Industrial Preservation",
+    description:
+      "BIT 20% preservation for metalworking fluids, cutting oils, detergents, and household cleaning products — controlling bacterial contamination in alkaline and recirculating systems.",
+    patterns: [/metalworking|cutting oil|detergent|household clean|construction chemical/i],
+    allowedSlugs: BIT_SLUGS,
+  },
+  {
+    heading: "Leather, Textile & Personal Care Applications",
+    description:
+      "Benzisothiazolinone-based biocide for leather processing, tanning liquors, textile spin-finish solutions, and select cosmetic and personal care formulations.",
+    patterns: [/leather|tanning|textile|spin.finish|cosmetic|personal care/i],
+    allowedSlugs: BIT_SLUGS,
+  },
+  {
+    heading: "Cosmetics, Personal Care & Pharmaceutical Preservation",
+    description:
+      "Bronopol preservation for shampoos, lotions, cosmetics, and pharmaceutical formulations, with fast-acting activity against gram-negative bacteria including Pseudomonas.",
+    patterns: [/shampoo|lotion|pharmaceutical|toiletr|personal care product|pseudomonas/i],
+    allowedSlugs: BRONOPOL_SLUGS,
+  },
+  {
+    heading: "Water Treatment, Paper Mills & Oilfield Systems",
+    description:
+      "Bronopol biocide for cooling water systems, paper mill slime control, and oilfield drilling and production fluid preservation.",
+    patterns: [/cooling water|paper mill|pulp|oilfield|drilling fluid|air conditioning|humidifying/i],
+    allowedSlugs: BRONOPOL_SLUGS,
   },
 ];
 
@@ -351,7 +430,9 @@ export function getProductKeywordContentSections(
   const allKeywords = [...allBuying, ...allResearch];
 
   // Build application groups
-  const applicationGroups: KeywordContentGroup[] = APPLICATION_PATTERNS.map(
+  const applicationGroups: KeywordContentGroup[] = APPLICATION_PATTERNS.filter(
+    ({ allowedSlugs }) => !allowedSlugs || allowedSlugs.includes(slug)
+  ).map(
     ({ heading, description, patterns }) => {
       const matchedKeywords = dedupeArray(
         extractByPattern(allKeywords, patterns)

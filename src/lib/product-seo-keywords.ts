@@ -27,6 +27,8 @@ import {
   METAL_WORKING_FLUIDS_SYNONYMS,
   BIOCIDE_OIL_GAS_SYNONYMS,
   MEA_TRIAZINE_78_HIGH_CONC_SYNONYMS,
+  BIT_20_SYNONYMS,
+  BRONOPOL_SYNONYMS,
   type ProductSynonyms,
 } from "@/lib/seo/product-synonyms";
 import {
@@ -55,6 +57,19 @@ import { EDDM_PRIMARY_KEYWORD, EDDM_LONG_TAIL_KEYWORDS } from "./seo/eddm-keywor
 import { MMA_TRIAZINE_40_BTX_FREE_PRIMARY_KEYWORD, MMA_TRIAZINE_40_BTX_FREE_LONG_TAIL_KEYWORDS } from "./seo/mma-triazine-40-btx-free-keywords";
 import { BKC_50_PRIMARY_KEYWORD, BKC_50_LONG_TAIL_KEYWORDS } from "./seo/bkc-50-keywords";
 import { BKC_80_PRIMARY_KEYWORD, BKC_80_LONG_TAIL_KEYWORDS } from "./seo/bkc-80-keywords";
+import {
+  BIT_20_PRIMARY_KEYWORD,
+  BIT_20_LONG_TAIL_KEYWORDS,
+  BIT_20_BUYING_INTENT,
+  BIT_20_RESEARCH_BASED,
+} from "./seo/bit-20-benzisothiazolinone-keywords";
+import {
+  BRONOPOL_PRIMARY_KEYWORD,
+  BRONOPOL_LONG_TAIL_KEYWORDS,
+  BRONOPOL_BUYING_INTENT,
+  BRONOPOL_RESEARCH_BASED,
+  BRONOPOL_INFORMATIONAL,
+} from "./seo/bronopol-keywords";
 
 /**
  * Slug → synonyms mapping for all products that have synonym data.
@@ -74,6 +89,8 @@ const PRODUCT_SYNONYMS_MAP: Record<string, ProductSynonyms> = {
   "metal-working-fluids": METAL_WORKING_FLUIDS_SYNONYMS,
   "biocide-oil-gas": BIOCIDE_OIL_GAS_SYNONYMS,
   "mea-triazine-78-high-concentration": MEA_TRIAZINE_78_HIGH_CONC_SYNONYMS,
+  "bit-20-benzisothiazolinone": BIT_20_SYNONYMS,
+  "bronopol": BRONOPOL_SYNONYMS,
 };
 
 type ProductKeywordConfig = {
@@ -186,6 +203,25 @@ export const PRODUCT_SEO_KEYWORDS: Record<string, ProductKeywordConfig> = {
   "benzalkonium-chloride-80": {
     primaryKeyword: BKC_80_PRIMARY_KEYWORD,
     longTailKeywords: BKC_80_LONG_TAIL_KEYWORDS
+  },
+
+  "bit-20-benzisothiazolinone": {
+    primaryKeyword: BIT_20_PRIMARY_KEYWORD,
+    longTailKeywords: mergeKeywordClusters(
+      BIT_20_LONG_TAIL_KEYWORDS,
+      BIT_20_BUYING_INTENT,
+      BIT_20_RESEARCH_BASED
+    ),
+  },
+
+  "bronopol": {
+    primaryKeyword: BRONOPOL_PRIMARY_KEYWORD,
+    longTailKeywords: mergeKeywordClusters(
+      BRONOPOL_LONG_TAIL_KEYWORDS,
+      BRONOPOL_BUYING_INTENT,
+      BRONOPOL_RESEARCH_BASED,
+      BRONOPOL_INFORMATIONAL
+    ),
   },
 };
 

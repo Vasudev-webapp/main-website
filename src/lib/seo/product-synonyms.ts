@@ -871,3 +871,180 @@ export const MEA_TRIAZINE_78_HIGH_CONC_SYNONYMS: ProductSynonyms = {
     "If your specification demands high-concentration MEA Triazine (78% active), Vasudev Chemo Pharma can supply the matching grade in drums, IBCs, or ISO tanks. Contact us today.",
 };
 
+
+
+export const BIT_20_SYNONYMS: ProductSynonyms = {
+  intro:
+    "BIT 20% (Benzisothiazolinone 20% solution) is referenced in formulation manuals, safety data sheets, and purchase specifications under many chemical names, abbreviations, and trade names. Vasudev Chemo Pharma's BIT 20% is the same active substance (CAS 2634-33-5) regardless of which name your specification uses:",
+  groups: [
+    {
+      heading: "IUPAC and Chemical Names",
+      items: [
+        "1,2-Benzisothiazol-3(2H)-one",
+        "1,2-Benzisothiazolin-3-one",
+        "Benzisothiazolinone",
+        "Benzisothiazolone",
+        "1,2-Benzoisothiazol-3-one",
+        "Benz[d]isothiazol-3(2H)-one",
+        "2,3-Dihydro-1,2-benzisothiazol-3-one",
+        "1,2-Benzothiazol-3-one",
+        "1,2-Benzothiazolinone",
+        "2,3-Dihydro-3-oxo-1,2-benzisothiazole",
+        "3-Hydroxy-1,2-benzisothiazole",
+        "Benzo[d]isothiazol-3-one",
+        "Benzo[d]isothiazol-3(2H)-one",
+        "2-Hydrobenzo[d]isothiazol-3-one",
+        "Benzoisothiazol-3-one",
+        "1,2-Benzoisothiazoline-3-one",
+      ],
+    },
+    {
+      heading: "Common Abbreviations",
+      items: [
+        "BIT",
+        "BIT 20",
+        "BIT-20",
+        "BIT 20%",
+        "BIT 20 I LIQ",
+        "BIT-10",
+      ],
+    },
+    {
+      heading: "Trade Names and Brand Equivalents",
+      items: [
+        "Preventol® BIT 20 N (LANXESS)",
+        "Preventol® BIT 20 I LIQ (LANXESS)",
+        "Nipacide™ BIT 20 (Clariant)",
+        "Acticide® BIT (Thor / equivalent)",
+        "Mergal® BIT20 (Troy Corporation / Ataman)",
+        "Vinkocide® BIT 20 D (Vink Chemicals)",
+        "Proxel® (Lonza — related isothiazolinone family, BIT-based grades)",
+        "Proxel® AB / GXL / CRL / XL2 / XL / HL / TN (Lonza BIT grades)",
+        "BIT-20 (Bonbon 20 — regional trade name)",
+      ],
+    },
+    {
+      heading: "Application-Based Names",
+      items: [
+        "In-Can Preservative",
+        "In-Can Biocide",
+        "Industrial Biocide",
+        "Broad-Spectrum Preservative",
+        "Formaldehyde-Free Preservative",
+        "Isothiazolinone Biocide",
+        "Paint Preservative",
+        "Coatings Biocide",
+        "Metalworking Fluid Preservative",
+        "Cutting Oil Biocide",
+        "Detergent Preservative",
+        "Cosmetic Preservative (BIT)",
+        "Personal Care Preservative",
+        "Leather Processing Biocide",
+        "Textile Antimicrobial Finish",
+        "Wood Preservative Biocide",
+        "Construction Chemicals Biocide",
+        "Drilling Mud Preservative",
+        "Packer Fluid Biocide",
+        "Oilfield Biocide (BIT-based)",
+        "Paper Mill Slimicide",
+        "Water Treatment Biocide",
+      ],
+    },
+    {
+      heading: "Registry Identifiers",
+      items: [
+        "CAS 2634-33-5",
+        "EINECS 220-120-9",
+        "EC Number 220-120-9",
+        "UN Number 3077",
+        "Molecular Formula C7H5NOS",
+        "Molecular Weight 151.18 g/mol",
+        "MDL Number MFCD00127753",
+        "InChIKey DMSMPAJRVJJAGA-UHFFFAOYSA-N",
+      ],
+    },
+  ],
+  casNote:
+    "CAS Number: 2634-33-5 | EINECS/EC: 220-120-9 | UN Number: 3077 | Molecular Formula: C7H5NOS | Molecular Weight: 151.18 g/mol",
+  closingText:
+    "If your specification, purchase order, MSDS, or formulation manual lists any of the above names, abbreviations, or brand equivalents, Vasudev Chemo Pharma can supply the matching product. Our BIT 20% is supplied as a formaldehyde-free, water/glycol-based liquid preservative with full COA and SDS documentation on every shipment. Contact us for samples, technical data, and trade-equivalence confirmation.",
+};
+
+
+export const BRONOPOL_SYNONYMS: ProductSynonyms = {
+  intro:
+    "Bronopol is referenced in formulation manuals, safety data sheets, and purchase specifications under many chemical names, abbreviations, and trade names. Vasudev Chemo Pharma's Bronopol is the same active substance (CAS 52-51-7) regardless of which name your specification uses:",
+  groups: [
+    {
+      heading: "IUPAC and Chemical Names",
+      items: [
+        "2-Bromo-2-nitropropane-1,3-diol",
+        "2-Bromo-2-nitro-1,3-propanediol",
+        "1,3-Propanediol, 2-bromo-2-nitro-",
+        "2-Nitro-2-bromo-1,3-propanediol",
+        "beta-Bromo-beta-nitrotrimethyleneglycol",
+        "2-bromo-2-nitropropane-1,3-diolbronopol",
+      ],
+    },
+    {
+      heading: "Common Abbreviations",
+      items: [
+        "Bronopol",
+        "BNPD",
+        "BNPK",
+        "INN: Bronopol",
+      ],
+    },
+    {
+      heading: "Trade Names and Brand Equivalents",
+      items: [
+        "Bronocot",
+        "Bronosol",
+        "Bronotak",
+        "Bronopolu",
+        "Bronopolum",
+        "Onyxide 500 (Lonza)",
+        "Lexgard Bronopol",
+        "Myacide AS Plus",
+        "Myacide BT",
+        "Myacide Pharma BP",
+        "Bioban (equivalent)",
+        "Canguard 409",
+        "NSC 141021",
+      ],
+    },
+    {
+      heading: "Application-Based Names",
+      items: [
+        "Preservative (INN antimicrobial)",
+        "Broad-Spectrum Antimicrobial",
+        "Nitro-Bromo Biocide",
+        "Cosmetic Preservative",
+        "Pharmaceutical Preservative",
+        "Industrial Biocide",
+        "Cooling Water Biocide",
+        "Metalworking Fluid Preservative",
+        "Cutting Fluid Preservative",
+        "Oilfield Biocide",
+        "Paper Mill Slimicide",
+        "Household Product Preservative",
+        "Personal Care Preservative",
+      ],
+    },
+    {
+      heading: "Registry Identifiers",
+      items: [
+        "CAS 52-51-7",
+        "EINECS/EC 200-143-0",
+        "UN Number 3241",
+        "Molecular Formula C3H6BrNO4",
+        "Molecular Weight 199.99 g/mol",
+        "RTECS TY3385000",
+      ],
+    },
+  ],
+  casNote:
+    "CAS Number: 52-51-7 | EINECS/EC: 200-143-0 | UN Number: 3241 | Molecular Formula: C3H6BrNO4 | Molecular Weight: 199.99 g/mol",
+  closingText:
+    "If your specification, purchase order, MSDS, or formulation manual lists any of the above names, abbreviations, or brand equivalents, Vasudev Chemo Pharma can supply the matching product. Our Bronopol is supplied with full COA and SDS documentation on every shipment. Contact us for samples, technical data, and trade-equivalence confirmation.",
+};

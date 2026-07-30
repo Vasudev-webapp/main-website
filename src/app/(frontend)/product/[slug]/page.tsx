@@ -34,6 +34,8 @@ import {
   METAL_WORKING_FLUIDS_SYNONYMS,
   BIOCIDE_OIL_GAS_SYNONYMS,
   MEA_TRIAZINE_78_HIGH_CONC_SYNONYMS,
+  BIT_20_SYNONYMS,
+  BRONOPOL_SYNONYMS,
 } from "@/lib/seo/product-synonyms";
 import {
   MEA_TRIAZINE_SLUG,
@@ -463,6 +465,8 @@ export default async function ProductDetailPage({
     "metal-working-fluids": METAL_WORKING_FLUIDS_SYNONYMS,
     "biocide-oil-gas": BIOCIDE_OIL_GAS_SYNONYMS,
     "mea-triazine-78-high-concentration": MEA_TRIAZINE_78_HIGH_CONC_SYNONYMS,
+    "bit-20-benzisothiazolinone": BIT_20_SYNONYMS,
+    "bronopol": BRONOPOL_SYNONYMS,
   };
   const activeSynonyms = synonymMap[slug];
   const synonymData: {
