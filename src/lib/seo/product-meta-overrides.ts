@@ -9,6 +9,16 @@ type ProductMetaOverride = {
  * and the generic fallback template.
  */
 export const PRODUCT_META_OVERRIDES: Record<string, ProductMetaOverride> = {
+  // Highest-value product page. GSC (Jul 2026): query "mea triazine" sat at
+  // position 4.2 with 89 impressions and 1 click (1.1% CTR, benchmark ~8.4%).
+  // The old title carried no CAS number, which is the strongest relevance
+  // signal for a bare chemical-name search. Kept to 55 chars so Google does
+  // not truncate it.
+  "mea-triazine-78-h2s-scavenger": {
+    title: "MEA Triazine 78% (CAS 4719-04-4) H2S Scavenger Supplier",
+    description:
+      "MEA Triazine 78% (CAS 4719-04-4) H2S scavenger, direct from the ISO 9001:2015 India manufacturer. Oil, gas, wastewater & biogas. Drum, IBC & ISO-tank export. COA, SDS and sample in 24 hrs.",
+  },
   "mma-triazine-40": {
     title: "MMA Triazine 40% Manufacturer | BTX-Free H2S Scavenger",
     description:

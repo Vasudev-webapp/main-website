@@ -33,7 +33,14 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vasudevchemopharma.com"),
   title: {
-    template: "%s | Vasudev",
+    // No brand suffix here. Roughly 70 page templates already end their own
+    // title with "| Vasudev Chemo Pharma", so a template suffix produced a
+    // doubled brand ("… | Vasudev Chemo Pharma | Vasudev") and pushed titles to
+    // 83-113 characters against Google's ~60-character display limit. A
+    // duplicated brand is also a common trigger for Google discarding the
+    // title and writing its own, which costs CTR on pages that already rank.
+    // Pages that want the brand must include it in their own title.
+    template: "%s",
     default:
       "Vasudev Chemo Pharma — Industrial, Specialty & Surfactant Chemicals",
   },

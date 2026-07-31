@@ -15,6 +15,7 @@ import BlogProductAside from "@/components/blog/BlogProductAside";
 import { blogData, type BlogEntry } from "./seo-blog-data";
 import { getBlogImageOverride } from "@/lib/blogs-payload";
 import { getProductBySlug } from "@/lib/products-payload";
+import { filterLinksToLiveProducts } from "@/lib/blog/visible-product-links";
 
 export const revalidate = 3600;
 
@@ -149,6 +150,10 @@ export default async function BlogDetailPage({
     }
   }
 
+  // Links to products that were hidden in the CMS are dropped so the blog
+  // never points at a 404. See src/lib/blog/visible-product-links.ts.
+  const visibleInternalLinks = await filterLinksToLiveProducts(blog.internalLinks);
+
   const tocItems = blog.sections.map((s) => ({
     id: s.id,
     label: s.heading,
@@ -281,13 +286,13 @@ export default async function BlogDetailPage({
               </blockquote>
 
               {/* Internal links section */}
-              {blog.internalLinks.length > 0 && (
+              {visibleInternalLinks.length > 0 && (
                 <div className="my-8 bg-light rounded-2xl p-6">
                   <h3 className="font-heading font-semibold text-primary text-base mb-3">
                     Related Products &amp; Services
                   </h3>
                   <ul className="space-y-2">
-                    {blog.internalLinks.map((link) => (
+                    {visibleInternalLinks.map((link) => (
                       <li key={link.href} className="flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
                         <Link

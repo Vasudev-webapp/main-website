@@ -1,0 +1,48 @@
+# Files excluded from the Vercel deployment upload.
+#
+# This is the right place for "do not ship to production" — NOT .gitignore.
+# .gitignore controls what is committed to git; .vercelignore controls what is
+# uploaded and built. Using .gitignore for this would delete the tooling from
+# version control (no backup, no history, gone on a fresh clone) while doing
+# nothing extra for security: only files under public/ are ever served, so
+# scripts/ was never publicly reachable to begin with.
+#
+# Verified safe to exclude: no file under src/ imports from any path below, and
+# next.config.mjs does not reference them.
+#
+# If a build or prebuild step ever needs scripts/, remove that line first —
+# excluding it here makes those files unavailable during the Vercel build.
+
+# ── SEO / ops tooling — run locally or in CI, never at runtime ──
+scripts/
+
+# ── Search Console snapshots and generated reports ──
+data/
+reports/
+
+# ── Documentation and keyword research (not app content) ──
+docs/
+content/
+/*.md
+
+# ── Dev-only workspaces ──
+_dev-archive/
+claude-seo/
+content-strategy-context/
+assets/
+.kiro/
+.claude/
+.cursor/
+.playwright-mcp/
+.playwright-cli/
+
+# ── Tests ──
+tests/
+e2e/
+test-results/
+playwright.config.ts
+playwright.config.mjs
+
+# ── Local build artefacts ──
+tsconfig.tsbuildinfo
+*.report.html
