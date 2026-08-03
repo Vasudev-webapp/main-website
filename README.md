@@ -63,6 +63,74 @@ Notes:
 - `CORS_ALLOWED_ORIGINS` must list exact allowed origins (scheme + host + optional port), comma-separated.
 - Do not hardcode any secret in code. All auth keys and challenge secrets must be provided through environment variables.
 
+## Blog Authoring, Preview & Publishing (Payload CMS)
+
+Articles are written in the Payload admin at `/admin/collections/blogs` and render at
+`/blog/<slug>` alongside the hard-coded articles in
+`src/app/(frontend)/blog/[slug]/*-data.ts`.
+
+### Workflow
+
+1. **Create** — Articles → Create New. Fill the `Content`, `SEO`, `Media` and
+   `Links & Authorship` tabs. Each body section is a rich-text field supporting
+   H3/H4 subheadings, real HTML tables, lists and links.
+2. **Preview** — click **Preview** to open `/blog/<slug>` in a new tab with
+   Next.js draft mode enabled. The page renders exactly as it will once live, with
+   an amber "Draft preview" bar and an *Exit preview* link. Drafts are `noindex`
+   and emit no structured data.
+3. **Publish** — click **Publish**. The article becomes publicly visible, is added
+   to `sitemap.xml`, and the publish hook revalidates `/blog/<slug>`, `/blog` and
+   `/sitemap.xml` so the change is live immediately rather than after the 1-hour
+   ISR window. If `INDEXNOW_KEY` is set, the URL is also submitted to IndexNow.
+
+Draft previews are gated by the editor's Payload session cookie — there is no
+shareable secret in the preview URL, so a leaked link is useless to anyone not
+logged into the CMS. `/api/preview` is disallowed in `robots.txt` via the `/api/`
+rule.
+
+### Publish-time quality gates
+
+Content rules are enforced only when publishing, so drafts can be saved freely.
+Publishing is blocked until the article has a category, an intro of 80+ characters,
+at least two body sections, a conclusion, an author with credentials, hero image
+alt text, and a hero image. `Meta title` is capped at 70 characters and
+`Meta description` at 180 so SERP snippets are not truncated.
+
+### Entry types
+
+- **Full article** — written and published in the CMS.
+- **Image override only** — the original use of this collection: swaps the hero
+  image on a hard-coded article without replacing its content. Rows that predate
+  the authoring fields are migrated to this type automatically.
+
+A CMS article takes precedence over a hard-coded article with the same slug, which
+allows an existing article to be taken over and edited in the CMS.
+
+### Database migration
+
+The authoring fields require a schema migration. Outside production the schema is
+pushed automatically (`PAYLOAD_PUSH`); for production apply it explicitly:
+
+```bash
+npx tsx src/_runmigrate.ts
+```
+
+`up()` is additive only (18 new `blogs` columns plus array/version tables) and
+`down()` reverses it. To generate a new migration after changing a collection:
+
+```bash
+npx tsx src/_genmigration.ts <migration_name>
+```
+
+These `tsx` scripts exist because the `payload` CLI cannot resolve this project's
+`@/*` tsconfig path aliases.
+
+### Not enabled
+
+Payload's iframe-based **Live Preview** is intentionally off: the site CSP sets
+`frame-ancestors 'none'` in `src/middleware.ts`, so the admin panel cannot frame
+the front-end. Enabling it would require relaxing that to `frame-ancestors 'self'`.
+
 ## Performance Guardrails
 
 - Static routes and media receive edge cache headers in `next.config.mjs`.

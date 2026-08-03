@@ -64,6 +64,14 @@ import {
   BIT_20_RESEARCH_BASED,
 } from "./seo/bit-20-benzisothiazolinone-keywords";
 import {
+  BIT_20_BUYING_INTENT_EXTRA,
+  BIT_20_RESEARCH_BASED_EXTRA,
+} from "./seo/bit-20-benzisothiazolinone-keywords-extra";
+import {
+  BIT_20_LONG_TAIL_EXTRA,
+  BIT_20_CITY_STATE_KEYWORDS,
+} from "./seo/bit-20-benzisothiazolinone-keywords-geo";
+import {
   BRONOPOL_PRIMARY_KEYWORD,
   BRONOPOL_LONG_TAIL_KEYWORDS,
   BRONOPOL_BUYING_INTENT,
@@ -210,7 +218,11 @@ export const PRODUCT_SEO_KEYWORDS: Record<string, ProductKeywordConfig> = {
     longTailKeywords: mergeKeywordClusters(
       BIT_20_LONG_TAIL_KEYWORDS,
       BIT_20_BUYING_INTENT,
-      BIT_20_RESEARCH_BASED
+      BIT_20_RESEARCH_BASED,
+      BIT_20_BUYING_INTENT_EXTRA,
+      BIT_20_RESEARCH_BASED_EXTRA,
+      BIT_20_LONG_TAIL_EXTRA,
+      BIT_20_CITY_STATE_KEYWORDS
     ),
   },
 

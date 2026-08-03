@@ -4,7 +4,11 @@ import { hydrotropeBlogListItems } from "./[slug]/hydrotrope-articles-data";
 import { triazineH2sBlogListItems } from "./[slug]/triazine-h2s-articles-data";
 import { nonTriazineH2sBlogListItems } from "./[slug]/non-triazine-h2s-articles-data";
 import BlogPageClient from "./BlogPageClient";
-import { getAllBlogImageOverrides } from "@/lib/blogs-payload";
+import {
+  getAllBlogImageOverrides,
+  getPublishedCmsBlogListItems,
+} from "@/lib/blogs-payload";
+import type { BlogListItem } from "@/lib/blog/article";
 
 export const revalidate = 3600;
 
@@ -12,16 +16,6 @@ export const metadata: Metadata = applyPageMetaOverride("/blog", {
   title: "Chemical Industry Blog | Vasudev Chemo Pharma",
   description: "Expert insights on H2S scavengers, MEA Triazine applications, and chemical manufacturing.",
 });
-
-type BlogListItem = {
-  slug: string;
-  title: string;
-  category: string;
-  date: string;
-  image: string;
-  imageAlt: string;
-  featured?: boolean;
-};
 
 const blogs: BlogListItem[] = [
   ...triazineH2sBlogListItems,
@@ -141,12 +135,23 @@ const blogs: BlogListItem[] = [
 ];
 
 export default async function BlogPage() {
-  const imageOverrides = await getAllBlogImageOverrides();
+  const [imageOverrides, cmsBlogs] = await Promise.all([
+    getAllBlogImageOverrides(),
+    getPublishedCmsBlogListItems(),
+  ]);
+
+  // CMS articles take precedence over a hard-coded entry with the same slug,
+  // matching the resolution order used by /blog/[slug].
+  const cmsSlugs = new Set(cmsBlogs.map((blog) => blog.slug));
+  const mergedBlogs: BlogListItem[] = [
+    ...cmsBlogs,
+    ...blogs.filter((blog) => !cmsSlugs.has(blog.slug)),
+  ];
 
   return (
-    <BlogPageClient 
-      initialBlogs={blogs} 
-      imageOverrides={imageOverrides} 
+    <BlogPageClient
+      initialBlogs={mergedBlogs}
+      imageOverrides={imageOverrides}
     />
   );
 }

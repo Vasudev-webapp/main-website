@@ -75,7 +75,11 @@ export const PRODUCT_META_OVERRIDES: Record<string, ProductMetaOverride> = {
       "Buy EDDM (Ethylenedioxy Dimethanol) CAS 3586-55-8 — Indian manufacturer. Non-triazine H2S scavenger & industrial biocide. 90-95% purity. Preventol EDDM alternative. ISO 9001. Global supply.",
   },
   "bit-20-benzisothiazolinone": {
-    title: "BIT 20% Benzisothiazolinone Manufacturer India",
+    // CAS added: every competitor ranking for these terms (ChemicalBook,
+    // Mubychem, Sigma, TCI) carries it, and chemical buyers scan for the CAS as
+    // an identity check. There was room — the old title was 46 chars; this is
+    // 60, still inside Google's display limit.
+    title: "BIT 20% Benzisothiazolinone CAS 2634-33-5 | Manufacturer",
     description:
       "BIT 20% (1,2-Benzisothiazolin-3-one, CAS 2634-33-5) formaldehyde-free in-can preservative from ISO 9001 Gujarat manufacturer. For paints, adhesives, inks, metalworking fluids & detergents. Preventol/Nipacide BIT 20 alternative. Request COA, SDS & sample.",
   },
