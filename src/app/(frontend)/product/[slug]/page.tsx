@@ -65,6 +65,7 @@ import {
 import { hydrotropeProductArticleLinks } from "@/app/(frontend)/blog/[slug]/hydrotrope-articles-data";
 import { getProductKeywordContentSections } from "@/lib/seo/keyword-content-sections";
 import { getProductInternalLinks } from "@/lib/seo/internal-links";
+import AuthorByline from "@/components/blog/AuthorByline";
 import {
   SXS_40_SLUG,
   SXS_40_CHEMICAL_IDENTIFIERS,
@@ -120,6 +121,8 @@ import {
   BKC_80_COMPARISON_TABLE,
   BKC_80_REGULATORY_MATRIX,
   BKC_80_DILUTION_TABLE,
+  BKC_80_STRUCTURE_SUMMARY,
+  BKC_80_HOMOLOG_FORMULAS,
 } from "@/lib/seo/bkc-80-content";
 
 /* ─── ISR: revalidate product pages every hour ──────────────── */
@@ -145,6 +148,8 @@ export async function generateMetadata({
     if (!product) return {};
 
     const isMeaTriazine = slug === MEA_TRIAZINE_SLUG;
+    const isBkc50 = slug === BKC_50_SLUG;
+    const isBkc80 = slug === BKC_80_SLUG;
     const metaOverride = PRODUCT_META_OVERRIDES[slug];
 
     // Engine fallback (new products only). Gated so curated + bare existing
@@ -195,10 +200,16 @@ export async function generateMetadata({
       ? Object.fromEntries(
         MEA_TRIAZINE_MARKET_LANGUAGE_CODES.map((languageCode) => [languageCode, canonicalUrl])
       )
-      : {
-        en: canonicalUrl,
-        "x-default": canonicalUrl,
-      };
+      : (isBkc50 || isBkc80)
+        ? {
+          en: canonicalUrl,
+          "en-IN": canonicalUrl,
+          "x-default": canonicalUrl,
+        }
+        : {
+          en: canonicalUrl,
+          "x-default": canonicalUrl,
+        };
 
     return applyPageMetaOverride(canonicalUrl, {
       title,
@@ -233,8 +244,12 @@ export async function generateMetadata({
         url: canonicalUrl,
         type: "website",
         siteName: "Vasudev Chemo Pharma Chemicals",
-        locale: isMeaTriazine ? "en_IN" : "en_US",
-        alternateLocale: isMeaTriazine ? [...MEA_TRIAZINE_OG_LOCALES] : undefined,
+        locale: (isMeaTriazine || isBkc50 || isBkc80) ? "en_IN" : "en_US",
+        alternateLocale: isMeaTriazine
+          ? [...MEA_TRIAZINE_OG_LOCALES]
+          : (isBkc50 || isBkc80)
+            ? ["en_US"]
+            : undefined,
         images: [
           {
             url: ogImageUrl,
@@ -974,6 +989,54 @@ export default async function ProductDetailPage({
             </section>
           )}
 
+          {/* ─── BKC 50%: MANUFACTURER / EXPORTER / SUPPLIER BUYING-INTENT SECTION (SEO) ─── */}
+          {isBkc50 && (
+            <section id="manufacturer-supplier" className="mb-16">
+              <h2 className="font-heading text-h3 text-primary mb-6">
+                Benzalkonium Chloride Manufacturer, Exporter and Supplier
+              </h2>
+              <AuthorByline
+                name="Vasudev Chemo Pharma Formulation & Regulatory Affairs Team"
+                credentials="Industrial Chemistry, Biocide Formulation"
+                publishedDate="2026-08-04"
+                lastUpdated="2026-08-04"
+              />
+              <div className="prose prose-gray max-w-none text-gray-600 leading-relaxed mt-6">
+                <p>
+                  Vasudev Chemo Pharma is a direct <strong>Benzalkonium Chloride
+                  manufacturer in India</strong> and a leading <strong>BKC 50%
+                  supplier in India</strong>, producing Benzalkonium chloride
+                  (BKC) 50% at our ISO 9001:2015, GMP and Halal-certified plant
+                  in Ankleshwar, Gujarat. As a factory-direct <strong>Benzalkonium
+                  Chloride manufacturer, exporter and supplier</strong>, we ship
+                  Benzalkonium Chloride BKC 50% and 80% in 200 L drums, 1000 L IBC
+                  totes and bulk tanker/ISO-tank loads.
+                </p>
+                <p>
+                  Buyers searching for a <strong>BKC supplier</strong> or a
+                  Benzalkonium Chloride BKC 50 exporter choose Vasudev Chemo
+                  Pharma for factory-direct pricing, batch-wise Certificate of
+                  Analysis (COA), Safety Data Sheet (SDS) and Halal certification
+                  on every shipment — with no trading middleman. We supply both
+                  grades, Benzalkonium Chloride BKC 50% and 80%, from the same
+                  ISO 9001:2015 facility, so formulators can single-source across
+                  concentration and packaging needs.
+                </p>
+                <p>
+                  Domestic buyers across India and export customers in the USA,
+                  UAE, Saudi Arabia, Brazil, Vietnam and Russia source Benzalkonium
+                  chloride (BKC) 50% directly from this Gujarat manufacturer for
+                  hospital disinfectants, food-contact sanitisers, pool algicides
+                  and cosmetic preservation.{" "}
+                  <Link href="/contact?product=benzalkonium-chloride-50" className="text-accent hover:underline font-medium">
+                    Request a quote
+                  </Link>{" "}
+                  for BKC 50% supply to your location.
+                </p>
+              </div>
+            </section>
+          )}
+
           {/* ─── BKC 50% / 80%: CHEMICAL IDENTITY, APPLICATIONS, COMPARISON, REGULATORY ─── */}
           {isBkc50 && (
             <BkcContentSections
@@ -1008,6 +1071,8 @@ export default async function ProductDetailPage({
               }}
               regulatory={BKC_80_REGULATORY_MATRIX}
               dilution={BKC_80_DILUTION_TABLE}
+              structureSummary={BKC_80_STRUCTURE_SUMMARY}
+              homologFormulas={BKC_80_HOMOLOG_FORMULAS}
             />
           )}
 

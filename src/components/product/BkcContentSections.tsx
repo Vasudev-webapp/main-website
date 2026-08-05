@@ -20,6 +20,18 @@ type DilutionRow = {
   waterMass: string;
   notes: string;
 };
+type HomologRow = {
+  chainLength: string;
+  commonName: string;
+  casNumber: string;
+  molecularFormula: string;
+  molecularWeight: string;
+};
+type StructureSummary = {
+  generalFormula: string;
+  structureDescription: string;
+  clarificationNote: string;
+};
 
 export type BkcContentSectionsProps = {
   productName: string;
@@ -32,6 +44,8 @@ export type BkcContentSectionsProps = {
   comparison: ComparisonTable;
   regulatory: Row[];
   dilution?: DilutionRow[];
+  structureSummary?: StructureSummary;
+  homologFormulas?: HomologRow[];
 };
 
 export default function BkcContentSections({
@@ -45,19 +59,22 @@ export default function BkcContentSections({
   comparison,
   regulatory,
   dilution,
+  structureSummary,
+  homologFormulas,
 }: BkcContentSectionsProps) {
   return (
     <>
       {/* ─── Chemical identifiers & synonyms ─────────────────────── */}
       <section id="identifiers" className="mb-16">
         <h2 className="font-heading text-h3 text-primary mb-6">
-          Chemical Identifiers &amp; Synonyms
+          What Are the Chemical Identifiers &amp; Synonyms of {productName}?
         </h2>
         <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-6">
-          {productName} is referenced across regulatory, customs and formulation
-          systems by the identifiers below. Use this table to match technical
-          specifications, customs HS codes and supplier brand names from any
-          global source to the same active substance (ADBAC, CAS 8001-54-5).
+          {productName} — CAS 8001-54-5 — is referenced across regulatory,
+          customs and formulation systems by the identifiers below. Use this
+          table to match technical specifications, customs HS codes and
+          supplier brand names from any global source to the same active
+          substance (ADBAC, CAS 8001-54-5).
         </p>
 
         <div className="border border-gray-200 rounded-2xl overflow-hidden overflow-x-auto mb-8">
@@ -104,16 +121,68 @@ export default function BkcContentSections({
         </div>
       </section>
 
+      {/* ─── Structure & formula ──────────────────────────────────── */}
+      {structureSummary && (
+        <section id="structure-formula" className="mb-16">
+          <h2 className="font-heading text-h3 text-primary mb-6">
+            {productName} Structure and Formula
+          </h2>
+          <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-4">
+            {structureSummary.structureDescription}
+          </p>
+          <div className="border border-gray-200 rounded-2xl p-6 bg-light mb-6 max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">
+              General (mixture) formula
+            </p>
+            <p className="font-mono text-sm text-primary break-words">
+              {structureSummary.generalFormula}
+            </p>
+          </div>
+          <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-6">
+            {structureSummary.clarificationNote}
+          </p>
+
+          {homologFormulas && homologFormulas.length > 0 && (
+            <div className="border border-gray-200 rounded-2xl overflow-hidden overflow-x-auto">
+              <table className="w-full text-sm min-w-[640px]">
+                <thead>
+                  <tr className="bg-primary text-white">
+                    <th className="text-left px-4 py-3 font-semibold">Alkyl Chain</th>
+                    <th className="text-left px-4 py-3 font-semibold">Homolog Name</th>
+                    <th className="text-left px-4 py-3 font-semibold">CAS No.</th>
+                    <th className="text-left px-4 py-3 font-semibold">Molecular Formula</th>
+                    <th className="text-left px-4 py-3 font-semibold">Mol. Weight</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {homologFormulas.map((row, i) => (
+                    <tr key={row.casNumber} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
+                      <td className="px-4 py-3 font-medium text-gray-700">{row.chainLength}</td>
+                      <td className="px-4 py-3 text-gray-600">{row.commonName}</td>
+                      <td className="px-4 py-3 text-gray-600 font-mono text-xs">{row.casNumber}</td>
+                      <td className="px-4 py-3 text-accent font-mono font-semibold">{row.molecularFormula}</td>
+                      <td className="px-4 py-3 text-gray-600">{row.molecularWeight}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </section>
+      )}
+
       {/* ─── Applications by industry ────────────────────────────── */}
       <section id="industry-applications" className="mb-16">
         <h2 className="font-heading text-h3 text-primary mb-6">
-          Applications by Industry &amp; Dosage Guidelines
+          What Is {productName} Used For? Applications &amp; Dosage by Industry
         </h2>
         <p className="max-w-3xl text-sm leading-relaxed text-gray-600 mb-8">
-          {productName} is used across healthcare, food &amp; beverage, personal
-          care, water treatment, agriculture and industrial sectors. Use the
-          dosage ranges below as a starting point — always confirm efficacy in
-          your specific formulation and against applicable regulations.
+          {productName} is used at 0.05%–0.4% active quat across healthcare,
+          food &amp; beverage, personal care, water treatment, agriculture and
+          industrial sectors as a disinfectant, sanitiser, algicide and
+          preservative. Use the dosage ranges below as a starting point —
+          always confirm efficacy in your specific formulation and against
+          applicable regulations.
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {applicationBlocks.map((block) => (
@@ -217,7 +286,7 @@ export default function BkcContentSections({
       {/* ─── Regulatory & quality matrix ─────────────────────────── */}
       <section id="regulatory" className="mb-16">
         <h2 className="font-heading text-h3 text-primary mb-6">
-          Regulatory, Compliance &amp; Quality Status
+          Is {productName} Regulatory-Compliant? Certifications &amp; Quality Status
         </h2>
         <div className="border border-gray-200 rounded-2xl overflow-hidden overflow-x-auto">
           <table className="w-full text-sm min-w-[520px]">
@@ -231,6 +300,31 @@ export default function BkcContentSections({
             </tbody>
           </table>
         </div>
+        <p className="text-xs text-gray-400 italic mt-4">
+          Sources: US EPA List N (Disinfectants for Use Against SARS-CoV-2) —
+          applicable only to specific finished-formulation products bearing
+          an EPA registration number and label directions derived from this
+          active ingredient, not to the raw concentrate itself,{" "}
+          <a
+            href="https://www.epa.gov/pesticide-registration/list-n-disinfectants-coronavirus-covid-19"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="underline hover:text-gray-600"
+          >
+            epa.gov/list-n
+          </a>
+          ; US FDA 21 CFR 178.1010 (food-contact sanitising solutions),{" "}
+          <a
+            href="https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-178/subpart-C/section-178.1010"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="underline hover:text-gray-600"
+          >
+            ecfr.gov/178.1010
+          </a>
+          ; ECHA CLP/GHS classification for ADBAC (CAS 8001-54-5); EN 1276 /
+          EN 14476 / AOAC use-dilution efficacy test methods.
+        </p>
         <p className="mt-6 text-sm text-gray-600 max-w-3xl">
           Need grade-specific documentation for {productName}?{" "}
           <Link

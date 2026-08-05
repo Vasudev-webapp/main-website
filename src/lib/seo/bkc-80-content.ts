@@ -53,6 +53,76 @@ export const BKC_80_CHEMICAL_IDENTIFIERS: BkcIdentifierRow[] = [
   { label: "EPA PC Code (US Antimicrobial)", value: "069105" },
 ];
 
+/* ───────────────── Structure & formula explainer (targets the search term
+ * "Benzalkonium Chloride structure and formula" / "Benzalkonium Chloride |
+ * C22H40ClN"). BKC is a MIXTURE of alkyl chain lengths (C8–C18), so there is
+ * no single fixed molecular formula for the technical-grade product — this
+ * table gives the general (mixture) formula plus the per-homolog formulas so
+ * a buyer arriving from a homolog-specific search (e.g. C22H40ClN, which is
+ * actually the C14/myristyl homolog, not a generic BKC formula) lands on
+ * accurate, disambiguated information rather than a single wrong number. ── */
+
+export type BkcHomologRow = {
+  chainLength: string;
+  commonName: string;
+  casNumber: string;
+  molecularFormula: string;
+  molecularWeight: string;
+};
+
+export const BKC_80_STRUCTURE_SUMMARY = {
+  generalFormula: "C₆H₅CH₂N(CH₃)₂RCl, where R = a straight-chain alkyl group from C₈H₁₇ to C₁₈H₃₇",
+  structureDescription:
+    "Benzalkonium Chloride (BKC) is not a single-formula compound — it is a mixture of alkylbenzyldimethylammonium chlorides. Each molecule has a quaternary nitrogen centre carrying four substituents: a benzyl group (C₆H₅CH₂–), two methyl groups (CH₃), one long straight-chain alkyl group (R, ranging from octyl C₈ to octadecyl C₁₈), and a chloride counter-ion (Cl⁻). Because commercial BKC is a blend of alkyl chain lengths — typically dominated by C₁₂ (dodecyl), C₁₄ (tetradecyl), and C₁₆ (hexadecyl) homologs — the technical product does not have one single molecular formula or molecular weight; instead it has the average molecular weight (354.0 g/mol for BKC 80%'s typical C₁₂–C₁₆ distribution) and a formula range shown below.",
+  clarificationNote:
+    "Searches for a single fixed formula such as \"C22H40ClN\" for Benzalkonium Chloride refer to one specific alkyl-chain homolog within the BKC family — C22H40ClN corresponds to the C14 (tetradecyl / myristyl) dimethylbenzylammonium chloride homolog, CAS 139-08-2, not the CAS 8001-54-5 technical mixture sold commercially. The table below lists the exact formula for each common homolog so the correct one can be identified for regulatory or formulation cross-referencing.",
+} as const;
+
+export const BKC_80_HOMOLOG_FORMULAS: BkcHomologRow[] = [
+  {
+    chainLength: "C₈ (octyl)",
+    commonName: "Octyldimethylbenzylammonium chloride",
+    casNumber: "959-55-7",
+    molecularFormula: "C₁₇H₃₀ClN",
+    molecularWeight: "283.9 g/mol",
+  },
+  {
+    chainLength: "C₁₀ (decyl)",
+    commonName: "Decyldimethylbenzylammonium chloride",
+    casNumber: "17301-53-0",
+    molecularFormula: "C₁₉H₃₄ClN",
+    molecularWeight: "311.9 g/mol",
+  },
+  {
+    chainLength: "C₁₂ (dodecyl / lauryl) — dominant homolog",
+    commonName: "Dodecyldimethylbenzylammonium chloride",
+    casNumber: "139-07-1",
+    molecularFormula: "C₂₁H₃₈ClN",
+    molecularWeight: "340.0 g/mol",
+  },
+  {
+    chainLength: "C₁₄ (tetradecyl / myristyl)",
+    commonName: "Tetradecyldimethylbenzylammonium chloride",
+    casNumber: "139-08-2",
+    molecularFormula: "C₂₂H₄₀ClN",
+    molecularWeight: "354.0 g/mol",
+  },
+  {
+    chainLength: "C₁₆ (hexadecyl / cetyl)",
+    commonName: "Hexadecyldimethylbenzylammonium chloride",
+    casNumber: "122-18-9",
+    molecularFormula: "C₂₄H₄₄ClN",
+    molecularWeight: "382.1 g/mol",
+  },
+  {
+    chainLength: "C₁₈ (octadecyl / stearyl)",
+    commonName: "Octadecyldimethylbenzylammonium chloride",
+    casNumber: "122-19-0",
+    molecularFormula: "C₂₆H₄₈ClN",
+    molecularWeight: "410.1 g/mol",
+  },
+];
+
 /* ───────────────── Generic + IUPAC synonyms ──────────────────────────────── */
 
 export const BKC_80_GENERIC_SYNONYMS: string[] = [
@@ -71,6 +141,7 @@ export const BKC_80_GENERIC_SYNONYMS: string[] = [
   "Cloruro de Benzalconio 80%",
   "Cloreto de Benzalcônio 80%",
   "Chlorure de Benzalkonium 80%",
+  "Biocide Chemical (Quaternary Ammonium Compound) 80%",
 ];
 
 /* ───────────────── Trade-name equivalents (CRITICAL for 80% export) ──────── */
@@ -420,6 +491,6 @@ export const BKC_80_SCHEMA_ENRICHMENT = {
     { name: "Origin", value: "Manufactured in India" },
     { name: "Manufacturing Standards", value: "ISO 9001:2015 + GMP + Halal" },
   ],
-  category: "Surfactant Chemicals — Quaternary Ammonium Compounds (Quats) — Concentrate",
+  category: "Surfactant Chemicals — Quaternary Ammonium Compounds (Quats) / Biocide Chemicals — Concentrate",
   countryOfOrigin: "IN",
 } as const;

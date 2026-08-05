@@ -68,6 +68,17 @@ type LiveBlogSlug = {
 
 const HIGH_PRIORITY_PRODUCTS = new Set([
   "mea-triazine-78-h2s-scavenger",
+  "benzalkonium-chloride-50",
+  // BKC 80% is the highest-volume export grade (see src/lib/seo/bkc-80-content.ts
+  // header comment) — was previously missing from this set despite BKC 50%
+  // being included, giving BKC 80% a lower sitemap priority than its own
+  // "highest-value optimisation" status warrants.
+  "benzalkonium-chloride-80",
+]);
+
+const WEEKLY_PRODUCTS = new Set([
+  "benzalkonium-chloride-50",
+  "benzalkonium-chloride-80",
 ]);
 
 const STATIC_ROUTES: RouteConfig[] = [
@@ -278,7 +289,7 @@ export async function GET() {
       const product = liveProducts.find((p) => p.slug === slug);
       const entry = buildEntry(
         `/product/${slug}`,
-        "monthly",
+        WEEKLY_PRODUCTS.has(slug) ? "weekly" : "monthly",
         HIGH_PRIORITY_PRODUCTS.has(slug) ? 0.95 : 0.9,
         now
       );

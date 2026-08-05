@@ -580,7 +580,7 @@ export const BENZALKONIUM_CHLORIDE_50_FAQS: FAQItem[] = [
   {
     question: "Is BKC 50% compatible with anionic surfactants like LABSA, SLES, or SCS/SXS hydrotropes?",
     answer:
-      "No. BKC is a cationic surfactant and is generally incompatible with anionic surfactants — including LABSA, SLES, SLS, sodium cumene sulfonate (SCS), sodium xylene sulfonate (SXS), and most soap-based systems. Mixing forms an insoluble ion-pair complex that precipitates out of solution and destroys both biocidal activity and detergency. BKC IS compatible with nonionic surfactants (alcohol ethoxylates, APGs, Tween series), amphoteric surfactants (cocamidopropyl betaine when pH > IEP), and other cationic/quat systems.",
+      "BKC 50% is generally incompatible with anionic surfactants — including LABSA, SLES, SLS, sodium cumene sulfonate (SCS), sodium xylene sulfonate (SXS), and most soap-based systems — because BKC is a cationic surfactant. Mixing forms an insoluble ion-pair complex that precipitates out of solution and destroys both biocidal activity and detergency. BKC IS compatible with nonionic surfactants (alcohol ethoxylates, APGs, Tween series), amphoteric surfactants (cocamidopropyl betaine when pH > IEP), and other cationic/quat systems.",
   },
   {
     question: "What grades of BKC 50% does Vasudev Chemo Pharma manufacture?",
@@ -595,7 +595,7 @@ export const BENZALKONIUM_CHLORIDE_50_FAQS: FAQItem[] = [
   {
     question: "Can BKC 50% be used to disinfect swimming pools and spa water?",
     answer:
-      "Yes. BKC 50% is an effective algicide and supplementary sanitiser for residential and commercial swimming pools, spas, and recreational water. Typical dose: 5–15 ppm active quat (10–30 ml of BKC 50% per 1,000 litres of pool water) as a weekly preventive against algae bloom. BKC works synergistically with chlorine-based primary disinfectants and at slightly elevated pH where chlorine alone is less effective. It is non-foaming at recommended pool concentrations and does not affect pH significantly. Always follow local pool water regulations.",
+      "BKC 50% is an effective algicide and supplementary sanitiser for residential and commercial swimming pools, spas, and recreational water. Typical dose: 5–15 ppm active quat (10–30 ml of BKC 50% per 1,000 litres of pool water) as a weekly preventive against algae bloom. BKC works synergistically with chlorine-based primary disinfectants and at slightly elevated pH where chlorine alone is less effective. It is non-foaming at recommended pool concentrations and does not affect pH significantly. Always follow local pool water regulations.",
   },
   {
     question: "What is the storage and shelf life of BKC 50%?",
@@ -605,7 +605,7 @@ export const BENZALKONIUM_CHLORIDE_50_FAQS: FAQItem[] = [
   {
     question: "Is BKC 50% Halal-certified and Kosher-certified?",
     answer:
-      "Yes. Vasudev Chemo Pharma's BKC 50% is Halal-certified by a recognised Indian Halal certification body (certificate provided with each shipment on request — important for export to UAE, Saudi Arabia, Malaysia, Indonesia, and other Muslim-majority markets). Kosher certification is available on request for buyers serving the Israeli and US Jewish-market food sanitation segments. Our manufacturing facility is also GMP certified for cosmetic and pharmaceutical-grade production, and ISO 9001:2015 certified for quality management.",
+      "Vasudev Chemo Pharma's BKC 50% is Halal-certified by a recognised Indian Halal certification body, with the certificate provided with each shipment on request — important for export to UAE, Saudi Arabia, Malaysia, Indonesia, and other Muslim-majority markets. Kosher certification is available on request for buyers serving the Israeli and US Jewish-market food sanitation segments. Our manufacturing facility is also GMP certified for cosmetic and pharmaceutical-grade production, and ISO 9001:2015 certified for quality management.",
   },
   {
     question: "What documentation is provided with BKC 50% shipments?",

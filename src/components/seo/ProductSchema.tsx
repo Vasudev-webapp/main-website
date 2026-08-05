@@ -108,16 +108,23 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
     offers: {
       "@type": "Offer",
       ...(availability ? { availability } : {}),
-      priceCurrency: product.currency || "USD",
       ...(hasPrice
         ? {
+          priceCurrency: product.currency || "USD",
           priceSpecification: {
-            "@type": "PriceSpecification",
+            "@type": "UnitPriceSpecification",
             price: product.price,
             priceCurrency: product.currency || "USD",
           },
         }
-        : {}),
+        : {
+          // No public unit price for this bulk B2B chemical — omit price/
+          // priceCurrency entirely rather than emitting priceCurrency
+          // without a price (which is an invalid/incomplete Offer per
+          // Google's Product structured data guidelines). Buyers request
+          // a quote instead.
+          businessFunction: "http://purl.org/goodrelations/v1#Sell",
+        }),
       url: `https://www.vasudevchemopharma.com/product/${product.slug}`,
       seller: {
         "@type": "Organization",
