@@ -15,6 +15,8 @@ export default function robots(): MetadataRoute.Robots {
           "/payload",
           "/payload/*",
           "/api/",
+          "/landing/",
+          "/landing/*",
           "/tmp",
           "/tmp/*",
         ],
