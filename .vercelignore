@@ -29,7 +29,8 @@ content/
 _dev-archive/
 claude-seo/
 content-strategy-context/
-assets/
+# Root-only: bare "assets/" also excluded public/lp/assets/ from deploy (404 on live).
+/assets/
 .kiro/
 .claude/
 .cursor/
