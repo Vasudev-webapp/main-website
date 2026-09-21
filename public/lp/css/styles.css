@@ -7,7 +7,7 @@
   --brand: #3c2a98;
   --brand-deep: #241a5c;
   --brand-mid: #3d4dda;
-  --accent: #00a658;
+  --accent: #00C96B;
   --accent-dark: #008a48;
   --wa: #25d366;
   --wa-dark: #1ebe57;
@@ -295,6 +295,10 @@ textarea {
 }
 
 .logo__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.95rem;
@@ -302,8 +306,15 @@ textarea {
   line-height: 1.2;
 }
 
-.logo__text span {
+.logo__name,
+.logo__tag {
   display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logo__tag {
   font-weight: 500;
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -329,6 +340,90 @@ textarea {
 @media (min-width: 480px) {
   .header-actions .btn--wa span {
     display: inline;
+  }
+}
+
+/* Narrow phones (≈200–395px): keep logo readable, prevent crop/overlap */
+@media (max-width: 395px) {
+  .site-header .container {
+    width: min(100% - 1rem, var(--container));
+  }
+
+  .site-header__inner {
+    gap: 0.5rem;
+  }
+
+  .logo {
+    flex: 1 1 auto;
+    gap: 0.4rem;
+    min-width: 0;
+  }
+
+  .logo img {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .logo__text {
+    flex: 1 1 auto;
+    font-size: 0.72rem;
+    line-height: 1.25;
+  }
+
+  .logo__tag {
+    font-size: 0.58rem;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .header-actions .btn {
+    min-height: 44px;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  .header-actions .btn--wa {
+    min-width: 44px;
+    padding-inline: 0.55rem;
+  }
+}
+
+/* ≤360px: hide logo text; scale mark so icon-only brand stays clear */
+@media (max-width: 360px) {
+  .logo__text {
+    display: none;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+  }
+
+  .logo img {
+    width: clamp(48px, 18vw, 56px);
+    height: clamp(48px, 18vw, 56px);
+  }
+
+  .header-actions .btn--brand {
+    padding-inline: 0.55rem;
+  }
+}
+
+/* 396–464px: logo text ellipsizes — icon-only mark (leaves ≤395 / ≤360 rules intact) */
+@media (min-width: 396px) and (max-width: 464px) {
+  .logo__text {
+    display: none;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+  }
+
+  .logo img {
+    width: clamp(48px, 12vw, 56px);
+    height: clamp(48px, 12vw, 56px);
   }
 }
 
@@ -363,9 +458,19 @@ textarea {
   overflow: hidden;
   isolation: isolate;
 }
+.hero__logo__name {
+  color: var(--bg);
+}
+.hero__logo__tag {
+  color: var(--text-muted);
+}
 .hero__title-accent {
   display: inline-block; 
   color: var(--accent); 
+}
+.hero__title-accent span{
+  display: inline-block; 
+  color: var(--bg);
 }
 .hero__media {
   position: absolute;
@@ -431,7 +536,7 @@ textarea {
   margin: 0 0 var(--space-6);
   max-width: 42ch;
   font-size: clamp(1rem, 2.2vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .hero__ctas {
