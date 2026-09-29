@@ -108,7 +108,7 @@ export default async function Footer() {
           <FooterColumn title="Company" links={companyLinks} />
         </div>
 
-        <div className="grid grid-cols-1 gap-6 border-b border-white/10 py-8 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 py-8 md:grid-cols-4">
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-white/40">
               Corporate Office
@@ -164,21 +164,6 @@ export default async function Footer() {
               )}
             </div>
           </div>
-        </div>
-
-        <div className="flex flex-col items-center justify-between gap-4 pt-5 sm:flex-row">
-          <p className="text-sm text-white/40">
-            &copy; {new Date().getFullYear()} {company.companyName || "-"}. All
-            rights reserved. Designed by{" "}
-            <a
-              href="https://www.aayvimotechnologies.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/60 hover:text-white"
-            >
-              Aayvimo Technologies, Ankleshwar
-            </a>
-          </p>
         </div>
       </div>
     </footer>
