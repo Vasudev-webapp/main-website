@@ -8,6 +8,8 @@ import { CATEGORY_LABELS, Product } from "@/lib/types";
 import { getCategoryPriorityMap } from "@/lib/product-sequencing";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import FaqSection from "@/components/seo/FaqSection";
+import { PRODUCTS_INDEX_FAQS } from "@/lib/seo/page-faqs";
 
 export const revalidate = 3600;
 
@@ -147,6 +149,8 @@ export default async function ProductPage() {
             </div>
           </section>
         ))}
+
+        <FaqSection items={PRODUCTS_INDEX_FAQS} className="pb-16" />
 
         {/* CTA */}
         <section className="pb-20">

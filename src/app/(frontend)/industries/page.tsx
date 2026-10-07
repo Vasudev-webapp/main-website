@@ -5,6 +5,8 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import FaqSection from "@/components/seo/FaqSection";
+import { INDUSTRIES_INDEX_FAQS } from "@/lib/seo/page-faqs";
 
 const SITE_URL = "https://www.vasudevchemopharma.com";
 
@@ -248,6 +250,8 @@ export default function IndustriesIndexPage() {
             </div>
           </div>
         </section>
+
+        <FaqSection items={INDUSTRIES_INDEX_FAQS} className="mt-16" />
 
         {/* CTA */}
         <section className="mt-20">

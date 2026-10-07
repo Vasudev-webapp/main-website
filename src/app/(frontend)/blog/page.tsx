@@ -9,6 +9,8 @@ import {
   getPublishedCmsBlogListItems,
 } from "@/lib/blogs-payload";
 import type { BlogListItem } from "@/lib/blog/article";
+import FaqSection from "@/components/seo/FaqSection";
+import { BLOG_INDEX_FAQS } from "@/lib/seo/page-faqs";
 
 export const revalidate = 3600;
 
@@ -149,9 +151,12 @@ export default async function BlogPage() {
   ];
 
   return (
+    <>
     <BlogPageClient
       initialBlogs={mergedBlogs}
       imageOverrides={imageOverrides}
     />
+    <FaqSection items={BLOG_INDEX_FAQS} className="pb-20" />
+    </>
   );
 }

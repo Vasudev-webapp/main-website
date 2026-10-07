@@ -16,6 +16,8 @@ import {
   TRIAZINE_MANUFACTURER_KEYWORDS,
   mergeKeywordClusters,
 } from "@/lib/seo/keyword-clusters";
+import FaqSection from "@/components/seo/FaqSection";
+import { HOME_FAQS } from "@/lib/seo/page-faqs";
 
 // Homepage reads the live product catalogue from the CMS (ProductsSection +
 // GlobalSupplySection). Use ISR so new/updated products appear without a full
@@ -65,6 +67,7 @@ export default function HomePage() {
         <WhyChooseSection />
         <GlobalSupplySection />
         <BlogSection />
+        <FaqSection items={HOME_FAQS} />
       </main>
     </>
   );

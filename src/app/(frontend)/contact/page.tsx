@@ -6,6 +6,8 @@ import dynamic from "next/dynamic";
 import { getCompanyInfo } from "@/lib/company";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import FaqSection from "@/components/seo/FaqSection";
+import { CONTACT_FAQS } from "@/lib/seo/page-faqs";
 
 // Lazy-load ContactForm — not part of LCP
 const ContactForm = dynamic(() => import("@/components/contact/ContactForm"), {
@@ -163,6 +165,8 @@ export default async function ContactPage() {
             </div>
           </div>
         </section>
+
+        <FaqSection items={CONTACT_FAQS} className="py-12 lg:py-20 bg-light mb-20" />
 
         {/* Client Logos */}
         {/* <section className="pb-20">

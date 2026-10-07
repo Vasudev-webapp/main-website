@@ -7,6 +7,8 @@ import Button from "@/components/Button";
 import { getCompanyInfo } from "@/lib/company";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import FaqSection from "@/components/seo/FaqSection";
+import { ABOUT_FAQS } from "@/lib/seo/page-faqs";
 
 export const revalidate = 3600;
 
@@ -224,6 +226,8 @@ export default async function AboutPage() {
             </div>
           </div>
         </section>
+
+        <FaqSection items={ABOUT_FAQS} className="py-12 lg:py-20 bg-light" />
 
         {/* Internal Links Section */}
         <section className="py-16">

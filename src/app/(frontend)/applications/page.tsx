@@ -5,6 +5,8 @@ import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { APPLICATION_PAGES_DATA } from "@/lib/seo/application-pages-data";
+import FaqSection from "@/components/seo/FaqSection";
+import { APPLICATIONS_INDEX_FAQS } from "@/lib/seo/page-faqs";
 import {
   buildApplicationPagePath,
   SITE_URL,
@@ -316,6 +318,8 @@ export default function ApplicationsIndexPage() {
             ))}
           </div>
         </section>
+
+        <FaqSection items={APPLICATIONS_INDEX_FAQS} className="mt-16" />
       </main>
     </>
   );

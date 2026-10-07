@@ -5,6 +5,8 @@ import Link from "next/link";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { CASE_STUDIES } from "@/lib/case-studies-data";
+import FaqSection from "@/components/seo/FaqSection";
+import { CASE_STUDY_INDEX_FAQS } from "@/lib/seo/page-faqs";
 
 export const revalidate = 3600;
 const CASE_STUDY_URL = "https://www.vasudevchemopharma.com/case-study";
@@ -103,6 +105,8 @@ export default function CaseStudyPage() {
             </div>
           </div>
         </section>
+
+        <FaqSection items={CASE_STUDY_INDEX_FAQS} className="py-12 lg:py-20 bg-light" />
       </main>
     </>
   );

@@ -5,6 +5,8 @@ import SectionLabel from "@/components/SectionLabel";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { COMPETITOR_PAGES_DATA } from "@/lib/seo/competitor-comparison-data";
+import FaqSection from "@/components/seo/FaqSection";
+import { COMPARE_INDEX_FAQS } from "@/lib/seo/page-faqs";
 import {
   buildComparisonPagePath,
   MEA_TRIAZINE_PRODUCT_PATH,
@@ -98,6 +100,8 @@ export default function ComparisonIndexPage() {
             ))}
           </div>
         </section>
+
+        <FaqSection items={COMPARE_INDEX_FAQS} className="mt-16" />
 
         <section className="mt-16">
           <div className="max-w-container mx-auto px-6 lg:px-10">
