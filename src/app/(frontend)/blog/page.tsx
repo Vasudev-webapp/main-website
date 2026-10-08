@@ -3,6 +3,9 @@ import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import { hydrotropeBlogListItems } from "./[slug]/hydrotrope-articles-data";
 import { triazineH2sBlogListItems } from "./[slug]/triazine-h2s-articles-data";
 import { nonTriazineH2sBlogListItems } from "./[slug]/non-triazine-h2s-articles-data";
+import { scsVassol4090BlogListItems } from "./[slug]/scs-vassol-40-90-article-data";
+import { vasclean4090BlogListItems } from "./[slug]/vasclean-40-90-article-data";
+import { scs90BlogListItems } from "./[slug]/scs-90-article-data";
 import BlogPageClient from "./BlogPageClient";
 import {
   getAllBlogImageOverrides,
@@ -20,6 +23,9 @@ export const metadata: Metadata = applyPageMetaOverride("/blog", {
 });
 
 const blogs: BlogListItem[] = [
+  ...scsVassol4090BlogListItems,
+  ...vasclean4090BlogListItems,
+  ...scs90BlogListItems,
   ...triazineH2sBlogListItems,
   ...nonTriazineH2sBlogListItems,
   ...hydrotropeBlogListItems,
