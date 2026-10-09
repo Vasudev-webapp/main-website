@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import localFont from "next/font/local";
 // Root layout imports global CSS (includes .allow-copy copy-exception rules).
 import { Geist } from "next/font/google";
@@ -154,6 +155,9 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
+  verification: {
+    google: "j7HMOyBDN-gAAYBd17WKjsCtC_kB0gdueCaUVsiYcgo",
+  },
 };
 
 export default function FrontendLayout({
@@ -198,6 +202,21 @@ export default function FrontendLayout({
         className={`${monaSans.variable} ${geistSans.variable} antialiased`}
         suppressHydrationWarning
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-2K7JMSEF7P"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {
+            `window.dataLayer = window.dataLayer || [];
+            function gtag()
+            {
+              dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-2K7JMSEF7P');`
+          }
+        </Script>
         <SiteJsonLd />
         <CopyProtection />
         <Navbar />
