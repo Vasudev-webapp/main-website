@@ -5,6 +5,7 @@ import { nonTriazineH2sArticlesData } from "./non-triazine-h2s-articles-data";
 import { scsVassol4090ArticlesData } from "./scs-vassol-40-90-article-data";
 import { vasclean4090ArticlesData } from "./vasclean-40-90-article-data";
 import { scs90ArticlesData } from "./scs-90-article-data";
+import { bkc50ArticlesData } from "./bkc-50-article-data";
 
 /* ------------------------------------------------------------------ */
 /*  Blog data type (SEO-enriched)                                     */
@@ -61,6 +62,7 @@ export const blogData: Record<string, BlogEntry> = {
   ...scsVassol4090ArticlesData,
   ...vasclean4090ArticlesData,
   ...scs90ArticlesData,
+  ...bkc50ArticlesData,
 
   /* ================================================================== */
   /*  Month 2 — SEO Content Blog Posts                                  */
