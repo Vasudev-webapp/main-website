@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Metadata } from "next";
-import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
+import { Metadata, ResolvingMetadata } from "next";
+import { addMissingPageOpenGraph, applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import SectionLabel from "@/components/SectionLabel";
 import Button from "@/components/Button";
 import { getAllProducts } from "@/lib/products-payload";
@@ -13,7 +13,7 @@ import { PRODUCTS_INDEX_FAQS } from "@/lib/seo/page-faqs";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = applyPageMetaOverride("/product", {
+const metadata: Metadata = applyPageMetaOverride("/product", {
   title: "Chemical Products — Industrial, Specialty & Surfactant | Vasudev Chemo Pharma",
   description:
     "Browse chemical products from Vasudev Chemo Pharma — ISO 9001:2015 certified manufacturer in Gujarat, India. Industrial chemicals, specialty chemicals, and surfactant chemicals. Request a quote today.",
@@ -21,6 +21,13 @@ export const metadata: Metadata = applyPageMetaOverride("/product", {
     canonical: "https://www.vasudevchemopharma.com/product",
   },
 });
+
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  return addMissingPageOpenGraph("/product", metadata, await parent);
+}
 
 function groupByCategory(products: Product[]) {
   const groups: Record<string, Product[]> = {};

@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
-import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
+import { addMissingPageOpenGraph, applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import { getAllProducts } from "@/lib/products-payload";
 import { CUSTOM_LANDING_PAGES_DATA } from "@/lib/seo/custom-landing-pages-data";
 import { COUNTRY_PAGES_DATA } from "@/lib/seo/country-pages-data";
@@ -20,7 +20,7 @@ import {
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = applyPageMetaOverride("/sitemap", {
+const metadata: Metadata = applyPageMetaOverride("/sitemap", {
   title: "Site Directory & Visual Sitemap | Vasudev Chemo Pharma",
   description:
     "Explore the complete page directory of Vasudev Chemo Pharma. Discover how our H2S scavengers, industrial biocides, and hydrotropes connect to various applications, locations, and global supply hubs.",
@@ -34,6 +34,13 @@ export const metadata: Metadata = applyPageMetaOverride("/sitemap", {
     url: "https://www.vasudevchemopharma.com/sitemap",
   },
 });
+
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  return addMissingPageOpenGraph("/sitemap", metadata, await parent);
+}
 
 const mainPages = [
   { label: "Home Page", href: "/" },

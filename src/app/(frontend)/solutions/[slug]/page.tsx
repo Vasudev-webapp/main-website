@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import { getCustomPageData } from "@/lib/seo/custom-landing-pages-data";
@@ -21,7 +21,7 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const { slug } = await params;
   const page = getCustomPageData(slug);
   if (!page || page.category !== "solutions") return {};
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: page.title,
       description: page.description,
     },
-  });
+  }, await parent);
 }
 
 export default async function SolutionsPage({ params }: Props) {

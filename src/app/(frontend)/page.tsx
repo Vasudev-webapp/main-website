@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
+import type { Metadata, ResolvingMetadata } from "next";
+import { addMissingPageOpenGraph, applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/home/AboutSection";
 import ServicesSection from "@/components/home/ServicesSection";
@@ -24,7 +24,7 @@ import { HOME_FAQS } from "@/lib/seo/page-faqs";
 // redeploy, while avoiding a live DB read on every request.
 export const revalidate = 3600;
 
-export const metadata: Metadata = applyPageMetaOverride("/", {
+const metadata: Metadata = applyPageMetaOverride("/", {
   title:
     "Vasudev Chemo Pharma — India's Leading MEA Triazine 78% Manufacturer",
   description:
@@ -38,6 +38,7 @@ export const metadata: Metadata = applyPageMetaOverride("/", {
     canonical: "https://www.vasudevchemopharma.com",
   },
   openGraph: {
+    type: "website",
     title:
       "H2S Scavenger & MEA Triazine 78% Manufacturer — Vasudev Chemo Pharma",
     description:
@@ -45,6 +46,13 @@ export const metadata: Metadata = applyPageMetaOverride("/", {
     url: "https://www.vasudevchemopharma.com",
   },
 });
+
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  return addMissingPageOpenGraph("/", metadata, await parent);
+}
 
 export default function HomePage() {
   return (

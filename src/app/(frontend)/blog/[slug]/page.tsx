@@ -4,7 +4,7 @@ import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import ExpandableImage from "@/components/ExpandableImage";
-import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
+import { addMissingPageOpenGraph, applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import SectionLabel from "@/components/SectionLabel";
 import ArticleSchema from "@/components/seo/ArticleSchema";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
@@ -136,7 +136,7 @@ export async function generateMetadata({
   // Path-level overrides exist for the hard-coded articles. CMS articles are
   // authored with their own meta fields, so the CMS stays the source of truth.
   return article.source === "cms"
-    ? metadata
+    ? addMissingPageOpenGraph(`/blog/${slug}`, metadata)
     : applyPageMetaOverride(`/blog/${slug}`, metadata);
 }
 

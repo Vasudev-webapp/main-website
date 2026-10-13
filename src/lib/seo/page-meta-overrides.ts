@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 
 export type PageMetaOverride = {
   h1?: string;
@@ -1213,8 +1213,10 @@ export function getPageH1Override(path: string): string | undefined {
 
 export function applyPageMetaOverride(
   path: string,
-  metadata: Metadata
+  metadata: Metadata,
+  parent?: Awaited<ResolvingMetadata>
 ): Metadata {
+  metadata = addMissingPageOpenGraph(path, metadata, parent);
   const override = PAGE_META_OVERRIDES[normalizePath(path)];
 
   if (!override) {
@@ -1256,6 +1258,63 @@ export function applyPageMetaOverride(
         ...nextMetadata.twitter,
         description: override.description,
       };
+    }
+  }
+
+  return nextMetadata;
+}
+
+// Additions are limited to pages covered by the on-page SEO workbook.
+const OG_SITE_NAME_PATHS = new Set([
+  "/", "/about", "/sitemap", "/service/chemical-manufacturing",
+  "/h2s-scavenger-oil-gas",
+  "/industries/oil-gas-h2s-scavenger", "/industries/water-treatment",
+  "/industries/metal-working-fluids", "/industries/paper-mill",
+  "/applications/biogas-h2s-removal", "/applications/gas-sweetening",
+  "/applications/pipeline-h2s-treatment", "/solutions/h2s-scavenger",
+  "/blog/non-triazine-h2s-scavenger-product-range",
+]);
+
+const OG_LOGO_PATHS = new Set([
+  "/", "/about", "/sitemap", "/product",
+  "/applications/biogas-h2s-removal", "/applications/gas-sweetening",
+  "/applications/pipeline-h2s-treatment", "/solutions/h2s-scavenger",
+]);
+
+export function addMissingPageOpenGraph(
+  path: string,
+  metadata: Metadata,
+  parent?: Awaited<ResolvingMetadata>
+): Metadata {
+  const normalizedPath = normalizePath(path);
+  const current = metadata.openGraph ?? parent?.openGraph;
+  if (!current) return metadata;
+
+  const addSiteName =
+    OG_SITE_NAME_PATHS.has(normalizedPath) && current.siteName == null;
+  // Resolve parent metadata first to preserve inherited OG and Twitter values.
+  const addLogo =
+    parent != null && OG_LOGO_PATHS.has(normalizedPath) && current.images == null;
+  if (!addSiteName && !addLogo) return metadata;
+
+  const nextMetadata: Metadata = {
+    ...metadata,
+    openGraph: {
+      ...current,
+      ...(addSiteName ? { siteName: "Vasudev Chemo Pharma" } : {}),
+      ...(addLogo ? {
+        images: [{
+          url: "https://atjtpw4vvodv5rtp.public.blob.vercel-storage.com/Vasudev/Vasudev_Chemo_Pharma_LOGO.png",
+        }],
+      } : {}),
+    } as Metadata["openGraph"],
+  };
+
+  if (addLogo) {
+    const twitter = metadata.twitter ?? parent?.twitter;
+    if (twitter && twitter.images == null) {
+      // Prevent Next.js from automatically adding the logo as a Twitter image.
+      nextMetadata.twitter = { ...twitter, images: [] } as Metadata["twitter"];
     }
   }
 

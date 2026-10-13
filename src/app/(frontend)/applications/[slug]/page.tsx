@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -51,7 +51,7 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}, parent: ResolvingMetadata): Promise<Metadata> {
   const { slug } = await params;
   const page = getApplicationData(slug);
 
@@ -85,7 +85,7 @@ export async function generateMetadata({
       title: page.title,
       description: page.description,
     },
-  });
+  }, await parent);
 }
 
 export default async function ApplicationDetailPage({

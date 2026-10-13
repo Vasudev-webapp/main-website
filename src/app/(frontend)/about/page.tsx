@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
+import type { Metadata, ResolvingMetadata } from "next";
+import { addMissingPageOpenGraph, applyPageMetaOverride } from "@/lib/seo/page-meta-overrides";
 import Image from "next/image";
 import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
@@ -12,7 +12,7 @@ import { ABOUT_FAQS } from "@/lib/seo/page-faqs";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = applyPageMetaOverride("/about", {
+const metadata: Metadata = applyPageMetaOverride("/about", {
   title: "About Vasudev Chemo Pharma — Chemical Manufacturer India",
   description:
     "Learn about Vasudev Chemo Pharma — ISO 9001:2015 certified industrial and specialty chemical manufacturer from Gujarat, India. 15+ chemical products exported worldwide.",
@@ -26,6 +26,13 @@ export const metadata: Metadata = applyPageMetaOverride("/about", {
     url: "https://www.vasudevchemopharma.com/about",
   },
 });
+
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  return addMissingPageOpenGraph("/about", metadata, await parent);
+}
 
 const capabilities = [
   { title: "Chemical Manufacturing", href: "/service/chemical-manufacturing" },
