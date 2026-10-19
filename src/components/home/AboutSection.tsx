@@ -27,10 +27,10 @@ export default async function AboutSection() {
   return (
     <section id="about" className="py-12 lg:py-20">
       <div className="max-w-container mx-auto px-6 lg:px-10">
+        <SectionLabel>Who we are</SectionLabel>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Column */}
           <div>
-            <SectionLabel>Who we are</SectionLabel>
 
             <Image
               src="/images/vcp-manufacturing-facility.png"
