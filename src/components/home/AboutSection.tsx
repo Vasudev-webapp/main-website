@@ -32,7 +32,15 @@ export default async function AboutSection() {
           <div>
             <SectionLabel>Who we are</SectionLabel>
 
-            
+            <Image
+              src="/images/vcp-manufacturing-facility.png"
+              alt="Vasudev Chemo Pharma manufacturing facility"
+              width={1254}
+              height={1254}
+              sizes="(min-width: 1280px) 568px, (min-width: 1024px) calc((100vw - 144px) / 2), calc(100vw - 48px)"
+              loading="lazy"
+              className="mt-8 aspect-square w-full h-auto rounded-3xl object-cover"
+            />
           </div>
 
           {/* Right Column */}
