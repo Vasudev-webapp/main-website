@@ -8,27 +8,12 @@ import GoogleTranslate from "./GoogleTranslate";
 /* ── Static nav links (no dropdown) ──────────────────────────────────── */
 
 /* ── Dropdown: Products ──────────────────────────────────────────────── */
-const productsDropdown = {
-  label: "Products",
-  sections: [
-    {
-      heading: "Our Products",
-      links: [
-        { label: "MEA Triazine 78%", href: "/product/mea-triazine-78-h2s-scavenger", accent: true },
-        { label: "MMA Triazine 40%", href: "/product/mma-triazine-40"},
-        { label: "All Products", href: "/product" },
-      ],
-    },
-    {
-      heading: "Surfactant Chemicals",
-      links: [
-        { label: "EDDM - Non Triazine H2S Scavenger", href: "/product/eddm-non-triazine-h2s-scavenger", accent: true },
-        { label: "Benzalkonium Chloride 50%", href: "/product/benzalkonium-chloride-50"},
-        { label: "Benzalkonium Chloride 80%", href: "/product/benzalkonium-chloride-80"},
-        { label: "All Products", href: "/product" },
-      ],
-    },
-  ],
+type DropdownData = {
+  label: string;
+  sections: {
+    heading: string;
+    links: { label: string; href: string; accent?: boolean }[];
+  }[];
 };
 
 /* ── Dropdown: Industries ────────────────────────────────────────────── */
@@ -91,8 +76,6 @@ const supplyDropdown = {
   ],
 };
 
-type DropdownData = typeof productsDropdown;
-
 /* ── Chevron icon ────────────────────────────────────────────────────── */
 function ChevronDown({ className = "" }: { className?: string }) {
   return (
@@ -110,7 +93,7 @@ function DesktopDropdown({ data, open }: { data: DropdownData; open: boolean }) 
         open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="bg-white rounded-2xl shadow-xl border border-gray-100 px-6 py-6 min-w-[440px]">
+      <div className="bg-white rounded-2xl shadow-xl border border-gray-100 px-6 py-6 min-w-[440px] max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain">
         <div className="grid grid-cols-2 gap-8">
           {data.sections.map((section) => (
             <div key={section.heading}>
@@ -189,7 +172,15 @@ function MobileAccordion({
 }
 
 /* ── Main Navbar ─────────────────────────────────────────────────────── */
-export default function Navbar() {
+export default function Navbar({
+  productSections = [],
+}: {
+  productSections?: DropdownData["sections"];
+}) {
+  const productsDropdown: DropdownData = {
+    label: "Products",
+    sections: productSections,
+  };
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -358,7 +349,7 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-4 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-4 max-h-[calc(100dvh-172px)] overflow-y-auto overscroll-contain">
           <Link href="/" className="block py-3 text-sm font-medium text-primary hover:text-accent" onClick={closeMobile}>
             Home
           </Link>

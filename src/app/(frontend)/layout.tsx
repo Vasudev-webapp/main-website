@@ -5,6 +5,9 @@ import localFont from "next/font/local";
 import { Geist } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
+import { getAllProducts } from "@/lib/products-payload";
+import { getCategoryPriorityMap } from "@/lib/product-sequencing";
+import { CATEGORY_LABELS } from "@/lib/types";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CopyProtection from "@/components/CopyProtection";
@@ -160,11 +163,45 @@ export const metadata: Metadata = {
   },
 };
 
-export default function FrontendLayout({
+export default async function FrontendLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [products, categoryPriorityMap] = await Promise.all([
+    getAllProducts().catch((error) => {
+      console.error("Failed to load navbar products from CMS:", error);
+      return [];
+    }),
+    getCategoryPriorityMap(),
+  ]);
+
+  for (const product of products) {
+    if (!CATEGORY_LABELS[product.category]) {
+      console.error("Navbar product has no assigned category:", product.name, product.slug);
+    }
+  }
+
+  const productSections = Object.entries(CATEGORY_LABELS)
+    .sort(([aCategory, aLabel], [bCategory, bLabel]) => {
+      const priorities: Record<string, number> = categoryPriorityMap;
+      return (priorities[aCategory] ?? 100) - (priorities[bCategory] ?? 100)
+        || aLabel.localeCompare(bLabel);
+    })
+    .map(([category, heading]) => ({
+      heading,
+      links: [
+        ...products.filter((product) => product.category === category).map((product) => ({
+          label: product.name,
+          href: `/product/${product.slug}`,
+          accent: product.slug === "mea-triazine-78-h2s-scavenger"
+            || product.slug === "eddm-non-triazine-h2s-scavenger",
+        })),
+        { label: "All Products", href: "/product" },
+      ],
+    }))
+    .filter((section) => section.links.length > 1);
+
   return (
     <html lang="en">
       <head>
@@ -219,7 +256,7 @@ export default function FrontendLayout({
         </Script>
         <SiteJsonLd />
         <CopyProtection />
-        <Navbar />
+        <Navbar productSections={productSections} />
         {children}
         <Footer />
         <WhatsAppButton />
