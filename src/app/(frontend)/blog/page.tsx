@@ -8,6 +8,7 @@ import { vasclean4090BlogListItems } from "./[slug]/vasclean-40-90-article-data"
 import { scs90BlogListItems } from "./[slug]/scs-90-article-data";
 import { bkc50BlogListItems } from "./[slug]/bkc-50-article-data";
 import { meaTriazine78BlogListItems } from "./[slug]/mea-triazine-78-article-data";
+import { mmaTriazine45BlogListItems } from "./[slug]/mma-triazine-45-article-data";
 import BlogPageClient from "./BlogPageClient";
 import {
   getAllBlogImageOverrides,
@@ -25,6 +26,7 @@ export const metadata: Metadata = applyPageMetaOverride("/blog", {
 });
 
 const blogs: BlogListItem[] = [
+  ...mmaTriazine45BlogListItems,
   ...meaTriazine78BlogListItems,
   ...bkc50BlogListItems,
   ...scsVassol4090BlogListItems,

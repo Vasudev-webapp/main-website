@@ -8,6 +8,7 @@ import { vasclean4090BlogListItems } from "@/app/(frontend)/blog/[slug]/vasclean
 import { scs90BlogListItems } from "@/app/(frontend)/blog/[slug]/scs-90-article-data";
 import { bkc50BlogListItems } from "@/app/(frontend)/blog/[slug]/bkc-50-article-data";
 import { meaTriazine78BlogListItems } from "@/app/(frontend)/blog/[slug]/mea-triazine-78-article-data";
+import { mmaTriazine45BlogListItems } from "@/app/(frontend)/blog/[slug]/mma-triazine-45-article-data";
 
 const initialBlogs = [
   ...[
@@ -16,6 +17,7 @@ const initialBlogs = [
     ...scs90BlogListItems,
     ...bkc50BlogListItems,
     ...meaTriazine78BlogListItems,
+    ...mmaTriazine45BlogListItems,
   ].map(blog => ({ ...blog, href: `/blog/${blog.slug}` })),
   {
     title: "How Automation Is Shaping the Future of Chemical Manufacturing",
