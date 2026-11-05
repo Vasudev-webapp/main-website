@@ -4,7 +4,7 @@ import type { BlogEntry } from "./seo-blog-data";
 export const mmaTriazine45ArticlesData: Record<string, BlogEntry> = {
   "mma-triazine-45-industrial-applications": {
     title:
-      "🌿 Introducing MMA Triazine 45% – Reliable Protection for Industrial Applications!",
+      "Introducing MMA Triazine 45% – Reliable Protection for Industrial Applications!",
     metaTitle:
       "MEA Triazine 45% Manufacturer – Powerful Biocide for Industrial Applications",
     metaDescription:
