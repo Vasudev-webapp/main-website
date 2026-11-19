@@ -133,8 +133,6 @@ export const BKC_50_TRADE_NAMES: string[] = [
   "Benzalkonium Chloride EP / Ph. Eur.",
   "Benzalkonium Chloride IP",
   "Benzalkonium Chloride JP",
-  // Vasudev SKU
-  "VCP-SFC-0005",
 ];
 
 /* ───────────────── Pure-substance physical properties ─────────────────────── */

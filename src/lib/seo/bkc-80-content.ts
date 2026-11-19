@@ -179,8 +179,6 @@ export const BKC_80_TRADE_NAMES: string[] = [
   "Croda Crodaquat® BAC 80",
   // Reagent grade
   "Sigma-Aldrich BC 12060 (80% BKC)",
-  // Vasudev SKU
-  "VCP-SFC-0006",
 ];
 
 /* ───────────────── Pure-substance physical properties ─────────────────────── */

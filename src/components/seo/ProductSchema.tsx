@@ -87,7 +87,6 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
     description:
       product.description ||
       `${product.name} manufactured by Vasudev Chemo Pharma, Gujarat, India.`,
-    sku: product.sku,
     image: product.imageUrl || undefined,
     url: `https://www.vasudevchemopharma.com/product/${product.slug}`,
     brand: {
@@ -252,7 +251,6 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
     productSchema.alternateName = [...scsEnrichment.alternateName];
     productSchema.category = scsEnrichment.category;
     productSchema.countryOfOrigin = scsEnrichment.countryOfOrigin;
-    productSchema.mpn = "VCP-SFC-0001";
     productSchema.additionalProperty = [
       ...scsEnrichment.identifierProperties.map((p) => ({
         "@type": "PropertyValue",
@@ -295,7 +293,6 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
     productSchema.alternateName = [...bkcEnrichment.alternateName];
     productSchema.category = bkcEnrichment.category;
     productSchema.countryOfOrigin = bkcEnrichment.countryOfOrigin;
-    productSchema.mpn = "VCP-SFC-0005";
     productSchema.additionalProperty = [
       ...bkcEnrichment.identifierProperties.map((p) => ({
         "@type": "PropertyValue",
@@ -338,7 +335,6 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
     productSchema.alternateName = [...bkcEnrichment.alternateName];
     productSchema.category = bkcEnrichment.category;
     productSchema.countryOfOrigin = bkcEnrichment.countryOfOrigin;
-    productSchema.mpn = "VCP-SFC-0006";
     productSchema.additionalProperty = [
       ...bkcEnrichment.identifierProperties.map((p) => ({
         "@type": "PropertyValue",

@@ -111,8 +111,6 @@ export const SCS_40_TRADE_NAMES: string[] = [
   "Mallak SCS-40",
   "Navdeep SCS-40",
   "Nandadeep SCS-40",
-  // ── Vasudev SKU ──
-  "VCP-SFC-0001",
 ];
 
 /* ───────────────── Pure-substance physical properties (research E-E-A-T) ─ */

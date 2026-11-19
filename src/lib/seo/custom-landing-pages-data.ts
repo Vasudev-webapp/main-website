@@ -1928,7 +1928,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
       {
         heading: "Equivalent 80% reference grades",
         id: "equivalents",
-        body: "Our BKC 80% is a functional equivalent to Lonza Bardac® 2280 and Hyamine® 80; Stepan BTC® 8358 / 8248; Nouryon (AkzoNobel) Maquat® 4480-E and LC 12-80; and Pilot Lonzabac® 80 / Sumquat® 2380. All are 80% ADBAC (CAS 8001-54-5). We supply the same chemistry as SKU VCP-SFC-0006 with a matchable C12/C14/C16 alkyl distribution.",
+        body: "Our BKC 80% is a functional equivalent to Lonza Bardac® 2280 and Hyamine® 80; Stepan BTC® 8358 / 8248; Nouryon (AkzoNobel) Maquat® 4480-E and LC 12-80; and Pilot Lonzabac® 80 / Sumquat® 2380. All are 80% ADBAC (CAS 8001-54-5). We supply the same chemistry with a matchable C12/C14/C16 alkyl distribution.",
       },
       {
         heading: "Cross-qualification for blenders",
@@ -1939,7 +1939,6 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
     specs: [
       { label: "Active Substance", value: "ADBAC (CAS 8001-54-5), 80%" },
       { label: "Matches", value: "Bardac® 2280 · BTC® 8358 · Maquat® 4480-E" },
-      { label: "SKU", value: "VCP-SFC-0006" },
       { label: "Samples", value: "1 – 5 kg for cross-qualification" },
     ],
     benefits: [

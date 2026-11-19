@@ -253,7 +253,7 @@ export default function BKCvsDDACvsCTABPage() {
                   </tr>
                   <tr>
                     <td className="py-3 px-3 font-medium">Vasudev product</td>
-                    <td className="py-3 px-3">BKC 50% (VCP-SFC-0005), BKC 80% (VCP-SFC-0006)</td>
+                    <td className="py-3 px-3">BKC 50%, BKC 80%</td>
                     <td className="py-3 px-3">Project-based sourcing</td>
                     <td className="py-3 px-3">Project-based sourcing</td>
                   </tr>

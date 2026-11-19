@@ -1318,7 +1318,7 @@ Monitoring: Regular wellhead H2S measurements (using Draeger tubes, online analy
         id: "global-standard",
         body: `Benzalkonium Chloride is a cationic surfactant and quaternary ammonium biocide. Its mechanism of action — disrupting the lipid bilayer of microbial cell membranes — makes it broadly effective against gram-positive and gram-negative bacteria, fungi, yeasts, and enveloped viruses (including SARS-CoV-2, MERS-CoV, influenza A, herpes simplex, and HIV).
 
-Reference grades from Lonza (Bardac® 22, Bardac® 2280, Hyamine® 3500), Stepan (BTC® 824, BTC® 8358), Nouryon/AkzoNobel (Maquat® MC 1412, Maquat® 4480-E), Pilot Chemical (Lonzabac® 50/80), and Kao (Sanisol® C) are the formulation standards used by global disinfectant brands. Vasudev Chemo Pharma's BKC 50% (VCP-SFC-0005) and BKC 80% (VCP-SFC-0006) are functionally equivalent to all of these reference grades — same active substance (ADBAC), same C₁₂–C₁₆ alkyl distribution, same regulatory approvals.`,
+Reference grades from Lonza (Bardac® 22, Bardac® 2280, Hyamine® 3500), Stepan (BTC® 824, BTC® 8358), Nouryon/AkzoNobel (Maquat® MC 1412, Maquat® 4480-E), Pilot Chemical (Lonzabac® 50/80), and Kao (Sanisol® C) are the formulation standards used by global disinfectant brands. Vasudev Chemo Pharma's BKC 50% and BKC 80% are functionally equivalent to all of these reference grades — same active substance (ADBAC), same C₁₂–C₁₆ alkyl distribution, same regulatory approvals.`,
       },
       {
         heading: "Application Profile by Industry",
@@ -1344,7 +1344,7 @@ Strategic export markets: USA (EPA-registered formulators), UAE / Saudi Arabia (
       },
     ],
     specs: [
-      { label: "Products available", value: "BKC 50% (VCP-SFC-0005), BKC 80% (VCP-SFC-0006)" },
+      { label: "Products available", value: "BKC 50%, BKC 80%" },
       { label: "Active substance", value: "Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC), CAS 8001-54-5" },
       { label: "HS Code", value: "29239000" },
       { label: "Hospital surface disinfection", value: "0.1% – 0.4% active quat" },

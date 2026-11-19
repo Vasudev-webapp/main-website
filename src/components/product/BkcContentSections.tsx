@@ -36,7 +36,6 @@ type StructureSummary = {
 export type BkcContentSectionsProps = {
   productName: string;
   productSlug: string;
-  skuBrand: string;
   identifiers: Row[];
   genericSynonyms: string[];
   tradeNames: string[];
@@ -51,7 +50,6 @@ export type BkcContentSectionsProps = {
 export default function BkcContentSections({
   productName,
   productSlug,
-  skuBrand,
   identifiers,
   genericSynonyms,
   tradeNames,
@@ -113,8 +111,7 @@ export default function BkcContentSections({
               Formulators worldwide reference this chemistry under many supplier
               brand names, all sharing CAS 8001-54-5:{" "}
               <strong className="text-primary">{tradeNames.join(", ")}</strong>.
-              Vasudev Chemo Pharma supplies the same active substance under SKU{" "}
-              <strong className="text-accent">{skuBrand}</strong> with COA-verified
+              Vasudev Chemo Pharma supplies the same active substance with COA-verified
               active matter.
             </p>
           </div>

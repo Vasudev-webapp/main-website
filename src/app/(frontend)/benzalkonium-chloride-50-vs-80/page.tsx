@@ -200,15 +200,10 @@ export default function BKC50Vs80Page() {
                     <td className="py-3 px-4">BTC® 824, BTC® 50NF</td>
                     <td className="py-3 px-4">BTC® 8358</td>
                   </tr>
-                  <tr className="border-b border-border">
+                  <tr>
                     <td className="py-3 px-4 font-medium">Nouryon brand equivalent</td>
                     <td className="py-3 px-4">Maquat® MC 1412</td>
                     <td className="py-3 px-4">Maquat® 4480-E</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 px-4 font-medium">Vasudev SKU</td>
-                    <td className="py-3 px-4">VCP-SFC-0005</td>
-                    <td className="py-3 px-4">VCP-SFC-0006</td>
                   </tr>
                 </tbody>
               </table>

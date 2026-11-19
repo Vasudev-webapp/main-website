@@ -739,7 +739,7 @@ Typical pharmaceutical use levels are 0.001% – 0.01% active in finished produc
       },
     ],
     specs: [
-      { label: "Products", value: "BKC 50% (VCP-SFC-0005), BKC 80% (VCP-SFC-0006)" },
+      { label: "Products", value: "BKC 50%, BKC 80%" },
       { label: "Active substance", value: "Alkyl Dimethyl Benzyl Ammonium Chloride (ADBAC), CAS 8001-54-5" },
       { label: "Hospital use concentration", value: "0.1% – 0.4% active quat (1,000 – 4,000 ppm)" },
       { label: "Food-contact use", value: "Max 200 ppm (FDA 21 CFR 178.1010)" },
@@ -843,7 +843,7 @@ BKC 80% concentrate is the most cost-efficient grade for cooling-tower biocide f
       },
     ],
     specs: [
-      { label: "Products", value: "BKC 50% (VCP-SFC-0005), BKC 80% (VCP-SFC-0006)" },
+      { label: "Products", value: "BKC 50%, BKC 80%" },
       { label: "Pool algicide preventive", value: "5 – 15 ppm active quat (10 – 30 mL BKC 50% per 1,000 L)" },
       { label: "Cooling tower routine", value: "50 – 100 ppm active quat (slug dose)" },
       { label: "Cooling tower shock", value: "100 – 200 ppm active quat (Legionella control)" },
@@ -944,7 +944,7 @@ For pharmaceutical OEMs, Vasudev Chemo Pharma supplies GMP-certified BKC 50% and
       },
     ],
     specs: [
-      { label: "Products", value: "BKC 50% (VCP-SFC-0005), BKC 80% (VCP-SFC-0006) — Cosmetic Grade" },
+      { label: "Products", value: "BKC 50%, BKC 80% — Cosmetic Grade" },
       { label: "INCI Name", value: "Benzalkonium Chloride" },
       { label: "Cosmetic max use (rinse-off)", value: "0.1% active (Cosmetics Europe Annex V)" },
       { label: "Cosmetic max use (leave-on)", value: "0.05% active (Cosmetics Europe Annex V)" },

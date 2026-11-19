@@ -870,12 +870,6 @@ export default async function ProductDetailPage({
                       </tr>
                     )}
                     <tr className="border-b border-gray-100">
-                      <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50">SKU</td>
-                      <td className={`px-5 py-3 text-primary${isMeaTriazine ? " [overflow-wrap:anywhere]" : ""}`}>
-                        {isMeaTriazine ? MEA_TRIAZINE_IDENTITY.iupacName : product.sku || "—"}
-                      </td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
                       <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50">Category</td>
                       <td className="px-5 py-3 text-primary">{categoryLabel}</td>
                     </tr>
@@ -1045,7 +1039,6 @@ export default async function ProductDetailPage({
             <BkcContentSections
               productName={product.name}
               productSlug={product.slug}
-              skuBrand="VCP-SFC-0005"
               identifiers={BKC_50_CHEMICAL_IDENTIFIERS}
               genericSynonyms={BKC_50_GENERIC_SYNONYMS}
               tradeNames={BKC_50_TRADE_NAMES}
@@ -1062,7 +1055,6 @@ export default async function ProductDetailPage({
             <BkcContentSections
               productName={product.name}
               productSlug={product.slug}
-              skuBrand="VCP-SFC-0006"
               identifiers={BKC_80_CHEMICAL_IDENTIFIERS}
               genericSynonyms={BKC_80_GENERIC_SYNONYMS}
               tradeNames={BKC_80_TRADE_NAMES}
@@ -1278,9 +1270,7 @@ export default async function ProductDetailPage({
                     <strong className="text-primary">
                       {SCS_40_TRADE_NAMES.join(", ")}
                     </strong>
-                    . Vasudev Chemo Pharma supplies the same chemistry under
-                    SKU{" "}
-                    <strong className="text-accent">VCP-SFC-0001</strong> with
+                    . Vasudev Chemo Pharma supplies the same chemistry with
                     COA-verified 39 – 41% active matter.
                   </p>
                 </div>

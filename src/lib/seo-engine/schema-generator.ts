@@ -52,7 +52,6 @@ export function buildProductSchemaEnrichment(product: Product): Record<string, u
   }
 
   out.countryOfOrigin = product.originCountry || "India";
-  if (product.sku && product.sku.trim()) out.mpn = product.sku;
 
   const props = [
     pv("CAS Number", product.casNumber),
