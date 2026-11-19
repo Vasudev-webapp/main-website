@@ -262,7 +262,7 @@ const countries = Object.values(COUNTRY_PAGES_DATA);
 const specs = [
   { label: "Active Content", value: "\u226578% (guaranteed)" },
   { label: "CAS Number", value: "4719-04-4" },
-  { label: "Chemical Name", value: "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine" },
+  { label: "Chemical Name", value: "2-[3,5-bis(2-hydroxyethyl)-1,3,5-triazinan-1-yl]ethanol" },
   { label: "Appearance", value: "Clear to pale yellow liquid" },
   { label: "pH (neat)", value: "9.0 \u2013 12.0" },
   { label: "Density", value: "1.05 \u2013 1.25 g/cm\u00B3" },

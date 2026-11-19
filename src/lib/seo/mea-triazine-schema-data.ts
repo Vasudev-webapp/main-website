@@ -6,6 +6,12 @@
 
 export const MEA_TRIAZINE_SLUG = "mea-triazine-78-h2s-scavenger";
 
+export const MEA_TRIAZINE_IDENTITY = {
+  formula: "C₉H₂₁N₃O₃",
+  molecularWeight: "219.28 g/mol",
+  iupacName: "2-[3,5-bis(2-hydroxyethyl)-1,3,5-triazinan-1-yl]ethanol",
+} as const;
+
 export const MEA_TRIAZINE_MARKET_LANGUAGE_CODES = [
   "en",
   "en-IN",
@@ -71,9 +77,9 @@ export const MEA_TRIAZINE_METADATA = {
   // that currently has no visible on-page presence), then the branded query
   // and the primary commercial + geo qualifier.
   title:
-    "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine | MEA Triazine 78% Manufacturer India",
+    `${MEA_TRIAZINE_IDENTITY.iupacName} | MEA Triazine 78% Manufacturer India`,
   description:
-    "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine (MEA Triazine 78%, CAS 4719-04-4) H2S scavenger — manufacturer, supplier & exporter in India. Bulk drum, IBC & tanker supply.",
+    `${MEA_TRIAZINE_IDENTITY.iupacName} (MEA Triazine 78%, CAS 4719-04-4) H2S scavenger — manufacturer, supplier & exporter in India. Bulk drum, IBC & tanker supply.`,
   openGraphDescription:
     "MEA Triazine 78% H2S Scavenger — highly effective for natural gas, crude oil, and biogas purification. Protects equipment from corrosion and ensures personnel safety.",
   twitterDescription:
@@ -86,6 +92,7 @@ export const MEA_TRIAZINE_SCHEMA_ENRICHMENT = {
   alternateName: [
     /* ── IUPAC / Chemical Synonyms ────────────────────────── */
     "Monoethanolamine Triazine 78%",
+    MEA_TRIAZINE_IDENTITY.iupacName,
     "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine",
     "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine 78%",
     "1,3,5-Triazine-1,3,5(2H,4H,6H)-triethanol",

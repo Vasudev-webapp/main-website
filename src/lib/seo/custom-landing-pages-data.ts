@@ -359,7 +359,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
       }
     ],
     specs: [
-      { label: "Chemical Name", value: "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine" },
+      { label: "Chemical Name", value: "2-[3,5-bis(2-hydroxyethyl)-1,3,5-triazinan-1-yl]ethanol" },
       { label: "Grades Supplied", value: "MEA Triazine 78% / MMA Triazine 40%" },
       { label: "Incoterms", value: "FOB, CIF, CFR global shipping support" }
     ],
@@ -913,10 +913,10 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
     category: "solutions",
     title: "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine (CAS 4719-04-4)",
     description:
-      "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine (CAS 4719-04-4) is the IUPAC name for MEA Triazine 78% H2S scavenger. Learn its structure, properties, formation and synonyms.",
+      "2-[3,5-bis(2-hydroxyethyl)-1,3,5-triazinan-1-yl]ethanol (CAS 4719-04-4) is the IUPAC name for MEA Triazine 78% H2S scavenger. Learn its structure, properties, formation and synonyms.",
     h1: "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine — CAS 4719-04-4",
     intro:
-      "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine (CAS 4719-04-4) is the IUPAC chemical name for the compound sold commercially as MEA Triazine 78%, the most widely used liquid hydrogen sulphide (H2S) scavenger in the oil and gas industry. This page explains what the molecule is, how it is formed, its physical properties, and the many synonyms under which it is bought and sold.",
+      "2-[3,5-bis(2-hydroxyethyl)-1,3,5-triazinan-1-yl]ethanol (CAS 4719-04-4) is the IUPAC chemical name for the compound sold commercially as MEA Triazine 78%, the most widely used liquid hydrogen sulphide (H2S) scavenger in the oil and gas industry. This page explains what the molecule is, how it is formed, its physical properties, and the many synonyms under which it is bought and sold.",
     sections: [
       {
         heading: "What is hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine?",
@@ -935,7 +935,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
       },
     ],
     specs: [
-      { label: "IUPAC Name", value: "Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine" },
+      { label: "IUPAC Name", value: "2-[3,5-bis(2-hydroxyethyl)-1,3,5-triazinan-1-yl]ethanol" },
       { label: "CAS Number", value: "4719-04-4" },
       { label: "Commercial Name", value: "MEA Triazine 78%" },
       { label: "Appearance", value: "Clear to pale-yellow liquid" },
@@ -949,7 +949,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
     faqs: [
       {
         question: "Is hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine the same as MEA Triazine?",
-        answer: "Yes. Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine is the IUPAC chemical name; MEA Triazine 78% is the commercial name for the same compound (CAS 4719-04-4) supplied at 78% active concentration.",
+        answer: "Yes. 2-[3,5-bis(2-hydroxyethyl)-1,3,5-triazinan-1-yl]ethanol is the IUPAC chemical name; MEA Triazine 78% is the commercial name for the same compound (CAS 4719-04-4) supplied at 78% active concentration.",
       },
       {
         question: "What is the CAS number of hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine?",
@@ -1112,7 +1112,7 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
       {
         heading: "Export documentation and Incoterms",
         id: "documentation",
-        body: "Every export shipment includes a batch Certificate of Analysis (COA), GHS-compliant Safety Data Sheet (SDS), Technical Data Sheet (TDS), commercial invoice, packing list and certificate of origin, plus any destination-specific paperwork. We offer Ex-Works, FOB and CIF Incoterms. The HS code for this product is 29336990.",
+        body: "Every export shipment includes a batch Certificate of Analysis (COA), GHS-compliant Safety Data Sheet (SDS), Technical Data Sheet (TDS), commercial invoice, packing list and certificate of origin, plus any destination-specific paperwork. We offer Ex-Works, FOB and CIF Incoterms.",
       },
       {
         heading: "Markets we serve",
@@ -1123,7 +1123,6 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
     specs: [
       { label: "Loading Ports", value: "Mundra · Hazira · JNPT · Kandla" },
       { label: "Incoterms", value: "EXW · FOB · CIF" },
-      { label: "HS Code", value: "29336990" },
       { label: "Export Packaging", value: "Drums · IBC · flexitank · ISO tank" },
     ],
     benefits: [
@@ -1186,7 +1185,6 @@ export const CUSTOM_LANDING_PAGES_DATA: Record<string, LandingPageData> = {
       { label: "pH (as is)", value: "9.0 – 11.0" },
       { label: "Specific Gravity (25 °C)", value: "1.20 – 1.25" },
       { label: "GHS", value: "GHS07 · Warning · H315/H319/H335" },
-      { label: "HS Code", value: "29336990" },
     ],
     benefits: [
       "Batch-specific COA with every shipment",

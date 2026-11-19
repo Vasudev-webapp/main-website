@@ -1,5 +1,6 @@
 import { Product } from "./types";
 import { isRemovedProductSlug } from "./removed-products";
+import { MEA_TRIAZINE_IDENTITY } from "./seo/mea-triazine-schema-data";
 
 /**
  * Product seed data for the Vasudev Chemo Pharma catalog.
@@ -12,7 +13,8 @@ const productCatalog: Product[] = [
     name: "MEA Triazine 78% H2S Scavenger",
     slug: "mea-triazine-78-h2s-scavenger",
     sku: "VCP-IND-0001",
-    formula: "C3H9N3",
+    formula: MEA_TRIAZINE_IDENTITY.formula,
+    iupacName: MEA_TRIAZINE_IDENTITY.iupacName,
     casNumber: "4719-04-4",
     category: "industrial",
     subcategory: "Oilfield Chemicals",
@@ -21,8 +23,7 @@ const productCatalog: Product[] = [
     description:
       "MEA Triazine, also known as Monoethanolamine Triazine, is a highly effective chemical compound extensively used in various industrial sectors, particularly in the oil and gas industry. It is renowned for its remarkable ability to scavenge hydrogen sulfide (H2S), a toxic and corrosive gas commonly found in natural gas and crude oil. The presence of H2S poses significant risks to both infrastructure and personnel, making its removal a critical process in ensuring safety and operational efficiency.\n\nMEA Triazine offers a cost-effective and efficient solution for reducing H2S levels, thereby protecting equipment from corrosion, improving safety conditions, and ensuring compliance with stringent environmental regulations. Its versatility extends beyond the oil and gas industry, finding applications in wastewater treatment, biogas purification, and other sectors where H2S management is essential. As a clear to pale yellow liquid, MEA Triazine is easy to handle and integrate into various processes, making it a preferred choice for many industries.\n\nThe chemical's ability to react quickly and effectively with H2S, transforming it into non-corrosive and non-toxic byproducts, highlights its importance in maintaining operational integrity. By incorporating MEA Triazine into their processes, industries can enhance their operational efficiency, protect their assets, and contribute to a safer working environment.\n\n### H2S Scavenging Mechanism\nThe process involves a chemical reaction where MEA Triazine reacts with hydrogen sulfide to form stable, non-corrosive byproducts (thiadiazine). This reaction effectively removes H2S from drilling and completion fluids, ensuring the safety and integrity of the operation. Key benefits include protection of equipment from corrosive acids, significant safety improvement for personnel, and ensuring environmental compliance by minimizing H2S release.",
     appearance: "Clear to pale yellow liquid",
-    molecularWeight: "177.20 g/mol",
-    hsCode: "29336990",
+    molecularWeight: MEA_TRIAZINE_IDENTITY.molecularWeight,
     specs: {
       "Concentration (%)": "78% (Also available in 50%, 60%, 80%)",
       "Appearance": "Clear to pale yellow liquid",

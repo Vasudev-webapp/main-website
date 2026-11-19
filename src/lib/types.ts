@@ -57,7 +57,7 @@ export interface Product {
   description: string;
   appearance: string;
   molecularWeight: string;
-  hsCode: string;
+  hsCode?: string;
 
   // Technical
   specs: Record<string, string>;

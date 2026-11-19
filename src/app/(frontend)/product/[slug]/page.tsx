@@ -39,6 +39,7 @@ import {
 } from "@/lib/seo/product-synonyms";
 import {
   MEA_TRIAZINE_SLUG,
+  MEA_TRIAZINE_IDENTITY,
   MEA_TRIAZINE_COMPARISON,
   MEA_TRIAZINE_MARKET_LANGUAGE_CODES,
   MEA_TRIAZINE_METADATA,
@@ -854,7 +855,7 @@ export default async function ProductDetailPage({
 
               {/* Quick identity table */}
               <div className="border border-gray-200 rounded-2xl overflow-hidden mb-6">
-                <table className="w-full text-sm">
+                <table className={`w-full text-sm${isMeaTriazine ? " table-fixed" : ""}`}>
                   <tbody>
                     <tr className="border-b border-gray-100">
                       <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50 w-40">Product Name</td>
@@ -863,14 +864,16 @@ export default async function ProductDetailPage({
                     {isMeaTriazine && (
                       <tr className="border-b border-gray-100">
                         <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50">Chemical Name (IUPAC)</td>
-                        <td className="px-5 py-3 text-primary">
-                          Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine
+                        <td className="px-5 py-3 text-primary [overflow-wrap:anywhere]">
+                          {MEA_TRIAZINE_IDENTITY.iupacName}
                         </td>
                       </tr>
                     )}
                     <tr className="border-b border-gray-100">
                       <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50">SKU</td>
-                      <td className="px-5 py-3 text-primary">{product.sku || "—"}</td>
+                      <td className={`px-5 py-3 text-primary${isMeaTriazine ? " [overflow-wrap:anywhere]" : ""}`}>
+                        {isMeaTriazine ? MEA_TRIAZINE_IDENTITY.iupacName : product.sku || "—"}
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-100">
                       <td className="px-5 py-3 font-medium text-gray-500 bg-gray-50/50">Category</td>
@@ -954,20 +957,20 @@ export default async function ProductDetailPage({
           {isMeaTriazine && (
             <section id="chemical-name" className="mb-16">
               <h2 className="font-heading text-h3 text-primary mb-6">
-                Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine — Manufacturer, Supplier &amp; Exporter in India
+                {MEA_TRIAZINE_IDENTITY.iupacName} — Manufacturer, Supplier &amp; Exporter in India
               </h2>
               <div className="prose prose-gray max-w-none text-gray-600 leading-relaxed">
                 <p>
-                  <strong>Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine</strong>{" "}
+                  <strong>{MEA_TRIAZINE_IDENTITY.iupacName}</strong>{" "}
                   (CAS 4719-04-4) is the IUPAC chemical name for MEA Triazine 78%,
                   a triazine-based hydrogen sulphide (H₂S) scavenger. Vasudev Chemo
-                  Pharma is a direct <strong>manufacturer of
-                  hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine in India</strong>,
+                  Pharma is a direct <strong>manufacturer of{" "}
+                  {MEA_TRIAZINE_IDENTITY.iupacName} in India</strong>,
                   producing it at our ISO 9001:2015 certified plant in Ankleshwar,
                   Gujarat.
                 </p>
                 <p>
-                  As a hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine{" "}
+                  As a {MEA_TRIAZINE_IDENTITY.iupacName}{" "}
                   <strong>supplier in India</strong> and{" "}
                   <strong>exporter from India</strong>, we supply this H₂S scavenger
                   in 200 L drums, 1000 L IBC totes and bulk tanker loads, with a
@@ -978,7 +981,7 @@ export default async function ProductDetailPage({
                 </p>
                 <p>
                   Buyers in oil &amp; gas, refineries, biogas and wastewater treatment
-                  source hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine directly from
+                  source {MEA_TRIAZINE_IDENTITY.iupacName} directly from
                   us for factory-direct pricing and export-ready documentation.{" "}
                   <Link href="/contact?product=mea-triazine-78-h2s-scavenger" className="text-accent hover:underline font-medium">
                     Request a quote
@@ -1537,7 +1540,7 @@ export default async function ProductDetailPage({
             )}
 
             {/* Additional chemical/physical properties */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+            <div className={`grid grid-cols-1 ${isMeaTriazine ? "md:grid-cols-2" : "md:grid-cols-3"} gap-4 mt-6`}>
               {product.appearance ? (
                 <div className="bg-light rounded-2xl p-5">
                   <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">Appearance</p>
@@ -1553,10 +1556,12 @@ export default async function ProductDetailPage({
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">Molecular Weight</p>
                 <p className="text-sm text-primary font-medium">{product.molecularWeight || "To be added"}</p>
               </div>
-              <div className="bg-light rounded-2xl p-5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">HSN Code</p>
-                <p className={`text-sm font-medium ${product.hsCode ? "text-primary" : "text-gray-400 italic"}`}>{product.hsCode || "To be added"}</p>
-              </div>
+              {!isMeaTriazine && (
+                <div className="bg-light rounded-2xl p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">HSN Code</p>
+                  <p className={`text-sm font-medium ${product.hsCode ? "text-primary" : "text-gray-400 italic"}`}>{product.hsCode || "To be added"}</p>
+                </div>
+              )}
             </div>
           </section>
 

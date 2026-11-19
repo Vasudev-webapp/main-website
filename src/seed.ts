@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { getPayload } from "payload";
 import config from "./payload.config";
+import { MEA_TRIAZINE_IDENTITY } from "./lib/seo/mea-triazine-schema-data";
 
 /**
  * Seed script — inserts all 12 catalogue products into Payload CMS.
@@ -18,7 +19,8 @@ type SeedProduct = {
   description: string;
   appearance: string;
   molecularWeight: string;
-  hsCode: string;
+  hsCode?: string;
+  iupacName?: string;
   originCountry: string;
   priceUnit: string;
   unitOfMeasure: string;
@@ -443,15 +445,15 @@ const seedProducts: SeedProduct[] = [
     name: "MEA Triazine 78% H2S Scavenger",
     slug: "mea-triazine-78-h2s-scavenger",
     sku: "VCP-IND-0001",
-    formula: "C₆H₁₅N₃O₃",
+    formula: MEA_TRIAZINE_IDENTITY.formula,
+    iupacName: MEA_TRIAZINE_IDENTITY.iupacName,
     casNumber: "4719-04-4",
     category: "industrial",
     subcategory: "Oilfield Chemicals",
     description:
       "MEA Triazine 78% is a high-concentration hydrogen sulphide scavenger formulated for oil and gas applications. It reacts irreversibly with H₂S to form non-hazardous dithiazine by-products, ensuring efficient sweetening of crude oil and natural gas streams. For applications requiring BTEX-free solutions, consider our [MMA Triazine 40%](/product/mma-triazine-40). Manufactured by Vasudev Chemo Pharma at our ISO 9001:2015 certified facility in Gujarat, India, this product is supplied at a guaranteed minimum active content of 78%. It is often used in conjunction with [Oilfield Biocides](/product/biocide-oil-gas) for comprehensive microbial and H2S control.",
     appearance: "Clear to pale yellow liquid",
-    molecularWeight: "177.20 g/mol",
-    hsCode: "29336990",
+    molecularWeight: MEA_TRIAZINE_IDENTITY.molecularWeight,
     originCountry: "India",
     priceUnit: "/MT",
     unitOfMeasure: "MT",

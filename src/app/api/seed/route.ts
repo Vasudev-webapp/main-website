@@ -11,6 +11,7 @@ import {
 } from "@/lib/api-security";
 import { logApiError, logApiEvent } from '@/lib/observability';
 import { isRemovedProductSlug } from "@/lib/removed-products";
+import { MEA_TRIAZINE_IDENTITY } from "@/lib/seo/mea-triazine-schema-data";
 
 // Only allow seeding in development
 export const dynamic = 'force-dynamic';
@@ -108,14 +109,14 @@ const seedProducts = [
     name: "MEA Triazine 78% H2S Scavenger",
     slug: "mea-triazine-78-h2s-scavenger",
     sku: "VCP-IND-0001",
-    formula: "C₆H₁₅N₃O₃",
+    formula: MEA_TRIAZINE_IDENTITY.formula,
+    iupacName: MEA_TRIAZINE_IDENTITY.iupacName,
     casNumber: "4719-04-4",
     category: "industrial",
     subcategory: "Oilfield Chemicals",
     description: "MEA Triazine 78% is a high-concentration hydrogen sulphide scavenger formulated for oil and gas applications. It reacts irreversibly with H₂S to form non-hazardous dithiazine by-products, ensuring efficient sweetening of crude oil and natural gas streams. Manufactured by Vasudev Chemo Pharma at our ISO 9001:2015 certified facility in Gujarat, India, this product is supplied at a guaranteed minimum active content of 78%, making it one of the most concentrated MEA Triazine solutions available in the market. It is compatible with both contact tower and direct-injection scavenging systems, and is suitable for sour gas treatment, amine unit support, and pipeline sweetening operations.",
     appearance: "Clear to pale yellow liquid",
-    molecularWeight: "177.20 g/mol",
-    hsCode: "29336990",
+    molecularWeight: MEA_TRIAZINE_IDENTITY.molecularWeight,
     specs: [
       { key: "Active Content", value: "≥ 78%" },
       { key: "pH (1% solution)", value: "10.0 – 12.0" },

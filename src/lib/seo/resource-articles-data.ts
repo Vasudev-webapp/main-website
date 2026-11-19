@@ -994,31 +994,21 @@ These are starting estimates. Actual consumption should be verified in the field
     slug: "import-compliance-guide",
     title: "MEA Triazine Import Compliance Guide — Country-Specific Requirements",
     description:
-      "Practical import compliance guide for MEA Triazine 78% covering HS codes, documentation, customs requirements, and regulatory frameworks for major importing countries.",
+      "Practical import compliance guide for MEA Triazine 78% covering documentation, customs requirements, and regulatory frameworks for major importing countries.",
     keywords: [
       "MEA Triazine import compliance",
       "H2S scavenger import requirements",
       "triazine customs documentation",
-      "MEA Triazine HS code",
       "chemical import regulations",
       "MEA Triazine export documentation",
       "H2S scavenger import guide",
     ],
     category: "Product Knowledge",
-    h1: "MEA Triazine Import Compliance Guide — Documentation, HS Codes & Country Requirements",
+    h1: "MEA Triazine Import Compliance Guide — Documentation & Country Requirements",
     intro:
-      "Importing MEA Triazine 78% requires the right documentation, HS classification, and an understanding of destination-country regulations. This guide covers the compliance essentials for major importing markets so you can plan procurement with confidence.",
+      "Importing MEA Triazine 78% requires the right documentation and an understanding of destination-country regulations. This guide covers the compliance essentials for major importing markets so you can plan procurement with confidence.",
     publishedDate: "2026-03-26",
     sections: [
-      {
-        heading: "HS Code Classification",
-        id: "hs-code",
-        body: `MEA Triazine (1,3,5-tris(2-hydroxyethyl)hexahydro-s-triazine, CAS 4719-04-4) is typically classified under HS Code 2933.69 — other compounds containing an unfused triazine ring in the structure. Some countries may also accept classification under 3824.99 (chemical preparations not elsewhere specified) depending on end-use declarations.
-
-The correct HS code affects duty rates, import licensing requirements, and regulatory classification. Vasudev Chemo Pharma provides the appropriate HS code recommendation for each destination country as part of our standard export documentation.
-
-Always confirm the HS classification with your customs broker before the first shipment to a new destination. We can provide supporting documentation including chemical composition certificates and end-use declarations to assist with customs classification.`,
-      },
       {
         heading: "Standard Export Documentation",
         id: "export-documentation",
@@ -1065,11 +1055,6 @@ Both countries benefit from reduced duty rates under regional trade agreements. 
       },
     ],
     faqs: [
-      {
-        question: "What HS code is used for MEA Triazine 78%?",
-        answer:
-          "MEA Triazine is typically classified under HS 2933.69 (triazine ring compounds). Some countries may accept 3824.99 (chemical preparations NES). We provide destination-specific HS code guidance with every quotation.",
-      },
       {
         question: "Does Vasudev handle export documentation?",
         answer:

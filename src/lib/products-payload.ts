@@ -1,5 +1,6 @@
 import type { Product } from "./types";
 import { isRemovedProductSlug } from "./removed-products";
+import { MEA_TRIAZINE_IDENTITY, MEA_TRIAZINE_SLUG } from "./seo/mea-triazine-schema-data";
 
 /**
  * Resolve the Payload instance lazily.
@@ -218,7 +219,7 @@ function toProduct(doc: any): Product {
     Array.isArray(doc.documents) ? doc.documents : []
   );
 
-  return {
+  const product: Product = {
     id: doc.id,
     name: doc.name,
     slug: doc.slug,
@@ -306,6 +307,15 @@ function toProduct(doc: any): Product {
     seoScoreOverride:
       typeof doc.seoScoreOverride === "number" ? doc.seoScoreOverride : undefined,
   };
+
+  // Correct this catalog entry even when the CMS still contains the old values.
+  // Keep sku, id and slug intact for lookups and enquiries.
+  if (product.slug === MEA_TRIAZINE_SLUG) {
+    Object.assign(product, MEA_TRIAZINE_IDENTITY);
+    delete product.hsCode;
+  }
+
+  return product;
 }
 
 /** Fetch all active products */

@@ -10,6 +10,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import FaqSection from "@/components/seo/FaqSection";
 import { PRODUCTS_INDEX_FAQS } from "@/lib/seo/page-faqs";
+import { MEA_TRIAZINE_IDENTITY, MEA_TRIAZINE_SLUG } from "@/lib/seo/mea-triazine-schema-data";
 
 export const revalidate = 3600;
 
@@ -138,9 +139,9 @@ export default async function ProductPage() {
                         </p>
                       )}
                       {product.sku && (
-                        <p>
+                        <p className={product.slug === MEA_TRIAZINE_SLUG ? "[overflow-wrap:anywhere]" : undefined}>
                           <span className="font-medium text-gray-600">SKU:</span>{" "}
-                          {product.sku}
+                          {product.slug === MEA_TRIAZINE_SLUG ? MEA_TRIAZINE_IDENTITY.iupacName : product.sku}
                         </p>
                       )}
                     </div>

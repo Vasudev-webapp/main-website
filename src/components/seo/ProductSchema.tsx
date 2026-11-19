@@ -444,6 +444,11 @@ export default function ProductSchema({ product }: ProductSchemaProps) {
       : undefined,
   };
 
+  if (isEnrichedSlug) {
+    chemicalSchema.iupacName = product.iupacName;
+    chemicalSchema.molecularWeight = product.molecularWeight;
+  }
+
   if (isEddm) {
     chemicalSchema.name = EDDM_DISPLAY_NAME;
     chemicalSchema.alternateName = [EDDM_SHORT_NAME, EDDM_DISPLAY_NAME, ...EDDM_ALTERNATE_NAMES];

@@ -23,7 +23,7 @@ export const meaTriazine78ArticlesData: Record<string, BlogEntry> = {
       {
         heading: "What Is MEA Triazine 78% H2S Scavenger?",
         id: "what-is-mea-triazine-78",
-        body: "MEA Triazine 78% is a triazine-based chemical used for removing hydrogen sulphide from oil and gas streams. It is also known as monoethanolamine triazine and is widely used in industrial H₂S scavenging applications. The chemical reacts with hydrogen sulphide and converts it into sulphur-containing reaction by-products, helping reduce H₂S concentration in treated streams. Product Information: Product Name: MEA Triazine 78% H2S Scavenger; Chemical Name: Hexahydro-1,3,5-tris(2-hydroxyethyl)-s-triazine; CAS Number: 4719-04-4; Chemical Formula: C₆H₁₅N₃O₃; Molecular Weight: 177.20 g/mol; Active Content: Minimum 78%.",
+        body: "MEA Triazine 78% is a triazine-based chemical used for removing hydrogen sulphide from oil and gas streams. It is also known as monoethanolamine triazine and is widely used in industrial H₂S scavenging applications. The chemical reacts with hydrogen sulphide and converts it into sulphur-containing reaction by-products, helping reduce H₂S concentration in treated streams. Product Information: Product Name: MEA Triazine 78% H2S Scavenger; Chemical Name: 2-[3,5-bis(2-hydroxyethyl)-1,3,5-triazinan-1-yl]ethanol; CAS Number: 4719-04-4; Chemical Formula: C₉H₂₁N₃O₃; Molecular Weight: 219.28 g/mol; Active Content: Minimum 78%.",
       },
       {
         heading: "How Does MEA Triazine Work as an H2S Scavenger?",
